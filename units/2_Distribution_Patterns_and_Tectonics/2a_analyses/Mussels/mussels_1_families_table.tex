@@ -1,0 +1,266 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{margin=1in}
+\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+%\usepackage{fancyhdr}
+%\fancyhf{}
+%\pagestyle{fancy}
+%\setlength{\headheight}{14pt}
+%\fancyhead[R]{\footnotesize Range Size \thepage}
+%\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Geographic Range Size}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\newgeometry{left=1in,top=0.75in, bottom=0.75in}
+
+Families, Subfamilies and Genera for the freshwater mussel order Unionoida. Numbers in the columns indicate the number of species for each genus in the biogeographic regions.
+
+\begin{longtable}[l]{@{}lllrrrrrr@{}}
+\toprule
+Family & Subfamily & Genus &
+Afrotropical & Australian & Indomalaysian &
+Nearctic & Neotropical &
+Palearctic\tabularnewline
+\midrule
+\endhead
+Etheriidae & Etheriinae & \textit{Acostaea} & 0 & 0 & 0 & 0 & 1 &
+0\tabularnewline
+Etheriidae & Etheriinae & \textit{Bartlettia} & 0 & 0 & 0 & 0 & 1 &
+0\tabularnewline
+Etheriidae & Etheriinae & \textit{Etheria} & 1 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Etheriidae & Etheriinae & \textit{Pseudomulleria} & 0 & 0 & 1 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Callonaia} & 0 & 0 & 0 & 0 & 1 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Castalia} & 0 & 0 & 0 & 0 & 10 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Castaliella} & 0 & 0 & 0 & 0 & 1 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Cucumerunio} & 0 & 2 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Echyridella} & 0 & 3 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Hyridella} & 0 & 8 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Virgus} & 0 & 1 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Prisodon} & 0 & 0 & 0 & 0 & 2 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Triplodon} & 0 & 0 & 0 & 0 & 2 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Diplodon} & 0 & 0 & 0 & 0 & 18 &
+0\tabularnewline
+Hyriidae & Hyriinae & \textit{Rhipidodonta} & 0 & 0 & 0 & 0 & 10 &
+0\tabularnewline
+Hyriidae & Velesunioninae & \textit{Alathyria} & 0 & 4 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Velesunioninae & \textit{Lortiella} & 0 & 3 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Velesunioninae & \textit{Microdontia} & 0 & 1 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Velesunioninae & \textit{Velesunio} & 0 & 6 & 0 & 0 & 0 &
+0\tabularnewline
+Hyriidae & Velesunioninae & \textit{Westralunio} & 0 & 3 & 0 & 0 & 0 &
+0\tabularnewline
+Iridinidae & Aspathariinae & \textit{Aspatharia} & 14 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Iridinidae & Aspathariinae & \textit{Chambardia} & 11 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Iridinidae & Aspathariinae & \textit{Moncetia} & 1 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Iridinidae & Iridininae & \textit{Chelidonopsis} & 1 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Iridinidae & Iridininae & \textit{Mutela} & 14 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Iridinidae & Iridininae & \textit{Pleiodon} & 2 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Margaritiferidae & Margaritiferinae & \textit{Margaritifera} & 0 & 0 & 1 &
+5 & 0 & 8\tabularnewline
+Mycetopodidae & Anondontitinae & \textit{Anodontites} & 0 & 0 & 0 & 0 & 21
+& 0\tabularnewline
+Mycetopodidae & Anondontitinae & \textit{Lamproscapha} & 0 & 0 & 0 & 0 & 2
+& 0\tabularnewline
+Mycetopodidae & Leilinae & \textit{Leila} & 0 & 0 & 0 & 0 & 2 &
+0\tabularnewline
+Mycetopodidae & Monocondylaeinae & \textit{Diplodontites} & 0 & 0 & 0 & 0
+& 3 & 0\tabularnewline
+Mycetopodidae & Monocondylaeinae & \textit{Fossula} & 0 & 0 & 0 & 0 & 1 &
+0\tabularnewline
+Mycetopodidae & Monocondylaeinae & \textit{Haasica} & 0 & 0 & 0 & 0 & 1 &
+0\tabularnewline
+Mycetopodidae & Monocondylaeinae & \textit{Iheringella} & 0 & 0 & 0 & 0 &
+2 & 0\tabularnewline
+Mycetopodidae & Monocondylaeinae & \textit{Monocondylaea} & 0 & 0 & 0 & 0
+& 4 & 0\tabularnewline
+Mycetopodidae & Monocondylaeinae & \textit{Tamsiella} & 0 & 0 & 0 & 0 & 2
+& 0\tabularnewline
+Mycetopodidae & Mycetopodinae & \textit{Mycetopoda} & 0 & 0 & 0 & 0 & 4 &
+0\tabularnewline
+Mycetopodidae & Mycetopodinae & \textit{Mycetopodella} & 0 & 0 & 0 & 0 & 1
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Brazzaea} & 1 & 0 & 0 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Coelatura} & 22 & 0 & 0 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Germainaia} & 1 & 0 & 0 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Grandidieria} & 1 & 0 & 0 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Mweruella} & 1 & 0 & 0 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Nitia} & 5 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Nyassunio} & 2 & 0 & 0 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Prisodontopsis} & 1 & 0 & 0 &
+0 & 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Pseudospatha} & 1 & 0 & 0 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Arcidopsis} & 0 & 0 & 1 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Caudiculatus} & 0 & 0 & 1 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Chamberlainia} & 0 & 0 & 2 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Contradens} & 0 & 0 & 6 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Ctenodesma} & 0 & 0 & 2 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Diaurora} & 0 & 0 & 1 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Discomya} & 0 & 0 & 1 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Elongaria} & 0 & 0 & 2 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Ensidens} & 0 & 0 & 2 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Haasodonta} & 0 & 2 & 0 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Harmandia} & 0 & 0 & 2 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Hyriopsis} & 0 & 0 & 7 & 0 & 0
+& 1\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Inversidens} & 0 & 0 & 1 & 0 &
+0 & 2\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Lamellidens} & 0 & 0 & 11 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Lamprotula} & 0 & 0 & 19 & 0 &
+0 & 2\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Modellnaia} & 0 & 0 & 1 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Oxynaia} & 0 & 0 & 5 & 0 & 0 &
+0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Parreysia} & 0 & 0 & 39 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Physunio} & 0 & 0 & 10 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Pilsbryoconcha} & 0 & 0 & 5 &
+0 & 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Pressidens} & 0 & 0 & 3 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Prohyriopsis} & 0 & 0 & 1 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Pronodularia} & 0 & 0 & 0 & 0
+& 0 & 2\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Protunio} & 0 & 0 & 1 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Pseudobaphia} & 0 & 0 & 2 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Pseudodon} & 0 & 0 & 22 & 0 &
+0 & 1\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Rectidens} & 0 & 0 & 2 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Scabies} & 0 & 0 & 5 & 0 & 0 &
+0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Schepmania} & 0 & 0 & 2 & 0 &
+0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Solenaia} & 0 & 0 & 5 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Trapezoideus} & 0 & 0 & 4 & 0
+& 0 & 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Unionetta} & 0 & 0 & 2 & 0 & 0
+& 0\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Leguminaia} & 0 & 0 & 0 & 0 &
+0 & 2\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Microcondylaea} & 0 & 0 & 0 &
+0 & 0 & 1\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Potomida} & 0 & 0 & 0 & 0 & 0
+& 1\tabularnewline
+Unionidae & \textit{incertae sedis} & \textit{Pseudodontopsis} & 0 & 0 & 0 &
+0 & 0 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\centering
+	\includegraphics[height=\textheight]{grano_salis_phylogeny}
+
+\end{document}  

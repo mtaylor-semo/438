@@ -1,0 +1,170 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{margin=1in}
+\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+%\usepackage{fancyhdr}
+%\fancyhf{}
+%\pagestyle{fancy}
+%\setlength{\headheight}{14pt}
+%\fancyhead[R]{\footnotesize Range Size \thepage}
+%\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Geographic Range Size}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\thispagestyle{empty}
+\newgeometry{top=0.5in, bottom=0.5in}
+Superfamilies, Families and Genera of Crayfishes of the World.  Numbers in columns are the number of species per genus in each biogeographic region.
+
+\begin{longtable}[l]{@{}lllrrrrrr@{}}
+\toprule
+Superfamily & Family & Genus &
+Palearctic & Nearctic & Afrotropical &
+Neotropical & Indomalaysian &
+Australian\tabularnewline
+\midrule
+\endhead
+Astacoidea & Astacidae & \emph{Astacus} & 5 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Astacidae & \emph{Atlantostacs} & 8 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Astacidae & \emph{Austraopotamobius} & 7 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Astacidae & \emph{Caspiastacus} & 2 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Astacidae & \emph{Pacifastacus} & 0 & 8 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Astacidae & \emph{Pontastacus} & 9 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Barbicambarus} & 0 & 1 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Bouchardina} & 0 & 1 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Cambarellus} & 0 & 8 & 0 & 9 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Cambaroides} & 7 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Cambarus} & 0 & 97 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Distocambarus} & 0 & 5 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Fallicambarus} & 0 & 18 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Faxonella} & 0 & 4 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Hobbseus} & 0 & 7 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Orconectes} & 0 & 91 & 0 & 0 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Procambarus} & 0 & 140 & 0 & 39 & 0 &
+0\tabularnewline
+Astacoidea & Cambaridae & \emph{Troglocambarus} & 0 & 2 & 0 & 0 & 0 &
+0\tabularnewline
+Parastacoidea & Parastacidae & \emph{Astacoides} & 0 & 0 & 9 & 0 & 0 &
+0\tabularnewline
+Parastacoidea & Parastacidae & \emph{Astacopsis} & 0 & 0 & 0 & 0 & 0 &
+3\tabularnewline
+Parastacoidea & Parastacidae & \emph{Cherax} & 0 & 0 & 0 & 0 & 0 &
+45\tabularnewline
+Parastacoidea & Parastacidae & \emph{Engaeus} & 0 & 0 & 0 & 0 & 0 &
+39\tabularnewline
+Parastacoidea & Parastacidae & \emph{Engaewa} & 0 & 0 & 0 & 0 & 0 &
+5\tabularnewline
+Parastacoidea & Parastacidae & \emph{Esastacus} & 0 & 0 & 0 & 0 & 0 &
+43\tabularnewline
+Parastacoidea & Parastacidae & \emph{Geocharax} & 0 & 0 & 0 & 0 & 0 &
+2\tabularnewline
+Parastacoidea & Parastacidae & \emph{Gramastacus} & 0 & 0 & 0 & 0 & 0 &
+1\tabularnewline
+Parastacoidea & Parastacidae & \emph{Ombrastocides} & 0 & 0 & 0 & 0 & 0
+& 11\tabularnewline
+Parastacoidea & Parastacidae & \emph{Paranephrops} & 0 & 0 & 0 & 0 & 0 &
+2\tabularnewline
+Parastacoidea & Parastacidae & \emph{Parastacus} & 0 & 0 & 0 & 8 & 0 &
+0\tabularnewline
+Parastacoidea & Parastacidae & \emph{Samastacus} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Parastacoidea & Parastacidae & \emph{Spinastacoides} & 0 & 0 & 0 & 3 & 0
+& 0\tabularnewline
+Parastacoidea & Parastacidae & \emph{Tenuibranchiurus} & 0 & 0 & 0 & 1 &
+0 & 0\tabularnewline
+Parastacoidea & Parastacidae & \emph{Virilastacus} & 0 & 0 & 0 & 3 & 0 &
+0\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+\newgeometry{left=0.25in}
+
+\includegraphics[height=1\textheight]{crayfish_tree1} \includegraphics[height=1\textheight]{crayfish_tree2}
+
+\newpage
+\restoregeometry
+\includegraphics[height=1\textheight]{crayfishes_global_distribution}
+
+\end{document}  

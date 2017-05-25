@@ -1,0 +1,256 @@
+In the last exercise, you determined the range size for freshwater
+organisms. Fishes, crayfishes and mussels can't cross land so it seems
+reasonable that they may be restricted to just a few watersheds.
+However, coastal marine fishes do not have obvious limitations to their
+distribution. Adults of many coastal marine fishes are able to swim very
+long distances. Thus, at least potentially, more marine fishes may have
+relatively large range sizes compared to those with small ranges. Your
+goal for this exercise is to determine whether coastal marine fishes
+have large range sizes.
+
+For this exercise, all students will use the same data set, which comes
+from Horn et al. (2006, in \emph{The Ecology of Marine Fishes:
+California and Adjacent Waters}). The data set includes distribution
+information for 516 species of coastal marine fishes that occur in
+California. The authors determined the range size of each species using
+the number of degrees of latitude (°S to °N) that were occupied. The
+range could (and usually does) extend outside of California. The only
+requirement was that some part of the species' range had to occur within
+the coastal waters of California. For each degree of latitude, a species
+was assigned 1 if present, and 0 if absent. The full latitude range
+extends from 30°S (central Chile in South America) to 68°N (north of the
+Arctic Circle in Alaska).
+
+You will calculate the number of degrees latitude occupied by each
+species. You will also calculate the number of species present in each
+degree of latitude. In this data set, species are rows and degrees of
+latitude are columns. You will plot histograms of the results from these
+two calculations. Finally, you will learn a new trick with the
+\textbf{plot()} function to identify the region with the highest
+diversity of coastal marine fishes.
+
+\textbf{Obtain the Data Set}. Type the entire command on one line.
+
+cafish \textless{}-
+read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/california\_marine\_fishes.csv',
+header=TRUE, row.names=1)
+
+First, calculate how many degrees of latitude are covered by each
+species to determine range size. Repeat for the number of species per
+degree of latitude.
+
+rangeSize \textless{}- rowSums(cafish)
+
+numSpecies \textless{}- colSums(cafish)
+
+Calculate some basic statistics to fill in the table below. I've shown
+you what to do for range size. Repeat for the number of species present
+in each degree of latitude.
+
+max(rangeSize) \# \emph{max}imum number of degrees latitude occupied
+
+min(rangeSize) \# \emph{min}imum number of degrees latitude occupied
+
+mean(rangeSize) \# mean number of degrees latitude occupied
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule
+& \textbf{Degrees of Latitude Occupied} & \textbf{Number of Species per
+Degree}\tabularnewline
+\midrule
+\endhead
+\textbf{Maximum} & &\tabularnewline
+\textbf{Minimum} & &\tabularnewline
+\textbf{Mean} & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+1) What is your hypothesis? Given that the total latitudinal range in
+the data set covers 99° of latitude, from 30°S to 68°N, does the mean
+number of degrees latitude occupied suggest that most coastal marine
+fishes likely have large or small range size? Explain.
+
+Create a histogram of \textbf{rangeSize} and \textbf{numSpecies}. What
+do the result suggest about range size?
+
+2) Was your hypothesis supported for range size? Did most coastal marine
+fishes have relatively small or relatively large range sizes, especially
+in relation to the actual distance covered by the data set? Explain.
+
+3) Describe the pattern for number of species per degree latitude. A few
+degrees of latitude seem to have very few species. Can you think of
+reasons why? Hint 1: Look back at the minimum number of species per
+degree latitude in the table on the first page. Do you really think
+there is a degree of latitude anywhere along the coast that has only one
+species of fish? Hint 2: The data set encompasses only those species
+that occur in California. Use this information to try to explain the
+very high peak with very low numbers of species and the secondary peak
+with more reasonably numbers of species.
+
+\textbf{Presentation Quality Figures}. Each student should write the
+code for one of the histograms.
+
+Plot the two histograms side by side. I've given you the basic code,
+including the breaks (bin size) and limits of the X-axis. See the
+information below the code to use to make presentation quality
+histograms.
+
+op \textless{}- par(mfrow=c(1,2))
+
+hist(rangeSize, breaks=25, xlim=c(0,100))
+
+hist(numSpecies, breaks=50, xlim=c(0,500))
+
+par(op)
+
+To increase the presentation quality of your histograms, modify the
+\textbf{hist()} commands above to include the following details:
+
+\textbf{Main titles. Apply each title to the appropriate histogram.*}
+
+Frequency Distribution of Range Size for California Coastal Marine
+Fishes
+
+Frequency Distribution of Number of Species per Degree Latitude
+
+* These titles are very long so replace one of the spaces between words
+in the title with ``\textbackslash{}n'' (no quotes) to split the title
+across two lines. You decide where but aim for balance between the two
+lines. Include each your initials in the histogram that you create. You
+used this same technique in the first tutorial to add your name to one
+figure.
+
+\textbf{X-Axis Label. Apply each label to the appropriate histogram.}
+
+Degrees of Latitude Occupied
+
+Species Per Degree Latitude
+
+You may play adjust \textbf{col} and \textbf{border} if you wish.
+
+When you have finished, save the file as a PDF and upload to the Unit
+1b: California course drop box before you leave today.
+
+\textbf{Where is the richness of coastal marine fishes the highest?}
+
+Species richness is the number of species present at a given location.
+The second histogram showed that most degrees of latitude had fewer than
+half of the 519 species, and some degrees of latitude had far less than
+one-fifth of all species in the data set. Thus, most degrees of latitude
+had relatively low species richness (relative to the total data set).
+However, a few degrees of latitude had nearly or more than 400 species,
+which indicates very high species richness. Those were the degrees of
+latitude at the very right side of your histogram. Are those few degrees
+of latitude in the same area or are they randomly scattered? If the
+degrees of latitude are in the same area, they may suggest some type of
+biogeographic hotspot with high overall species diversity. Biogeographic
+hotspots are often targets for conservation management to ensure
+maintenance of diversity. The area of high richness may also represent a
+boundary between two biogeographically distinct regions. Regions that
+are biogeographically distinct tend to have distinct groups of taxa,
+with relatively few organisms shared between regions. You will learn
+more about biogeographic regions in the next unit. For now, you will
+explore which degrees of latitude have the highest overall species
+richness.
+
+To do so, use the \textbf{plot()} function to plot the
+\textbf{numSpecies} results.
+
+plot(numSpecies)
+
+Clearly, there is a peak in species richness, but at which latitudes?
+The Y-axis is the richness per degree latitude. The X-axis, labeled
+Index, is simply the order of the results in the \textbf{numSpecies}
+data set, so you can't easily tell which latitudes have the highest
+species richness. However, the order of records corresponds to the order
+of latitude from 30°S to 68°N.
+
+To get degrees of latitude on the X-axis, you need to generate a
+sequence of numbers that correspond to the degrees of latitude. As you
+did in the last exercise, use the \textbf{seq()} function to generate a
+sequence of numbers from -30 to 68, incrementing by 1. Type
+\textbf{?seq} if you don't remember how to use this function. Assign the
+results to a variable called \textbf{lat} for \emph{lat}itude.
+
+Now you can plot species richness against latitude.
+
+plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))
+
+\# These limits create a balanced distribution of tick marks
+
+Now, if you compare the points that represent the greatest richness, you
+get a sense that the highest diversity is somewhere between 25°N and
+40°N. This is useful but it would be nice to know precisely which
+degrees of latitude have the highest species richness.
+
+R provides a way to interact with your plots, using the
+\textbf{identify()} function. The \textbf{identify()} function lets you
+click on points in your plot. It will identify each point you click, up
+to a specifiable limit. You have to use the \textbf{identify()} function
+immediately after you use the \textbf{plot()} function because
+\textbf{identify()} works only in the currently active plot window.
+
+After you type the plot command below, move the window to the back and
+type the identify command, then bring the plot window back to the front.
+
+plot(numSpecies\textasciitilde{}lat) \# Skip xlim for now.
+
+identify(numSpecies\textasciitilde{}lat)
+
+Now, click once on the highest point. A number should appear. Click 3-4
+more of the highest points. Also click the lowest leftmost point and the
+lowest rightmost point. Press the \textbf{Esc} key when you are finished
+to stop the interaction.
+
+(If numbers do not appear, try the commands again. If you are still not
+successful, ask for help.)
+
+The lowest leftmost point should be 0 and the lowest rightmost point
+should be 99. The highest points are in the mid-60s. Notice also that
+the numbers that appeared on your graph also appear in the R command
+window after you pressed the \textbf{Esc} key. You could assign the
+results to a variable for later use but it is not necessary to do so
+here.
+
+The numbers that appeared on your graph are the record numbers
+indicating the order in the data set, hardly useful for your needs.
+Helpfully, the \textbf{identify()} function lets you specify a
+vector\footnote{A vector is one line of numeric \emph{or} text data (not
+  both). Think of it as one row of information from a data set. You
+  created a vector when you used the \textbf{seq()} function.} of
+information that can be used as labels. A suitable label would be the
+actual degree of latitude. You can extract the labels from the header
+row of the data set, which contains the degrees of latitude as column
+names. Type \textbf{head(cafish)} to see. S in the column header stands
+for latitudes \emph{s}outh of the equator and N stands for latitudes
+\emph{n}orth of the equator. The \textbf{colnames()} function extracts
+the column names for you.
+
+latlabels \textless{}- colnames(cafish)
+
+latlabels \# View the result
+
+Now, plot the species richness and identify the points. The numbers that
+appeared on the previous plot were somewhat large so use the cex
+argument in \textbf{identify()} to reduce the character size.
+(\textbf{cex} is a generic character expansion argument that allows you
+to reduce (values less than 1) or increase (values greater than 1) the
+size of symbols and text.
+
+plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))
+
+identify(numSpecies\textasciitilde{}lat, labels = latlabels, cex=0.8)
+
+As before, click several of the highest points, as well as the lowest
+leftmost and rightmost points. Press the \textbf{Esc} key when finished.
+
+You can now easily tell that the region with the highest species
+richness occurs in the same general area in the northern hemisphere. The
+question is, where is this?
+
+4) Identify the area with the map on the next page. Discuss with your
+partner some potential reasons why this area might have such high
+species richness compared to surrounding higher and lower latitudes.
+List some of your reasons and be prepared to share them with the class.
+
+\includegraphics{media/image1.jpeg}

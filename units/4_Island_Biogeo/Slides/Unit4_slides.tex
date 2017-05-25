@@ -1,0 +1,470 @@
+\documentclass[xcolor=svgnames]{beamer}
+%\documentclass[xcolor=dvipsnames]{beamer}
+%\usetheme{default}
+\usepackage{pgf,pgfpages}
+\usepackage{amsmath}
+\usepackage{graphicx}
+	\graphicspath{{img/}} % set of paths to search for images
+\usepackage{units}
+\usepackage{booktabs}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+
+%\mode<handout> 	% Use this to make PDF with all overlays on one slide.
+\mode<presentation>
+{
+  \usetheme{MST}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usefonttheme[onlymath]{serif}
+\usecolortheme[named=myBlue]{structure}
+
+%% Uncomment the next two lines to make slides with note lines
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+
+\title{Island Biogeography}
+
+\begin{document}
+
+\section{Insular Habitats}
+\subsection{What are Islands?}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{island_intro.jpg}
+}
+\begin{frame}[b]{\textcolor{yellow} {Island Biogeography}}
+	\hfill \textcolor{yellow}{Rock Islands, Republic of Palau}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{patch_reefs.jpg}
+}
+\begin{frame}[b]{\textcolor{yellow} {Coral patch reefs are ``islands.''}}
+	\hfill \textcolor{yellow}{Great Barrier Reef, Australia}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{big_oak_tree_sp.jpg}
+}
+\begin{frame}[b]{\textcolor{white} {Fragmented landscapes are ``islands.''}}
+	\hfill \textcolor{white}{Big Oak Tree State Park, Missouri}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{pothole_lakes.jpg}
+}
+\begin{frame}[b]{\textcolor{white} {Lakes and springs are ``islands.''}}
+	\hfill \textcolor{white}{Pleistocene pothole lakes, Siberia}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{cave.jpg}
+}
+\begin{frame}[b]{\textcolor{white} {Caves are ``islands.''}}
+	\hfill \textcolor{white}{Quadirikiri Cave, New Zealand}
+\end{frame}
+}
+
+\begin{frame}{What do these have in common with islands?}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[height=0.4\textheight]{patch_reefs.jpg}\\
+			\includegraphics[height=0.4\textheight]{big_oak_tree_sp.jpg}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[height=0.4\textheight]{pothole_lakes.jpg}\\
+			\includegraphics[height=0.4\textheight]{cave.jpg}
+		\end{column}	
+	\end{columns}
+\end{frame}
+
+\section{Early Studies}
+
+\subsection{Relative Abundance}
+
+\begin{frame}{Most species in a community are uncommon or rare.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{species_relative_abundance}\\
+	\pause
+	\begin{block}{}
+		\centering 
+		Why does low abundance matter for taxa that live on islands?
+	\end{block}
+\end{frame}
+
+\subsection{Species Richness}
+
+\begin{frame}{Species richness increases with island area.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{species_island_area}
+%	\begin{tikzpicture}
+%		\node at (-2.5,1.75) [black] {$S=\log(c)+z\log(A)$};
+%		\node at (-6.5,5.2) [font=\footnotesize] {$S=cA^z$};
+%	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Species richness decreases with island isolation.}
+	\centering
+		\includegraphics[height=0.75\textheight]{species_island_isolation} \par
+\end{frame}
+
+%\begin{frame}{How do these patterns relate to island area and size?}
+%	\begin{columns}[T] 
+%		\begin{column}{0.5\textwidth}
+%			\centering
+%		\includegraphics[width=0.9\textwidth]{species_island_area}
+%		\end{column}
+%		\begin{column}{0.5\textwidth}
+%			\centering
+%		\includegraphics[width=0.75\textwidth]{species_island_isolation}
+%		\end{column}
+%	\end{columns}
+%\end{frame}
+
+\begin{frame}{How do area and isolation predict species richness?}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[height=0.6\textheight]{area_and_isolation_vert}\\
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{tikzpicture}
+				[mainland/.style={rectangle,draw=black,fill=myBlue!10,thick,minimum size=15mm},
+				 bigisland/.style={circle,draw=black,fill=black!10,thick,minimum size=7mm,text width=1cm,align=center},
+				 tinyisland/.style={font=\tiny,circle,draw=black,fill=black!10,thick,minimum size=0mm,text width=0.5cm,align=center}]
+				\path	node at (3,-0.8)	[mainland]		{Mainland Source}
+						node at (1.2,-3)	[bigisland]		{Island 1}
+						node at (5,-3)		[tinyisland]	{Island 2}
+						node at (1.2,-5.6)	[tinyisland]	{Island 3}
+						node at (5,-5.6)	[bigisland]		{Island 4};
+			\end{tikzpicture}
+		\end{column}		
+	\end{columns}
+\end{frame}
+
+\section{Developing the Model}
+\subsection{A Natural Experiment}
+
+\begin{frame}{Volcanic activity destroyed life on Krakatau Islands.}
+	\centering
+		\includegraphics[height=0.85\textheight]{krakatau}
+\end{frame}
+
+\begin{frame}{Bird richness on the Krakatau Islands reached equilibrium 40 years after the eruption.}
+	\centering
+	\begin{tabular}{rccc}
+		\toprule
+		\textbf{Rakata} & Nonmigrant & Migrant & Total\\
+		\midrule
+		1908 & 13 & 0 & 13 \\
+		1919--1921 & 27 & 4 & 31 \\
+		1932--1934 & 27 & 3 & 30 \\
+		\bottomrule
+	\end{tabular}
+	
+	\vspace{1\baselineskip}
+	
+	\begin{tabular}{rccc}
+		\toprule
+		\textbf{Sertung}& Nonmigrant & Migrant & Total\\
+		\midrule
+		1908 & 1 & 0 & 1 \\
+		1919--1921 & 27 & 2 & 29\\
+		1932--1934 & 29 & 6 & 34\\
+		\bottomrule
+	\end{tabular}
+\end{frame}
+
+\begin{frame}{Species composition changed over time.}
+	\centering
+	\begin{tabular}{rccc}
+		\toprule
+		\textbf{Rakata} & Extinction & Immigration\\
+		\midrule
+		1908--1919 & 2 & 20 \\
+		1921--1932 & 5 & 4  \\
+		\bottomrule
+	\end{tabular}
+
+	\vspace{1\baselineskip}
+
+	\begin{tabular}{rccc}
+		\toprule
+		\textbf{Sertung}& Extinction & Immigration\\
+		\midrule
+		1908--1919 & 0 & 28 \\
+		1921--1932 & 2 & 7  \\
+		\bottomrule
+	\end{tabular}
+
+	\vspace{1\baselineskip}
+
+	\pause
+	\begin{block}{}
+		\textbf{Species turnover} occurs when immigrant taxa replace extinct taxa.
+	\end{block}
+\end{frame}
+
+\section{Equilibrium Theory of MacArthur-Wilson}
+\subsection{The Model}
+
+\begin{frame}{Immigration and extinction will reach equilibrium.}
+	\centering
+		\includegraphics[height=0.8\textheight]{immigration_extinction_equilibrium}
+\end{frame}
+
+\begin{frame}{Equilibrium points vary by island area and isolation.}
+	\centering
+		\includegraphics[height=0.8\textheight]{island_equilibrium}
+\end{frame}
+
+\subsection{Testing the Model}
+
+\begin{frame}{The model was tested  on tiny islands.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{fumigation.jpg}
+\end{frame}
+
+\begin{frame}{Results showed rapid arthropod recovery.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{arthropod_recovery}
+\end{frame}
+
+\subsection{Modifying the Model}
+
+\begin{frame}{Species turnover was lower than predicted on ``near'' islands.}
+	\centering
+	\begin{columns}[T]
+		\begin{column}{0.4\textwidth}
+			\includegraphics[height=0.5\textheight]{island_equilibrium}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\includegraphics[height=0.5\textheight]{rescue_effect}
+		\end{column}
+	\end{columns}
+	\pause
+	\begin{tikzpicture}
+		\draw	[<-,very thick]	(-3.2,1.36) -- (1.7,2) {};
+		\draw	[<-,very thick,color=red!50!black]	(-3.5,1.6) -- (4.8,3) {};
+	\end{tikzpicture}
+	\pause
+	\begin{block}{Rescue Effect}
+		High immigration rates reduce extinction rates.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Species turnover was higher than predicted on ``large'' islands.}
+	\centering
+	\begin{columns}[T]
+		\begin{column}{0.4\textwidth}
+			\includegraphics[height=0.5\textheight]{island_equilibrium}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\includegraphics[height=0.5\textheight]{rescue_effect}
+		\end{column}
+	\end{columns}
+	\begin{tikzpicture}
+		\draw	[<-,very thick]	(-3.65,1.1) -- (0.25,2) {};
+	\end{tikzpicture}
+	\pause
+	\begin{block}{Target Effect}
+		Large islands have high immigration.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Islands have sequential equilibrium points over time.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{sequential_equilibria}
+\end{frame}
+
+
+\section{New Models of Island Biogeography}
+\subsection{A Model for Speciation}
+
+\begin{frame}{New models of island biogeography are emerging.}
+	\centering
+			\includegraphics[height=0.8\textheight]{new_island_paradigm}
+\end{frame}
+
+\section{Island Communities}
+\subsection{}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{island_community_assembly.jpg}
+}
+\begin{frame}[b,plain]
+	\hfill\color{White!90!black}\tiny{Whitsunday Island courtesy Damien Dempsey. Wikimedia Commons.}
+\end{frame}
+}
+
+\section{Community Assembly Rules}
+\subsection{Biogeographic Processes}
+
+\begin{frame}{Filters prevent or allow dispersal of specific taxa.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{filter_alaska}\\
+\end{frame}
+
+\begin{frame}{Filters prevent or allow dispersal of specific taxa.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{filter_sunda}\\
+\end{frame}
+
+\begin{frame}{Species richness shows a hierarchical pattern of nesting.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{nestedness_ants} \\
+\end{frame}
+
+\begin{frame}{Island isolation determines nestedness by selective immigration.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{nestedness_selective_immigration} \\
+\end{frame}
+
+\begin{frame}{Island area determines nestedness by selective extinction.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{nestedness_selective_extinction_before} \\
+\end{frame}
+
+\begin{frame}{Island area determines nestedness by selective extinction.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{nestedness_selective_extinction_after} \\
+\end{frame}
+
+\begin{frame}{Selective immigration and selective extinction determine final nestedness pattern.}
+	\centering
+		\includegraphics[width=0.7\textwidth]{nestedness_selective_immigration_extinction} \\
+\end{frame}
+
+\begin{frame}{Immigration and extinction interact to determine presence or absence.}
+	\centering
+		\includegraphics[width=0.6\textwidth]{insular_distribution_function_top}\\
+		\pause
+		\begin{block}{}
+			\textbf{Insular distribution function} shows interaction of immigration and extinction.
+		\end{block}
+\end{frame}
+
+\begin{frame}{Insular distribution function of masked shrew.}
+	\centering
+		\includegraphics[width=0.7\textwidth]{insular_distribution_function_shrews}\\
+	\pause
+	\begin{tikzpicture}
+		\draw [very thick] (-2.3,1.8) -- (3.6,5.3);
+	\end{tikzpicture}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{species_interact.jpg}
+}
+\begin{frame}[b,plain]
+\color{LightGray}\tiny{\textit{Euglossa dilemma} (Green Orchid Bee) photo by Bob Peterson. Flickr Creative Commons.}
+\end{frame}
+}
+
+\subsection{Species Interactions}
+
+\begin{frame}{Ecologically similar species have non-overlapping distributions.}
+	\centering
+		\includegraphics[height=0.8\textheight]{checkerboard_distribution}\\
+\end{frame}
+
+\begin{frame}{Checkerboard pattern of various bird species on the Bismarck Islands.}
+	\centering
+		\includegraphics[width=0.8\textwidth]{insular_distribution_birds}\\
+\end{frame}
+
+\begin{frame}{Distribution of the Mangrove Golden Whistler on the Bismarck Islands.}
+	\centering
+		\includegraphics[width=0.8\textwidth]{insular_distribution_Pmelanura}\\
+\end{frame}
+
+\begin{frame}{Distribution of the Australian Golden Whistler on the Bismarck Islands.}
+	\centering
+		\includegraphics[width=0.8\textwidth]{insular_distribution_Ppectoralis}\\
+\end{frame}
+
+\begin{frame}{The two whistlers do not co-occur anywhere on the Bismarck Islands.}
+	\centering
+		\includegraphics[width=0.8\textwidth]{insular_distribution_pachychephala}\\
+\end{frame}
+
+\begin{frame}{Distribution of the Yellow-Bibbed Fruit Dove on the Bismarck Islands.}
+	\centering
+		\includegraphics[width=0.8\textwidth]{insular_distribution_Psolom}\\
+\end{frame}
+
+\begin{frame}{Distribution of the White-Bibbed Fruit Dove on the Bismarck Islands.}
+	\centering
+		\includegraphics[width=0.8\textwidth]{insular_distribution_Privoli}\\
+\end{frame}
+
+\begin{frame}{The yellow- and white-bibbed fruit doves rarely co-occur.}
+	\centering
+		\includegraphics[width=0.8\textwidth]{insular_distribution_ptilinopus}\\
+\end{frame}
+
+\begin{frame}{Given species A, M, N and R, how many unique arrangements, including single species, are possible?}
+	\pause
+	\centering
+		\includegraphics[width=0.8\textwidth]{checkerboard_cuckoo_table}\\
+\end{frame}
+
+\begin{frame}{\textit{Elacatinus} cleaner gobies do not overlap.}
+	\centering
+		\includegraphics[width=0.75\textwidth]{elacatinus_cleaner_distrib.pdf}\\
+\end{frame}
+
+\begin{frame}{\textit{Elacatinus} sponge-dwelling gobies do not overlap.}
+	\centering
+		\includegraphics[width=0.75\textwidth]{elacatinus_sponger_distrib.pdf}\\
+\end{frame}
+
+\begin{frame}{Ecological release broadens the population niche.}
+	\centering
+		\includegraphics[width=0.9\textwidth]{voles}\\
+	\begin{block}{}
+		Prey Vole: Ecological release in \textit{absence} of predator shrew.\\
+	\end{block}
+\end{frame}
+
+
+\section{Island Community Assembly}
+\subsection{Summary}
+
+\begin{frame}{Summary of island biogeography concepts.}
+	\begin{columns}[T]%
+		\begin{column}{0.5\textwidth}%
+		\begin{itemize}%
+			\item<1-| alert@1> Insular habitats are any habitat surrounded by unsuitable habitat.
+			\item<2-| alert@2> Communities assemble by complex interaction of
+			\begin{itemize}%
+				\item<3-| alert@3> island characteristics,
+				\item<4-| alert@4> biogeographic and evolutionary processes,
+				\item<5-| alert@5> and species interactions.
+			\end{itemize}%
+		\end{itemize}%
+		\end{column}%
+		\begin{column}{0.5\textwidth}%
+			\includegraphics<1-2>[width=0.9\textwidth]{Global_islands.jpg}
+			\includegraphics<3>[width=0.9\textwidth]{island_equilibrium}
+			\includegraphics<4>[width=1\textwidth]{new_island_paradigm}
+			\includegraphics<5>[width=0.9\textwidth]{insular_distribution_birds_b}
+		\end{column}%
+	\end{columns}%
+\end{frame}
+
+\end{document}

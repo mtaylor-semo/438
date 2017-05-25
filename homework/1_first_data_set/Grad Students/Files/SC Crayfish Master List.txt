@@ -1,0 +1,44 @@
+MAP. Cambarus (Cambarus) bartonii (Fabricius, 1798)........Appalachian brook crayfish
+MAP. Cambarus (Cambarus) howardi Hobbs and Hall 1969
+MAP. Cambarus (Depressicambarus) latimanus (LeConte, 1856)
+MAP. Cambarus (Depressicambarus) reduncus Hobbs, 1956
+MAP. Cambarus (Depressicambarus) reflexus Hobbs, 1981
+MAP. Cambarus (Depressicambarus) striatus Hay, 1902
+7. Cambarus (Hiaticambarus) sp. nov. B (in the undiagnosed C. (H.) longirostris complex)
+MAP. Cambarus (Jugicambarus) asperimanus Faxon, 1914
+MAP. Cambarus (Jugicambarus) carolinus (Erichson, 1846)
+MAP. Cambarus (Jugicambarus) nodosus Bouchard and Hobbs, 1976
+MAP. Cambarus (Lacunicambarus) diogenes Girard, 1852
+MAP. Cambarus (Puncticambarus) acuminatus Faxon, 1884
+MAP. Cambarus (Puncticambarus) chaugaensis Prins and Hobbs, 1972
+MAP. Cambarus (Puncticambarus) robustus Girard, 1852
+MAP. Cambarus (Puncticambarus) spicatus Hobbs, 1956
+16. Cambarus (Puncticambarus) hobbsorum Cooper 2001*
+MAP. Distocambarus (Distocambarus) crockeri Hobbs and Carlson, 1983
+MAP. Distocambarus (Fitzcambarus) carlsoni Hobbs, 1983......................mimic crayfish
+MAP. Distocambarus (Fitzcambarus) hunteri Fitzpatrick and Eversole, 1997
+MAP. Distocambarus (Fitzcambarus) youngineri Hobbs and Carlson, 1985
+MAP. Fallicambarus (Creaserinus) fodiens (Cottle, 1863)
+MAP. Faxonella clypeata (Hay, 1899)
+MAP. Procambarus (Leconticambarus) barbatus (Faxon, 1890)
+MAP. Procamrus (Ortmannicus) acutus (Girard, 1852).......”eastern” white river crayfish
+MAP. Procambarus (Ortmannicus) ancylus Hobbs, 1958
+MAP. Procambarus (Ortmannicus) blandingii (Harlan, 1830)
+MAP. Procambarus (Ortmannicus) braswelli Cooper, 1998
+MAP. Procambarus (Ortmannicus) chacei Hobbs, 1958
+MAP. Procambarus (Ortmannicus) enoplosternum Hobbs, 1947
+MAP. Procambarus (Ortmannicus) hirsutus Hobbs, 1958
+MAP. Procambarus (Ortmannicus) lepidodactylus Hobbs, 1947.....PeeDee lotic crayfish
+MAP. Procambarus (Ortmannicus) lunzi (Hobbs, 1940)
+MAP. Procambarus (Ortmannicus) pearsei (Creaser, 1934)
+MAP. Procambarus (Ortmannicus) pubescens (Faxon, 1884)
+MAP. Procambarus (Pennides) echinatus Hobbs, 1956
+MAP. Procambarus (Pennides) raneyi Hobbs, 1953
+MAP. Procambarus (Pennides) spiculifer (Leconte, 1856)
+MAP. Procambarus (Scapulicambarus) clarkii (Girard, 1852)............red swamp crayfish
+MAP. Procambarus (Scapulicambarus) troglodytes (LeConte, 1856)
+* Recently collected from South Carolina waters in Chester County, South Carolina, and therefore not included in the key.
+
+Fig 24 is Cambarus sp nov. which is same as sp. nov. B above.  See couplet 2, pg. 28.
+C. hobbsorum is in Chester County, which is upper Santee.
+

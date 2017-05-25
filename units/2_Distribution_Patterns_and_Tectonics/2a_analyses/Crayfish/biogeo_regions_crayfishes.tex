@@ -1,0 +1,243 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+%\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Biogeographic Regions \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Biogeographic Regions}
+\author{Crayfishes}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+
+You recently learned that the world's continental landmasses are divided
+into seven major biogeographic regions. \textbf{List below the seven
+regions, without looking at any source}.
+
+\begin{multicols}{2}
+a.\vspace{0.5\baselineskip}
+
+b.\vspace{0.5\baselineskip}
+
+c.\vspace{0.5\baselineskip}
+
+d.\vspace{0.5\baselineskip}
+
+\columnbreak
+
+e.\vspace{0.5\baselineskip}
+
+f.\vspace{0.5\baselineskip}
+
+g.\vspace{0.5\baselineskip}
+
+\end{multicols}
+
+The seven major regions were originally determined in large part because
+mammals and birds showed similar patterns of endemism associated with
+the different landmasses. Today, you will learn whether three major
+groups of freshwater organisms (fishes, mussels, crayfishes) show
+patterns of endemism similar to their terrestrial counterparts.
+
+Work together in pairs to answer the following questions.
+
+\begin{enumerate}[leftmargin=*]
+\item Do you think the three freshwater groups will show patterns of
+endemism associated with the seven biogeographic regions? Explain why or
+why not.\vspace{10\baselineskip}
+
+\end{enumerate}
+
+You were lucky enough to draw crayfishes for this exercise. You have
+been given a sheet of data that lists the superfamilies, families and
+genera of crayfishes from around the world, and the number of species
+for each genus found in each biogeographic region.
+
+\begin{enumerate}[resume, leftmargin=*]
+\item How many genera of crayfishes are found in each biogeographic region?
+
+\begin{multicols}{2}
+a.\vspace{0.5\baselineskip}
+
+b.\vspace{0.5\baselineskip}
+
+c.\vspace{0.5\baselineskip}
+
+d.\vspace{0.5\baselineskip}
+
+e.\vspace{0.5\baselineskip}
+
+f.\vspace{0.5\baselineskip}
+
+g.\vspace{0.5\baselineskip}
+\end{multicols}
+
+\item  How many species of crayfishes are found in each biogeographic
+region?
+
+
+\begin{multicols}{2}
+a.\vspace{0.5\baselineskip}
+
+b.\vspace{0.5\baselineskip}
+
+c.\vspace{0.5\baselineskip}
+
+d.\vspace{0.5\baselineskip}
+
+e.\vspace{0.5\baselineskip}
+
+f.\vspace{0.5\baselineskip}
+
+g.\vspace{0.5\baselineskip}
+\end{multicols}
+
+\item Which region has the greatest number of genera? Which region has the
+fewest number of genera? Which region has the greatest number of
+species? The fewest? Are they the same regions you listed for the
+genera?
+
+\begin{multicols}{2}
+
+%\vspace*{\baselineskip}
+
+Greatest number of genera:\vspace{2\baselineskip}
+
+Least number of genera: \vspace{2\baselineskip}
+
+ Greatest number of species:\vspace{2\baselineskip}
+ 
+ Least number of species:\vspace{2\baselineskip}
+ 
+ \end{multicols}
+ 
+ \vspace{\baselineskip}
+ 
+\item List the genera that are found in more than one biogeographic region.
+Name the regions for each genus you list.\vspace*{\stretch{1}}
+
+\item Do any genera show a Pangaea, Laurasian, or Gondwanan distribution?
+If so, list the genera, and then explain for each genus how you
+determined which distribution pattern it has.\vspace*{\stretch{1}}
+
+\newpage
+\item Do any of the families show a Pangaean, Laurasian or Gondwanan
+distribution? If so, list the families, and then explain for each family
+how you determined which distribution pattern it has.\vspace*{\stretch{1}}
+
+\item Are there any families or genera with a distribution that is
+\emph{not apparently} consistent with plate tectonics, i.e., a
+distribution that is not Pangaean, Laurasian or Gondwanan? If so, list
+the taxa and regions in which the taxa are located. How might you try to
+explain this distribution?\vspace*{\stretch{1}}
+
+\item Centers of diversity are areas where species diversity is especially
+high. Some biologists think that these areas are places where new
+species evolve frequently within the higher taxon. Based on the
+information you compiled above, where do you think the center of
+diversity is for the Astacoidea? Where is the center of diversity for
+the Parastacoidea?\vspace*{\stretch{1}}
+
+\end{enumerate}
+
+\newpage
+
+Freshwater crayfishes evolved from marine clawed lobster ancestors.
+Because each superfamily has a different center of diversity, a
+hypothesis was proposed in 1880, which stated that freshwater crayfish 
+evolved from marine ancestors twice, once for each superfamily. In 1902,
+a competing hypothesis proposed that freshwater crayfish evolved only
+once.
+
+Carefully study the two phylogenetic trees that were included with the
+distribution data, then answer the next two questions.
+
+\begin{enumerate}[resume, leftmargin=*]
+\item The phylogenetic trees clearly support one of the two hypotheses.
+Which one? Explain.\vspace*{\stretch{1}}
+
+\item Is the hypothesized relationship among the higher crayfish taxa
+consistent with the breakup of Pangaea? Explain.\vspace*{\stretch{1}}
+
+\end{enumerate}
+
+Be prepared to come to the front of the class to discuss some of your
+results.
+
+
+\end{document}  

@@ -1,0 +1,300 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}}%
+%	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+%\lecture{instructor}{instructor}
+\lecture{student}{student}
+
+\begin{frame}[t,plain]{Our goals for today are to learn}
+
+	\hangpara whether most organisms have small, medium, or large range sizes, and
+	
+	\hangpara the processes that regulate the geographic range.
+
+\end{frame}
+
+\begin{frame}[t,plain]{In groups, discuss the following questions.}
+
+	\hangpara Do most plants and animals have small, medium or large range sizes?
+
+	\hangpara What factors do you think determine range size?
+
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_range_size}}
+\begin{frame}[t,plain]{These figures show range size frequency. Interpret them.}
+
+\end{frame}
+}
+
+\begin{frame}[t,plain]{What factors constrain the geographic range size?}
+
+	\vspace{\baselineskip}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{range_pinus_catarrhines}
+	\end{center}
+	
+	\hangpara Write 3–4 hypotheses to explain why most species have small range size. Be prepared to discuss them with the class.
+	
+\end{frame}
+
+\lecture{instructor}{instructor}
+
+\begin{frame}[t,plain]{Some factors that influence geographic range size include}
+
+	\hangpara the ecological niche,
+	
+	\hangpara disturbance, 
+	
+	\hangpara species interactions, and
+
+	\hangpara historical processes.
+	
+		
+\end{frame}
+
+\lecture{student}{student}
+
+\begin{frame}[t,plain]{The geographic range reflects the species’ niche.}
+
+	\hangpara What is the \highlight{fundamental niche} vs. the \highlight{realized niche?}
+	\pause
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{range_niche}
+	\end{center}
+	\pause
+	
+	\hangpara What is the \highlight{fundamental geographic range} vs the \highlight{realized geographic range?}
+
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_groundhog}}
+\begin{frame}[b,plain]
+\tiny Wikimedia Commons.
+\end{frame}
+}
+
+\begin{frame}[t,plain]{Abundance and density is highest near the center of the range. Why?}
+	\begin{center}
+		\includegraphics[width=\textwidth]{range_scissortail}
+	\end{center}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_juniper}}
+\begin{frame}[b,plain]{\highlight{Habitat quality} influences abundance and density.}
+
+\end{frame}
+}
+
+\begin{frame}[t,plain]{\highlight{Metapopulations} have cycles of extinction and colonization.}
+	\begin{center}
+		\includegraphics[width=\textwidth]{range_metapopulation}	
+	\end{center}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_disturbance_flood}}
+\begin{frame}[b,plain]{Floods restore sediment and nutrients.}
+\tiny\hfill\textcolor{white}{2008 St. Louis area flood, Jocelyn Augustino, Wikimedia Commons.}
+\end{frame}
+}
+
+\lecture{instructor}{instructor}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_flood_birdspoint}}
+\begin{frame}[b,plain]{}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_louisiana_land_loss}}
+\begin{frame}[b,plain]{}
+
+\end{frame}
+}
+
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_disturbance_fire}}
+\begin{frame}[b,plain]{\textcolor{white}{Fires maintain forests and grasslands.}}
+
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_disturbance_fire_regime}}
+\begin{frame}[b,plain]
+	\tiny\hfill USDA, Wikimedia Commons.
+\end{frame}
+}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_hurricane}}
+\begin{frame}[b,plain]{Hurricanes can alter reef ecosystems.}
+	\tiny\hfill Hurricane Sandy, NOAA, Wikimedia Commons.
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_urchins}}
+\begin{frame}[b,plain]
+	\tiny\textcolor{white}{NOAA, Flickr Creative Commons.}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_ginsburgellus}}
+\begin{frame}[b,plain]{\textcolor{white}{The range of some species depends on the range of other species.}}
+	\tiny\textcolor{white}{Nineline Goby, \copyright André de Molenaar.}
+\end{frame}
+}
+
+\begin{frame}[t,plain]{Whitebark Pine uses Clark’s Nutcracker for seed dispersal.}
+	\begin{center}
+		\includegraphics[width=\textwidth]{range_nutcracker}
+	\end{center}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_squirrels}}
+\begin{frame}[b,plain]{Native Red Squirrels have lost range to invasive Grey Squirrels.}
+	
+	\tiny\hfill Red Squirrel Survival Trust
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_brown_tree_snake}}
+\begin{frame}[b,plain]{Native bats and birds have lost range to invasive snake.}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_historical}}
+\begin{frame}[b,plain]{Historical factors influence range size.}
+\end{frame}
+}
+
+\lecture{instructor}{instructor}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_groundhog}}
+\begin{frame}[b,plain]
+\tiny Wikimedia Commons.
+\end{frame}
+}
+
+\lecture{student}{student}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_marmota}}
+\begin{frame}[b,plain]
+	\tiny Modified from Wikimedia Commons.
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_allopatric}}
+\begin{frame}[t,plain]{Closely related species have \highlight{allopatric} distributions.}
+\end{frame}
+}
+
+\begin{frame}[t,plain]{Closely related species have fewer overlapping ranges than expected.}
+
+	\begin{center}
+		\hangpara Observed vs. expected number of \\\hspace{0.5em} overlapping ranges for desert rodents.
+
+		\begin{tabular}{@{}lrr@{}}
+		\toprule
+		Taxon & Observed & Expected \tabularnewline
+		\midrule
+		Same genus & 111 & 146.3 \tabularnewline
+		Diff. genus & 785 & 749.7 \tabularnewline
+		Similar size & 217 & 242.2 \tabularnewline
+		Diff. size & 697 & 653.8 \tabularnewline
+		\bottomrule
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_goby_phylo}}
+\begin{frame}[b,plain]
+\end{frame}
+}
+
+
+
+
+\end{document}

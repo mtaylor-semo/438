@@ -1,0 +1,278 @@
+\documentclass[xcolor=svgnames]{beamer}
+%\documentclass[xcolor=dvipsnames]{beamer}
+%\usetheme{default}
+\usepackage{pgf,pgfpages}
+\usepackage{graphicx}
+\usepackage{units}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetheme{Boadilla}
+
+
+%% Uncomment the next two lines to make slides with note lines
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+
+\definecolor{myBlue}{RGB}{0, 0, 100}
+
+%\mode<handout> 	% Use this to make PDF with all overlays on one slide.
+\mode<presentation>
+
+\usefonttheme[onlymath]{serif}
+\usecolortheme[named=myBlue]{structure}
+
+%\usecolortheme{seahorse}
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{section in head/foot}\insertsection
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in head/foot}%
+    \usebeamerfont{subsection in head/foot}\insertsubsection\hspace*{3em}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatletter\setbeamertemplate{navigation symbols}{} 
+
+\begin{document}
+
+\section{Pleistocene}
+\subsection{Biogeography}
+
+\begin{frame}{The Pleistocene}
+	\begin{center}
+		\begin{block}{}
+			\includegraphics[width=1.0\textwidth]{img/iceage}
+		\end{block}
+		\begin{block}{}
+			The Pleistocene (2.6 MYA to 12 KYA) had a profound influence on the biogeography of modern taxa.
+		\end{block}
+	\end{center}
+\end{frame}
+
+\subsection{Background}
+\begin{frame}{Extent of Glaciation}
+	\begin{columns}[T]
+		\begin{column}{0.45\textwidth}
+			\includegraphics[width=1\textwidth]{img/north_hemi_overhead}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\begin{itemize}
+				\item Four major advances in northern hemisphere
+					\begin{itemize}
+						\item Nebraska
+						\item Kansan
+						\item Illinois
+						\item Wisconsin
+					\end{itemize}
+				\item Wisconsin was 85,000 -- 12,000 years bp
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\subsection{Glacier Formation}
+\begin{frame}{Why do glaciers advance and retreat?}
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{img/wowl.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Milankovitch Cycles: Eccentricity}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/eccentricity}
+	\end{center}
+	\begin{block}{}
+		Earth's orbit deviates from less to more elliptical every 100,000 years.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Milankovitch Cycles: Obliquity}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/obliquity}
+	\end{center}
+	\begin{block}{}
+		Earth's tilt angle of Earth changes every 41,000 years.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Milankovitch Cycles: Precession}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{img/precession}
+	\end{center}
+	\begin{block}{}
+		Earth's axis ``wobbles'' like a spinning top every 22,000 years.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Milankovitch: Present}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/milankopresent}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Milankovitch: Past}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/milankopast}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Albedo Effect Enhances Glaciation}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1\textwidth]{img/albedo}
+			\end{center}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\begin{itemize}
+				\item	\textcolor{myBlue}{\textbf{Albedo}} is a measure of reflected sunlight. 
+				\item Glaciers reflect much more sunlight back to the atmosphere. 
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{Environmental Change}
+
+\begin{frame}{Environmental Change}
+		\begin{center}
+			\includegraphics[width=0.7\textwidth]{img/glacial_pirate_ship.jpg}
+			\begin{block}{}
+				What changes to the environment did Pleistocene glaciation cause? Think about terrain (topography), sea levels, and overall climate.
+			\end{block}
+		\end{center}
+\end{frame}
+
+\begin{frame}{Environmental Change}
+	\includegraphics[width=1\textwidth]{img/glacial_land_coverage}
+	\begin{block}{}
+		About 1/3 of land covered by ice sheets. \pause 
+		Where did the water come from?
+	\end{block}
+\end{frame}
+
+\begin{frame}{Environmental Change}
+	\includegraphics[width=1\textwidth]{img/pleisto_sealevels}
+	\begin{block}{}
+		New land exposed by sea level reduction.
+	\end{block}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{img/NorthAmerica.jpg}}
+\setbeamercolor{frametitle}{fg=DarkOrange}
+\begin{frame}{Ice Sheets Altered North American Topography}
+\end{frame}
+}
+\begin{frame}{Terrestrial Change}
+		\begin{center}
+			\includegraphics[width=0.58\textwidth]{img/riverpatterns.jpg}
+			\begin{block}{}
+				North of the Missouri River, glaciated rivers run parallel.
+			\end{block}
+		\end{center}
+		{\hfill\tiny{Image: Bruce Railsback, Dept. of Geology, Univ. Georgia}}
+\end{frame}
+
+\begin{frame}{Terrestrial Change}
+		\begin{center}
+			\includegraphics[width=0.7\textwidth]{img/coteau.jpg}
+			\begin{block}{}
+				Coteau des Prairies Plateau in the upper Midwest.
+			\end{block}
+		\end{center}
+		{\hfill\tiny{Image: Bruce Railsback, Dept. of Geology, Univ. Georgia}}
+\end{frame}
+
+\begin{frame}{Pleistocene Lake Formation}
+		\begin{center}
+			\includegraphics[width=0.7\textwidth]{img/lake_agassiz.png}
+			\begin{block}{}
+				Meltwater from retreating ice sheets formed many large lakes, such as \\
+				Lake Agassiz in Canada...
+			\end{block}
+		\end{center}
+		{\hfill\tiny{Image: Bruce Railsback, Dept. of Geology, Univ. Georgia}}
+\end{frame}
+
+\begin{frame}{Pleistocene Lake Formation}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[height=7cm]{img/bonneville_lakes.png}
+			\end{center}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\begin{block}{}
+			...and Lake Bonneville, Lake Lahonta, and many others in the western U.S.
+			\end{block}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Pleistocene Sea Level Drop}
+		\begin{columns}[T]
+			\begin{column}{0.45\textwidth}
+				\includegraphics[width=1\textwidth]{img/caribbean}
+			\end{column}
+			\begin{column}{0.45\textwidth}
+				\begin{itemize}
+					\item Mean sea level ca. 130 km below present
+					\item 52 million km$^3$ of sea water in ice
+					\item \textcolor{myBlue}{\textbf{Eustatic}} and \textcolor{myBlue}{\textbf{Isostatic}} sea level changes
+				\end{itemize}
+			\end{column}
+		\end{columns}
+\end{frame}
+
+\begin{frame}{Pleistocene Land Bridges}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/beringia}
+			\begin{block}{}
+				Beringia was a land bridge between Palearctic and Nearctic.
+			\end{block}
+		\end{center}
+\end{frame}
+
+\begin{frame}{Pleistocene Land Bridges}
+		\begin{center}
+			\includegraphics[width=0.75\textwidth]{img/wallacia}
+			\begin{block}{}
+				Wallacia allowed dispersal to Indomalaysian and Australian islands.
+			\end{block}
+		\end{center}
+\end{frame}
+
+\subsection{Climate Change}
+
+\begin{frame}{Climates Were Cooler}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{img/pleistotemps}
+			\begin{block}{}
+				Mean Pleistocene temperatures were as much as $-$8$^{\circ}$C below current mean temps.
+			\end{block}
+		\end{center}
+\end{frame}
+
+\begin{frame}{Seasonal Temperature Swings Were Moderate}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{img/adiabatic}
+			\begin{block}{}
+				Seasonal temperatures did not differ as much due to \textcolor{myBlue}{\textbf{adiabatic warming}} and altered climate patterns.
+			\end{block}
+		\end{center}
+\end{frame}
+
+
+
+
+\end{document}

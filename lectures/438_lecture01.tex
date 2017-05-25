@@ -1,0 +1,232 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+%\lecture{instructor}{instructor}
+%\lecture{student}{student}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{tetons_landscape}}
+\begin{frame}[b,plain]{\textcolor{white}{BI 438 / 638: Biogeography}}
+
+\end{frame}
+}
+
+%% Contact Info
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mike_snake.jpg}}
+\begin{frame}[t,plain]
+\large
+\vspace{5ex}
+\hangpara\hspace{17em} Mike Taylor
+
+\hangpara\hspace{17em} RH 217
+
+\hangpara\hspace{17em} mtaylor@semo.edu
+
+\end{frame}
+}
+
+%% Grades
+\begin{frame}[t,plain]{You \highlight{earn} your grade with }
+
+	\hangpara 3 exams @ 75--100 points, 
+
+	\hangpara 3--5 critical analyses @ 30 points, 
+
+		\hspace{2em} Grads / honors will lead a discussion,
+
+	\hangpara Pre- and post-tests,
+	
+	\hangpara Data analyses and assignments, and
+	
+	\hangpara Grad / honors project and presentation.
+	
+\end{frame}
+
+%% Software
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{software}}
+\begin{frame}[t,plain]{You will complete many analyses.}
+
+	\hangpara You may bring a laptop.
+	
+	\hangpara Install free \href{https://www.r-project.org/}{R software}.
+	
+	\hangpara Analysis of fishes, crayfishes, and mussels.
+
+\end{frame}
+}
+
+
+%% Textbook
+\begin{frame}[t,plain]{The textbook is \highlight{required} for this course.}
+	\begin{center}
+		\includegraphics[height=0.7\textheight]{textbook}
+	\end{center}
+\end{frame}
+
+
+%% First assignment
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{first_assignment}}
+\begin{frame}[t,plain]{Here is your first assignment. Maybe.}
+
+	\hangpara You'll build a presence/absence data matrix for the fishes of Georgia.
+
+	\hangpara \url{http://mtaylor4.semo.edu/~goby/biogeo/}
+	
+	\hangpara \url{http://fishesofgeorgia.uga.edu}
+	
+\end{frame}
+}
+
+%% What is biogeography?
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{tetons_landscape}}
+\begin{frame}[b,plain]{\textcolor{white}{What is biogeography?}}
+
+\end{frame}
+}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{tetons_landscape}}
+\begin{frame}[t,plain]{\textcolor{white}{What explains the distribution of organisms living here?}}
+
+	\hangpara\textcolor{white}{Consider ecological and geological time scales.}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{teton_region_overview}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{craters_overview}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{craters_of_the_moon}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{twin_falls}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{teton_region_overview}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{grand_prismatic_spring}}
+\begin{frame}[b,plain]{\textcolor{white}{Grand Prismatic Spring, Yellowstone NP.}}
+\hfill\tiny\textcolor{white}{Clément Bardot, Wikimedia Commons}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{teton_hotspots}}
+\begin{frame}[b,plain]
+\hfill\tiny{\textcolor{white}{Arjuno3, Wikimedia Commons}}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{teton_fault_zone}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{teton_burned_area}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{tetons_landscape}}
+\begin{frame}[t,plain]{\textcolor{white}{What explains the distribution of organisms living here?}}
+
+	\hangpara\textcolor{white}{Consider ecological and geological time scales.}
+\end{frame}
+}
+
+
+\end{document}

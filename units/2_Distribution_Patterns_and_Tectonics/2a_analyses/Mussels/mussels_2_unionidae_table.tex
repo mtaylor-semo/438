@@ -1,0 +1,264 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{margin=1in}
+\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+%\usepackage{fancyhdr}
+%\fancyhf{}
+%\pagestyle{fancy}
+%\setlength{\headheight}{14pt}
+%\fancyhead[R]{\footnotesize Range Size \thepage}
+%\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Geographic Range Size}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\newgeometry{left=1in,top=0.75in, bottom=0.75in}
+
+Subfamiles, Tribes and Genera for the freshwater mussel family Unionidae. Numbers in the columns indicate the number of species for each genus in the biogeographic regions.
+
+\begin{longtable}[l]{@{}lllrrrrrr@{}}
+\toprule
+Subfamily & Tribe & Genus &
+Afrotropical & Australian & Indomalaysian &
+Nearctic & Neotropical &
+Palearctic\tabularnewline
+\midrule
+\endhead
+Ambleminae & Amblemini & \textit{Amblema} & 0 & 0 & 0 & 3 & 0 &
+0\tabularnewline
+Ambleminae & Gonideini & \textit{Gonidea} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Actinonaias} & 0 & 0 & 0 & 2 & 7 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Arotonaias} & 0 & 0 & 0 & 0 & 3 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Cyprogenia} & 0 & 0 & 0 & 2 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Cyrtonaias} & 0 & 0 & 0 & 2 & 5 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Delphinonaias} & 0 & 0 & 0 & 0 & 4 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Disconaias} & 0 & 0 & 0 & 2 & 5 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Dromus} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Ellipsaria} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Epioblasma} & 0 & 0 & 0 & 22 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Friersonia} & 0 & 0 & 0 & 0 & 1 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Glebula} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Hamiota} & 0 & 0 & 0 & 4 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Lampsilis} & 0 & 0 & 0 & 24 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Lemiox} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Leptodea} & 0 & 0 & 0 & 3 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Ligumia} & 0 & 0 & 0 & 3 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Medionidus} & 0 & 0 & 0 & 6 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Obliquaria} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Obovaria} & 0 & 0 & 0 & 6 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Potamilus} & 0 & 0 & 0 & 7 & 2 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Ptychobranchus} & 0 & 0 & 0 & 6 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Ptychorhynchus} & 0 & 0 & 3 & 0 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Toxolasma} & 0 & 0 & 0 & 8 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Truncilla} & 0 & 0 & 0 & 3 & 1 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Venustaconcha} & 0 & 0 & 0 & 2 & 0 &
+0\tabularnewline
+Ambleminae & Lampsilini & \textit{Villosa} & 0 & 0 & 0 & 18 & 0 &
+0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Barynaias} & 0 & 0 & 0 & 0 &
+5 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Martensnaias} & 0 & 0 & 0 & 0
+& 1 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Micronaias} & 0 & 0 & 0 & 0 &
+3 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Nephritica} & 0 & 0 & 0 & 0 &
+2 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Nephronaias} & 0 & 0 & 0 & 0
+& 24 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Pachynaias} & 0 & 0 & 0 & 0 &
+2 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Psoronaias} & 0 & 0 & 0 & 0 &
+8 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Psorula} & 0 & 0 & 0 & 0 & 7
+& 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Reticulatus} & 0 & 0 & 0 & 0
+& 2 & 0\tabularnewline
+Ambleminae & \textit{incertae sedis} & \textit{Sphenonaias} & 0 & 0 & 0 & 1
+& 6 & 0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Elliptio} & 0 & 0 & 0 & 39 & 0 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Elliptoideus} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Fusconaia} & 0 & 0 & 0 & 13 & 0 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Hemistena} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Plethobasus} & 0 & 0 & 0 & 3 & 0 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Pleurobema} & 0 & 0 & 0 & 26 & 0 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Pleuronaia} & 0 & 0 & 0 & 2 & 0 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Popenaias} & 0 & 0 & 0 & 1 & 3 &
+0\tabularnewline
+Ambleminae & Pleurobemini & \textit{Uniomerus} & 0 & 0 & 0 & 4 & 0 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Amphinaias} & 0 & 0 & 0 & 11 & 0 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Cyclonaias} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Megalonaias} & 0 & 0 & 0 & 1 & 1 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Plectomerus} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Quadrula} & 0 & 0 & 0 & 5 & 0 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Quincuncina} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Theliderma} & 0 & 0 & 0 & 5 & 0 &
+0\tabularnewline
+Ambleminae & Quadrulini & \textit{Tritogonia} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Alasmidonta} & 0 & 0 & 0 & 12 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Anemina} & 0 & 0 & 5 & 0 & 0 &
+2\tabularnewline
+Unioninae & Anodontini & \textit{Anodonta} & 0 & 0 & 0 & 7 & 1 &
+6\tabularnewline
+Unioninae & Anodontini & \textit{Anodontoides} & 0 & 0 & 0 & 3 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Arcidens} & 0 & 0 & 0 & 2 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Cristaria} & 0 & 0 & 4 & 0 & 0 &
+3\tabularnewline
+Unioninae & Anodontini & \textit{Lasmigona} & 0 & 0 & 0 & 8 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Pegias} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Pseudanodonta} & 0 & 0 & 0 & 0 & 0 &
+3\tabularnewline
+Unioninae & Anodontini & \textit{Pyganodon} & 0 & 0 & 0 & 6 & 1 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Simpsonaias} & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Simpsonella} & 0 & 0 & 2 & 0 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Sinanodonta} & 0 & 0 & 1 & 0 & 0 &
+2\tabularnewline
+Unioninae & Anodontini & \textit{Strophitus} & 0 & 0 & 0 & 3 & 0 &
+0\tabularnewline
+Unioninae & Anodontini & \textit{Utterbackia} & 0 & 0 & 0 & 7 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Aculamprotula} & 0 & 0 & 5 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Acuticosta} & 0 & 0 & 5 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Arconaia} & 0 & 0 & 3 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Cafferia} & 1 & 0 & 0 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Cuneopsis} & 0 & 0 & 6 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Inversiunio} & 0 & 0 & 0 & 0 & 0 &
+4\tabularnewline
+Unioninae & Unionini & \textit{Lanceolaria} & 0 & 0 & 5 & 0 & 0 &
+3\tabularnewline
+Unioninae & Unionini & \textit{Lepidodesma} & 0 & 0 & 2 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Nodularia} & 0 & 0 & 4 & 0 & 0 &
+1\tabularnewline
+Unioninae & Unionini & \textit{Rhombuniopsis} & 0 & 0 & 3 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Schistodesmus} & 0 & 0 & 2 & 0 & 0 &
+0\tabularnewline
+Unioninae & Unionini & \textit{Unio} & 2 & 0 & 0 & 0 & 0 &
+10\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\centering
+	\includegraphics[height=\textheight]{grano_salis_phylogeny}
+
+\end{document}  

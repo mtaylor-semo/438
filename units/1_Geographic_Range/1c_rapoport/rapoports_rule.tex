@@ -1,0 +1,246 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* Bold Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%	\setlist{leftmargin=1em}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+%\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Range Size \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+
+\title{Rapoport's Rule}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+\textbf{Save copies of your graphs today as you will need them for the
+writing assignment.}
+
+Now that you understand Rapoport's Rule, you'll do a brief exercise to explore whether the
+rules apply to primary freshwater fishes in the U.S., plus parts of
+northern Mexico and southern Canada. First, you'll calculate the mean
+and maximum species richness per degree of latitude and plot that
+against latitude. Then, you'll determine whether species range size
+increases with higher latitude.
+
+\subsection*{Species Richness}
+
+The geographic area was divided into a grid of 1° latitude $\times$ 1°
+longitude cells (see figure below). If a species was collected in one of
+the 1° cells, then presence was recorded with a 1. Absence was recorded
+with a 0. The presence/absence data for each cell was recorded for 529
+species of North American freshwater fishes.
+
+\begin{center}
+	\includegraphics[width=0.95\textwidth]{na_grid}
+\end{center}
+
+On one line, enter the following:
+
+\begin{verbatim}
+nagrid <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/nagrid.csv', 
+  row.names=1)
+\end{verbatim}
+\texttt{nagrid} \qquad \# View the data set.
+
+The file is a grid of latitude (rows) by longitude (columns). Each
+number greater than zero is the number of species, or \emph{species
+richness}, that was collected from that 1° grid cell.
+
+To test Rapoport's rule for species richness, you must compare mean and
+maximum species richness to degrees of latitude. You will calculate the
+mean and maximum values using the \textbf{apply()} function. The apply
+function applies any function, here the \textbf{mean()} and
+\textbf{max()} functions, to each row or column of your data set.
+
+\texttt{meansp \textless{}- apply(nagrid,1,mean)}
+
+\texttt{maxsp \textless{}- apply(nagrid,1,max)}
+
+Before you can plot the results, you need to create a latitude axis that
+runs from 24 to 49. In the past I've had you use the \textbf{seq()}
+function. Here is another way, as long as you want default increments of
+1.
+
+\texttt{lat \textless{}- 24:49}  \qquad \# lat \textless{}- seq(24,49,1) does the same thing.
+
+\texttt{lat} \qquad \# view the results
+
+Finally, create your plots. You'll plot two graphs side by side.
+As before, I'll give you the basic framework for the \textbf{plot()} function,
+then let you \texttt{source} a file of commands to make it pretty.
+
+\texttt{op \textless{}- par(mfrow=c(1,2))} 
+
+\texttt{plot(lat\textasciitilde{}meansp)}
+
+\texttt{plot(lat\textasciitilde{}maxsp)}
+
+\texttt{par(op)}
+
+With the plot window still open, bring the console to the front and enter:
+
+\texttt{source('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/rapo\_pretty.r')}
+
+Save your graph as a PDF or PNG file and upload to the Rapoport drop box.
+You \emph{must} do this.
+
+\begin{enumerate}
+	\item At what latitudes, approximately, are mean and maximum species richness the
+highest? 
+
+	\vspace{3\baselineskip}
+
+	\item Does species richness follow Rapoport's Rule? Explain.
+
+	\vspace{7\baselineskip}
+	%\newpage
+
+	\item Why do you think species richness is relatively low between
+24–28°N compared to between 30–38°N? A map should be on screen to help
+you think about this.
+
+\vspace{7\baselineskip}
+
+\end{enumerate}
+
+\subsection*{Range Size}
+
+You need a different data set to evaluate Rapoport's Rule for range size and latitude. 
+Type the following command on one line.
+
+\begin{verbatim}
+fishArea <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/fish_area.csv',
+  row.names=1)
+\end{verbatim}
+
+\texttt{fishArea} \qquad \# view the data file
+
+Latitude (\textbf{lat}) is one column in the data set. Area
+(\textbf{area}) is another column in the data set. Plot a quality
+graph using this code (on one line):
+
+\begin{verbatim}
+plot(fishArea$lat ~ fishArea$area, xlab = 'Area', ylab = 'Latitude (degrees N)',
+  main='Relative Area Occupied by U.S Freshwater Fishes')
+\end{verbatim}
+
+Save your graph as a PDF file on your flash drive or upload it to the
+Rapoport drop box for safekeeping. You are \emph{not required} to upload
+this file to the drop box.
+
+\begin{enumerate}[resume]
+	\item Based on this graph, do the data support Rapoport's rule for
+range size and latitude? Explain.
+
+\vspace{7\baselineskip}
+\end{enumerate}
+
+Next, create a graph that displays the results in a different way, using what
+I call a “champaign graph.” This graph uses ``bubbles'' to plot the
+relative area occupied by each species, overlaid on a map of the U.S.,
+complete with state boundaries and major rivers.  The center of each bubble
+is located at the mean latitude and longitude for each species.
+
+To save typing, I've written all the code for you (you're welcome), which you can run at once by typing:
+
+\begin{verbatim}
+source('http://mtaylor4.semo.edu/~goby/biogeo/rapo_champaign.r')
+\end{verbatim}
+
+Zoom this graph to full size and save it as a PDF file on your flash
+drive or upload it to the Rapoport drop box for safekeeping. You are
+\emph{not required} to upload this file to the drop box. Then, answer
+the following questions. (Kinda try to ignore the circles located in the
+oceans. The algorithm I wrote is rather poor but it serves our needs.)
+
+\begin{enumerate}[resume]
+	\item Based on this graph, combined with the previous graph, do
+U.S. freshwater fishes follow Rapoport's Rule for geographic range size?
+Explain.
+
+	\vspace{9\baselineskip}
+
+	\item Considering the geographic ranges east of the Rocky
+Mountains, what region of the U.S. seems to have most of the
+smaller bubbles? Why do you think this is?
+
+	\vspace{9\baselineskip}
+
+	\item What geographic region west of the Rocky Mountains seems to
+have the fewest bubbles? (Or, most of the smallest bubbles?) Why do you think this is? 
+\end{enumerate}
+
+\end{document}  

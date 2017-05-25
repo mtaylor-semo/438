@@ -1,0 +1,3 @@
+For future:
+
+Try to harvest data from Chapter 13 for tests of island biogeography to show various aspects such as rescue effect, target effect, etc.

@@ -1,0 +1,104 @@
+\documentclass[12pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage[margin=10pt, font=small, labelsep=period]{caption}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+%\usepackage{hyperref}
+
+\title{Unit 1: Rapoport's Rule and\\Variation of Range Size}
+\author{Biogeography}
+\date{Fall 2013}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\section{Assigned Reading}
+Chapter 15: 621-637.
+
+\section{Rapoport's Rule}
+
+Now that you have a sense of range size, it's time to consider gradients in range size.
+
+In 1982, Eduardo Rapoport reported a trend in range size that he observed across several different taxonomic groups.  He suggested that species tend to have larger geographic ranges at higher latitudes compared to lower latitudes nearer the equator. Going along with larger geographic range size was decreasing species richness.  Species richness was higher at low latitudes and richness was lower at higher latitudes.  (Figure \ref{raporulelat}). Rapoport also noted a relationship between range size or species richness and elevation (Figure \ref{raporuleelev}).  Species at higher latitudes or higher elevations tended to occupy larger geographic ranges.  In contrast, species richness declined with increasing latitude or elevation.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=1\textwidth]{raporulelat.png}  
+		\caption{Illustration of Rapoport's Rule for range size and latitude, based on range width (degrees latitude, blue line) and species richness (green line) of North American trees and Pacific Coast Molluscs . For both taxonomic groups, average range size increases and species richness decreases with higher latitudes (modified from Brown 1995.)\label{raporulelat}}
+		
+\end{figure}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=1\textwidth]{raporuleelev.png}  
+		\caption{Illustration of Rapoport's Rule for range size and elevation, based on range size (meters, blue line) and species richness (green line) for Costa Rican trees and Venezuelan birds. For both taxonomic groups, average range size increases and species richness decreases with higher altitude (modified from Stevens 1992.)\label{raporuleelev}}
+\end{figure}
+
+These patterns have come to be called \emph{Rapoport's Rule}.  Not all taxa show these trends associated with latitude an elevation so there is considerable debate among biogeographers as to the universality of this rule.  We'll discuss in more depth with a critical analysis assignment.  A number of ideas have been proposed to explain this rule, at least for the taxa where the trend has been observed.  Your text discusses this in some detail on pages 626--634, so study those pages in depth.  Later in the semester, we will discuss in more depth the hypotheses that have been proposed to explain the latitudinal gradient for species richness.
+
+\section{Body Size, Abundance and Geographic Area}
+
+Figure \ref{areabodysize}  shows the range size of North American birds as a function of body size.  Can you detect any apparent trends? How does range size (Y-axis) differ between small birds (small body mass) compared to large birds? Do the points seem randomly scattered across the entire graph or are they concentrated in some way?  Study the figure and develop some ideas before reading further.
+
+\begin{figure}[hb]
+	\centering
+		\includegraphics[width=0.9\textwidth]{land_bird_range_size.png}
+		\caption{Geographic area as a function of body mass for North American birds.  See the notes for an explanation of the three dashed lines. (Figure 15.9 from your text.)\label{areabodysize}}
+\end{figure}
+
+If anything, small birds show considerable variation of range size, while large birds are constrained to have large range sizes.  A similar trend is observed for land mammals (see your text).  However, the graphs suggest a bit more than we might first realize.  To understand why, you have to consider the information represented by the three dashed lines, called \emph{constraint lines}.   A constraint is a limitation of some sort, like the constraints on the geographic range discussed in the last set of lecture notes.
+ 
+Two of the constraints should be fairly obvious as to the limitation.  The third will be subtle but it has potentially important consequences from a conservation biology perspective.  This first constraint is the vertical dashed line.  Interpret this in relation to the X-axis. \emph{What do you think is the constraint?} (Think about it before reading further.) The vertical dashed line represents a physiological constraint on body size.  Species have to be of a certain minimum size to function. The second constraint is the horizontal dashed line. Interpret it in relation to the Y-axis. This time the constraint is not related to the organism but to the land.  \emph{What do you think is the second constraint?} (Again, think before peeking ahead.)  The second constraint is the size of the continent or ocean basin.  Most species don't (or can't) extend beyond continents or ocean basins, which sets the upper limit of the range size.
+
+The third constraint is represented by the diagonal dashed line.  It doesn't relate directly to the two axes but it does begin to explain the non-random relationship between body mass and range size. What do you think is the constraint? This one is rather subtle, so we'll walk through it slowly, but we first have to establish a few basic biological tenets.  For many species, abundance is a negative function of body size.  That is, small species tend to have high abundance, while large species have much lower abundance.  This is not usually a problem to accept because large species need more of the limited resources, so fewer individuals can be supported.  However, studies have shown that species with low abundances are more vulnerable to extinction.  Therefore, large species tend to be much less common and have a higher probability of going extinct.\footnote{If you had BI 300, think back to the lectures on turnover rates and the link between high origination and extinction rates.  If you didn't have my evolution class, think back on a particularly fond childhood memory.  Either way, send me an e-mail saying you read this far to get two extra credit points.}  Thus, for a population of a large species to be sustained, it needs a range size sufficient to support the population.  That's where this diagonal line comes into play, and not just for large species. 
+ 
+Considering the information above, can you now begin to explain what this diagonal constraint line represent?  The area above the diagonal line represents the approximate area needed by a species to sustain a viable population.  Species whose ranges are very small relative to their body size may have a higher probability of extinction.  This information would be critical to know by a conservation biologist, for example, who might then try to increase the available habitat and thereby increase the range size of the species.  Several methods exist to calculate constraint lines, but this is well beyond our goals for this course.  However, the application of this method is one of many analytical tools that may be useful to a conservation biologist charged with protecting threatened or endangered species.
+
+Figure \ref{area and abundance} shows this information in a different way.  Here, range area on the X-axis is plotted with species abundance on the Y-axis.  Species with large geographic range sizes generally vary in abundance, but very few species that have small ranges have very high abundances.
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.85\textwidth]{area_abundance.png}  
+		\caption{Plot of abundance as a function of geographic area for North American birds.  See the notes for an explanation of the dashed line. (Figure 15.10 of your text) \label{area and abundance}}
+\end{figure}
+
+\section{Range Shape}
+
+Another trend noted by Rapoport is range shape.  Figure \ref{range shape} plots the range shape for North American and Eurasian birds.  The plot is the size of the range in a north-south direction (y-axis) against the size of the range in an east-west direction (X-axis). If the two dimensions are equal, then the dot falls exactly on the line.  For many species the range is more or less circular.  However, for dots above the diagonal line, the the range is taller (N--S) than wide (E--W).  The reverse is true for dots below the diagonal line.  Notice that some North American birds tend to have taller range shapes while others have a wider range, especially for birds with the largest range size.  In contrast, no European birds have tall ranges and very few have roughly symmetric range shapes. Nearly all species tend to have much wider ranges.  Can you think of why range shape differs between North American and European bird species?
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.85\textwidth]{range_shape.png}  
+		\caption{Range shape based on N--S vs. E--W length (km) for species of North American birds (panel B) and Eurasian birds (panel C). The black diagonal line indicates a symmetric range. Many distributions are skewed towards N--S or E--W dimensions. (Figure 15.13 of your text) \label{range shape}}
+\end{figure}
+
+Continental barriers tend to explain the overall shape.  Large continental barriers, such as the Rocky Mountains and the Appalachian Mountains, tend to run north--south.  In Eurasia, the major mountain barriers tend to run east--west. In North America, species with smaller ranges tend to be constrained in the east--west direction by the barriers, so the ranges tend to stretch into a north--south dimension.  Small North American species may have ranges between the Atlantic coast and the Appalachian Mountains, or between the Appalachian and Rocky mountains, or between the Rockies and the Pacific Coast.  However that Eurasian birds all tend to have large range sizes overall (Figure \ref{range shape}C).  None of the Eurasian birds appear to have small ranges. Can you come up with a possible explanation?  Here's a hint: Pleistocene glaciation.
+
+During the Pleistocene (1.8 million to 12,000 years ago), there were five major glacial advances that extended south into North America and Eurasia. In North America, glaciers advanced as far south as the Missouri River in Missouri and even farther south in Illinois.  Species unable to disperse east to west across mountain barriers could still disperse southward into Mexico or Central America to escape the glaciers and associated cooler climates.  In Eurasia, however, the mountain ranges that run east--west in the southern part of the continent would have limited dispersal south during the glacial advance.  Trapped between a cold place and a high place, many Eurasian species probably went extinct.  The only species that could have survived would have been those that already had the ability to cross over the mountains, and thus would already have larger range sizes. Remember also that the east--west size of the geographic range will be constrained by the edges of the continent.
+
+\section{Range Overlap}
+
+Species exist as part of a community of many species so many species clearly have ranges that overlap. Yet, what may not be obvious is that the ranges of \emph{closely related} species that only recently spectated often do not overlap, as shown for the species of kangaroo rats in the genus \emph{Dipodomys} (Figure \ref{krat range}).  Non-overlapping ranges of closely related species also holds for Caribbean reef fishes (gobies) of the genus \emph{Elacatinus} (Figure \ref{elacatinus}). Closely related species, such as \emph{E. oceanops} and \emph{E. evelynae}, or \emph{E. macrodon} and \emph{E. saucrus} have non-overlapping ranges.  Only species on very long branches, indicating a much more distant relationship, have overlapping ranges.  For example, \emph{E. multifasciatus} and \emph{Ginsburgellus novemlineatus} are sister species as are \emph{E. pallens} and \emph{E. gemmatus} but these sister-pairs diverged long before most other \emph{Elacatinus}. Both of these species-pairs have nearly 100\% overlap of their ranges.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.75\textwidth]{krart_nonoverlapping_range.png}  
+		\caption{Non-overlapping ranges of kangaroo rats, genus \emph{Dipodomys}, in the southwestern United States. (Figure 4.25 of your text.)\label{krat range}}
+\end{figure}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=1\textwidth]{goby_phylo.png}  
+		\caption{Phylogeny showing relationships among Caribbean gobies in the genus \emph{Elacatinus}. Closely related species have non-overlapping ranges.\label{elacatinus}}
+\end{figure}
+
+This pattern of non-overlapping ranges among recently diverged species has been observed enough to warrant several comparative studies, but the results are often conflicting.  Thus, the generality of this idea of non-overlap between closely related species remains highly debated.
+
+
+\end{document}  

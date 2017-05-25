@@ -1,0 +1,280 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Range Size \thepage}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Range Size: California Coastal Marine Fishes}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+In a previous exercise, you determined the range size for freshwater
+organisms. Fishes, mussels, and some crayfishes can't cross land so it seems
+reasonable that they may be restricted to just a few watersheds.
+However, coastal marine fishes do not have obvious limitations to their
+distribution. Adults of many coastal marine fishes are able to swim very
+long distances. Thus, at least potentially, more marine fishes may have
+relatively large range sizes compared to those with small ranges. Your
+goal for this exercise is to determine whether coastal marine fishes
+have large range sizes.
+
+For this exercise, all students will use the same data set, which comes
+from Horn et al. (2006, in \emph{The Ecology of Marine Fishes:
+California and Adjacent Waters}). The data set includes distribution
+information for 516 species of coastal marine fishes that occur in
+California. The authors determined the range size of each species using
+the number of degrees of latitude (°S to N) that were occupied. The
+range could (and usually does) extend outside of California. The only
+requirement was that some part of the species' range had to occur within
+the coastal waters of California. For each degree of latitude, a species
+was assigned 1 if present, and 0 if absent. The full latitude range
+extends from 30°S (central Chile in South America) to 68°N (north of the
+Arctic Circle in Alaska).
+
+You will calculate the number of degrees latitude occupied by each
+species. You will also calculate the number of species present in each
+degree of latitude. In this data set, species are rows and degrees of
+latitude are columns. You will plot histograms of the results from these
+two calculations. Finally, you will learn a new trick with the
+\textbf{plot()} function to identify the region with the highest
+diversity of coastal marine fishes.
+
+\subsection*{Obtain the Data Set}
+
+Enter the following on one line:
+
+\texttt{cafish \textless{}-
+read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/california\_marine\_fishes.csv', row.names=1)}
+
+First, calculate how many degrees of latitude are covered by each
+species to determine range size. Repeat for the number of species per
+degree of latitude.
+
+\texttt{rangeSize \textless{}- rowSums(cafish)}
+
+\texttt{numSpecies \textless{}- colSums(cafish)}
+
+Calculate some basic statistics to fill in the table below. I've shown
+you what to do for range size. Repeat for the number of species present
+in each degree of latitude.
+
+\texttt{max(rangeSize)} \qquad \# maximum number of degrees latitude occupied
+
+\texttt{min(rangeSize)} \qquad \# minimum number of degrees latitude occupied
+
+\texttt{mean(rangeSize)} \qquad \# mean number of degrees latitude occupied
+
+\begin{tabular}[l]{@{}lL{1.6in}L{1.6in}@{}}
+\toprule
+& Degrees of Latitude Occupied & Number of Species per Degree\tabularnewline
+\midrule
+ & & \\[1ex]
+Maximum & \rule{1.5in}{0.4pt} & \rule{1.5in}{0.4pt} \tabularnewline[2ex]
+Minimum & \rule{1.5in}{0.4pt} & \rule{1.5in}{0.4pt} \tabularnewline[2ex]
+Mean & \rule{1.5in}{0.4pt} & \rule{1.5in}{0.4pt} \tabularnewline
+\bottomrule
+\end{tabular}
+
+\textbf{1. What is your hypothesis?} Given that the total latitudinal range in
+the data set covers 99° of latitude, from 30°S to 68°N, does the mean
+number of degrees latitude occupied suggest that most coastal marine
+fishes likely have large or small range size? Explain.
+
+\vspace{7\baselineskip}
+
+Create a histogram of \textbf{rangeSize} and \textbf{numSpecies}. What
+do the result suggest about range size?
+
+\textbf{2. Was your hypothesis supported for range size?} Did most coastal marine
+fishes have relatively small or relatively large range sizes, especially
+in relation to the actual distance covered by the data set? Explain.
+
+\vspace{7\baselineskip}
+
+\textbf{3. Describe the pattern for number of species per degree latitude.} A few
+degrees of latitude seem to have very few species. Can you think of
+reasons why? Hint 1: Look back at the minimum number of species per
+degree latitude in the table on the first page. Do you really think
+there is a degree of latitude anywhere along the coast that has only one
+species of fish? Hint 2: The data set encompasses only those species
+that occur in California. Use this information to try to explain the
+very high peak with very low numbers of species and the secondary peak
+with more reasonably numbers of species.
+
+
+
+%% MAke pretty.
+
+
+
+When you have finished, save the file as a PDF and upload to the Unit
+1b: California course drop box before you leave today.
+
+\textbf{Where is the richness of coastal marine fishes the highest?}
+
+Species richness is the number of species present at a given location.
+The second histogram showed that most degrees of latitude had fewer than
+half of the 519 species, and some degrees of latitude had far less than
+one-fifth of all species in the data set. Thus, most degrees of latitude
+had relatively low species richness (relative to the total data set).
+However, a few degrees of latitude had nearly or more than 400 species,
+which indicates very high species richness. Those were the degrees of
+latitude at the very right side of your histogram. Are those few degrees
+of latitude in the same area or are they randomly scattered? If the
+degrees of latitude are in the same area, they may suggest some type of
+biogeographic hotspot with high overall species diversity. Biogeographic
+hotspots are often targets for conservation management to ensure
+maintenance of diversity. The area of high richness may also represent a
+boundary between two biogeographically distinct regions. Regions that
+are biogeographically distinct tend to have distinct groups of taxa,
+with relatively few organisms shared between regions. You will learn
+more about biogeographic regions in the next unit. For now, you will
+explore which degrees of latitude have the highest overall species
+richness.
+
+To do so, use the \textbf{plot()} function to plot the
+\textbf{numSpecies} results.
+
+\texttt{plot(numSpecies)}
+
+Clearly, there is a peak in species richness, but at which latitudes?
+The Y-axis is the richness per degree latitude. The X-axis, labeled
+Index, is simply the order of the results in the \textbf{numSpecies}
+data set, so you can't easily tell which latitudes have the highest
+species richness. However, the order of records corresponds to the order
+of latitude from 30°S to 68°N.
+
+To get degrees of latitude on the X-axis, you need to generate a
+sequence of numbers that correspond to the degrees of latitude. Use the \textbf{seq()} function to generate a
+sequence of numbers from $\minus$30 to 68, incrementing by 1. Assign the
+results to a variable called \textbf{lat} for \emph{lat}itude.
+
+\texttt{lat <- seq(-30,68,1)}
+
+Now you can plot species richness against latitude. \textbf{xlim{}} limits create a balanced distribution of tick marks along the X-axis.
+
+\texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}
+
+Now, if you compare the points that represent the greatest richness, you
+get a sense that the highest diversity is somewhere between 25N and
+40°N. This is useful but it would be nice to know precisely which
+degrees of latitude have the highest species richness.
+
+R provides a way to interact with your plots, using the
+\textbf{identify()} function. The \textbf{identify()} function lets you
+click on points in your plot. It will identify each point you click, up
+to a specifiable limit. You have to use the \textbf{identify()} function
+immediately after you use the \textbf{plot()} function because
+\textbf{identify()} works only in the currently active plot window.
+
+After you type the plot command below (or recall the command using
+the “up” cursor, move the window to the back and type the identify
+command, then bring the plot window back to the front.
+
+\texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}
+
+\texttt{identify(numSpecies\textasciitilde{}lat, labels=lat, cex=0.8)} \qquad \# cex reduces the character size.
+
+Now, click once on the highest point. The number that should appear is the latitude of that point. Remember that a negative number is °S (south of the equator). Click 3–4 more of the highest points. Also click the lowest leftmost point and the
+lowest rightmost point. Press the \textbf{Esc} key when you are finished
+to stop the interaction. (If numbers do not appear, try the commands again. If you are still not
+successful, ask for help.)
+
+The lowest leftmost point should be $\minus$30 and the lowest rightmost point
+should be 68. The highest points are in the low- to mid-30s. Notice also that
+the numbers that appeared on your graph also appear in the R command
+window after you pressed the \textbf{Esc} key. You could assign the
+results to a variable for later use but it is not necessary to do so
+here.
+
+You can now easily tell that the region with the highest species
+richness occurs in the same general area in the northern hemisphere. The
+question is, where is this?
+
+\textbf{4. Identify the area with the map on the next page.} Discuss with your
+partner some potential reasons why this area might have such high
+species richness compared to surrounding higher and lower latitudes.
+List some of your reasons and be prepared to share them with the class.
+
+\newpage
+
+\begin{center}
+	\includegraphics[width=\textwidth]{california_with_latitude}
+\end{center}
+
+
+\end{document}  

@@ -1,0 +1,357 @@
+Some species have been updated or deleted since 2011.  Double check this list for 2015.
+
+Family: Petromyzontidae
+Ichthyomyzon bdellium	Ohio lamprey
+Ichthyomyzon castaneus	chestnut lamprey
+Ichthyomyzon gagei	southern brook lamprey
+Ichthyomyzon greeleyi	mountain brook lamprey
+Lampetra aepyptera	least brook lamprey
+Lampetra appendix	American brook lamprey
+Petromyzon marinus	sea lamprey
+
+Family: Acipenseridae
+Acipenser brevirostrum	shortnose sturgeon
+Acipenser fulvescens	lake sturgeon
+Acipenser oxyrinchus desotoi	Gulf sturgeon
+Acipenser oxyrinchus oxyrinchus	Atlantic sturgeon
+
+Family: Polyodontidae
+Polyodon spathula	paddlefish
+
+Family: Lepisosteidae
+Lepisosteus oculatus	spotted gar
+Lepisosteus osseus	longnose gar
+Lepisosteus platyrhincus	Florida gar
+
+Family: Amiidae
+Amia calva	bowfin
+
+Family: Hiodontidae
+Hiodon tergisus	mooneye
+
+Family: Anguillidae
+Anguilla rostrata	American eel
+
+Family: Clupeidae
+Alosa aestivalis	blueback herring
+Alosa alabamae	Alabama shad
+Alosa chrysochloris	skipjack herring
+Alosa mediocris	hickory shad
+Alosa pseudoharengus	alewife
+Alosa sapidissima	American shad
+Brevoortia smithi	yellowfin menhaden
+Brevoortia tyrannus	Atlantic menhaden
+Dorosoma cepedianum	gizzard shad
+Dorosoma petenense	threadfin shad
+Opisthonema oglinum	Atlantic thread herring
+
+Family: Cyprinidae
+Campostoma anomalum	central stoneroller
+Campostoma oligolepis	largescale stoneroller
+Campostoma pauciradii	bluefin stoneroller
+Carassius auratus	goldfish
+Clinostomus funduloides	rosyside dace
+Ctenopharyngodon idella	grass carp
+Cyprinella caerulea	blue shiner
+Cyprinella callisema	Ocmulgee shiner
+Cyprinella callistia	Alabama shiner
+Cyprinella callitaenia	bluestripe shiner
+Cyprinella galactura	whitetail shiner
+Cyprinella gibbsi	Tallapoosa shiner
+Cyprinella leedsi	bannerfin shiner
+Cyprinella lutrensis	red shiner
+Cyprinella nivea	whitefin shiner
+Cyprinella pyrrhomelas	fireyblack shiner
+Cyprinella spiloptera	spotfin shiner
+Cyprinella trichroistia	tricolor shiner
+Cyprinella venusta	blacktail shiner
+Cyprinella whipplei	steelcolor shiner
+Cyprinella xaenura	Altamaha shiner
+Cyprinus carpio	common carp
+Erimonax monachus	spotfin chub
+Erimystax insignis	blotched chub
+Hemitremia flammea	flame chub
+Hybognathus regius	eastern silvery minnow
+Hybopsis amblops	bigeye chub
+Hybopsis lineapunctata	lined chub
+Hybopsis rubrifrons	rosyface chub
+Hybopsis sp. cf. H. winchelli	Etowah chub
+Hybopsis winchelli	coastal chub
+Luxilus chrysocephalus	striped shiner
+Luxilus coccogenis	warpaint shiner
+Luxilus zonistius	bandfin shiner
+Lythrurus atrapiculus	blacktip shiner
+Lythrurus bellus	pretty shiner
+Lythrurus fasciolaris	scarlet shiner
+Lythrurus lirus	mountain shiner
+Macrhybopsis sp. cf M. aestivalis	"Coosa" chub (fall line chub complex)
+Macrhybopsis storeriana	silver chub
+Nocomis leptocephalus	bluehead chub
+Nocomis micropogon	river chub
+Notemigonus crysoleucas	golden shiner
+Notropis altipinnis	highfin shiner
+Notropis amplamala	longjaw minnow
+Notropis ariommus	popeye shiner
+Notropis asperifrons	burrhead shiner
+Notropis atherinoides	emerald shiner
+Notropis baileyi	rough shiner
+Notropis chalybaeus	ironcolor shiner
+Notropis chrosomus	rainbow shiner
+Notropis cummingsae	dusky shiner
+Notropis harperi	redeye chub
+Notropis hudsonius	spottail shiner
+Notropis hypsilepis	highscale shiner
+Notropis leuciodus	Tennessee shiner
+Notropis longirostris	longnose shiner
+Notropis sp. cf N. longirostris	longnose shiner species
+Notropis lutipinnis	yellowfin shiner
+Notropis maculatus	taillight shiner
+Notropis petersoni	coastal shiner
+Notropis photogenis	silver shiner
+Notropis scepticus	sandbar shiner
+Notropis spectrunculus	mirror shiner
+Notropis stilbius	silverstripe shiner
+Notropis telescopus	telescope shiner
+Notropis texanus	weed shiner
+Notropis volucellus	mimic shiner
+Notropis xaenocephalus	Coosa shiner
+Opsopoeodus emiliae	pugnose minnow
+Phenacobius catostomus	riffle minnow
+Phenacobius crassilabrum	fatlips minnow
+Phenacobius uranops	stargazing minnow
+Phoxinus tennesseensis	Tennessee dace
+Pimephales notatus	bluntnose minnow
+Pimephales promelas	fathead minnow
+Pimephales vigilax	bullhead minnow
+Pteronotropis euryzonus	broadstripe shiner
+Pteronotropis grandipinnis	Apalachee shiner
+Pteronotropis sp. cf. P. hypselopterus "metallicus"	sailfin shiner species
+Pteronotropis stonei	lowland shiner
+Pteronotropis welaka	bluenose shiner
+Rhinichthys cataractae	longnose dace
+Rhinichthys obtusus	western blacknose dace
+Semotilus atromaculatus	creek chub
+Semotilus thoreauianus	Dixie chub
+Tanichthys albonubes	white cloud mountain minnow
+
+Family: Catostomidae
+Carpiodes carpio	river carpsucker
+Carpiodes sp. cf. C. cyprinus	quillbacks
+Carpiodes sp. cf. C. velifer	highfin carpsucker species
+Catostomus commersoni	white sucker
+Erimyzon oblongus	creek chubsucker
+Erimyzon sucetta	lake chubsucker
+Hypentelium etowanum	Alabama hog sucker
+Hypentelium nigricans	northern hog sucker
+Ictiobus bubalus	smallmouth buffalo
+Ictiobus niger	black buffalo
+Minytrema melanops	spotted sucker
+Moxostoma anisurum	silver redhorse
+Moxostoma carinatum	river redhorse
+Moxostoma collapsum	notchlip redhorse
+Moxostoma duquesnei	black redhorse
+Moxostoma erythrurum	golden redhorse
+Moxostoma lacerum	harelip sucker
+Moxostoma lachneri	greater jumprock
+Moxostoma poecilurum	blacktail redhorse
+Moxostoma robustum	robust redhorse
+Moxostoma rupiscartes	striped jumprock
+Moxostoma sp. cf. M. lachneri	brassy jumprock
+Moxostoma sp.	sicklefin redhorse
+Moxostoma sp.	Apalachicola redhorse
+
+Family: Ictaluridae
+Ameiurus brunneus	snail bullhead
+Ameiurus catus	white catfish
+Ameiurus melas	black bullhead
+Ameiurus natalis	yellow bullhead
+Ameiurus nebulosus	brown bullhead
+Ameiurus platycephalus	flat bullhead
+Ameiurus serracanthus	spotted bullhead
+Ictalurus furcatus	blue catfish
+Ictalurus punctatus	channel catfish
+Noturus eleutherus	mountain madtom
+Noturus flavipinnis	yellowfin madtom
+Noturus funebris	black madtom
+Noturus gyrinus	tadpole madtom
+Noturus insignis	margined madtom
+Noturus leptacanthus	speckled madtom
+Noturus nocturnus	freckled madtom
+Noturus sp. cf. N. munitus	Coosa madtom
+Pylodictis olivaris	flathead catfish
+
+Family: Esocidae
+Esox americanus	redfin pickerel
+Esox lucius	northern pike
+Esox masquinongy	muskellunge
+Esox niger	chain pickerel
+
+Family: Umbridae
+Umbra pygmaea	eastern mudminnow
+
+Family: Salmonidae
+Oncorhynchus mykiss	rainbow trout
+Salmo trutta	brown trout
+Salvelinus fontinalis	brook trout
+
+Family: Aphredoderidae
+Aphredoderus sayanus	pirate perch
+
+Family: Amblyopsidae
+Chologaster cornuta	swampfish
+Typhlichthys subterraneus	southern cavefish
+
+
+Family: Mugilidae
+Agonostomus monticola	mountain mullet
+
+Family: Atherinopsidae
+Labidesthes sicculus	brook silverside
+Membras martinica	rough silverside
+Menidia beryllina	inland silverside
+Menidia menidia	Atlantic silverside
+
+
+Family: Fundulidae
+Fundulus bifax	stippled studfish
+Fundulus catenatus	northern studfish
+Fundulus chrysotus	golden topminnow
+Fundulus cingulatus	banded topminnow
+Fundulus diaphanus	banded killifish
+Fundulus escambiae	russetfin topminnow
+Fundulus heteroclitus	mummichog
+Fundulus lineolatus	lined topminnow
+Fundulus luciae	spotfin killifish
+Fundulus majalis	striped killifish
+Fundulus olivaceus	blackspotted topminnow
+Fundulus confluentus	marsh killifish
+Fundulus rubrifrons	redface topminnow
+Fundulus stellifer	southern studfish
+Leptolucania ommata	pygmy killifish
+Lucania goodei	bluefin killifish
+Lucania parva	rainwater killifish
+
+Family: Poeciliidae
+Gambusia affinis and Gambusia holbrooki	western and eastern mosquitofish
+Heterandria formosa	least killifish
+Poecilia latipinna	sailfin molly
+
+Family: Cyprinodontidae
+Cyprinodon variegatus	sheepshead minnow
+
+
+
+Family: Cottidae
+Cottus carolinae	banded sculpin
+Cottus carolinae zopherus	Coosa banded sculpin
+Cottus chattahoochee	Chattahoochee sculpin
+Cottus sp. cf. C. bairdi	Ridge and Valley sculpin
+Cottus sp. cf. C. bairdi	Savannah sculpin
+Cottus sp. cf. C. bairdi	smoky sculpin
+Cottus sp. cf. C. carolinae	banded sculpin species
+Cottus tallapoosae	Tallapoosa sculpin
+
+Family: Moronidae
+Morone americana	white perch
+Morone chrysops	white bass
+Morone chrysops X M. saxatilis	white bass X striped bass hybrid
+Morone mississippiensis	yellow bass
+Morone saxatilis	striped bass
+
+Family: Centrarchidae
+Acantharchus pomotis	mud sunfish
+Ambloplites ariommus	shadow bass
+Ambloplites rupestris	rock bass
+Centrarchus macropterus	flier
+Enneacanthus chaetodon	blackbanded sunfish
+Enneacanthus gloriosus	bluespotted sunfish
+Enneacanthus obesus	banded sunfish
+Lepomis auritus	redbreast sunfish
+Lepomis cyanellus	green sunfish
+Lepomis gibbosus	pumpkinseed
+Lepomis gulosus	warmouth
+Lepomis humilis	orangespotted sunfish
+Lepomis macrochirus	bluegill
+Lepomis marginatus	dollar sunfish
+Lepomis megalotis	longear sunfish
+Lepomis microlophus	redear sunfish
+Lepomis miniatus X L. punctatus integrade	spotted sunfish integrade
+Lepomis punctatus	spotted sunfish
+Micropterus cataractae	shoal bass
+Micropterus coosae	redeye bass
+Micropterus dolomieu	smallmouth bass
+Micropterus henshalli	Alabama bass
+Micropterus notius	Suwannee bass
+Micropterus punctulatus	spotted bass
+Micropterus salmoides	largemouth bass
+Micropterus sp. cf. M. coosae	Bartram's bass
+Micropterus sp. cf. M. coosae	redeye bass (Chattahoochee)
+Micropterus sp. cf. M. coosae	redeye bass (Altamaha / Ogeechee)
+Pomoxis annularis	white crappie
+Pomoxis nigromaculatus	black crappie
+
+Family: Percidae
+Etheostoma blennioides	greenside darter
+Etheostoma caeruleum	rainbow darter
+Etheostoma chlorobranchium	greenfin darter
+Etheostoma chuckwachatte	lipstick darter
+Etheostoma cinereum	ashy darter
+Etheostoma coosae	Coosa darter
+Etheostoma ditrema	coldwater darter
+Etheostoma duryi	black darter
+Etheostoma edwini	brown darter
+Etheostoma etowahae	Etowah darter
+Etheostoma fricksium	Savannah darter
+Etheostoma fusiforme	swamp darter
+Etheostoma gutselli	Tuckasegee darter
+Etheostoma hopkinsi	Christmas darter
+Etheostoma inscriptum	turquoise darter
+Etheostoma jessiae	blueside darter
+Etheostoma jordani	greenbreast darter
+Etheostoma olmstedi	tessellated darter
+Etheostoma parvipinne	goldstripe darter
+Etheostoma rufilineatum	redline darter
+Etheostoma rupestre	rock darter
+Etheostoma scotti	Cherokee darter
+Etheostoma serrifer	sawcheek darter
+Etheostoma tennesseense	Tennessee darter
+Etheostoma sp. cf. E. brevirostrum	holiday darter complex
+Etheostoma sp. cf. E. rufilineatum	redline darter species
+Etheostoma stigmaeum	speckled darter
+Etheostoma swaini	gulf darter
+Etheostoma tallapoosae	Tallapoosa darter
+Etheostoma trisella	trispot darter
+Etheostoma vulneratum	wounded darter
+Etheostoma zonale	banded darter
+Etheostoma zonifer	backwater darter
+Perca flavescens	yellow perch
+Percina antesella	amber darter
+Percina aurantiaca	tangerine darter
+Percina aurolineata	goldline darter
+Percina caprodes	logperch
+Percina crypta	Halloween darter
+Percina evides	gilt darter
+Percina jenkinsi	Conasauga logperch
+Percina kathae	Mobile logperch
+Percina kusha	bridled darter
+Percina lenticula	freckled darter
+Percina nigrofasciata	blackbanded darter
+Percina palmaris	bronze darter
+Percina sciera	dusky darter
+Percina shumardi	river darter
+Percina smithvanizi	Muscadine darter
+Percina squamata	olive darter
+Percina tanasi	snail darter
+Sander canadensis	sauger
+Sander vitreus	walleye
+
+Family: Sciaenidae
+Aplodinotus grunniens	freshwater drum
+
+Family: Elassomatidae
+Elassoma evergladei	Everglades pygmy sunfish
+Elassoma gilberti	Gulf coast pygmy sunfish
+Elassoma okatie	bluebarred pygmy sunfish
+Elassoma okefenokee	Okefenokee pygmy sunfish
+Elassoma zonatum	banded pygmy sunfish
+

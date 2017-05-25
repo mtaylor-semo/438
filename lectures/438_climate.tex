@@ -1,0 +1,219 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+%\lecture{instructor}{instructor}
+%\lecture{student}{student}
+
+\lecture{student}{student}
+\begin{frame}[t,plain]{The \highlight{geographic template} explains biogeographic patterns.}
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{geographic_template}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t,plain]
+	\hangpara What climate factors affect distribution of terrestrial organisms on a global scale?
+
+	\hangpara Would these same factors affect freshwater organisms?
+
+	\hangpara Would these same factors affect marine organisms?
+\end{frame}
+
+
+\begin{frame}[t,plain]{What patterns do you observe for climate variation?}
+
+	\vspace{-0.5\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{climate_global_regimes}
+	\end{center}
+	
+	\vspace{-1.5\baselineskip}
+	\hangpara Do rainforests or deserts occur at specific latitudes?\\Are mountain ranges (gray) related to climate zones?\\Do you find other latitudinal or east vs west side of continents?
+	
+\end{frame}
+
+\begin{frame}[t,plain]{Predict the relationship between precipitation and latitude.}
+
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{climate_precipitation_latitude_blank}
+	\end{center}
+
+\end{frame}
+
+\lecture{instructor}{instructor}
+\begin{frame}[t,plain]
+
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{climate_precipitation_latitude}
+	\end{center}
+
+\end{frame}
+
+
+\lecture{student}{student}
+\begin{frame}[t,plain]{What patterns do you observe for climate variation?}
+
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{climate_global_regimes}
+	\end{center}
+	
+\end{frame}
+
+
+\begin{frame}[t,plain]{The \highlight{geographic template} regulates all biotic distributions.}
+	\hangpara The spatial variation of environmental factors is non-random and predictable.
+	
+	\hangpara Geographic gradients are strongly correlated with climate variation.
+	
+	\hangpara What determines the patterns of climate variability?
+\end{frame}
+
+
+\begin{frame}[t,plain]{Solar radiation is the primary forcer of climate.}
+	\begin{minipage}{0.6\textwidth}%
+		\includegraphics[width=0.95\textwidth]{climate_solar_radiation}
+	\end{minipage}
+%	\hfill
+	\begin{minipage}{0.35\textwidth}%
+		\vspace{-4\baselineskip}
+		\hangpara Intensity decreases with higher latitudes.
+		
+		\hangpara Intensity is modified by atmosphere.
+
+	\end{minipage}
+\end{frame}
+
+
+\begin{frame}[t,plain]{Solar input is strongest at the equator.}
+	
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{climate_equinox_solstice}
+	\end{center}
+		
+\end{frame}
+
+\begin{frame}[t,plain]{Solar input at the equator creates global wind patterns.}
+	\begin{minipage}{0.55\textwidth}%
+		\includegraphics[width=0.95\textwidth]{climate_hadley_cells}
+	\end{minipage}
+%	\hfill
+	\begin{minipage}{0.40\textwidth}%
+		\vspace{-4\baselineskip}
+		\hangpara Vertical circulation creates latitudinal gradient.
+		
+		\hangpara Horizontal deflection due to Coriolis effect.
+
+	\end{minipage}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{climate_global_wind_circulation1}}
+\begin{frame}[t,plain]{Solar input creates global precipitation patterns.}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{climate_pacific_northwest_novalues}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+\lecture{instructor}{instructor}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{climate_pacific_northwest_values}}
+\begin{frame}[t,plain]
+\end{frame}
+}
+
+\lecture{student}{student}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{climate_precip_gradient}}
+\begin{frame}[t,plain]{Why is precipitation so different west and east of the Cascade Mountains?}
+\end{frame}
+}
+
+
+\begin{frame}[t,plain]{Mountain ranges can create \highlight{rain shadows.}}
+	\begin{center}
+		\includegraphics[width=\textwidth]{climate_rain_shadow}
+	\end{center}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{climate_precip_gradient}}
+\begin{frame}[t,plain]{Why does precipitation increase east of the Rocky Mountains?}
+\end{frame}
+}
+
+\begin{frame}[t,plain]{To summarize, the geographic template}
+
+	\hangpara is the \highlight{non-random spatial variation of climate variables} due to global gradients and geographic features,
+	
+	\hangpara forms the basis for biotic distributions, and
+	
+	\hangpara operates at global, regional and local scales.
+\end{frame}
+
+
+\end{document}

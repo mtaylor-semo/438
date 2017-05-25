@@ -1,0 +1,236 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}%}%
+	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+%\usepackage{tikz}
+%	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+%\lecture{instructor}{instructor}
+\lecture{student}{student}
+
+\begin{frame}{The \highlight{Pleistocene} (2.6 MYA to 12 KYA) had a profound influence on the biogeography of modern taxa.}
+	\begin{center}
+			\includegraphics[width=0.95\textwidth]{pleistocene_iceage}
+			
+	\end{center}
+\end{frame}
+
+\begin{frame}{Four major glacial advances occurred in the northern hemisphere.}
+	\begin{columns}[T]
+		\begin{column}{0.45\textwidth}
+			\includegraphics[width=1\textwidth]{pleistocene_north_hemi_overhead}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\hangpara\highlight{Nebraska}
+			
+			\hangpara\highlight{Kansan}
+			
+			\hangpara\highlight{Illinois}
+			
+			\hangpara\highlight{Wisconsin:} 85,000–12,000 KYA.
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Why do glaciers advance and retreat?}
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{pleistocene_wowl}
+	\end{center}
+\end{frame}
+
+\begin{frame}{\highlight{Eccentricity:} Earth’s orbit deviates from less to more elliptical every 100,000 years.}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{milankovitch_eccentricity}
+	\end{center}
+\end{frame}
+
+\begin{frame}{\highlight{Obliquity:} Earth’s tilt angle changes every 41,000 years.}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{milankovitch_obliquity}
+	\end{center}
+\end{frame}
+
+\begin{frame}{\highlight{Precession:} Earth’s axis “wobbles” like a spinning top every 22,000 years.}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{milankovitch_precession}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Milankovitch Cycle: Present}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{milankopresent}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Milankovitch Cycle: 11,000 years ago.}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{milankopast}
+	\end{center}
+\end{frame}
+
+\begin{frame}{\highlight{Albedo} effect enhances glaciation by reflecting sunlight.}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1\textwidth]{pleistocene_albedo}
+			\end{center}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\hangpara Albedo is a measure of reflected sunlight. 
+			
+			\hangpara Glaciers reflect sunlight back to the atmosphere. 
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{What changes to the environment did Pleistocene glaciation cause? }
+		\vspace{-\baselineskip}
+		\begin{center}
+			\includegraphics[width=0.75\textwidth]{pleistocene_glacial_pirate_ship}
+		\end{center}
+		\vspace{-\baselineskip}
+		\qquad Think about terrain (topography), sea levels, and overall climate.
+\end{frame}
+
+\begin{frame}{About 1/3 of land covered by ice sheets. Where did the water come from?}
+	\includegraphics[width=1\textwidth]{pleistocene_glacial_land_coverage}
+\end{frame}
+
+\begin{frame}{New land was exposed by sea level reduction.}
+	\includegraphics[width=1\textwidth]{pleistocene_sealevels}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{NorthAmerica.jpg}}
+\begin{frame}[t]{\textcolor{white}{Ice sheets altered North American topography.}}
+\end{frame}
+}
+\begin{frame}{North of the Missouri River, glaciated rivers run parallel.}
+	\vspace{-1\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.9\textheight]{missouri_riverpatterns}
+	\end{center}
+
+	\vskip0pt plus 1fill
+
+	\hfill\tiny{Image: Bruce Railsback, Dept. of Geology, Univ. Georgia}
+\end{frame}
+
+\begin{frame}{Coteau des Prairies Plateau in the upper Midwest was formed by glaciers.}
+		\vspace{-1\baselineskip}
+		\begin{center}
+			\includegraphics[width=1\textheight]{missouri_coteau}
+		\end{center}
+	\vskip0pt plus 1fill
+	\hfill\tiny{Image: Bruce Railsback, Dept. of Geology, Univ. Georgia}
+\end{frame}
+
+\begin{frame}[t]{Meltwater from retreating ice sheets formed many large lakes, such as Lake Agassiz in Canada\dots}
+		\vspace{-1\baselineskip}
+		\begin{center}
+			\includegraphics[width=1\textheight]{pleistocene_lake_agassiz}
+		\end{center}
+	\vskip0pt plus 1fill
+	
+	\hfill\tiny{Image: Bruce Railsback, Dept. of Geology, Univ. Georgia}
+\end{frame}
+
+\begin{frame}{\dots and Lake Bonneville, Lake Lahonta, and many others in the western U.S.}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{pleistocene_bonneville_lakes}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Pleistocene glaciers caused \highlight{eustatic} and \highlight{isostatic} sea level changes.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{pleistocene_caribbean}
+	\end{center}
+	\vskip0pt plus 1fill
+	\hfill\tiny Darekk2, Wikimedia Commons.
+\end{frame}
+
+\begin{frame}{\highlight{Beringia} allowed dispersal between Palearctic and Nearctic regions.}
+		\includegraphics[width=1\textwidth]{pleistocene_beringia}
+\end{frame}
+
+\begin{frame}{\highlight{Wallacea} allowed dispersal betweel Indomalaysian to Australian regions.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{pleistocene_wallacia}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Mean Pleistocene temperatures were as much as $-$8°C below current mean temps.}
+	\includegraphics[width=1\textwidth]{pleistocene_temps}
+\end{frame}
+
+\begin{frame}{Seasonal temperatures did not vary much due to \highlight{adiabatic warming} and altered climate patterns.}
+	\includegraphics[width=1\textwidth]{pleistocene_adiabatic}
+\end{frame}
+
+\end{document}

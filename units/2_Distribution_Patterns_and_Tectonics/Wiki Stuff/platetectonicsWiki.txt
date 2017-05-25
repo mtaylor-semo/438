@@ -1,0 +1,61 @@
+==Plate Tectonics==
+
+Since the 1600s, several scientists had noted that several continents, especially South America and Arica, seemed to fit together like pieces of a puzzle, but none had proposed a satisfactory model of how the continents actually moved.
+
+The first comprehensive model of continental drift was published in 1912 by Alfred Wegener.  However, because Wegener had little evidence, his ideas weren't widely accepted until the 1960s, when geological exploration of the ocean floors yielded considerable evidence.    However, Wegener's model turned out to be inaccurate, even if his overall conception was sound.
+
+The current model of '''Plate Tectonics'' holds that the earth's crust is composed of 7-8 large or major plates, such as the North American and Pacific plates, plus many more smaller plates, such as the Caribbean and Nazca plates.  The plates can be composed of less dense '''continental crust''' or more dense '''oceanic crust.'''
+
+((([imageleft||{UP}/images/TectonicPlates.png]<br>
+The eight major plates that form the earth's crust.
+)))
+
+The plates move on convective currents created by the magma that lies beneath the plates.  If two plates collide, one of three processes might occur.  If two plates of continental crust collide, then mountain ranges can form.  If two oceanic plates collide, they can sink to form deep trenches.  The most common occurrence, however, is when the less dense continental crust slides above the denser, sinking oceanic crust. The sinking oceanic crust '''subduction zone''' (see Fig. 8.20 of your text) as it is pulled down ('''slab pull''') beneath the continental crust. Subduction zones cause high levels of seismic activity.  For example, the Pacific and Nazca plates, which form most the sea floor of the Pacific Ocean, is sinking beneath the North American, South American, Philippine and Australian plates (see the figure above), causing numerous earthquakes and volcanic eruptions.  This region has been named the "Ring of Fire" due to all of the seismic activity.
+
+((([imageleft||{UP}/images/RingOfFire.png]<br>
+The Pacific Ring of Fire has numerous earthquakes and volcanic eruptions.
+)))
+
+Elsewhere, such as along the midline of the entire Atlantic Ocean, two plates are being pushed apart, which allows magma to rise through the crust.  The rising magma cools and forms new crust.  This process is called seafloor spreading.  As the magma rises, it pushes up the edges of the two plates, creating a high ridge, like the Mid-Atlantic Ridge that runs north-south through the Atlantic Ocean.  The weight of ridge pushes the rest of the plate away from the spreading area ('''ridge push'''), allowing magma to continue to rise and form new crust.
+
+((([imageleft||{UP}/images/MidAtlRidge.png]<br>
+The Mid-Atlantic Ridge is formed by seafloor spreading.
+)))
+
+
+==Plate Tectonics and Biogeography==
+
+The tectonic history of the earth has had an enormous influence on the geographic distribution of organisms, especially higher taxa* like families and orders.
+
+(((*If you list Linneaus' classification hierarchy with Kingdom and Phylum at the top and Genus and Species at the bottom, then relative terms like higher and lower taxa make intuitive sense.  Higher taxa are high on the list, lower taxa are at the bottom of the list.)))
+
+To understand how the moving continents have influenced the biogeographic distribution of taxa, you need to know three major landmasses that existed as part of earth's geological history.  The landmasses are '''Pangaea''', '''Laurasia''', and '''Gondwana''' (sometimes called Gondwanaland in the older literature).  
+
+Pangaea was formed about 250 million years ago when all of the landmasses were united into a single supercontinent. 
+
+((([imageleft||{UP}/images/permian.jpg]<br>
+Very early stages of Pangaea formation during the late Permian period.  Compare this figure with Fig. 8.22E on page 288 of your text. Image from [^http://www.scotese.com|Paleomap]
+)))
+
+By the mid-Jurassic, about 170-160, Pangaea broke up into two large landmasses, the northern Laurasia and the southern Gondwana.  Laurasia was composed of landmasses that eventually formed most of North America and Eurasia.  Gondwana was composed of landmasses that included South America, Africa, India (including Madagascar), Australia, and Antarctica.
+
+((([imageleft||{UP}/images/jurassic.jpg]<br>
+Formation of Laurasia and Gondwana as Pangaea broke up during the Jurassic period.  Compare this figure with Fig. 8.22F and G on page 288-289 of your text. Image from [^http://www.scotese.com|Paleomap]
+)))
+
+The modern distribution of a higher taxa often provides clues about the earlier distribution of their ancestors.  For taxa found on nearly all continents, their ancestors were likely dispersed across the Pangaean landmass.  These taxa have a Pangaean distribution.  If a taxon is limited to North America and Eurasia, their ancestors probably evolved in Laurasia sometime after the breakup of Pangaea. This taxon would have a Laurasian distribution.  Similalry, if a  taxon is present on some combination of South America, Africa, India, Australia or Antarctica, their ancestors probably evolved on Gondwana after the breakup of Pangaea.  This taxon has a Gondwanan distribution.  Study, for example, the figures shown in Box 8.1 to see several examples of fossil and modern taxa that have a Gondwanan distribution.  
+
+==Pangaea and the Biogeographic Regions==
+
+We can now relate this information to the [Distribution-Patterns-and-Biogeographic-Regions|Biogeographic Regions].  Recall that the seven major biogeographic regions were determined based primarily on high levels of endemic taxa.  Much of this endemism can be explain by plate tectonics.  
+
+For example, a higher taxon, such as a family, that evolved in Gondwana will not be present in Laurasia, except via uncommon instances of dispersal (which you'll learn about later). If the higher taxon continues to diversify (the evolution of new genera and species), the lower taxa will only be found on Gondwanan landmasses.  As Gondwana continued to break up into the continents we now recognize, evolutionary processes would continue to form new genera and species endemic to each of these continents. For example, carefully study Figure 12.5 on page 467 (pg. 437 of the 3rd edition) of your text.  Notice the repeated diversification of several genera of flies (Chironomidae) on Australia, South America and New Zealand.  These genera show a pattern of endemism restricted to Gondawnan landmasses, which we can now recognize as parts of the Neotropical, Australian and Antarctica biogeographic regions.
+
+More broadly, Gondwanan taxa may be present in the Neotropical, Afrotropical, Indomalaysian, Australian or Antarctic biogeographic regions, or some combination of these regions (as you saw with the flies).  Similarly, a Laurasian taxon would be found in the Nearctic and the Palearctic. The major biogeographic regions were recognized long before any concept of continental movement was accepted. Yet, the early biogeographers recognized that many taxa were distributed across the Nearctic and the Palearctic, which they called a '''holarctic distribution'''.  The figure below shows the holarctic distribution of the bear genus ''Ursus'' (Ursidae), with four species: Brown, Black, Polar and Asian bears (Ursidae).  What kind of distribution does the entire family have?
+
+((([imageleft||{UP}/images/BearDistribution.jpg]<br>
+Distribution of the bear family Ursidae.
+)))
+
+You should be able to relate the seven biogeographic regions to the tectonic history of Pangaea, Laurasia and Gondwana.  For practice, and without looking at what you just read, make a list of the biogeographic regions that belong to Pangaea, then a list of the regions that belong to Laurasia, and then do the same for Gondwana.  For 2 points extra credit, type this list and give it to me in class next Friday (2 Sep).
+

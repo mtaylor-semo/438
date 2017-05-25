@@ -1,0 +1,30 @@
+1. What is the capital of Missouri?
+
+a. *Jefferson City
+b. Saint Louis
+c. Cape Girardeau
+
+/Property-FeedbackRight: Great, you did it!
+/Property-FeedbackWrong: Did you even study?
+/Property-Subject: Missouri History
+/Property-Difficulty: 2
+/Property-PointValue: 10
+/Property-ImageURL: http://www.downtownjeffersoncity.com/images/lights.jpg
+
+
+2. Where is Mount Fuji?
+
+a. France
+b. French Guyana
+c. *Japan
+d. China
+e. England
+
+/Property-ImageURL: 
+http://media-2.web.britannica.com/eb-media/03/75503-004-21B644FA.jpgs
+
+
+3. There are 8 planets orbiting around the Sun.
+
+a. *True
+b. False

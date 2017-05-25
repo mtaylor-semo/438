@@ -1,0 +1,266 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{exam}
+%\usepackage{graphicx}
+%	\graphicspath{{/Users/goby/Pictures/teach/300/}
+%	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb, amsmath}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common,TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{hanging}
+
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY}\else Pleistocene Extinction\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\printanswers
+
+\begin{document}
+
+Read carefully the papers listed below and then type your answers to the following questions.
+Type the question number and then your answer. You do not need to retype the question. Hand-written
+assignments will not be accepted. You must have your completed answers
+with you in class or your assignment will be considered late. Assignments e-mailed to me after the \emph{start} of class will be
+considered late. \emph{Interpret} what you read; do not copy answers directly from the text (that would
+be plagiarism). Be prepared to discuss your answers in small groups and as a class. Failure
+to discuss these questions may result in a pop quiz with a point value
+equal to this assignment.
+
+\textbf{Failure to attend} \textbf{class} \textbf{on the due date} will
+result in an automatic 50\% deduction.
+
+\begin{hangparas}{1.5em}{1}
+Alroy, J. 2001. A multispecies overkill simulation of the
+End-Pleistocene megafaunal mass extinction. Science 292: 1893-1896.
+
+Lorenzen, E.D. et al. 2011. Species-specific responses of Late
+Quaternary megafauna to climate and humans. Nature 479: 359-364. 
+\end{hangparas}
+
+
+\begin{questions}
+
+\question[5]
+Does Alroy 2001 conclusively eliminate End-Pleistocene climate change
+as the cause of the megafaunal mass extinction? Briefly, but clearly and
+accurately, state how he does or why he does not.
+
+\ifprintanswers
+No, Alroy does not eliminate climate change as a possibility. His
+computer model is designed only to test whether the observed extinctions
+are consistent with particular assumptions of human hunting abilities,
+human population increase and spread, human meat consumptions (large
+animals only), etc. He in no way tests for climate change as a
+possibility. He mentions on page 1896 (top of second column) that
+climate change may be a contributing factor that exacerbates the loss of
+megafauna initiated through human predation.
+\else\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+Alroy states that human hunting of large herbivores may have
+significantly disrupted ecosystem function. Describe the specific
+evidence he uses, including specific numbers from the relevant column(s)
+of Table 1, and then provide a biologically sound description of how the
+evidence he cites might lead to ecosystem collapse.
+  
+\ifprintanswers
+On page 1896, Alroy states that ``\dots these figures imply a major
+disruption of ecosystem function at the continental scale\dots''. Trial
+8 is the ``best-fit scenario'' for his model (pg. 1893, 3rd column, 3rd
+paragraph). In Table 1, the column labeled \textbf{Energy Use} refers to
+the amount of primary producers consumed by herbivores (primary
+consumers), relative to the maximum (I presume 1.00 is maximum). Trial 7
+shows an energy use of 0.762, which is approximately \textbf{25\% less}
+than 1.00. Trial 8, the best-fit, is about 2/3 of maximum. Trial 9 has
+an energy use of 0.515, which is approximately 1/2 of the relative
+maximum. These numbers match his statement of human predation depressing
+herbivory by 1/4 to 1/2.
+
+Types of ecosystem function disruption:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Vegetational structure: Herbivores will eat certain types of
+  producers. If those producers are not consumed due to lack of
+  herbivores, then the community composition of plants will be
+  different.
+\item
+  Vegetational carbon sinks: Plants are carbon sinks in the sense that
+  they take up and store carbon atmospheric carbon. Different species of
+  plants take up and store carbon at different rates. By changing the
+  community structure, you change the amount of carbon that will (or
+  will not) be stored.
+\item
+  Watershed dynamics: watersheds are influenced by the surrounding
+  vegetation, from erosion to canopy cover.
+\item
+  Insect and small vertebrate dynamics: the vegetative community is
+  often what we think of as habitat. By changing the community
+  composition, you will change the ``habitat.'' Changing the habitat
+  will change the types of organisms present.
+\end{itemize}
+\else\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+Alroy lists several nonhuman ecological factors that could complicate
+his model, but he claims most of them would further increase the
+extinction rates predicted by his model. Pick any one of these factors
+and then write a biologically sound explanation of how it would (or
+would not) further increase the extinction rate of some megafauna.
+
+\ifprintanswers
+Bottom of page 1896, first column, Alroy lists the following factors:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Demographic stochasticity
+\item
+  Genetic ``meltdown'' at small population sizes (loss of genetic
+  variability; bottleneck; drift)
+\item
+  Short-term environmental stochasticity
+\item
+  Variation among geographic regions on the availability of secondary
+  food sources
+\item
+  Ecological feedbacks induced by populations of nonhuman predators
+\item
+  Habitat change induced by extinction of keystone herbivore species,
+  and
+\item
+  Direct biological effects of long-term climate change.
+\end{itemize}
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+Lorenzen et al. based their study on six megafaunal herbivores, two
+of which are now extinct. Do you think these six species are a
+sufficient representation of the entire Pleistocene megafauna to
+distinguish between human overkill and climate change as the primary
+cause of the End-Pleistocene megafauna extinction? Explain why or why
+not. (Hint: what is the primary distribution of these six species ca.
+30–40,000 years ago?)
+
+\ifprintanswers
+Open-ended question: The distributions shown in Figure 1 show the
+species had a predominately Palearctic distribution about 30--40
+thousand years ago. Thus, it may underrepresent taxa with a North
+American distribution. On the other hand, the ranges may accurately
+reflect the ranges for most Pleistocene megafauna. Many, many more than
+6 species went extinct during the Pleistocene and not just in the
+northern hemisphere (e.g., Australia).
+\else
+	\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+Clearly explain how Lorenzen et al.'s conclusions differ from that of
+Alroy. Do they clearly demonstrate that a mix of human overkill and
+climate change is the best explanation for the megafauna extinction?
+Justify your answer. (I'm not asking you whether you think a mix of the
+two is most likely. I'm asking whether you think the authors clearly
+\emph{demonstrate} that this is the most likely explanation.)
+
+\ifprintanswers
+Alroy's model shows that the megafaunal extinction could be driven
+entirely through human predation, without including climate change as at
+least a contributing factor. In contrast, Lorenzen et al. shows that extinction
+of at least some of the megafauna is entirely consistent with climate change. 
+
+\begin{itemize}
+\item Musk Ox and Wooly Rhino: Climate 
+
+\item Horse and Steppe Bison: Climate and overkill
+
+\item Woolly Mammoth: Inconclusive
+
+\item Reindeer: relatively unaffected
+\end{itemize}
+
+For example, that the decrease of the bison is entirely consistent with climate change
+due to the gradual decrease in range size and gradual loss of genetic
+diversity (see page 5, first paragraph). They also argue that decrease of the
+bison may have been exacerbated by competition with moose and elk. After
+16 kya, bison appeared at many archaeological sites, suggesting sudden
+and increased usage by early humans.
+
+In the end, they argue that one hypothesis (climate vs overkill) is not sufficient to 
+explain all of the Pleistocene mass extinctions. They argue that different species
+responded differently to the changing climate and overkill pressure.
+\else\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+Figures 2 and 3 are central to Lorenzen et al.'s conclusions.
+Carefully interpret and compare these two figures. Describe how each
+figure is used to support the arguments made by the authors. How do
+these two figures together lead the authors to their conclusions? Use
+the North American Bison in your description to demonstrate your
+understanding of the figures. 
+
+\ifprintanswers
+Figure 2 suggests that Bison occupied a large geographic area (ca.
+10,000,000 km\^{}2) around 30 kya, then reduced in size by about 1/5
+(0.17 in Fig 3), equivalent to a log km\textsuperscript{2} of about 6.2
+(Fig 2), reducing N\textsubscript{e} to less than 10k (Fig. 3) about 10
+kya. The decrease in population size coincides with a loss of genetic
+variation, as shown in the skyline plot on the lower panel of of Fig. 2.
+Genetic variation was highest when the geographic range size was
+highest. Genetic variation decreased gradually as population
+size/geographic range size decreased.
+\else\vspace*{\stretch{1}}
+\fi
+
+\end{questions}
+
+\end{document}  

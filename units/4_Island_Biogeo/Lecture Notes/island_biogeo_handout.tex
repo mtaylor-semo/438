@@ -1,0 +1,233 @@
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+\usepackage{coffee4}
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+
+\title{Island Biogeography: Models}
+
+\author[Biogeography]{Biogeography}
+
+\date{Fall 2013} % without \date command, current date is supplied
+
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+
+%\printclassoptions
+
+\newthought{Islands were well-studied}\sidenote{Read pages 509--529, 539--544 Skim 553-557 for emerging models.} by early biogeographers because of their unique environments and species compositions.  This unit will focus on ecological processes that affect the biogeography of organisms living in insular, or island-like, habitats. 
+
+\section{What is an island?}\label{sec:island}
+%\subsection{name}\label{sec:name}
+\begin{marginfigure}%
+	\centering
+	\includegraphics{island_intro.jpg}\\
+	\includegraphics{patch_reefs.jpg}\\
+	\includegraphics{big_oak_tree_sp.jpg}\\
+	\includegraphics{pothole_lakes.jpg}\\
+	\includegraphics{cave.jpg}
+\end{marginfigure} 
+
+Islands, or more broadly, insular habitats, are defined here as suitable habitat surrounded by unsuitable habitat. Insular habitats can include true islands surrounded by water; patches of trees in a savanna surrounded by unsuitable grassland habitat; caves; ponds, lakes, and springs; and the tops of mountains. For our purposes, insular habitats are generally
+\begin{itemize}
+	\item well-defined, discrete entities; 
+	\item relatively simple compared to the larger surrounding habitats;
+	\item isolated from other source habitats and islands; and
+	\item fairly to very numerous.
+\end{itemize}
+
+If you are reminded of metapopulations (Unit 1), you should be.  Recall from Unit 1 the concept of metapopulations where a population is distributed across patchy, suitable habitats surrounded by unsuitable habitat. As you will learn, metapopulations match well with the concepts of island biogeography. 
+
+Early biogeographers were greatly interested in true islands because the flora and fauna were obviously related to but different from the mainland source taxa. The isolation raised natural questions about the dispersal and colonization of the islands, followed by the evolution of organismal and community diversity. Initial ideas were naively simple: island communities were thought to be static or unchanging in ecological time.  
+
+The initial or founding community was due to a unique combination of dispersal and extinction, governed by relatively few available niches. If a colonizing species found sufficient resources based on its niche, it remained.  If unable to find adequate resources, a population would never become established. One the initial community was established, it remained unchanged except over evolutionary time scales.  In general, if a taxon was not present now, it never would be present.  
+
+However, this idea changed in the 1960s when Robert MacArthur and E.O. Wilson published their seminal work on island biogeography.\sidenote{MacArthur, R.H. and E.O. Wilson. 1963. An equilibrium theory of insular zoogeography. Evolution~17:~373--387.\\Ibid. 1967. \textit{The Theory of Island Biogeography}. Monographs in Population Biology, no.~1. Princeton University Press, NJ.} Through a combination of mathematical theory and empirical comparisons of island taxa, they came up with some general patterns that seemed to explained how insular communities changed over ecological time scales of decades to hundreds of years. They noted that species richness 
+\begin{itemize}
+	\item increased with increases of island size, and
+	\item decreased with increases of distance between the island and the mainland.
+\end{itemize}
+Again, while they studied communities on actual islands, their models of island biogeography have been extended to most types of insular habitats, so keep that in mind as you proceed.
+
+\section{Relative Abundance}\label{sec:relative_abundance}
+
+\begin{marginfigure}%
+	\centering
+	\includegraphics{species_relative_abundance}
+\end{marginfigure} 
+In nearly any community, insular or not, most individuals sampled will belong to just a few common species.  Most other species present in the area will be relatively rare. For example, in a census of Maryland breeding birds, more than 30 species were uncommon, with about eight individuals sighted per species.\sidenote{The x-axis, the number of individuals per species, is log-transformed, so the graph is a log-normal distribution.} In contrast, about five species were very abundant, represented by more than 256 individuals each.
+
+This relative abundance curve applies generally to all communities, insular or not, but it becomes especially important in insular habitats because rare species are more vulnerable to extinction.  If a species goes extinct on an island, the chance of it being reestablished depends partly on the size of the island.  Small islands are less likely to be recolonized by a once-existing species, while large islands have a better chance of being recolonized by that species.
+
+\section{Species-Area Relationship}
+
+\begin{marginfigure}%
+	\centering
+	\includegraphics{species_island_area}
+\end{marginfigure} 
+
+As noted above, MacArthur and Wilson discovered a relationship between the number of species present and the size of the island. In general, large islands have more species, while small islands have few species.\sidenote{The concept of species-area relationships  is an important component of many ecological studies.} MacArthur and Wilson argued that large islands have more types of habitat, creating a larger number of unique niches. Thus, large islands will support more species. Intuitively, large islands are also easy targets for active and passive dispersal compared to small islands. Assuming an equal distance from a source, the larger island will be colonized more frequently. As you will see, MacArthur and Wilson associated island area only with extinction rates but not with immigration rates.
+
+The inset graph uses the same data as the large graph. The large graph, however, used log-transformed variables for both axes to highlight the linear relationship between species richness and island area.
+
+\section{Species-Isolation Relationship}
+\begin{marginfigure}%
+	\centering
+	\includegraphics{species_island_isolation}
+\end{marginfigure} 
+
+MacArthur and Wilson also proposed that immigration rate is linked to the distance of the island from a source population.  An island near the mainland would have higher immigration rates than islands far from the mainland source.   Why?  Even species with poor dispersal ability may get lucky and find the near island, while far islands are likely to be colonized only by the better dispersers. They did not link immigration rates to island size. 
+
+\section{Predicting Species Richness}
+\begin{marginfigure}%
+			\begin{tikzpicture}
+				[mainland/.style={rectangle,draw=black,fill=blue!10,thick,minimum size=15mm},
+				 bigisland/.style={circle,draw=black,fill=black!10,thick,minimum size=7mm,text width=1cm,align=center},
+				 tinyisland/.style={font=\tiny,circle,draw=black,fill=black!10,thick,minimum size=0mm,text width=0.5cm,align=center}]
+				\path	node at (3,-0.8)	[mainland]		{Mainland Source}
+						node at (1.2,-3)	[bigisland]		{Island 1}
+						node at (5,-3)		[tinyisland]	{Island 2}
+						node at (1.2,-5.6)	[tinyisland]	{Island 3}
+						node at (5,-5.6)	[bigisland]		{Island 4};
+			\end{tikzpicture}
+\end{marginfigure} 
+
+The species-area and species-isolation curves can be used separately to predict species richness on islands. Large islands have more area and therefore more species. Far islands tend to have fewer species because they are less likely to be colonized.  But, how do these to patterns interact to predict richness on islands? 
+Consider a hypothetical mainland source and four islands. Based on area and isolation, which island should have the most species and which should have the fewest? The large near island should have the highest species richness, while the small far island should have the fewest species.  Given the two islands of equal size, you would predict that the near island would have more species than the far island. Given the two islands of equal distance, you would predict the large island to have more species than the small island.  But, how would you predict species richness to compare between the small, near island and the large, far island?  To answer this question, MacArthur and Wilson needed to add two more components to their model. Can you think of what else they needed to consider?
+
+\section{Krakatau Islands}
+
+\begin{marginfigure}%
+	\centering
+	\includegraphics{krakatau}
+\end{marginfigure} 
+
+The Krakatou volcano formed a single island in Indonesia.  It erupted violently in 1883.  The eruption broke the initial island into three remnants, and destroyed the island flora and fauna. (The middle island emerged in 1930.) In the early 1900s, the remnant islands were surveyed to determine which bird species were present.
+The first survey in 1908 revealed that 13 nonmigrant species of birds had colonized the islands from neighboring islands, most likely Sumatra and Java.  Rakata was recolonized more quickly than Sertung. By the 1919 survey, the number of nonmigrant species had increased to 27 on both islands, and has remained relatively constant ever since. Despite the steady richness, the actual species present changed between surveys. Two species found on Rakata during the 1908 survey were not found during the 1919 survey, but 20 new species were found. Between the second and third surveys, five species were not found, but four new immigrant species were found. Similar observations were obtained from Sertung. From these results, MacArthur and Wilson drew two conclusions.
+\begin{marginfigure}%
+	\centering
+	\includegraphics{islandbiogeo014.jpg}\\
+	\includegraphics{islandbiogeo016.jpg}
+\end{marginfigure} 
+\begin{itemize}
+	\item Colonization took place quickly, reached a plateau, and then remained at that level.  
+	\item Despite the constant number of species, the actual species present turned over with some regularity.
+\end{itemize}
+
+Thus, MacArthur and Wilson recognized that more than island size and island isolation determined species richness on the island.  They had also to account for the rate of immigration and the rate of extinction, these are known as \textit{species turnover}. Species turnover occurs when new immigrant species replace extinct species. The new immigrants are different species than those that went extinct.  Species turnover was the last piece of the puzzle needed by MacArthur and Wilson.
+
+\section{Equilibrium Theory: One Island}
+\begin{marginfigure}%
+	\centering
+	\includegraphics{immigration_extinction_equilibrium}
+\end{marginfigure} 
+
+MacArthur and Wilson tied together the concepts of island area, island isolation, and species turnover, to develop a single theory that explains the dynamic nature of island communities. First, they modeled species turnover for a single island, which allowed them to discount area and isolation (which will be added later).
+
+The one-island model begins with the number of species ($S$) already present on the island, indicated along the x-axis.  The number of species present on the island determines both the rate of extinction and the rate of successful immigration.\sidenote{Immigration rates include only those species that establish populations on the island.}   The total number of species that an island can \textit{potentially} hold is based on the  species pool on the mainland, indicated on the graph by $P$. If the number of species relative to $P$ is low, then sufficient niches are available for new colonizers.  
+
+When $S$ is low, the successful immigration rate is high. As $S$ approaches $P$, the immigration rate slows until the island reaches maximum species richness ($S=P$).  At this point, the rate of new species immigration is zero because there are no new species left in the mainland source pool and all of the niches on the island are filled. With many species present, however, the extinction rate will be higher because more species present means more species can possibly go extinct. Recall from above that most species in any community are relatively rare.  Rare species are more likely to go extinct because population size is small. When a community has few species, most of the species present will be abundant and therefore less likely to go extinct.\sidenote{The causes of extinction could be many, such as competition, predation or chance.}
+
+Based on these simple concepts of immigration and extinction, MacArthur and Wilson proposed that any one island would achieve an equilibrium turnover rate ($\hat{T}$ on the y-axis), where $E=I$. That is, species lost to extinction are replaced by new immigrant species. Turnover rate would remain relatively constant once equilibrium has been established on the island. They argued that this concept applies to any island, regardless of size or isolation.
+
+\section{Equilibrium Theory: Multiple Islands}
+\begin{marginfigure}%
+	\centering
+	\includegraphics{island_equilibrium}
+\end{marginfigure} 
+
+Island area and isolation do affect immigration and extinction rates so MacArthur and Wilson incorporated these two factors into their model. An island near to the mainland source would have a higher immigration rate, while a far island would have a lower immigration rate.  Small islands will have a higher extinction rate, while large islands would have a lower extinction rate.  The precise equilibrium turnover rates will vary among islands but the variation is predictable.
+
+The new model uses two immigration rates based on isolation and two extinction rates based on area. The intersections of the immigration and extinction lines indicates the predicted turnover rate for near versus far islands and small versus large islands. Compare the turnover rates along the y-axis of the figure. The order of turnover rates, from highest to lowest, is small near, large near, small far, and large far. This order may not seem immediately intuitive. For example, the model predicts that a large near island will have a higher turn over rate than a small far island.  Why is this?
+
+First, begin with small near islands, which have the highest turnover rate. Small islands have fewer resources so support only small population sizes. Small populations tend to suffer high extinction rates. The island is near to the mainland source so immigration rates will also be high. Thus, new species constantly replace extinct species.  Next, contrast small near islands with large far islands, which have the lowest turnover rate. Large islands support large population sizes for more species so the extinction rate is lower. Because the island is far, immigration rate is low. Thus, new species only rarely replace the species lost due to uncommon extinction events.  
+
+But why, for example, does a small far island have a higher turnover rate than a large far island?  If you compare the extinction curves, the small island has a higher extinction rate than the large island, consistent with fewer available resources on the small island. Yet, the small island has a higher immigration rate than the large island. How can this be? Remember that the curves represent equilibrium functions. As extinction ($E$) increases, so does immigration ($I$). Small islands have higher extinction rates than large islands so a small far island will tend to have higher immigration rates than a large far island.  Use this same logic to explain why large near islands have the second highest turnover rate.
+
+\section{Tests of the Model}
+
+\begin{marginfigure}%
+	\centering
+	\includegraphics{arthropod_recovery}
+\end{marginfigure} 
+
+One of the first empirical tests of the MacArthur and Wilson model was performed on a series of very tiny mangrove islands in the Florida Keys. The islands were fumigated to remove all arthropod species, then recolonization was monitored. As predicted by the model, nearby islands had a higher rates of colonization. The single isolated island (E1) had a lower rate of recolonization and fewer total species once equilibrium was reached. In a companion study, the size of the mangrove islands was reduced by cutting down some of the mangrove trees. As predicted, the number of species declined with the decreased area.
+
+\begin{marginfigure}%
+	\centering
+	\includegraphics{islandbiogeo023.jpg}\\
+	\includegraphics{islandbiogeo025.jpg}
+\end{marginfigure} 
+
+Recall that MacArthur and Wilson based extinction rates on island area but not isolation.  Several studies have shown that extinction on islands that are not isolated is lower than expected due to a high immigration of individuals from nearby sources. The regular addition of individuals keeps the population level high enough to prevent extinction. The reduced extinction due to high immigration is called the \textit{rescue effect}.  MacArthur and Wilson based immigration rates on isolation but not area.  Several studies found that large islands tend to have higher rates of immigration than predicted. This intuitive result is because large islands are larger targets for active and passive dispersers.  The higher than expected immigration to large islands is called the \textit{target effect}.
+
+
+\section{Emergence of New Models}
+\begin{marginfigure}%
+	\centering
+	\includegraphics{sequential_equilibria.png}\\
+\end{marginfigure} 
+
+Overall, MacArthur and Wilson's Theory of Island Equilibrium has performed well even though it does not account for some short-term ecological processes such as competition and succession, nor long-term evolutionary processes such as speciation. For example, initial immigration of a new island might be random, with little or no interaction among species.  As species accumulate and population size increases, then competition, predation and other ecological interactions may influence extinction rates among species. Over long periods of time, the community will stabilize on a group of species with non-overlapping niches.  Finally, over evolutionary times new adaptations and new species may evolve.
+
+\begin{marginfigure}%
+	\centering
+	\includegraphics{new_island_paradigm}
+\end{marginfigure} 
+
+These deficiencies, plus others described in your text, have led some biogeographers to propose new models account for three basic biogeographic processes: immigration, extinction and speciation as a function of island area and isolation.  One such a model, which I'll call the Lomolino model, is shown here.\sidenote{Lomolino, M.V. 2000. A call for a new paradigm of island biogeography. Global Ecology and Biogeography 9: 1-6.} The axes on the lower left are island properties:  area and isolation.  Area increases to the top, isolation increases to the right.  The other axes corresponds to basic biogeographic processes: immigration, extinction and speciation.  Immigration rate increases to the left, extinction rate increases to the bottom, and speciation rate increases upward. You read parallel axes to interpet the model.
+
+The Lomolino model makes predictions similar to MacArthur and Wilson's model.  If an island is near (not isolated), then immigration will be high. If the island is far, the immigration will be lower. Similarly, if the island is large, then extinction rates will be be low. If the island is small, then extinction rates will be high.
+
+Despite the similarities, the Lomolino model has important differences. First, the Lomolino model eliminates predictions of species equilibrium.  Community structure is dynamic, so few island communities are likely to reach equilibrium.  Instead, community composition on islands tends to fluctuate over time for the  types of species present and their relative abundance as a result of speciation, extinction, historical geographic processes, major climatic events, or other forms of disturbance. 
+
+Second, the Lomolino model attempts to account for the origin of new species in insular habitats.  Notice that the peak of speciation occurs when immigration and extinction is low.  This occurs on large, isolated islands. Large islands have many niches to which species can adapt. They have time to adapt because extinction is low. Immigration is low so gene flow is limited or absent so the population can diverge from the mainland.
+
+Finally, the model predicts the relative amounts of endemism on islands. Speciation occurs within islands, so any species that evolves on an island will be found only on that island.
+
+Careful study of the four corners of the model, labeled a-d, reveals the predicted dynamics of the different insular communities.
+\begin{marginfigure}%
+	\includegraphics{new_island_paradigm}
+\end{marginfigure} 
+
+\begin{enumerate}[a:]
+	\item Has high immigration and low extinction.  This island community will probably have low species turnover, low endemicity and moderate species richess.
+
+	\item Has low immigration, low extinction, and high speciation. This island community will have higher richness with many endemic species and very low species turnover.
+
+	\item Has high immigration and extinction. This island community will have low endemicity and high turnover, and low to moderate richness.
+
+	\item Has low immigration and high extinction.  This island community will have very few species because most will go extinct and not be replaced by immigration very often. 
+\end{enumerate}
+\vspace{5cm}
+\section{Why do I set my coffee mug on my computer?}
+\cofeAm{0.2}{0.75}{2}{-5.2cm}{-7.5cm}
+
+
+\end{document}

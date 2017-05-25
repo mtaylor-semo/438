@@ -1,0 +1,156 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Tutorial Assignment \thepage}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Tutorial: Climate and Distribution}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+Temperature and precipitation are the two climate variables that most
+influence the distribution of ecosystems. This is a fundamental
+biogeographic concept which you will explore using a climate data set
+taken from Alberta, Canada. The data set contains mean annual
+temperature (MAT, in °C) and mean annual precipitation (MAP, in mm) from
+80 weather stations spread across eight different ecosystems (Ecosys,
+labeled A-H in the data set). For each ecosystem, the dominant plant species or group
+was recorded (Cw = Western Redcedar, Gr = mixed grasses, La = Subalpine
+Larch). The measurements are in five-year intervals from 1965--2010.
+
+You must recreate, as close as reasonably possible, the following figure
+(color version on screen).
+
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{tutorial_assignment_climate}
+\end{center}
+
+Pay attention to the use of colors and symbols. Colors identify the
+ecosystems, while the symbols represent the dominant plant groups.
+
+R provides the \texttt{read.csv()} function to read data sets from Internet 
+URLs. You will use this function  to get data sets for exercises during this
+course. You assign the data to a variable name, as you did in the tutorial
+You should assign the data to an informative variable name. To get the 
+data for this assignment, type the following command into R:
+
+\texttt{climate \textless{}-
+read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/climatedata.csv')}
+
+\textit{Important}: Use the \texttt{main} argument in the \texttt{plot()} function to add
+a main title, which will appear above the graph (but is not shown
+above). The title should contain your name and your partner's name.
+
+\subsection*{Some hints:}
+
+Don't forget to use \texttt{attach()} and \texttt{detach()} functions.
+
+Add only one argument at a time to the plot, as you
+did in the R Tutorial. If you make an error, it will be easier to find and fix
+before adding the next argument. Be careful with quotes and parentheses.
+
+Use \texttt{xlim} and \texttt{ylim} arguments in the \texttt{plot()} function to set the lower and
+upper values for the X and Y-axes, respectively. Type \texttt{?plot} to learn about
+the \texttt{xlim} and \texttt{ylim} arguments.
+
+You will need eight colors, one for each ecosystem. Instead of defining
+eight colors, use \texttt{rainbow(8)} to define your colors. See \texttt{?rainbow} for
+details.
+
+Use 21, 22 and 25 to specify the symbols for the \texttt{pch} argument in the
+\texttt{plot} function.
+
+Use the \texttt{text()} function to place the names of the major plant groups
+into the figure. You will need to use the \texttt{text()} function
+three separate times, one for each dominant plant group. Use the \texttt{font=3}
+argument to specify italics for the labels. Remember that the first two
+numbers should be the X and Y coordinates for your text. The Y value may
+be negative for one of the dominant plant group labels.
+
+Technically, you should include °C in the Y-axis label but doing so is
+more complex than I want to get into now. However, to encourage
+exploration, I will add 50\% extra credit to this assignment (5 pts) if
+you figure it out. You may access the Internet to do a Google search.
+
+\subsection*{Upload the completed graph to the tutorial drop box.}
+
+Save the file as a PDF or 75\% jpg file (File menu \textgreater{} Save
+as\ldots{}).
+
+Give the file an obvious name like climate\_lastnames.pdf (or .jpg).
+Include both last names. You and your partner must \textbf{each upload a
+copy} to the drop box in your respective Moodle accounts.
+
+\end{document}  

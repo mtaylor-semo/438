@@ -1,0 +1,113 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+%\usepackage{graphicx}
+%	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* Bold Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Graduate Assignment \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+
+\title{Graduate Student Assignment}
+\author{30 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+Your fearless instructor is afraid that he dropped the ball on putting together a graduate student project for you to complete.  The project is 20\% of your grade so he has to give you something to earn those points.  And so, without further ado:
+
+\section*{Staying Current}
+
+Pages 763--764 of your textbook provide a list of ``The Frontiers'' of biogeography.  I've dropped a couple of topics and added a couple of topics. You will choose a topic by random draw. Your goal is to find five peer-reviewed scientific publications related to your topic.  The papers must be from 2011 or later.  You will upload PDF files of the five papers to the drop box. In addition, you must write a one paragraph synopsis of \textit{each} paper that you choose. Upload the synopses to the drop box also.
+
+For the item that you draw, read about that topic on the pages listed above for ideas. If you have a topic not included above, I've provided other pages from your textbook. Use Google Scholar (http://scholar.google.com) to search for papers. The left side of the search results page will allow you to quickly limit your results to 2011 or more recent.  I'd really like 2014 or later, if the papers are there.
+
+Look for papers with the following qualities:
+
+\begin{itemize}
+
+\item Information that you feel would be valuable to include in lectures.
+
+\item Papers with accessible data that I might be able to turn into a future analysis exercise.
+
+\item Papers that test some of the concepts we discussed in class.
+
+\end{itemize}
+
+I am willing to consider another topic if you have an idea for something that I may be interested in. However, it cannot be about the biogeography of a particular group (e.g., biogeography of fishes). I am interested in broad, biogeographical concepts.  If you have an idea, do not hesitate to ask. It would be a good idea if you send along a paper or two showing me what you have in mind, along with an explanation of why you would like to do that topic.
+
+\section*{Due Date}
+
+Because I'm just a \textit{wee} bit behind, I'll give you until the scheduled final exam period during finals week to complete the assignment. That date is Thursday, 17 December, 10 am. Of course, you are welcome to complete it before then.
+
+\end{document}  

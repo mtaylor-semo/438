@@ -1,0 +1,211 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}}%
+%	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+\begin{document}
+
+\begin{frame}[plain]{\highlight{Biodiversity hotspots} have high endemism and many threats.}
+	\centering%
+		\includegraphics[width=1\textwidth]{global_hotspots}\\
+\end{frame}
+
+\begin{frame}[plain]{Areas of high endemism for African birds and amphibians.}
+	\centering%
+		\includegraphics[width=1\textwidth]{africa_birds_amphibs}\\
+\end{frame}
+
+\begin{frame}[plain]{Areas of high endemism for African mammals and plants.}
+	\centering%
+		\includegraphics[width=1\textwidth]{africa_mammals_plants}\\
+\end{frame}
+
+\begin{frame}[plain]{African hotspots have high endemism for many taxa.}
+	\centering
+		\includegraphics[height=0.8\textheight]{africa_hotspots}\\
+\end{frame}
+
+\begin{frame}[plain]{Endemism for marine fishes, corals and snails is highest in the Indo-Pacific.}
+	\centering
+		\includegraphics[width=\textwidth]{marine_endemism}
+		
+	Fishes (top), corals (middle), and snails (bottom).
+\end{frame}
+
+\begin{frame}[plain]{Marine hotspots are severely threatened.}
+	\centering
+		\includegraphics[width=\textwidth]{marine_hotspots2}
+
+	Threats (upper) and endemism (lower).
+		
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{philippine_eagle.jpg}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]{Apply island biogeography and metapopulation concepts to conserve diversity.}
+	\begin{columns}[T]
+		\begin{column}{0.6\textwidth}%
+			\centering
+			\includegraphics[height=0.6\textheight]{insular_distribution_function_top}\\
+		\end{column}
+		\begin{column}{0.4\textwidth}%
+			\begin{itemize}%
+				\item How are organisms distributed?
+				\item Protect the distribution.
+				\item Proceed despite limited knowledge.
+			\end{itemize}
+		\end{column}		
+	\end{columns}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{florida_panther_headshot.jpg}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]{\textit{Puma concolor} is distributed widely.}
+	\centering%
+		\includegraphics[height=0.9\textheight]{puma_range}
+\end{frame}
+
+\begin{frame}[plain]{Fewer than 200 panthers live in South Florida.}
+	\centering%
+		\includegraphics[height=0.85\textheight]{florida_panther_range}
+\end{frame}
+
+\begin{frame}[plain]{Roadkills cause many fatalities every year.}
+	\begin{columns}[T]%
+		\begin{column}{0.4\textwidth}%
+			\centering%
+			\includegraphics[height=0.7\textheight]{florida_panther_roadkill.jpg}
+		\end{column}
+		\begin{column}{0.55\textwidth}%
+			\centering%
+			\includegraphics[height=0.7\textheight]{panther_roadkill_map}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{florida_panther_kittens}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]{How can you increase the Florida Panther range up to the Okeefenokee Swamp in Georgia?}
+	\centering%
+		\includegraphics[height=0.8\textheight]{florida_corridor1}
+\end{frame}
+
+\begin{frame}[plain]{Florida agencies are proposing a series of habitat corridors.}
+	\centering%
+		\includegraphics[height=0.8\textheight]{florida_corridor2}
+\end{frame}
+
+
+\begin{frame}[plain]{Bridges and tunnels may increase safety and dispersal of panthers.}
+	\centering%
+		\includegraphics[height=0.8\textheight]{panther_corridors_proposed}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mesophotic_coral.jpg}
+}
+\begin{frame}[b,plain]{\textcolor{white}{Use biogeographic techniques to predict distribution and identify suitable habitat of mesophotic corals.}}
+\hfill \textcolor{white}{\textit{Leptoseris} is one genus of mesophotic coral.}
+\end{frame}
+}
+
+\begin{frame}[t,plain]{Predictive biogeography was used to identify suitable habitat in Hawaii}
+	\centering%
+		\includegraphics[height=0.8\textheight]{mesophotic_hawaii.jpg}\par
+		
+	\vskip0pt plus 1fill
+		
+\hfill\tiny Costa B.M., et al. 2012. NOAA Technical Report 149.
+\end{frame}
+
+\begin{frame}[t,plain]{34 parameters were used to predict the distribution.}
+	\centering%
+		\includegraphics[height=0.85\textheight]{mesophotic_predictors.jpg}\par
+
+	\vskip0pt plus 1fill
+
+\hfill\tiny Costa B.M., et al. 2012. NOAA Technical Report 149.
+\end{frame}
+
+\begin{frame}[t,plain]{Depth, light availability and distance from shore were most important.}
+	\centering%
+		\includegraphics[height=0.8\textheight]{mesophotic_results.jpg}\par
+
+	\vskip0pt plus 1fill
+
+\hfill\tiny Costa B.M., et al. 2012. NOAA Technical Report 149.
+\end{frame}
+
+\end{document}

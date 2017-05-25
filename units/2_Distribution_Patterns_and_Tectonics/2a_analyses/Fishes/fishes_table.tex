@@ -1,0 +1,200 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{margin=1in}
+\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+%\usepackage{fancyhdr}
+%\fancyhf{}
+%\pagestyle{fancy}
+%\setlength{\headheight}{14pt}
+%\fancyhead[R]{\footnotesize Range Size \thepage}
+%\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Geographic Range Size}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\newgeometry{top=0.5in, bottom=0.5in}
+
+Orders and Families for the Primary Freshwater Fishes of the World. Numbers in the columns indicate presence (1) or absence (0) of that taxon in the biogeographic regions.
+
+\begin{longtable}[l]{@{}llrrrrrr@{}}
+\toprule
+Order & Family & Nearctic &
+Neotropical & Palearctic & Afrotropical &
+Indomalaysian & Australian\tabularnewline
+\midrule
+\endhead
+Ceratodontiformes & Ceratodontidae & 0 & 0 & 0 & 0 & 0 &
+1\tabularnewline
+Lepidosireniformes & Lepidosirenidae & 0 & 1 & 0 & 0 & 0 &
+0\tabularnewline
+Lepidosireniformes & Protopteridae & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Polypteriformes & Polypteridae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Acipenseriformes & Polyodontidae & 1 & 0 & 1 & 0 & 0 & 0\tabularnewline
+Amiiformes & Amiidae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Osteoglossiformes & Osteoglossidae & 0 & 1 & 0 & 1 & 1 &
+1\tabularnewline
+Osteoglossiformes & Pantodontidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Osteoglossiformes & Hiodontidae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Osteoglossiformes & Notopteridae & 0 & 0 & 0 & 1 & 1 & 0\tabularnewline
+Osteoglossiformes & Mormyridae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Osteoglossiformes & Gymnachiridae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Clupeiformes & Denticeptidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Gonorynchiformes & Kneridae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Gonorynchiformes & Phractolaemidae & 0 & 0 & 0 & 1 & 0 &
+0\tabularnewline
+Cypriniformes & Cyprinidae & 1 & 0 & 1 & 1 & 1 & 0\tabularnewline
+Cypriniformes & Gyrinocheilidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Cypriniformes & Catostomidae & 1 & 0 & 1 & 0 & 0 & 0\tabularnewline
+Cypriniformes & Cobitidae & 0 & 0 & 1 & 0 & 1 & 0\tabularnewline
+Cypriniformes & Balitoridae & 0 & 0 & 1 & 1 & 1 & 0\tabularnewline
+Characiformes & Distichodontidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Characiformes & Citharinidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Characiformes & Parodontidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Curimatidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Prochildontidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Anostomidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Chilodontidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Crenuchidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Hemiodontidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Alestidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Characiformes & Gasteropelicidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Characidae & 1 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Acestrorhynchidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Cynodontidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Erythrinidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Lebiasinidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Ctenoluciidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Characiformes & Hepsetidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Siluriformes & Diplomystidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Cetopsidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Ictaluridae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Claroteidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Siluriformes & Austroglanididae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Siluriformes & Bagridae & 0 & 0 & 1 & 1 & 1 & 0\tabularnewline
+Siluriformes & Piimelodidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Cranoglanididae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Siluriformes & Siluridae & 0 & 0 & 1 & 0 & 1 & 0\tabularnewline
+Siluriformes & Schilbeidae & 0 & 0 & 0 & 1 & 1 & 0\tabularnewline
+Siluriformes & Pangasiidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Siluriformes & Chacidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Siluriformes & Clariidae & 0 & 0 & 1 & 1 & 1 & 0\tabularnewline
+Siluriformes & Heteropneustidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Siluriformes & Malapteruridae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Siluriformes & Mochokidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Siluriformes & Doradidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Auchenipteridae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Amblycipitidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Siluriformes & Akysidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Siluriformes & Sisoridae & 0 & 0 & 1 & 0 & 1 & 0\tabularnewline
+Siluriformes & Erethistidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Siluriformes & Aspredinidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Amphiliidae & 0 & 0 & 0 & 1 & 0 & 0\tabularnewline
+Siluriformes & Nematogenyidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Trichomycteridae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Callichthyidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Scoloplacidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Loricariidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Siluriformes & Astroblepidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Gymnotiformes & Sternopygidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Gymnotiformes & Rhamphichthyidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Gymnotiformes & Hypopomidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Gymnotiformes & Apteronotidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Gymnotiformes & Gymnotidae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Gymnotiformes & Electrophoridae & 0 & 1 & 0 & 0 & 0 & 0\tabularnewline
+Esociformes & Esocidae & 1 & 0 & 1 & 0 & 0 & 0\tabularnewline
+Esociformes & Umbridae & 1 & 0 & 1 & 0 & 0 & 0\tabularnewline
+Percopsiformes & Percopsidae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Percopsiformes & Aphredoderidae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Percopsiformes & Amblyopsidae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Synbranchiformes & Chadhuriidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Synbranchiformes & Mastacembelidae & 0 & 0 & 1 & 1 & 1 &
+0\tabularnewline
+Perciformes & Centrarchidae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Perciformes & Percidae & 1 & 0 & 1 & 0 & 0 & 0\tabularnewline
+Perciformes & Nandidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Perciformes & Polycentridae & 0 & 1 & 0 & 1 & 0 & 0\tabularnewline
+Perciformes & Pristolepidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Perciformes & Elassomatidae & 1 & 0 & 0 & 0 & 0 & 0\tabularnewline
+Perciformes & Luciocephalidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Perciformes & Anabantidae & 0 & 0 & 0 & 1 & 1 & 0\tabularnewline
+Perciformes & Helostomidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Perciformes & Belontiidae & 0 & 0 & 1 & 0 & 1 & 0\tabularnewline
+Perciformes & Osphronemidae & 0 & 0 & 0 & 0 & 1 & 0\tabularnewline
+Perciformes & Channidae & 0 & 0 & 1 & 1 & 1 & 0\tabularnewline
+\bottomrule
+\end{longtable}
+\newpage
+
+\restoregeometry
+\includegraphics[height=1\textheight]{cichlid_distribution} 
+
+\newpage
+
+\includegraphics[height=1\textheight]{cichlid_phylogeny}
+\end{document}  

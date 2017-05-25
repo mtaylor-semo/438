@@ -1,0 +1,225 @@
+\documentclass[xcolor=svgnames]{beamer}
+%\documentclass[xcolor=dvipsnames]{beamer}
+%\usetheme{default}
+\usepackage{pgf,pgfpages}
+\usepackage{graphicx}
+\usepackage{units}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\tikzstyle{every picture}+=[remember picture]
+
+
+%\mode<handout> 	% Use this to make PDF with all overlays on one slide.
+\mode<presentation>
+{
+  \usetheme{MST}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{items}[square]
+}
+
+\usefonttheme[onlymath]{serif}
+\usecolortheme[named=myBlue]{structure}
+
+%% Uncomment the next two lines to make slides with note lines
+% \usepackage{handoutWithNotes}
+% \pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+
+\title{Pleistocene}
+
+\begin{document}
+
+\section{Biotic Responses}
+\subsection{Ecosystem Changes}
+
+\begin{frame}{Climates and ecosystems shifted south during expansion}
+	\begin{center}
+		\includegraphics[height=0.75\textheight]{img/climate_marine}\hspace*{1cm}
+		\includegraphics[height=0.75\textheight]{img/climate_terrestrial}
+	\end{center}
+	{\hfill\tiny{See textbook for legend.}}
+\end{frame}
+
+\begin{frame}{Ecosystems proportions changed}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{img/ecosystem_proportions}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Glaciers altered prevailing wind patterns}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{img/laurentide_climate}
+	\end{center}
+\end{frame}
+
+\section{Terrestrial Responses}
+\subsection{Range Expansion}
+
+\begin{frame}{Trees expanded northward with glacial retreat}
+	\begin{columns}[T]
+		\begin{column}{0.3\textwidth}
+			\includegraphics[width=1\textwidth]{img/tree_range_expansion1}
+		\end{column}
+		\begin{column}{0.65\textwidth}
+			Prevailing winds enhanced range expansion of white spruce (below) but not lodgepole pine (left).\vspace*{0.6\baselineskip}
+			\includegraphics[height=0.55\textheight]{img/tree_range_expansion2}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Mammals expanded with shifting ecosystems}
+	\begin{center}
+		\includegraphics[height=0.85\textheight]{img/mammalian_range_expansion}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Mammalian co-occurrence in communities changed.}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/mammalian_community_change}
+	\end{center}
+\end{frame}
+
+\subsection{Pleistocene Refugia}
+
+\begin{frame}{Unglaciated areas provided refuge from glacial expansion}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{img/beringia}
+		\end{center}
+\end{frame}
+
+\begin{frame}{Many glacial refugia were available}
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{img/glacial_refugia}
+	\end{center}
+\end{frame}
+
+\subsection{Range Expansion}
+
+\begin{frame}{Many taxa recolonized from glacial refugia}
+		\begin{center}
+			\includegraphics[height=0.8\textheight]{img/north_hemi_range_expansion}
+		\end{center}
+\end{frame}
+
+\subsection{Speciation}
+
+\begin{frame}{New species evolved by vicariance in refugia}
+	\vspace*{-1cm}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{img/ground_squirrel_arctic}\\
+				Arctic Ground Squirrel\\
+				\footnotesize{Beringia refugium}
+			\end{center}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{img/ground_squirrel_columbian}\\
+				Columbian Ground Squirrel\\
+				\footnotesize{Southern refugium}
+			\end{center}
+		\end{column}
+	\end{columns}
+		\begin{block}{}
+		Speciation or population genetic divergence also found in: moose, northern and southern red-backed voles, tundra and arctic shrews, etc.
+		\end{block}
+\end{frame}
+
+\subsection{Testing for Expansion}
+
+\begin{frame}{Can we test for evidence of refugia and range expansion?}
+	\vspace*{-0.5cm}
+	\begin{columns}[T]
+		\begin{column}{0.6\textwidth}
+			\includegraphics[width=0.9\textwidth]{img/macgillivray_range} \hspace*{1cm}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\includegraphics[width=0.9\textwidth]{img/macgillivray_picture.jpg}
+		\end{column}
+	\end{columns}
+	\begin{tikzpicture}[overlay, line width=2pt]
+		\draw [<-] (1.7,1.5) -- (0.3,1.5) ;
+	\end{tikzpicture}
+	\begin{block}{}
+		Is the breeding resident population of MacGillivray's Warbler in Mexico a refugial population?
+	\end{block}
+\end{frame}
+
+\begin{frame}[plain]
+%	Placeholder to work out parsimony network
+\end{frame}
+
+\begin{frame}{Parsimony network supports refuge and range expansion for MacGillivray's Warbler}
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{img/macgillivray_network}
+	\end{center}
+\end{frame}
+
+\section{Aquatic Responses}
+
+\subsection{Marine Taxa}
+
+\begin{frame}{Antitropical distributions could form during Pleistocene}
+	\begin{center}
+		\includegraphics[height=0.4\textheight]{img/pilot_whale_range}\\
+		\scriptsize{Range of Pilot Whale (green shading, above)}\\
+		\vspace*{0.25cm}
+		\includegraphics[height=0.25\textheight]{img/antitropical}
+	\end{center}
+\end{frame}
+
+\begin{frame}{New diversity evolved in the southern hemisphere}
+	\vspace{-1cm}
+	\begin{columns}[T]
+		\begin{column}{0.45\textwidth}
+			\begin{center}
+				\includegraphics[height=0.8\textheight]{img/stomatopod.jpg}
+			\end{center}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\begin{center}
+				\includegraphics[height=0.8\textheight]{img/stomatopod_network.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{Freshwater Refugia}
+
+\begin{frame}{Western lakes were refugia for freshwater fishes}
+	\begin{columns}[T]
+		\begin{column}{0.45\textwidth}
+			\includegraphics[height=0.7\textheight]{img/western_freshwater_refugia}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			The pupfishes of the desert southwest represent \textbf{relict distributions} from once larger lakes.\\
+			\vspace*{\baselineskip}
+			\includegraphics[width=0.8\textwidth]{img/cyprinodon_diabolis.jpg}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Sea levels were much higher before the Pleistocene}
+	\begin{center}
+		\includegraphics[height=0.45\textheight]{img/prepleisto_sealevels}\\
+		\includegraphics[height=0.35\textheight]{img/pleisto_sealevels}\\
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{How did glaciers affect most North American fishes?}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{img/glacial_fall_line}
+	\end{center}
+	\begin{tikzpicture}[overlay, line width=2pt]
+		\draw [<-] (5.7,2.5) -- (4.5,2.5) ;
+		\draw (4.5,2.5) node[anchor=east] {Fall Line} ;
+
+		\draw [<-] (5.5,5.5) -- (4.3,5.5) ;
+		\draw (4.3,5.5) node[anchor=east] {Glacial Maxima} ;
+	\end{tikzpicture}
+\end{frame}
+
+\end{document}

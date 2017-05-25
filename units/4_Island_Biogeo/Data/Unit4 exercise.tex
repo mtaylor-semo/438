@@ -1,0 +1,272 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{listings}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+%\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Island Biogeography \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Island Biogeography}
+\author{}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+%\maketitle
+%\section{}
+%\subsection{}
+\thispagestyle{empty}
+
+%For this simple exercise, you will plot species abundance against island size or distance from a source, or both.  
+
+
+\section{Caribbean Amphibians and Reptiles}
+
+For your first analysis, you will plot species richness against island area for reptiles and amphibians on seven islands in the Caribbean. You will also perform a simple linear regression to determine if the relationship is significant. First, read in the data.
+
+{\small 
+\begin{verbatim}
+herp <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/herps.csv', header=
+    TRUE)
+\end{verbatim}}
+
+Log-transform the variables of interest: number of species and island area. The log transformation will highlight the linear relationship between the variables. I put the letter ``l'' in front of the new variable names to indicate that they contain log-transformations of the original data.
+
+\begin{verbatim}
+herp$lspecies <- log(herp$species)
+herp$lsize <- log(herp$size)
+
+\end{verbatim}
+
+Perform a simple linear regression analysis so that a regression line can be plotted in the graph. The results of the analysis will be stored in the variable \texttt{lsize.lm}
+
+\begin{verbatim}
+lsize.lm <- lm(lspecies ~ lsize, data=herp)
+
+\end{verbatim}
+
+Are the results significant?  To find out, type
+
+\begin{verbatim}
+summary(lsize.lm)
+
+\end{verbatim}
+
+For our purposes, you can ignore most of the information displayed.  Look at the \texttt{Coefficients:} table. Notice the three asterisks at the end of the line.  This means that there is a very highly significant relationship between species richness and island area ($p = 1.13 \times 10^{-7}$.  To get a sense of how much variation in species richness is due to island size, look for the value that follows \texttt{Adjusted R-squared}. The value will be around $0.997$, plus or minus a few thousandths.  $R^2$ is a measure of how much variation in the dependent variable (species richness) is explained by the dependent variable (island area). $R^2$ varies from 0 (none of the variation is explained) to 1 (100\% of the variation is explained). Here, $R^2 \approx 0.997$ means that island size accounts for almost all of the island richness on the islands, at least for this data set and regression model.
+
+Plot the data and regression results.  The \texttt{abline()} function plots the regression line from the linear regression.  Use a tilde (\textasciitilde) between the variables to be plotted.
+
+\begin{verbatim}
+plot(lspecies ~ lsize, data=herp, pch=19, cex=0.5, xlim=c(0,12), xlab = 
+    'Island Size', ylab='Species Richness')
+text(lspecies ~ lsize, data=herp, labels=herp$island, pos=2, offset=0.5, cex=0.8)
+abline(lsize.lm)
+\end{verbatim}
+
+Save the plot and upload to the dropbox. You and your partner should do this.
+
+
+\section{Longhorn Beetles in the Florida Keys}
+
+This data set contains species richness for a family of beetles, Cerambycidae, that were surveyed on the Florida Keys. This data set contains both island size and distance (from what, I do not know).  Read and log transform the data, then perform the regression analysis.  For these data, you will use both island size and island distance.  You will do two regression analyses and plot the results of both.
+
+\begin{verbatim}
+beetle <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/beetles.csv', header=TRUE)
+
+beetle$lspecies <- log(beetle$species)
+beetle$lsize <- log(beetle$size)
+beetle$ldist <- log(beetle$distance)
+
+\end{verbatim}
+
+\begin{verbatim}
+lsize.lm <- lm(lspecies ~ lsize, data=beetle)
+summary(lsize.lm)
+
+ldist.lm <- lm(lspecies ~ ldist, data=beetle)
+summary(ldist.lm)
+
+\end{verbatim}
+
+Are your results significant?  What is the $R^2$ value?  What is the significance level (the $p$ value)?  Plot both results side by side:
+
+\begin{verbatim}
+op <- par(mfrow=c(1,2))
+
+plot(lspecies ~ lsize, data=beetle, xlab='Island Size', ylab='Species Richness')
+abline(lsize.lm)
+
+plot(lspecies ~ ldist, data=beetle, xlab='Island Distance', ylab='Species Richness')
+abline(ldist.lm)
+
+par(op)
+\end{verbatim}
+
+After you have plotted the results, ask me to come over so that you can explain your interpretation of the figures to me.
+
+\section{Mammals in the Mountains}
+
+This data set contains species richness for small mammals found on mountain tops. This data set contains both mountain top size, distance to the nearest neighboring mountain top, and distance to the nearest non-mountainous mainland.  Read and log transform the data, then perform the regression analysis.  For these data, you will use mountain size, distance to the next mountain, and distance to the mainland.  You will do three regression analyses and plot their results.
+
+
+\begin{verbatim}
+mtn <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/mammals.csv', header=TRUE)
+
+mtn$lspecies <- log(mtn$species)
+mtn$lsize <- log(mtn$size)
+mtn$ldistmtn <- log(mtn$dist_mtn)
+mtn$ldistmain <- log(mtn$dist_mainland)
+
+lsize.lm <- lm(lspecies ~ lsize, data=mtn)
+summary(lsize.lm)
+
+ldistmtn.lm <- lm(lspecies ~ ldistmtn, data=mtn)
+summary(ldistmtn.lm)
+
+ldistmain.lm <- lm(lspecies ~ ldistmain, data=mtn)
+summary(ldistmain.lm)
+
+\end{verbatim}
+
+Are the results significant?  Plot all three analyses side by side:
+
+\begin{verbatim}
+op <- par(mfrow=c(1,3))
+
+plot(lspecies ~ lsize, data = mtn, xlab = 'Mountain Size',  ylab = 'Species Richness')
+abline(lsize.lm)
+
+plot(lspecies ~ ldistmtn, data=mtn, xlab = 'Mountain Distance', ylab = 'Species Richness')
+abline(ldistmtn.lm)
+
+plot(lspecies ~ ldistmain, data=mtn, xlab = 'Mainland Distance', ylab = 'Species Richness')
+abline(ldistmain.lm)
+
+par(op)
+\end{verbatim}
+
+Once again, invite me to your table so that you can interpret your results for me.
+
+\section{Cutting Down the Keys!}
+
+As mentioned in lecture, one test of MacArthur and Wilson's Equilibrium Theory involved changing the size of mangrove islands by cutting down mangrove trees around the perimeter of the island.  They determined species richness for arthropods (insect and spiders, mostly) in 1969, prior to removing the mangroves. They then resurveyed in 1970 and 1971.  After the 1970 survey, they reduced the island size even more. 
+
+How would you predict species richness to change as island size is reduced?
+
+This data set contains species richness and island size before and after trimming.  Read in the data set, and then log transform the variables.
+
+\begin{verbatim}
+arthro <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/arthropods.csv', header=TRUE)
+
+arthro$lspecies <- log(arthro$species)
+arthro$lsize <- log(arthro$size)
+
+\end{verbatim}
+
+The data set has a control island (IN1) which you should not include in the regression analysis or plot of the regression analysis.  However, you will include it in a separate plot.  So,  create a new data set that contains all of the data except for control island IN1.
+
+\begin{verbatim}
+#copy all of the data except for islands matching IN1
+arthro.new <- subset(arthro, island!='IN1')  
+
+lsize.lm <- lm(lspecies ~ lsize, data=arthro.new)
+summary(lsize.lm)
+
+plot(lspecies ~ lsize, data=arthro.new, ylab='Species Richness', xlab='Island Size')
+abline(lsize.lm)
+
+\end{verbatim}
+
+I want you to view the effect of size reduction independently for each island.  You could build a plot separately for each island but that would be time-consuming.  Instead, you will use an R package called \texttt{lattice}.  It will produce a separate graph for each of the nine islands monitored, including control island IN1. You will use the untransformed data.
+
+
+\begin{verbatim}
+library(lattice)	# this loads the lattice package.
+
+\end{verbatim}
+
+%\newpage
+
+For the commands below, type them as shown. Press the return key at the end of each line. Every time you press return, the R prompt will be a $+$ sign, showing that it is waiting for you to continue the command.  The command will not work if you type it all on a single line. Be sure to type three periods where indicated, too.
+
+\begin{verbatim}
+
+xyplot(species ~ size | island, data=arthro, aspect='xy', type='l', 
+    xlab='Island Size',  ylab= 'Species Richness', 
+    panel=function(x,y,...) {
+    panel.text(x, y, arthro$year, cex = 0.7, pos = 4, offset = 0)
+    panel.xyplot(x, y,...) })
+
+\end{verbatim}
+
+How do you interpret the figure? Does each island show a reduction in species richness?  Did the species richness decrease at the same rate among the different islands?
+
+\end{document}  

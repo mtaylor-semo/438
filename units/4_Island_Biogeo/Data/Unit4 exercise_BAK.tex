@@ -1,0 +1,222 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amsmath,amssymb}
+\usepackage[margin=10pt, font=small, labelsep=period]{caption}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%\usepackage{txfonts}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[pdftex, colorlinks=false, allbordercolors={1 1 1}]{hyperref}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{listings}
+	\lstset{breaklines=true, basicstyle=\ttfamily\small, showstringspaces=false}
+\usepackage{titlesec}
+	\titleformat*{\section}{\large\bfseries}
+\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\rhead{\scriptsize Pg. \thepage} % clear all header and footer fields
+	\renewcommand{\headrulewidth}{0pt}
+%	\fancyhead[R]{\footnotesize Pg \thepage}
+
+\fancypagestyle{firststyle}{%
+	\fancyhf{}
+	\lhead{\small \bfseries BI 438 / 638: Biogeography}
+	\rhead{\small \bfseries Island Biogeography}
+}
+
+\title{Island Biogeography}
+\author{}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+%\maketitle
+%\section{}
+%\subsection{}
+\thispagestyle{firststyle}
+
+%For this simple exercise, you will plot species abundance against island size or distance from a source, or both.  
+
+
+\section{Caribbean Amphibians and Reptiles}
+
+For your first analysis, you will plot species richness against island area for reptiles and amphibians on seven islands in the Caribbean. You will also perform a simple linear regression to determine if the relationship is significant. First, read in the data.
+
+\begin{lstlisting}
+herp <- read.csv(`http://mtaylor4.semo.edu/~goby/biogeo/herps.csv', header=TRUE)
+
+\end{lstlisting}
+
+Log-transform the variables of interest: number of species and island area. The log transformation will highlight the linear relationship between the variables. I put the letter ``l'' in front of the new variable names to indicate that they contain log-transformations of the original data.
+
+\begin{lstlisting}
+herp$lspecies <- log(herp$species)
+herp$lsize <- log(herp$size)
+
+\end{lstlisting}
+
+Perform a simple linear regression analysis so that a regression line can be plotted in the graph. The results of the analysis will be stored in the variable \texttt{lsize.lm}
+
+\begin{lstlisting}
+lsize.lm <- lm(lspecies ~ lsize, data=herp)
+
+\end{lstlisting}
+
+Are the results significant?  To find out, type
+
+\begin{lstlisting}
+summary(lsize.lm)
+
+\end{lstlisting}
+
+For our purposes, you can ignore most of the information displayed.  Look at the \texttt{coefficients:} table. Notice the three asterisks at the end of the line.  This means that there is a very highly significant relationship between species richness and island area ($p = 1.13 \times 10^{-7}$.  To get a sense of how much variation in species richness is due to island size, look for the value that follows \texttt{Adjusted R-squared}. The value will be around $0.9969$.  $R^2$ is a measure of how much variation in the dependent variable (species richness) is explained by the dependent variable (island area). $R^2$ varies from 0 (none of the variation is explained) to 1 (100\% of the variation is explained). Here, $R^2 = 0.9969$ means that island size accounts for almost all of the island richness on the islands, at least for this data set and regression model.
+
+Plot the data and regression results.  The \texttt{abline()} function plots the regression line from the linear regression.  Use a tilde (\textasciitilde) between the variables to be plotted.
+
+\begin{lstlisting}
+plot(lspecies~lsize, data=herp, pch=19, cex=0.5, xlim=c(0,12), xlab = `Island Size', ylab=`Species Richness')
+text(lspecies~lsize, data=herp, labels=herp$island, pos=2, offset=0.5, cex=0.8)
+abline(lsize.lm)
+\end{lstlisting}
+
+Save the plot and upload to the dropbox. You and your partner should do this.
+
+
+\section{Longhorn Beetles in the Florida Keys}
+
+This data set contains species richness for a family of beetles, Cerambycidae, that were surveyed on the Florida Keys. This data set contains both island size and distance (from what, I do not know).  Read and log transform the data, then perform the regression analysis.  For these data, you will use both island size and island distance.  You will do two regression analyses and plot the results of both.
+
+\begin{lstlisting}
+beetle <- read.csv(`http://mtaylor4.semo.edu/~goby/biogeo/beetles.csv', header=TRUE)
+
+beetle$lspecies <- log(beetle$species)
+beetle$lsize <- log(beetle$size)
+beetle$ldist <- log(beetle$distance)
+
+\end{lstlisting}
+
+\begin{lstlisting}
+lsize.lm <- lm(lspecies~lsize, data=beetle)
+summary(lsize.lm)
+
+ldist.lm <- lm(lspecies~ldist, data=beetle)
+summary(ldist.lm)
+
+\end{lstlisting}
+
+Are your results significant?  What is the $R^2$ value?  What is the significance level (the $p$ value)?  Plot both results side by side:
+
+\begin{lstlisting}
+op <- par(mfrow=c(1,2))
+
+plot(lspecies~lsize, data=beetle, xlab=`Island Size', ylab=`Species Richness')
+abline(lsize.lm)
+
+plot(lspecies~ldist, data=beetle, xlab=`Island Distance', ylab=`Species Richness')
+abline(ldist.lm)
+
+par(op)
+\end{lstlisting}
+
+\section{Mammals in the Mountains}
+
+This data set contains species richness for small mammals found on mountain tops. This data set contains both mountain top size, distance to the nearest neighboring mountain top, and distance to the nearest non-mountainous mainland.  Read and log transform the data, then perform the regression analysis.  For these data, you will use mountain size, distance to the next mountain, and distance to the mainland.  You will do three regression analyses and plot their results.
+
+
+\begin{lstlisting}
+mtn <- read.csv(`http://mtaylor4.semo.edu/~goby/biogeo/mammals.csv', header=TRUE)
+
+mtn$lspecies <- log(mtn$species)
+mtn$lsize <- log(mtn$size)
+mtn$ldistmtn <- log(mtn$dist_mtn)
+mtn$ldistmain <- log(mtn$dist_mainland)
+
+lsize.lm <- lm(lspecies~lsize, data=mtn)
+summary(lsize.lm)
+
+ldistmtn.lm <- lm(lspecies~ldistmtn, data=mtn)
+summary(ldistmtn.lm)
+
+ldistmain.lm <- lm(lspecies~ldistmain, data=mtn)
+summary(ldistmain.lm)
+
+\end{lstlisting}
+
+Are the results significant?  Plot all three analyses side by side:
+
+\begin{lstlisting}
+op <- par(mfrow=c(1,3))
+
+plot(lspecies ~ lsize, data = mtn, xlab = `Mountain Size',  ylab = `Species Richness')
+abline(lsize.lm)
+
+plot(lspecies~ldistmtn, data=mtn, xlab = `Mountain Distance', ylab = `Species Richness')
+abline(ldistmtn.lm)
+
+plot(lspecies~ldistmain, data=mtn, xlab = `Mainland Distance', ylab = `Species Richness')
+abline(ldistmain.lm)
+
+par(op)
+\end{lstlisting}
+
+\section{Cutting Down the Keys!}
+
+As mentioned in lecture, one test of MacArthur and Wilson's Equilibrium Theory involved changing the size of mangrove islands by cutting down mangrove trees around the perimeter of the island.  They determined species richness for arthropods (insect and spiders, mostly) in 1969, prior to removing the mangroves. They then resurveyed in 1970 and 1971.  After the 1970 survey, they reduced the island size even more. 
+
+How would you predict species richness to change as island size is reduced?
+
+This data set contains species richness and island size before and after trimming.  Read in the data set, and then log transform the variables.
+
+\begin{lstlisting}
+arthro <- read.csv(`http://mtaylor4.semo.edu/~goby/biogeo/arthropods.csv', header=TRUE)
+
+arthro$lspecies <- log(arthro$species)
+arthro$lsize <- log(arthro$size)
+
+\end{lstlisting}
+
+The data set has a control island (IN1) which you should not include in the regression analysis or plot of the regression analysis.  However, you will include it in a separate plot.  So,  create a new data set that contains all of the data except for control island IN1.
+
+\begin{lstlisting}
+#copy all of the data except for islands matching IN1
+arthro.new <- subset(arthro, island!=`IN1')  
+
+lsize.lm <- lm(lspecies~lsize, data=arthro.new)
+summary(lsize.lm)
+
+plot(lspecies~lsize, data=arthro.new, ylab=`Species Richness', xlab=`Island Size')
+abline(lsize.lm)
+
+\end{lstlisting}
+
+I want you to view the effect of size reduction independently for each island.  You could build a plot separately for each island but that would be time-consuming.  Instead, you will use an R package called \texttt{lattice}.  It will produce a separate graph for each of the nine islands monitored, including control island IN1. You will use the untransformed data.
+
+
+\begin{lstlisting}
+library(lattice)	# this loads the lattice package.
+
+\end{lstlisting}
+
+%\newpage
+
+For the commands below, you \emph{must} type them as shown. Wherever you see \texttt{<return>}, press the return key, then type the next line. Every time you press return, the R prompt will be a $+$ sign, showing that it is waiting for you to continue the command.  The command will not work if you type it all on a single line. Be sure to type three periods where indicated, too.
+
+\begin{lstlisting}
+
+xyplot(species~size | island, data=arthro, aspect=`xy', type=`l', xlab=`Island Size', ylab=`Species Richness', <return>
+	panel=function(x,y,...) { <return>
+	panel.text(x, y, arthro$year, cex = 0.7, pos = 4, offset = 0) <return>
+	panel.xyplot(x, y,...) })
+
+\end{lstlisting}
+
+
+\end{document}  

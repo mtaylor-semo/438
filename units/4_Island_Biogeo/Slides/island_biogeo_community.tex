@@ -1,0 +1,163 @@
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{img/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{microtype}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+
+\title{Island Biogeography: Community Assembly}
+
+\author[Biogeography]{Biogeography}
+
+\date{Fall 2013} % without \date command, current date is supplied
+
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+
+%\printclassoptions
+
+\newthought{MacArthur and Wilson's}\sidenote{Read pages 559--569; 574--593; 595--599; skim 599--613.} early models treated all species as equally likely to colonize any island and, once colonized, equally likely to go extinct. If so, then communities on island should be random subsets of the mainland species pool.  Each island would have a different random community.  They knew this was not true.  Instead, island communities were composed of species with certain dispersal, colonization and survivorship abilities.  These traits, coupled with the physical environment of the islands and surrounding unsuitable habitat, determined the structure of island communities. 
+
+\section{Island Assembly Guide}
+
+If island communities are not random, then what abilities do successful island species have that increase their chance of success on islands?  Answer these two questions before reading ahead.
+\begin{enumerate}
+	\item Which are more likely to be able to colonize an island, generalist or specialist species? Why?
+	\item Which are more likely to be able to colonize an island, species with low or high vagility?\sidenote{Vagility is the ability of an organism to move through the environment.} Why?  
+\end{enumerate}
+	
+the available evidence suggests that species that initially colonize newly formed islands have $r$-selected life histories\sidenote{Look up $r$ and $K$ selection if you are not familiar with them. $r$ and $K$ are derived from the population growth equation $\frac{\Delta N}{\Delta t} = rN(\frac{N-K}{K}).$} although, because new island formation is rarely observed, studies are necessarily limited. Initial colonizers are species with rapid growth, early maturity, high reproductive output, and broad fundamental niches.  Once established, insular communities are more amenable to immigration by $K$-selected species. This concept is similar to classic ecological patterns of terrestrial succession.  
+
+Not all $r$- and $K$-selected species are able to colonize islands because the ability to disperse across unsuitable habitat depends on vagility.  Species with high vagility are more likely to successfully colonize islands.  For example, islands may be quickly colonized flying birds and insects.  Mammals are rare on oceanic islands but one group is often present on even very remote oceanic islands?  Which group do you think it is? If you think you know the answer, send me an email with the name of the group for a small reward. 
+
+What about plants?  What types of dispersal mechanisms are necessary for plants to be successful island colonizers?  Plants with seeds that are ingested or attach to flying colonizing animals are likely to establish early. Wind-borne seeds may be able to reach nearby islands, especially for light weight seeds.  Plants like palms and mangroves that have floating seeds can also disperse great distances on ocean currents.
+
+What about freshwater fishes?  Can freshwater fishes make it to oceanic islands?  Most fishes cannot tolerate salt water but some fishes, such as killifishes, can tolerate salt water for brief periods of time. Salt tolerant fishes can successfully colonize nearby islands but would not likely reach distance islands.  For example, most Caribbean islands have one or a few species of killifishes. Distant oceanic islands in the Pacific Ocean do have a few fishes (gobies), that live in freshwater.  The gobies have a marine larval stage that allows them to disperse among the many Pacific islands.  
+
+\section{Dispersal Filters}
+\begin{marginfigure}%
+	\includegraphics{filter_sunda}
+\end{marginfigure} 
+\begin{marginfigure}%
+	\includegraphics{filter_alaska}
+\end{marginfigure} 
+
+The ability to disperse among insular habitats depends on 1) the dispersal ability of the organism and 2) the unsuitability of the surrounding environment.  The unsuitable environment acts as a \textit{filter}\sidenote{Read pages 194--196 about dispersal and filters.} to dispersal.  Some species with limited tolerance for the unsuitable habitat will probably be unable to disperse far. Species with greater tolerance for the unsuitable environment with have a greater chance of successfully dispersing to islands, especially those isolated by large expanses of unsuitable habitat.  
+
+Species respond differently to biogeographic barriers and filters, and the interactions among species has an important role in the dynamic nature of insular communities.  We'll look first at some biogeographic processes that govern assembly of island communities, then look at some of the evolutionary trends.  We'll begin with assembly and the selective nature of immigration.
+
+\section{Nestedness and Selective Immigration}
+\begin{marginfigure}%
+	\includegraphics{nestedness_ants}
+	\includegraphics{nestedness_selective_immigration}
+\end{marginfigure} 
+
+If we consider the distribution of species richness along a linear arrangement of insular habitats relative to a source population, a rather distinctive pattern emerges. Islands closer to the source will have a large number of taxa in common with the source population, while more distant islands will have fewer species, most or all of which will be a subset of the closer islands. This pattern is called \textit{nestedness}, which refers to the pattern that the species-poor assemblages found on far islands are ``nested'' within the more species-rich assemblages found on the nearby islands. Nested patterns emerge due to biogeographic filters causing selective immigration due to different dispersal abilities among taxa.
+
+The figure shows the distribution of ants on South Pacific islands north of Australia.  The lines show the eastern distribution limits for various ant taxa.  \textit{Diacamma} (species 1) extends only to New Guinea, but no farther to the east.  \textit{Myoponone} is also on New Guinea, and some islands slightly farther east, but no farther.  The last species of \textit{Trachymesopus} is present even on the very distant islands. All four species are found in New Guinea, but the number of ant species declines as the islands become more isolated from the mainland source.  The most distant islands contain a nested subset of species found on New Guinea.   
+
+Which taxon, \textit{Diacamma} or \textit{Trachymesopus}, do you think has greater dispersal ability or greater tolerance to the intervening environment? Can you explain this pattern in terms of biogegeographic filters? \textit{Trachymesopus} has the broadest range because it is not filtered out by limited dispersal ability or intolerance to the intervening environment.  \textit{Diacamma}, in contrast, does have limited dispersal ability or intolerance (or both), its distribution is limited by biogeographic filters.  How do you predict \textit{Myoponone} to compare to the two taxa? 
+
+
+\section{Nestedness and Selective Extinction}
+\begin{marginfigure}%
+%	\includegraphics{nestedness_selective_extinction_before}
+	\includegraphics{nestedness_selective_extinction_after}
+\end{marginfigure} 
+
+Nested patterns may also arise as a result of selective extinction due to different resource requirements among taxa.  Some taxa may be able to find sufficient resources on islands of nearly any size.  Other taxa, however, may have minimum resource requirements that cannot be met on smaller islands.  Therefore, a linear arrangement of islands by size may show nestedness.  Species occurring on most or all islands are those whose resource needs are met on most or all of the islands, even the smallest islands.  Other taxa are filtered out once island size becomes too small to meet resource needs.  Together, selective immigration and selective extinction contribute to nestedness and the nonrandom distribution of many taxa. 
+
+\section{Insular Distribution Function}
+\begin{marginfigure}%
+	\includegraphics{insular_distribution_function}
+\end{marginfigure} 
+
+Selective immigration and extinction interact to species-specific patterns of distribution among islands. Each species will have a unique distribution compared to other species.  Remember that selective immigration is based on island isolation and selective extinction is based on island area.  For a species to be present on an island, the rate of immigration must be higher than the rate of extinction.  The island must have sufficient resources to minimize the chance of extinction.
+
+ Assume for a moment that we have an island that is very isolated.  Isolated islands tend to have very low rates of immigration.  If the island is too small, it may not provide the resources needed by the immigrant species so it goes extinction.  If the island sufficiently large, though, it may provide sufficient resources so that the extinction rate remains lower than the immigration rate. If so, the population can remain established on the island. In contrast, a smaller island may have fewer resources but if it is close enough to the source, immigration can remain high enough to maintain the population (recall the \textit{rescue effect}). 
+ 
+This slides illustrates these predictions as a function of island area and isolation.  If an island is too small or too isolated, the species will not be present. However, given the proper combination of size and distance, the species will be present.  The dashed line represents the combination below which the species will be absent, and above which the species will be present. The second figure shows an example based on the masked shrew, which fits the pattern very well.  This pattern has been found in a variety of island organisms. It's a good pattern to remember because this pattern has implications for conservation of species.  
+
+Immigration and However, as we said earlier, the presence or absence of a species on an island is not solely a function of immigration and extinction, but also of interactions with other species on the island.
+
+\section{Interspecific Interactions in Island Communities}
+Immigration and extinction are not the only processes that determine whether a species is present on an island.  Island species are part of a larger community with many types of interspecific interactions, like predation and competition. Because the types of interspecific interactions are unique for each community, these interactions can be difficult to add to any model of island biogeography. Still, studies have revealed a number of distinct patterns due to interspecific interactions that can be summarized by three intertwined ideas.
+
+First, ecological similar species tend to have mutually exclusive distributions.  This is a basic ecological concept: no two species can occupy the same niche.  The limited resources available on islands may heighten competitive interactions between ecologically similar species, leading to the competitive exclusion of the weaker competitor.  
+
+Next,  insular species tend to exhibit ecological release.  The niche occupied by insular species tends to broaden relative to their conspecifics at the source population. The realized niche of the species becomes closer to the fundamental niche. The niche occupied by the island population tends to be broader than conspecifics\sidenote{Conspecifics are individuals of the same species.} at the source population.
+
+Finally, species-poor islands have few species but the species that are present often have very high abundance and density. Why?  The island has few species and none are ecologically similar so interspecific competition is minimal.  Each species experiences ecological release.  The broader niches allow each population to exploit a wider range of the resources that are available on the island, supporting more individuals.  Another way to think about this is through net primary production. The net primary production in an ecosystem supports a finite amount of biomass. In mainland ecosystems, the total supported biomass is divided among relatively few individuals of many species. With island ecosystems, because few species are present, a comparable amount of productivity supports many individuals of those few species.
+
+\section{Checkerboard Distribution}
+\begin{marginfigure}
+	\includegraphics{checkerboard_distribution}
+\end{marginfigure} 
+The different types of interspecific interactions can lead to a patchy, non-overlapping distribution of closely related or ecologically similar taxa in an island archipelago.  Jared Diamond coined the phrase ``checkerboard'' distribution for this pattern.  He studied the distribution of two ecologically similar species of flycatchers (genus \textit{Pachycephala}) in the Bismarck Islands, a Pacific archipelago east of New Guinea.  He found that each island had only one of the two species, even on the largest islands.  
+
+\textbf{I have noticed a similar phenomenon at least once in the gobies that I studied.  One species, the sharknose goby was quite abundant.  A second species, \textit{E. randalli}, was extremely rare on the main island.  However, only a few kilometers away on a small island, the situation was reversed.}
+
+
+\section{Comparing Insular Distribution Functions}
+\begin{marginfigure}
+	\includegraphics{insular_distribution_pachychephala}
+	\includegraphics{insular_distribution_ptilinopus}\\
+\end{marginfigure}
+The previous figure showed that the \textit{Pachycephala} species were distributed across the archipelago, but discovering  associations between particular groups of species based on island characteristics and interspecific interactions can be difficult.  One technique that can provide clues is the insular distribution function discussed above.  If you comparing insular distribution functions for ecologically similar species, you may uncover insular characteristics that are suitable for both species. Only then can you begin to understand how interspecific interactions, like competition, create the final checkerboard distributions of the species. 
+
+This plot shows the insular distribution functions for the same two species of \textit{Pachycephala} discussed in the previous section.   The ``D'' of the checkerboard figure above corresponds to \textit{P. melanura dahli}, the Mangrove Golden Whistler. The insular distribution function reveals that \textit{Pachycephala melanura} is found exclusively on smaller islands that are not particularly isolated. The ``P'' of the checkerboard figure above corresponds \textit{P. pectoralis}, the Australian Golden Whistler, which is found on larger islands.  Most islands are not especially isolated although the species is found on one distant island.  Notice that there is a island size overlap between the two species (near the 5 on the Y-axis) yet the two species co-occur.  Some islands in this size range are home to \textit{P. melanoma} while others are home to \textit{P. pectorals}, suggesting that competitive exclusion may prevent the two species from co-occurring on these islands.  The species that is present may have been the one to colonize the island first.  You should compare the similar figures in the text (we did another in lecture) to practice comparing and interpreting insular distribution functions among taxa.  
+
+\section{Non-Random Combinations}
+\begin{marginfigure}
+	\includegraphics{checkerboard_cuckoo_table}\\
+	\includegraphics{checkerboard_hummingbird_table}
+\end{marginfigure}
+
+Another quick way to study the ``checkerboard'' distribution for larger groups of ecologically similar species is to compare the observed combinations to those expected if distributions were random.  For example, four species of cuckoo doves are distributed across the Bismarck Islands.  With four species, up to 15 unique combinations of 1-4 of the species can occur on any given island, if distributions were random.  However, only six of these combinations are actually found and two species, M and N, never co-occur, and all four species never co-occur. Notice here that in the two species combination, A and M co-occur, while in the three species combo, A and N co-occur.  As with the Golden Whistlers, this may due to which species arrived first, M or N.  Once the one species is present, the other species is competitively excluded.
+
+A study of hummingbirds in the Caribbean island found that a greater number of species pairs are found where the two species differ in bill size that would be expected by chance.  Far fewer pairs are found with similar bill sizes.  This strongly suggests ecological segregation based on foraging.  Even more pronounced, when the co-occurring species are of similar size, they tend to segregate by altitude.  Similar patterns have been observed in some reef fishes.  Thus, competition for limited resources seems to play an important role in structuring insular communities.
+
+\section{Ecological Release and Niche Expansion}
+\begin{marginfigure}
+	\includegraphics{voles}\\
+%	\includegraphics{niche_shift_shrews}
+\end{marginfigure}
+
+Recall also that density of individuals increases on species-poor islands, and that species broaden or even shift the niches they occupy.  This is often due to reduced interspecific competition, especially given the ecologically similar species tend to be excluded from co-occurring.  Another cause of density increase and niche expansion may be due to a lack of predators or prey.
+
+For example, the niches occupied and relative abundance of meadow voles changes depending on whether one of their primary predators, the short-tailed shrew, is present or absent.  On the mainland, voles have relatively low abundance and are primarily found in the grasslands.  On the islands, lack of competition for the meadow voles causes their relative abundance to increase.  If shrews are also on the island, then meadow voles remain restricted to the grasslands.  If shrews are absent, however, then voles broaden their niche to include forested areas.
+
+This suggests that the meadow voles experience ecological release\sidenote{Ecological release is the expansion of habitat or food use due to reduced interspecific competition.} in the absence of a primary predator.  The meadow vole may actually prefer forest habitats but is excluded due to the shrew predator.  Upon release from the predator, the vole can occur in the preferred habitat.  
+
+\section{Island Biogeography Summary}
+
+Thus, we see that insular communities are structured by several interacting factors;
+\begin{itemize}
+	\item island area and isolation
+	\item rate of immigration and extinction
+	\item species interactions such as competition and predator-prey relationships
+\end{itemize}
+
+\end{document}

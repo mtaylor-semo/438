@@ -1,0 +1,9 @@
+base
+codetools
+datasets
+graphics
+grDevices
+knitr
+methods
+stats
+utils

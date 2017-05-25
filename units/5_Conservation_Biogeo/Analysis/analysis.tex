@@ -1,0 +1,341 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}%}%
+	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+\begin{document}
+
+\begin{frame}[plain]{Mac users need to install XQuartz.}
+
+	\hangpara Otherwise, you'll miss out on the groovy 3-D plots.
+
+\begin{block}{Download XQuartz 2.7.8}
+	\includegraphics[height=1cm]{xlogo} \quad http://www.xquartz.org 
+\end{block}
+\end{frame}
+
+
+
+
+
+\begin{frame}[plain]{Do the preliminary set-up for your analysess.}
+
+	\hangpara Load / install R packages needed, and set default colors for plots.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/color.r') 
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[plain]{Set up Georgia crayfishes and fishes for analyses.}
+
+	\hangpara Read in the presence / absence data.
+	
+	\hangpara Calculate similarity of watersheds based on shared species.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/gacrayfish.r') \pause
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/gafish.r')
+\end{block}
+\end{frame}
+
+
+\begin{frame}[plain]{Perform a cluster analysis.}
+
+\hangpara Watersheds will be clustered together based on similarity. 
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/gacrayfishcluster.r')
+\end{block}
+
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ga_crayfish_cluster}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]{Perform a principal coordinates analysis.}
+
+\hangpara Ordination procedure that reduces the number of dimensions while maintaining Euclidean distances. Plot the first two dimensions.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/crayfishpco.r')
+\end{block}
+
+
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ga_crayfish_pco.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]
+	\centering
+	\includegraphics[height=1\textheight]{georgia_watersheds_crayfishes}
+\end{frame}
+
+
+\begin{frame}[plain]{Now, plot 3 dimensions at the same time.}
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/crayfish3d.r')
+\end{block}
+
+	\hangpara Expand the window to full size. 
+	
+	\hangpara Right-click to zoom in and out. Left-click to rotate.
+
+\end{frame}
+
+\begin{frame}[plain]{Now, the fishes. Perform a cluster analysis.}
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/gafishcluster.r')
+\end{block}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ga_fish_cluster.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+
+\begin{frame}[plain]{Next, the principal coordinates analysis for fishes.}
+
+\hangpara Study the two dimensional plot for patterns.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/fishpco.r')
+\end{block}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ga_fish_pco.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]
+	\centering
+	\includegraphics[height=1\textheight]{georgia_watersheds_fishes}
+\end{frame}
+
+
+\begin{frame}[plain]{Next, the principal coordinates analysis for fishes.}
+
+	\hangpara Now, 3-D.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/fish3d.r')
+\end{block}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{procrustes}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]{Do watersheds show similar distributions in ordinated space when fishes and crayfishes are compared?}
+
+	\hangpara Perform a Procrustes analysis.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/procrustes.r')
+\end{block}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ga_procrustes.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]{Do watersheds show similar distributions in ordinated space when compared between fishes and crayfishes?}
+
+	\hangpara Are the results significant?  If so, then the alignment of the two PCO analyses in ordination space is not random. The two are similar.
+
+\begin{block}{Type}
+	protest(fish.sc, crayfish.sc, permutations = 9999)
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]{Now, let's do Missouri crayfishes, then fishes.}
+
+	\hangpara Read in the presence / absence data.
+	
+	\hangpara Calculate similarity of watersheds based on shared species.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/mocrayfish.r') \pause
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/mofish.r')
+\end{block}
+\end{frame}
+
+\begin{frame}[plain]{Perform the cluster analyses for both taxa.}
+
+	\hangpara Watersheds will be clustered together based on similarity. 
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/mocrayfishcluster.r')
+	\pause
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/mofishcluster.r')
+\end{block}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mo_crayfish_cluster.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mo_fish_cluster.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]{Next, the principal coordinates analysis for crayfishes.}
+
+	\hangpara Study the two dimensional plot for patterns.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/fishpco.r')
+\end{block}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mo_crayfish_pco.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]
+	\centering
+	\includegraphics[height=1\textheight]{mo_watersheds_crayfishes}
+\end{frame}
+
+
+\begin{frame}[plain]{Next, the principal coordinates analysis for fishes.}
+
+	\hangpara Study the two dimensional plot for patterns.
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/fishpco.r')
+\end{block}
+\end{frame}
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mo_fish_pco.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}[plain]
+	\centering
+	\includegraphics[height=1\textheight]{mo_watersheds_fishes}
+\end{frame}
+
+
+\begin{frame}[plain]{Perform the Procrustes analysis.}
+
+
+\begin{block}{Type}
+	source(`http://mtaylor4.semo.edu/~goby/biogeo/procrustes.r')
+	\pause
+
+	protest(fish.sc, crayfish.sc, permutations = 9999)
+\end{block}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{mo_procrustes.pdf}
+}
+\begin{frame}[plain]
+\end{frame}
+}
+
+
+\end{document}

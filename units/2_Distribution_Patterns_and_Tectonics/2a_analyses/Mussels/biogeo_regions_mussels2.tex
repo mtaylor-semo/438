@@ -1,0 +1,233 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+%\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Biogeographic Regions \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Biogeographic Regions}
+\author{Freshwater Mussels II}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+
+You recently learned that the world's continental landmasses are divided
+into seven major biogeographic regions. \textbf{List below the seven
+regions, without looking at any source}.
+
+\begin{multicols}{2}
+a.\vspace{0.5\baselineskip}
+
+b.\vspace{0.5\baselineskip}
+
+c.\vspace{0.5\baselineskip}
+
+d.\vspace{0.5\baselineskip}
+
+\columnbreak
+
+e.\vspace{0.5\baselineskip}
+
+f.\vspace{0.5\baselineskip}
+
+g.\vspace{0.5\baselineskip}
+
+\end{multicols}
+
+The seven major regions were originally determined in large part because
+mammals and birds showed similar patterns of endemism associated with
+the different landmasses. Today, you will learn whether three major
+groups of freshwater organisms (fishes, mussels, crayfishes) show
+patterns of endemism similar to their terrestrial counterparts.
+
+Work together in pairs to answer the following questions.
+
+%1
+\begin{enumerate}[leftmargin=*]
+\item Do you think the three freshwater groups will show patterns of
+endemism associated with the seven biogeographic regions? Explain why or
+why not.\vspace{10\baselineskip}
+
+\end{enumerate}
+
+You were lucky enough to draw freshwater mussels for this exercise. You
+have been given a table of data that lists the Subfamilies (-inae),
+Tribes (-ini) and genera of freshwater mussels of the family Unionidae.
+The table also indicates the number of species present for each genus in
+each biogeographic region.
+
+%2
+\begin{enumerate}[resume, leftmargin=*]
+\item How many genera of mussels are found in each biogeographic region?
+
+\begin{multicols}{2}
+a.\vspace{0.5\baselineskip}
+
+b.\vspace{0.5\baselineskip}
+
+c.\vspace{0.5\baselineskip}
+
+d.\vspace{0.5\baselineskip}
+
+e.\vspace{0.5\baselineskip}
+
+f.\vspace{0.5\baselineskip}
+
+g.\vspace{0.5\baselineskip}
+\end{multicols}
+
+%3
+\item  How many species of mussels are found in each biogeographic
+region?
+
+\begin{multicols}{2}
+a.\vspace{0.5\baselineskip}
+
+b.\vspace{0.5\baselineskip}
+
+c.\vspace{0.5\baselineskip}
+
+d.\vspace{0.5\baselineskip}
+
+e.\vspace{0.5\baselineskip}
+
+f.\vspace{0.5\baselineskip}
+
+g.\vspace{0.5\baselineskip}
+\end{multicols}
+
+%4
+\item Which region has the greatest number of genera? Which region has the
+least number of genera? Which region has the greatest number of species?
+The least? Are they the same regions you listed for the genera?
+
+\begin{multicols}{2}
+
+Greatest number of genera: \vspace{2\baselineskip}
+
+Least number of genera: \vspace{2\baselineskip}
+
+ Greatest number of species: \vspace{2\baselineskip}
+ 
+ Least number of species: \vspace{2\baselineskip}
+ 
+ \end{multicols}
+ 
+ \vspace{\baselineskip}
+ 
+%5
+\item List the tribes that are found in more than one biogeographic region.
+Name the regions for each tribe you list. \textbf{Do not include the
+\textit{incertae sedis} genera with this question}.\vspace*{\stretch{1}}
+
+%6
+\item Do any genera show a Pangaea, Laurasian, or Gondwanan distribution?
+If so, list the genera, and then explain how you determined which
+distribution patterns were appropriate.\vspace*{\stretch{1}}
+
+\newpage
+
+%7
+\item Do any of the tribes show a Pangaean, Laurasian or Gondwanan
+distribution? If so, list the tribes, and then explain how you
+determined which distribution patterns were appropriate. \textbf{Do not
+include the \textit{incertae sedis} genera with this question}.\vspace*{\stretch{1}}
+
+%8
+\item Are there any genera or tribes with a distribution that is \emph{not 
+apparently} consistent with plate tectonics, i.e., a distribution
+that is not Pangaean, Laurasian or Gondwanan? If so, list the taxa and
+regions in which the taxa are located. How might you try to explain this
+distribution? (Time to think about the biology of the organisms.)\vspace*{\stretch{1}}
+
+\newpage
+
+%9
+\item In what biogeographic region are the \textit{incertae sedis} genera
+located? Is this consistent with the distribution of the rest of the
+Ambleminae subfamily?\vspace*{\stretch{1}}
+
+\item Carefully study the phylogeny included with this exercise (or shown
+on screen). Is the phylogeny consistent with plate tectonics and the
+breakup of Pangaea? Explain.\vspace*{\stretch{1}}
+
+\end{enumerate}
+
+Be prepared to come to the front of the class to discuss some of your
+results.
+
+\end{document}  

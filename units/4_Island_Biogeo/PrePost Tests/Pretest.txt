@@ -1,0 +1,8 @@
+How does the size of an island correlate with the probability of taxon extinction on the island? Explain.
+
+
+How does the distance of an island from the mainland correlate with the probability of colonization of the island from a mainland source population?  Explain.
+
+During the Pleistocene, high mountain tops that extended above the glaciers acted as "islands" of refugia. How would size of the mountaintop refugia correlate with the number of taxa that currently live on the mountaintops. Explain.
+
+

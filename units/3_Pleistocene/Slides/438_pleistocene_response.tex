@@ -1,0 +1,304 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}%}%
+	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+%\lecture{instructor}{instructor}
+\lecture{student}{student}
+
+
+
+\begin{frame}[t]{Climates and ecosystems shifted south during expansion.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.75\textheight]{pleistocene_climate_marine}\hspace*{1cm}
+		\includegraphics[height=0.75\textheight]{pleistocene_climate_terrestrial}
+	\end{center}
+	
+	\vskip0pt plus 1fill
+	
+	\hfill\tiny{See textbook for legend.}
+\end{frame}
+
+\begin{frame}{Ecosystems proportions changed.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{pleistocene_ecosystem_proportions}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Glaciers altered prevailing wind patterns.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{pleistocene_laurentide_climate}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Trees expanded northward with glacial retreat.}
+	\begin{columns}[T]
+		\begin{column}{0.3\textwidth}
+			\includegraphics[width=1\textwidth]{pleistocene_tree_range_expansion1}
+		\end{column}
+		\begin{column}{0.65\textwidth}
+			Prevailing winds enhanced range expansion of white spruce (below) but not lodgepole pine (left).\vspace*{0.6\baselineskip}
+			\includegraphics[height=0.55\textheight]{pleistocene_tree_range_expansion2}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Mammal ranges expanded with shifting ecosystems.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.85\textheight]{pleistocene_mammalian_range_expansion}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]{Mammalian co-occurrence in communities changed.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{pleistocene_mammalian_community_change}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Unglaciated areas were \highlight{refugia} from glacial expansion.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{pleistocene_beringia}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Many glacial refugia were available.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.9\textheight]{pleistocene_glacial_refugia}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Many taxa recolonized from glacial refugia.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.9\textheight]{pleistocene_north_hemi_range_expansion}
+	\end{center}
+\end{frame}
+
+\begin{frame}{New species evolved by vicariance in refugia.}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+			\vspace{-\baselineskip}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{pleistocene_ground_squirrel_arctic}\\
+				Arctic Ground Squirrel\\
+				\footnotesize{Beringia refugium}
+			\end{center}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\vspace{-\baselineskip}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{pleistocene_ground_squirrel_columbian}\\
+				Columbian Ground Squirrel\\
+				\footnotesize{Southern refugium}
+			\end{center}
+		\end{column}
+	\end{columns}
+	\vspace{\baselineskip}
+
+	Speciation or population genetic divergence also found in moose, northern and southern red-backed voles, tundra and arctic shrews, etc.
+
+\end{frame}
+
+\begin{frame}{Where might we find refugia for freshwater fishes?}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{pleistocene_glacial_fall_line}
+	\end{center}
+	\begin{tikzpicture}[overlay, line width=2pt]
+		\draw [<-] (5.7,2.5) -- (4.5,2.5) ;
+		\draw (4.5,2.5) node[anchor=east] {Fall Line} ;
+
+		\draw [<-] (5.5,5.5) -- (4.3,5.5) ;
+		\draw (4.3,5.5) node[anchor=east] {Glacial Maxima} ;
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{}
+%	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.95\textheight]{pleistocene_modern_fish_distribution}
+	\end{center}
+\end{frame}
+
+
+%\begin{frame}{Western lakes were refugia for freshwater fishes.}
+%	\begin{columns}[T]
+%		\begin{column}{0.45\textwidth}
+%			\includegraphics[height=0.7\textheight]{pleistocene_western_freshwater_refugia}
+%		\end{column}
+%		\begin{column}{0.45\textwidth}
+%			The desert southwest pupfishes represent \highlight{relict distributions} of once larger lakes.\\
+%			\vspace*{\baselineskip}
+%			\reflectbox{\includegraphics[width=0.8\textwidth]{cyprinodon_diabolis}}
+%		\end{column}
+%	\end{columns}
+%\end{frame}
+
+\begin{frame}{The desert southwest pupfishes have \highlight{relict distributions.}}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+			\vspace{-\baselineskip}
+			\begin{center}
+				\includegraphics[height=0.8\textheight]{pleistocene_western_freshwater_refugia}
+			\end{center}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\vspace{\baselineskip}
+			\begin{center}
+				\reflectbox{\includegraphics[width=0.8\textwidth]{cyprinodon_diabolis}}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Can we test for evidence of refugia and range expansion?}
+	\begin{columns}[T]
+		\begin{column}{0.6\textwidth}
+			\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_range} %\hspace*{1cm}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_picture}
+		\end{column}
+	\end{columns}
+	\begin{tikzpicture}[overlay, line width=2pt]
+		\draw [<-] (1.7,1.5) -- (0.3,1.5) ;
+	\end{tikzpicture}
+	\vspace{\baselineskip}
+	
+	Is the breeding resident population of MacGillivray's Warbler in Mexico a refugial population?
+	
+\end{frame}
+
+\lecture{instructor}{instructor}
+{\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+%	Placeholder to work out parsimony network
+\end{frame}}
+
+\lecture{student}{student}
+\begin{frame}{\highlight{Parsimony network} supports refuge and range expansion for MacGillivray's Warbler.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_network}
+	\end{center}
+\end{frame}
+
+\lecture{student}{student}
+\begin{frame}{Sea levels were much higher before the Pleistocene.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.45\textheight]{pleistocene_prepleisto_sealevels}\\
+		\includegraphics[height=0.35\textheight]{pleistocene_sealevels}\\
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]{New diversity evolved in the southern hemisphere.}
+	\begin{columns}[T]
+		\begin{column}{0.45\textwidth}
+			\vspace{-\baselineskip}
+			\begin{center}
+				\includegraphics[height=0.85\textheight]{pleistocene_stomatopod}
+			\end{center}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\vspace{-\baselineskip}
+			\begin{center}
+				\includegraphics[height=0.85\textheight]{pleistocene_stomatopod_network.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{\highlight{Antitropical distributions} could form during Pleistocene. How?}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=\textwidth]{pleistocene_pilot_whale_range}\\
+		Range of Pilot Whale (green shading)\\
+%		\vspace*{\baselineskip}
+%		\includegraphics[height=0.25\textheight]{pleistocene_antitropical}
+	\end{center}
+\end{frame}
+
+\lecture{instructor}{instructor}
+\begin{frame}{Tropical waters were cooler during the Pleistocene.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{pleistocene_antitropical}
+	\end{center}
+\end{frame}
+
+
+
+\end{document}
