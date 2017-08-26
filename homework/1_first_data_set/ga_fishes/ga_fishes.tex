@@ -1,0 +1,753 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+
+\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage[parfill]{parskip}    % Activate to begin 
+\usepackage{booktabs}
+\usepackage{datatool}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+\begin{document}
+\thispagestyle{plain}
+
+\DTLloadrawdb[keys={Number,Student,Author}]{students}{student_list.txt}% Load students
+\dtlgetrow{students}{1}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Ichthyomyzon bdellium} &   Ohio lamprey\tabularnewline
+\textit{Ichthyomyzon castaneus} &   chestnut lamprey\tabularnewline
+\textit{Ichthyomyzon gagei} &   southern brook lamprey\tabularnewline
+\textit{Ichthyomyzon greeleyi} &   mountain brook lamprey\tabularnewline
+\textit{Lampetra aepyptera} &   least brook lamprey\tabularnewline
+\textit{Lampetra appendix} &   American brook lamprey\tabularnewline
+\textit{Petromyzon marinus} &   sea lamprey\tabularnewline
+\textit{Dasyatis sabina} &   Atlantic stingray\tabularnewline
+\textit{Acipenser brevirostrum} &   shortnose sturgeon\tabularnewline
+\textit{Acipenser fulvescens} &   lake sturgeon\tabularnewline
+\textit{Acipenser oxyrinchus desotoi} &   Gulf sturgeon\tabularnewline
+\textit{Acipenser oxyrinchus oxyrinchus} &   Atlantic sturgeon\tabularnewline
+\textit{Polyodon spathula} &   paddlefish\tabularnewline
+\textit{Lepisosteus oculatus} &   spotted gar\tabularnewline
+\textit{Lepisosteus osseus} &   longnose gar\tabularnewline
+\textit{Lepisosteus platyrhincus} &   Florida gar\tabularnewline
+\textit{Amia calva} &   bowfin\tabularnewline
+\textit{Hiodon tergisus} &   mooneye\tabularnewline
+\textit{Elops saurus} &   ladyfish\tabularnewline
+\textit{Megalops atlanticus} &   tarpon\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{2}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Lepisosteus osseus} &   longnose gar\tabularnewline
+\textit{Lepisosteus platyrhincus} &   Florida gar\tabularnewline
+\textit{Amia calva} &   bowfin\tabularnewline
+\textit{Hiodon tergisus} &   mooneye\tabularnewline
+\textit{Elops saurus} &   ladyfish\tabularnewline
+\textit{Megalops atlanticus} &   tarpon\tabularnewline
+\textit{Anguilla rostrata} &   American eel\tabularnewline
+\textit{Myrophis punctatus} &   speckled worm eel\tabularnewline
+\textit{Anchoa mitchilli} &   bay anchovy\tabularnewline
+\textit{Alosa aestivalis} &   blueback herring\tabularnewline
+\textit{Alosa alabamae} &   Alabama shad\tabularnewline
+\textit{Alosa chrysochloris} &   skipjack herring\tabularnewline
+\textit{Alosa mediocris} &   hickory shad\tabularnewline
+\textit{Alosa sapidissima} &   American shad\tabularnewline
+\textit{Brevoortia smithi} &   yellowfin menhaden\tabularnewline
+\textit{Brevoortia tyrannus} &   Atlantic menhaden\tabularnewline
+\textit{Dorosoma cepedianum} &   gizzard shad\tabularnewline
+\textit{Dorosoma petenense} &   threadfin shad\tabularnewline
+\textit{Opisthonema oglinum} &   Atlantic thread herring\tabularnewline
+\textit{Campostoma anomalum} &   central stoneroller\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{3}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Brevoortia smithi} &   yellowfin menhaden\tabularnewline
+\textit{Brevoortia tyrannus} &   Atlantic menhaden\tabularnewline
+\textit{Dorosoma cepedianum} &   gizzard shad\tabularnewline
+\textit{Dorosoma petenense} &   threadfin shad\tabularnewline
+\textit{Opisthonema oglinum} &   Atlantic thread herring\tabularnewline
+\textit{Campostoma anomalum} &   central stoneroller\tabularnewline
+\textit{Campostoma oligolepis} &   largescale stoneroller\tabularnewline
+\textit{Campostoma pauciradii} &   bluefin stoneroller\tabularnewline
+\textit{Clinostomus funduloides} &   rosyside dace\tabularnewline
+\textit{Cyprinella caerulea} &   blue shiner\tabularnewline
+\textit{Cyprinella callisema} &   Ocmulgee shiner\tabularnewline
+\textit{Cyprinella callistia} &   Alabama shiner\tabularnewline
+\textit{Cyprinella callitaenia} &   bluestripe shiner\tabularnewline
+\textit{Cyprinella galactura} &   whitetail shiner\tabularnewline
+\textit{Cyprinella gibbsi} &   Tallapoosa shiner\tabularnewline
+\textit{Cyprinella leedsi} &   bannerfin shiner\tabularnewline
+\textit{Cyprinella lutrensis} &   red shiner\tabularnewline
+\textit{Cyprinella nivea} &   whitefin shiner\tabularnewline
+\textit{Cyprinella pyrrhomelas} &   fireyblack shiner\tabularnewline
+\textit{Cyprinella spiloptera} &   spotfin shiner\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{4}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Cyprinella gibbsi} &   Tallapoosa shiner\tabularnewline
+\textit{Cyprinella leedsi} &   bannerfin shiner\tabularnewline
+\textit{Cyprinella lutrensis} &   red shiner\tabularnewline
+\textit{Cyprinella nivea} &   whitefin shiner\tabularnewline
+\textit{Cyprinella pyrrhomelas} &   fireyblack shiner\tabularnewline
+\textit{Cyprinella spiloptera} &   spotfin shiner\tabularnewline
+\textit{Cyprinella trichroistia} &   tricolor shiner\tabularnewline
+\textit{Cyprinella venusta} &   blacktail shiner\tabularnewline
+\textit{Cyprinella whipplei} &   steelcolor shiner\tabularnewline
+\textit{Cyprinella xaenura} &   Altamaha shiner\tabularnewline
+\textit{Erimonax monachus} &   spotfin chub\tabularnewline
+\textit{Erimystax insignis} &   blotched chub\tabularnewline
+\textit{Hemitremia flammea} &   flame chub\tabularnewline
+\textit{Hybognathus regius} &   eastern silvery minnow\tabularnewline
+\textit{Hybopsis amblops} &   bigeye chub\tabularnewline
+\textit{Hybopsis lineapunctata} &   lined chub\tabularnewline
+\textit{Hybopsis rubrifrons} &   rosyface chub\tabularnewline
+\textit{Hybopsis} sp. cf. \textit{H. winchelli} &   Etowah chub\tabularnewline
+\textit{Hybopsis winchelli} &   coastal chub\tabularnewline
+\textit{Luxilus chrysocephalus} &   striped shiner\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{5}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Hybognathus regius} &   eastern silvery minnow\tabularnewline
+\textit{Hybopsis amblops} &   bigeye chub\tabularnewline
+\textit{Hybopsis lineapunctata} &   lined chub\tabularnewline
+\textit{Hybopsis rubrifrons} &   rosyface chub\tabularnewline
+\textit{Hybopsis} sp. cf. \textit{H. winchelli} &   Etowah chub\tabularnewline
+\textit{Hybopsis winchelli} &   coastal chub\tabularnewline
+\textit{Luxilus chrysocephalus} &   striped shiner\tabularnewline
+\textit{Luxilus coccogenis} &   warpaint shiner\tabularnewline
+\textit{Luxilus zonistius} &   bandfin shiner\tabularnewline
+\textit{Lythrurus atrapiculus} &   blacktip shiner\tabularnewline
+\textit{Lythrurus bellus} &   pretty shiner\tabularnewline
+\textit{Lythrurus fasciolaris} &   scarlet shiner\tabularnewline
+\textit{Lythrurus lirus} &   mountain shiner\tabularnewline
+\textit{Macrhybopsis} sp. cf. \textit{M. aestivalis} &   Coosa chub (fall line chub complex)\tabularnewline
+\textit{Macrhybopsis storeriana} &   silver chub\tabularnewline
+\textit{Nocomis leptocephalus} &   bluehead chub\tabularnewline
+\textit{Nocomis micropogon} &   river chub\tabularnewline
+\textit{Notemigonus crysoleucas} &   golden shiner\tabularnewline
+\textit{Notropis altipinnis} &   highfin shiner\tabularnewline
+\textit{Notropis amplamala} &   longjaw minnow\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{6}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Macrhybopsis storeriana} &   silver chub\tabularnewline
+\textit{Nocomis leptocephalus} &   bluehead chub\tabularnewline
+\textit{Nocomis micropogon} &   river chub\tabularnewline
+\textit{Notemigonus crysoleucas} &   golden shiner\tabularnewline
+\textit{Notropis altipinnis} &   highfin shiner\tabularnewline
+\textit{Notropis amplamala} &   longjaw minnow\tabularnewline
+\textit{Notropis ariommus} &   popeye shiner\tabularnewline
+\textit{Notropis asperifrons} &   burrhead shiner\tabularnewline
+\textit{Notropis atherinoides} &   emerald shiner\tabularnewline
+\textit{Notropis baileyi} &   rough shiner\tabularnewline
+\textit{Notropis chalybaeus} &   ironcolor shiner\tabularnewline
+\textit{Notropis chrosomus} &   rainbow shiner\tabularnewline
+\textit{Notropis cummingsae} &   dusky shiner\tabularnewline
+\textit{Notropis harperi} &   redeye chub\tabularnewline
+\textit{Notropis hudsonius} &   spottail shiner\tabularnewline
+\textit{Notropis hypsilepis} &   highscale shiner\tabularnewline
+\textit{Notropis leuciodus} &   Tennessee shiner\tabularnewline
+\textit{Notropis longirostris} &   longnose shiner\tabularnewline
+\textit{Notropis} sp. cf. \textit{N. longirostris} &   longnose shiner species\tabularnewline
+\textit{Notropis lutipinnis} &   yellowfin shiner\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{7}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Notropis hudsonius} &   spottail shiner\tabularnewline
+\textit{Notropis hypsilepis} &   highscale shiner\tabularnewline
+\textit{Notropis leuciodus} &   Tennessee shiner\tabularnewline
+\textit{Notropis longirostris} &   longnose shiner\tabularnewline
+\textit{Notropis} sp. cf. \textit{N. longirostris} &   longnose shiner species\tabularnewline
+\textit{Notropis lutipinnis} &   yellowfin shiner\tabularnewline
+\textit{Notropis maculatus} &   taillight shiner\tabularnewline
+\textit{Notropis petersoni} &   coastal shiner\tabularnewline
+\textit{Notropis photogenis} &   silver shiner\tabularnewline
+\textit{Notropis scepticus} &   sandbar shiner\tabularnewline
+\textit{Notropis spectrunculus} &   mirror shiner\tabularnewline
+\textit{Notropis stilbius} &   silverstripe shiner\tabularnewline
+\textit{Notropis telescopus} &   telescope shiner\tabularnewline
+\textit{Notropis texanus} &   weed shiner\tabularnewline
+\textit{Notropis volucellus} &   mimic shiner\tabularnewline
+\textit{Notropis xaenocephalus} &   Coosa shiner\tabularnewline
+\textit{Opsopoeodus emiliae} &   pugnose minnow\tabularnewline
+\textit{Phenacobius catostomus} &   riffle minnow\tabularnewline
+\textit{Phenacobius crassilabrum} &   fatlips minnow\tabularnewline
+\textit{Phenacobius uranops} &   stargazing minnow\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{8}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Notropis volucellus} &   mimic shiner\tabularnewline
+\textit{Notropis xaenocephalus} &   Coosa shiner\tabularnewline
+\textit{Opsopoeodus emiliae} &   pugnose minnow\tabularnewline
+\textit{Phenacobius catostomus} &   riffle minnow\tabularnewline
+\textit{Phenacobius crassilabrum} &   fatlips minnow\tabularnewline
+\textit{Phenacobius uranops} &   stargazing minnow\tabularnewline
+\textit{Phoxinus tennesseensis} &   Tennessee dace\tabularnewline
+\textit{Pimephales notatus} &   bluntnose minnow\tabularnewline
+\textit{Pimephales promelas} &   fathead minnow\tabularnewline
+\textit{Pimephales vigilax} &   bullhead minnow\tabularnewline
+\textit{Pteronotropis euryzonus} &   broadstripe shiner\tabularnewline
+\textit{Pteronotropis grandipinnis} &   Apalachee shiner\tabularnewline
+\textit{Pteronotropis} sp. cf. \textit{P. hypselopterus} &   “metallicus” sailfin shiner species\tabularnewline
+\textit{Pteronotropis stonei} &   lowland shiner\tabularnewline
+\textit{Pteronotropis welaka} &   bluenose shiner\tabularnewline
+\textit{Rhinichthys atratulus} &   eastern blacknose dace\tabularnewline
+\textit{Rhinichthys cataractae} &   longnose dace\tabularnewline
+\textit{Rhinichthys obtusus} &   western blacknose dace\tabularnewline
+\textit{Semotilus atromaculatus} &   creek chub\tabularnewline
+\textit{Semotilus thoreauianus} &   Dixie chub\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{9}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Pteronotropis welaka} &   bluenose shiner\tabularnewline
+\textit{Rhinichthys atratulus} &   eastern blacknose dace\tabularnewline
+\textit{Rhinichthys cataractae} &   longnose dace\tabularnewline
+\textit{Rhinichthys obtusus} &   western blacknose dace\tabularnewline
+\textit{Semotilus atromaculatus} &   creek chub\tabularnewline
+\textit{Semotilus thoreauianus} &   Dixie chub\tabularnewline
+\textit{Tanichthys albonubes} &   white cloud mountain minnow\tabularnewline
+\textit{Carpiodes carpio} &   river carpsucker\tabularnewline
+\textit{Carpiodes} sp. cf. \textit{C. cyprinus} &   quillbacks\tabularnewline
+\textit{Carpiodes} sp. cf. \textit{C. velifer} &   highfin carpsucker species\tabularnewline
+\textit{Catostomus commersoni} &   white sucker\tabularnewline
+\textit{Erimyzon oblongus} &   creek chubsucker\tabularnewline
+\textit{Erimyzon sucetta} &   lake chubsucker\tabularnewline
+\textit{Hypentelium etowanum} &   Alabama hog sucker\tabularnewline
+\textit{Hypentelium nigricans} &   northern hog sucker\tabularnewline
+\textit{Ictiobus bubalus} &   smallmouth buffalo\tabularnewline
+\textit{Ictiobus niger} &   black buffalo\tabularnewline
+\textit{Minytrema melanops} &   spotted sucker\tabularnewline
+\textit{Moxostoma anisurum} &   silver redhorse\tabularnewline
+\textit{Moxostoma carinatum} &   river redhorse\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{10}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Hypentelium nigricans} &   northern hog sucker\tabularnewline
+\textit{Ictiobus bubalus} &   smallmouth buffalo\tabularnewline
+\textit{Ictiobus niger} &   black buffalo\tabularnewline
+\textit{Minytrema melanops} &   spotted sucker\tabularnewline
+\textit{Moxostoma anisurum} &   silver redhorse\tabularnewline
+\textit{Moxostoma carinatum} &   river redhorse\tabularnewline
+\textit{Moxostoma collapsum} &   notchlip redhorse\tabularnewline
+\textit{Moxostoma duquesnei} &   black redhorse\tabularnewline
+\textit{Moxostoma erythrurum} &   golden redhorse\tabularnewline
+\textit{Moxostoma lacerum} &   harelip sucker\tabularnewline
+\textit{Moxostoma lachneri} &   greater jumprock\tabularnewline
+\textit{Moxostoma poecilurum} &   blacktail redhorse\tabularnewline
+\textit{Moxostoma robustum} &   robust redhorse\tabularnewline
+\textit{Moxostoma rupiscartes} &   striped jumprock\tabularnewline
+\textit{Moxostoma} sp. cf. \textit{M. lachneri} &   brassy jumprock\tabularnewline
+\textit{Moxostoma} sp. &   sicklefin redhorse\tabularnewline
+\textit{Moxostoma} sp. &   Apalachicola redhorse\tabularnewline
+\textit{Ameiurus brunneus} &   snail bullhead\tabularnewline
+\textit{Ameiurus catus} &   white catfish\tabularnewline
+\textit{Ameiurus melas} &   black bullhead\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{11}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Moxostoma} sp. cf. \textit{M. lachneri} &   brassy jumprock\tabularnewline
+\textit{Moxostoma} sp. &   sicklefin redhorse\tabularnewline
+\textit{Moxostoma} sp. &   Apalachicola redhorse\tabularnewline
+\textit{Ameiurus brunneus} &   snail bullhead\tabularnewline
+\textit{Ameiurus catus} &   white catfish\tabularnewline
+\textit{Ameiurus melas} &   black bullhead\tabularnewline
+\textit{Ameiurus natalis} &   yellow bullhead\tabularnewline
+\textit{Ameiurus nebulosus} &   brown bullhead\tabularnewline
+\textit{Ameiurus platycephalus} &   flat bullhead\tabularnewline
+\textit{Ameiurus serracanthus} &   spotted bullhead\tabularnewline
+\textit{Ictalurus furcatus} &   blue catfish\tabularnewline
+\textit{Ictalurus punctatus} &   channel catfish\tabularnewline
+\textit{Noturus eleutherus} &   mountain madtom\tabularnewline
+\textit{Noturus flavipinnis} &   yellowfin madtom\tabularnewline
+\textit{Noturus funebris} &   black madtom\tabularnewline
+\textit{Noturus gyrinus} &   tadpole madtom\tabularnewline
+\textit{Noturus insignis} &   margined madtom\tabularnewline
+\textit{Noturus leptacanthus} &   speckled madtom\tabularnewline
+\textit{Noturus nocturnus} &   freckled madtom\tabularnewline
+\textit{Noturus} sp. cf. \textit{N. munitus} &   Coosa madtom\tabularnewline
+\end{tabular}
+
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{12}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Noturus funebris} &   black madtom\tabularnewline
+\textit{Noturus gyrinus} &   tadpole madtom\tabularnewline
+\textit{Noturus insignis} &   margined madtom\tabularnewline
+\textit{Noturus leptacanthus} &   speckled madtom\tabularnewline
+\textit{Noturus nocturnus} &   freckled madtom\tabularnewline
+\textit{Noturus} sp. cf. \textit{N. munitus} &   Coosa madtom\tabularnewline
+\textit{Pylodictis olivaris} &   flathead catfish\tabularnewline
+\textit{Ariopsis felis} &   hardhead catfish\tabularnewline
+\textit{Bagre marinus} &   gafftopsail catfish\tabularnewline
+\textit{Esox americanus} &   redfin pickerel\tabularnewline
+\textit{Esox lucius} &   northern pike\tabularnewline
+\textit{Esox masquinongy} &   muskellunge\tabularnewline
+\textit{Esox niger} &   chain pickerel\tabularnewline
+\textit{Umbra pygmaea} &   eastern mudminnow\tabularnewline
+\textit{Oncorhynchus mykiss} &   rainbow trout\tabularnewline
+\textit{Salmo trutta} &   brown trout\tabularnewline
+\textit{Salvelinus fontinalis} &   brook trout\tabularnewline
+\textit{Aphredoderus sayanus} &   pirate perch\tabularnewline
+\textit{Chologaster cornuta} &   swampfish\tabularnewline
+\textit{Typhlichthys subterraneus} &   southern cavefish\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{13}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Oncorhynchus mykiss} &   rainbow trout\tabularnewline
+\textit{Salmo trutta} &   brown trout\tabularnewline
+\textit{Salvelinus fontinalis} &   brook trout\tabularnewline
+\textit{Aphredoderus sayanus} &   pirate perch\tabularnewline
+\textit{Chologaster cornuta} &   swampfish\tabularnewline
+\textit{Typhlichthys subterraneus} &   southern cavefish\tabularnewline
+\textit{Agonostomus monticola} &   mountain mullet\tabularnewline
+\textit{Mugil cephalus} &   striped mullet\tabularnewline
+\textit{Mugil curema} &   white mullet\tabularnewline
+\textit{Labidesthes sicculus} &   brook silverside\tabularnewline
+\textit{Membras martinica} &   rough silverside\tabularnewline
+\textit{Menidia beryllina} &   inland silverside\tabularnewline
+\textit{Menidia menidia} &   Atlantic silverside\tabularnewline
+\textit{Strongylura marina} &   Atlantic needlefish\tabularnewline
+\textit{Fundulus bifax} &   stippled studfish\tabularnewline
+\textit{Fundulus catenatus} &   northern studfish\tabularnewline
+\textit{Fundulus chrysotus} &   golden topminnow\tabularnewline
+\textit{Fundulus cingulatus} &   banded topminnow\tabularnewline
+\textit{Fundulus diaphanus} &   banded killifish\tabularnewline
+\textit{Fundulus escambiae} &   russetfin topminnow\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{14}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Fundulus bifax} &   stippled studfish\tabularnewline
+\textit{Fundulus catenatus} &   northern studfish\tabularnewline
+\textit{Fundulus chrysotus} &   golden topminnow\tabularnewline
+\textit{Fundulus cingulatus} &   banded topminnow\tabularnewline
+\textit{Fundulus diaphanus} &   banded killifish\tabularnewline
+\textit{Fundulus escambiae} &   russetfin topminnow\tabularnewline
+\textit{Fundulus heteroclitus} &   mummichog\tabularnewline
+\textit{Fundulus lineolatus} &   lined topminnow\tabularnewline
+\textit{Fundulus luciae} &   spotfin killifish\tabularnewline
+\textit{Fundulus majalis} &   striped killifish\tabularnewline
+\textit{Fundulus olivaceus} &   blackspotted topminnow\tabularnewline
+\textit{Fundulus confluentus} &   marsh killifish\tabularnewline
+\textit{Fundulus rubrifrons} &   redface topminnow\tabularnewline
+\textit{Fundulus stellifer} &   southern studfish\tabularnewline
+\textit{Leptolucania ommata} &   pygmy killifish\tabularnewline
+\textit{Lucania goodei} &   bluefin killifish\tabularnewline
+\textit{Lucania parva} &   rainwater killifish\tabularnewline
+\textit{Gambusia affinis} and \textit{Gambusia holbrooki} &   western and eastern mosquitofish\tabularnewline
+\textit{Heterandria formosa} &   least killifish\tabularnewline
+\textit{Poecilia latipinna} &   sailfin molly\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{15}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Leptolucania ommata} &   pygmy killifish\tabularnewline
+\textit{Lucania goodei} &   bluefin killifish\tabularnewline
+\textit{Lucania parva} &   rainwater killifish\tabularnewline
+\textit{Gambusia affinis} and \textit{Gambusia holbrooki} &   western and eastern mosquitofish\tabularnewline
+\textit{Heterandria formosa} &   least killifish\tabularnewline
+\textit{Poecilia latipinna} &   sailfin molly\tabularnewline
+\textit{Cyprinodon variegatus} &   sheepshead minnow\tabularnewline
+\textit{Microphis brachyurus} &   opossum pipefish\tabularnewline
+\textit{Syngnathus fuscus} &   northern pipefish\tabularnewline
+\textit{Syngnathus louisianae} &   chain pipefish\tabularnewline
+\textit{Syngnathus scovelli} &   Gulf pipefish\tabularnewline
+\textit{Monopterus} sp. cf. \textit{M. albus} &   swamp eel\tabularnewline
+\textit{Cottus carolinae} &   banded sculpin\tabularnewline
+\textit{Cottus carolinae zopherus} &   Coosa banded sculpin\tabularnewline
+\textit{Cottus chattahoochee} &   Chattahoochee sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. bairdi} &   Ridge and Valley sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. bairdi} &   Savannah sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. bairdi} &   smoky sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. carolinae} &   banded sculpin species\tabularnewline
+\textit{Cottus tallapoosae} &   Tallapoosa sculpin\tabularnewline
+\end{tabular}
+
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{16}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Cottus chattahoochee} &   Chattahoochee sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. bairdi} &   Ridge and Valley sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. bairdi} &   Savannah sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. bairdi} &   smoky sculpin\tabularnewline
+\textit{Cottus} sp. cf. \textit{C. carolinae} &   banded sculpin species\tabularnewline
+\textit{Cottus tallapoosae} &   Tallapoosa sculpin\tabularnewline
+\textit{Centropomus undecimalis} &   common snook\tabularnewline
+\textit{Morone americana} &   white perch\tabularnewline
+\textit{Morone chrysops} &   white bass\tabularnewline
+\textit{Morone mississippiensis} &   yellow bass\tabularnewline
+\textit{Morone saxatilis} &   striped bass\tabularnewline
+\textit{Acantharchus pomotis} &   mud sunfish\tabularnewline
+\textit{Ambloplites ariommus} &   shadow bass\tabularnewline
+\textit{Ambloplites rupestris} &   rock bass\tabularnewline
+\textit{Centrarchus macropterus} &   flier\tabularnewline
+\textit{Enneacanthus chaetodon} &   blackbanded sunfish\tabularnewline
+\textit{Enneacanthus gloriosus} &   bluespotted sunfish\tabularnewline
+\textit{Enneacanthus obesus} &   banded sunfish\tabularnewline
+\textit{Lepomis auritus} &   redbreast sunfish\tabularnewline
+\textit{Lepomis cyanellus} &   green sunfish\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{17}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Centrarchus macropterus} &   flier\tabularnewline
+\textit{Enneacanthus chaetodon} &   blackbanded sunfish\tabularnewline
+\textit{Enneacanthus gloriosus} &   bluespotted sunfish\tabularnewline
+\textit{Enneacanthus obesus} &   banded sunfish\tabularnewline
+\textit{Lepomis auritus} &   redbreast sunfish\tabularnewline
+\textit{Lepomis cyanellus} &   green sunfish\tabularnewline
+\textit{Lepomis gibbosus} &   pumpkinseed\tabularnewline
+\textit{Lepomis gulosus} &   warmouth\tabularnewline
+\textit{Lepomis humilis} &   orangespotted sunfish\tabularnewline
+\textit{Lepomis macrochirus} &   bluegill\tabularnewline
+\textit{Lepomis marginatus} &   dollar sunfish\tabularnewline
+\textit{Lepomis megalotis} &   longear sunfish\tabularnewline
+\textit{Lepomis microlophus} &   redear sunfish\tabularnewline
+\textit{Lepomis punctatus} &   spotted sunfish\tabularnewline
+\textit{Micropterus cataractae} &   shoal bass\tabularnewline
+\textit{Micropterus coosae} &   redeye bass\tabularnewline
+\textit{Micropterus dolomieu} &   smallmouth bass\tabularnewline
+\textit{Micropterus henshalli} &   Alabama bass\tabularnewline
+\textit{Micropterus notius} &   Suwannee bass\tabularnewline
+\textit{Micropterus punctulatus} &   spotted bass\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{18}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Micropterus cataractae} &   shoal bass\tabularnewline
+\textit{Micropterus coosae} &   redeye bass\tabularnewline
+\textit{Micropterus dolomieu} &   smallmouth bass\tabularnewline
+\textit{Micropterus henshalli} &   Alabama bass\tabularnewline
+\textit{Micropterus notius} &   Suwannee bass\tabularnewline
+\textit{Micropterus punctulatus} &   spotted bass\tabularnewline
+\textit{Micropterus salmoides} &   largemouth bass\tabularnewline
+\textit{Micropterus} sp. cf. \textit{M. coosae} &   Bartram's bass\tabularnewline
+\textit{Micropterus} sp. cf. \textit{M. coosae} &   redeye bass (Chattahoochee)\tabularnewline
+\textit{Micropterus} sp. cf. \textit{M. coosae} &   redeye bass (Altamaha / Ogeechee)\tabularnewline
+\textit{Pomoxis annularis} &   white crappie\tabularnewline
+\textit{Pomoxis nigromaculatus} &   black crappie\tabularnewline
+\textit{Etheostoma blennioides} &   greenside darter\tabularnewline
+\textit{Etheostoma caeruleum} &   rainbow darter\tabularnewline
+\textit{Etheostoma chlorobranchium} &   greenfin darter\tabularnewline
+\textit{Etheostoma chuckwachatte} &   lipstick darter\tabularnewline
+\textit{Etheostoma cinereum} &   ashy darter\tabularnewline
+\textit{Etheostoma coosae} &   Coosa darter\tabularnewline
+\textit{Etheostoma ditrema} &   coldwater darter\tabularnewline
+\textit{Etheostoma duryi} &   black darter\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{19}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Etheostoma chlorobranchium} &   greenfin darter\tabularnewline
+\textit{Etheostoma chuckwachatte} &   lipstick darter\tabularnewline
+\textit{Etheostoma cinereum} &   ashy darter\tabularnewline
+\textit{Etheostoma coosae} &   Coosa darter\tabularnewline
+\textit{Etheostoma ditrema} &   coldwater darter\tabularnewline
+\textit{Etheostoma duryi} &   black darter\tabularnewline
+\textit{Etheostoma edwini} &   brown darter\tabularnewline
+\textit{Etheostoma etowahae} &   Etowah darter\tabularnewline
+\textit{Etheostoma fricksium} &   Savannah darter\tabularnewline
+\textit{Etheostoma fusiforme} &   swamp darter\tabularnewline
+\textit{Etheostoma gutselli} &   Tuckasegee darter\tabularnewline
+\textit{Etheostoma hopkinsi} &   Christmas darter\tabularnewline
+\textit{Etheostoma inscriptum} &   turquoise darter\tabularnewline
+\textit{Etheostoma jessiae} &   blueside darter\tabularnewline
+\textit{Etheostoma jordani} &   greenbreast darter\tabularnewline
+\textit{Etheostoma olmstedi} &   tessellated darter\tabularnewline
+\textit{Etheostoma parvipinne} &   goldstripe darter\tabularnewline
+\textit{Etheostoma rufilineatum} &   redline darter\tabularnewline
+\textit{Etheostoma rupestre} &   rock darter\tabularnewline
+\textit{Etheostoma scotti} &   Cherokee darter\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{20}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Etheostoma jordani} &   greenbreast darter\tabularnewline
+\textit{Etheostoma olmstedi} &   tessellated darter\tabularnewline
+\textit{Etheostoma parvipinne} &   goldstripe darter\tabularnewline
+\textit{Etheostoma rufilineatum} &   redline darter\tabularnewline
+\textit{Etheostoma rupestre} &   rock darter\tabularnewline
+\textit{Etheostoma scotti} &   Cherokee darter\tabularnewline
+\textit{Etheostoma serrifer} &   sawcheek darter\tabularnewline
+\textit{Etheostoma tennesseense} &   Tennessee darter\tabularnewline
+\textit{Etheostoma} sp. cf. \textit{E. brevirostrum} &   holiday darter complex\tabularnewline
+\textit{Etheostoma} sp. cf. \textit{E. rufilineatum} &   redline darter species\tabularnewline
+\textit{Etheostoma stigmaeum} &   speckled darter\tabularnewline
+\textit{Etheostoma swaini} &   gulf darter\tabularnewline
+\textit{Etheostoma tallapoosae} &   Tallapoosa darter\tabularnewline
+\textit{Etheostoma trisella} &   trispot darter\tabularnewline
+\textit{Etheostoma vulneratum} &   wounded darter\tabularnewline
+\textit{Etheostoma zonale} &   banded darter\tabularnewline
+\textit{Etheostoma zonifer} &   backwater darter\tabularnewline
+\textit{Perca flavescens} &   yellow perch\tabularnewline
+\textit{Percina antesella} &   amber darter\tabularnewline
+\textit{Percina aurantiaca} &   tangerine darter\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{21}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Etheostoma vulneratum} &   wounded darter\tabularnewline
+\textit{Etheostoma zonale} &   banded darter\tabularnewline
+\textit{Etheostoma zonifer} &   backwater darter\tabularnewline
+\textit{Perca flavescens} &   yellow perch\tabularnewline
+\textit{Percina antesella} &   amber darter\tabularnewline
+\textit{Percina aurantiaca} &   tangerine darter\tabularnewline
+\textit{Percina aurolineata} &   goldline darter\tabularnewline
+\textit{Percina caprodes} &   logperch\tabularnewline
+\textit{Percina crypta} &   Halloween darter\tabularnewline
+\textit{Percina evides} &   gilt darter\tabularnewline
+\textit{Percina jenkinsi} &   Conasauga logperch\tabularnewline
+\textit{Percina kathae} &   Mobile logperch\tabularnewline
+\textit{Percina kusha} &   bridled darter\tabularnewline
+\textit{Percina lenticula} &   freckled darter\tabularnewline
+\textit{Percina nigrofasciata} &   blackbanded darter\tabularnewline
+\textit{Percina palmaris} &   bronze darter\tabularnewline
+\textit{Percina sciera} &   dusky darter\tabularnewline
+\textit{Percina shumardi} &   river darter\tabularnewline
+\textit{Percina smithvanizi} &   Muscadine darter\tabularnewline
+\textit{Percina squamata} &   olive darter\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{22}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Percina nigrofasciata} &   blackbanded darter\tabularnewline
+\textit{Percina palmaris} &   bronze darter\tabularnewline
+\textit{Percina sciera} &   dusky darter\tabularnewline
+\textit{Percina shumardi} &   river darter\tabularnewline
+\textit{Percina smithvanizi} &   Muscadine darter\tabularnewline
+\textit{Percina squamata} &   olive darter\tabularnewline
+\textit{Percina tanasi} &   snail darter\tabularnewline
+\textit{Sander canadensis} &   sauger\tabularnewline
+\textit{Sander vitreus} &   walleye\tabularnewline
+\textit{Caranx hippos} &   crevalle jack\tabularnewline
+\textit{Eucinostomus argenteus} &   spotfin mojarra\tabularnewline
+\textit{Eucinostomus gula} &   silver jenny\tabularnewline
+\textit{Eugerres plumieri} &   striped mojarra\tabularnewline
+\textit{Archosargus probatocephalus} &   sheepshead\tabularnewline
+\textit{Lagodon rhomboides} &   pinfish\tabularnewline
+\textit{Aplodinotus grunniens} &   freshwater drum\tabularnewline
+\textit{Bairdiella chrysoura} &   silver perch\tabularnewline
+\textit{Cynoscion nebulosus} &   spotted seatrout\tabularnewline
+\textit{Cynoscion nothus} &   silver seatrout\tabularnewline
+\textit{Cynoscion regalis} &   weakfish\tabularnewline
+\end{tabular}
+
+\newpage
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{23}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Lagodon rhomboides} &   pinfish\tabularnewline
+\textit{Aplodinotus grunniens} &   freshwater drum\tabularnewline
+\textit{Bairdiella chrysoura} &   silver perch\tabularnewline
+\textit{Cynoscion nebulosus} &   spotted seatrout\tabularnewline
+\textit{Cynoscion nothus} &   silver seatrout\tabularnewline
+\textit{Cynoscion regalis} &   weakfish\tabularnewline
+\textit{Leiostomus xanthurus} &   spot\tabularnewline
+\textit{Micropogonias undulatus} &   Atlantic croaker\tabularnewline
+\textit{Sciaenops ocellatus} &   red drum\tabularnewline
+\textit{Elassoma evergladei} &   Everglades pygmy sunfish\tabularnewline
+\textit{Elassoma gilberti} &   Gulf coast pygmy sunfish\tabularnewline
+\textit{Elassoma okatie} &   bluebarred pygmy sunfish\tabularnewline
+\textit{Elassoma okefenokee} &   Okefenokee pygmy sunfish\tabularnewline
+\textit{Elassoma zonatum} &   banded pygmy sunfish\tabularnewline
+\textit{Dormitator maculatus} &   fat sleeper\tabularnewline
+\textit{Ctenogobius boleosoma} &   darter goby\tabularnewline
+\textit{Ctenogobius shufeldti} &   freshwater goby\tabularnewline
+\textit{Gobiosoma bosc} &   naked goby\tabularnewline
+\textit{Chaetodipterus faber} &   Atlantic spadefish\tabularnewline
+\textit{Citharichthys spilopterus} &   bay whiff\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}
+
+\dtlgetrow{students}{24}% Get student
+\dtlgetentryfromcurrentrow{\Student}{2}%
+\textbf{\Student}
+
+\begin{tabular}{@{}L{3in}L{3in}@{}}
+\textit{Dormitator maculatus} &   fat sleeper\tabularnewline
+\textit{Ctenogobius boleosoma} &   darter goby\tabularnewline
+\textit{Ctenogobius shufeldti} &   freshwater goby\tabularnewline
+\textit{Gobiosoma bosc} &   naked goby\tabularnewline
+\textit{Chaetodipterus faber} &   Atlantic spadefish\tabularnewline
+\textit{Citharichthys spilopterus} &   bay whiff\tabularnewline
+\textit{Paralichthys dentatus} &   summer flounder\tabularnewline
+\textit{Paralichthys lethostigma} &   southern flounder\tabularnewline
+\textit{Trinectes maculatus} &   hogchoker\tabularnewline[0.5ex]
+(go back to the top of the species list) &  \tabularnewline
+\textit{Ichthyomyzon bdellium} &   Ohio lamprey\tabularnewline
+\textit{Ichthyomyzon castaneus} &   chestnut lamprey\tabularnewline
+\textit{Ichthyomyzon gagei} &   southern brook lamprey\tabularnewline
+\textit{Ichthyomyzon greeleyi} &   mountain brook lamprey\tabularnewline
+\textit{Lampetra aepyptera} &   least brook lamprey\tabularnewline
+\textit{Lampetra appendix} &   American brook lamprey\tabularnewline
+\textit{Petromyzon marinus} &   sea lamprey\tabularnewline
+\textit{Dasyatis sabina} &   Atlantic stingray\tabularnewline
+\textit{Acipenser brevirostrum} &   shortnose sturgeon\tabularnewline
+\textit{Acipenser fulvescens} &   lake sturgeon\tabularnewline
+\textit{Acipenser oxyrinchus desotoi} &   Gulf sturgeon\tabularnewline
+\end{tabular}
+
+\end{document}
