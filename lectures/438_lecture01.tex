@@ -7,12 +7,7 @@
 %\documentclass[t,handout]{beamer}  %Use this for handouts.
 %\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
-%	\setbeamercolor{background canvas}{bg=black!5}
 
-
-%%% Including only some slides for students.
-%%% Uncomment the following line. For the slides,
-%%% use the labels shown below the command.
 %\includeonlylecture{student}
 
 %% For students, use \lecture{student}{student}
@@ -26,7 +21,7 @@
 \usepackage{fontspec}
 \def\mainfont{Linux Biolinum O}
 \setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
-\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setmonofont[Scale=0.75]{Linux Libertine Mono O} 
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
 \usepackage{microtype}
 
@@ -92,20 +87,18 @@
 }
 
 %% Grades
-\begin{frame}[t,plain]{You \highlight{earn} your grade with }
-
-	\hangpara 3 exams @ 75--100 points, 
-
-	\hangpara 3--5 critical analyses @ 30 points, 
-
-		\hspace{2em} Grads / honors will lead a discussion,
-
-	\hangpara Pre- and post-tests,
-	
-	\hangpara Data analyses and assignments, and
-	
-	\hangpara Grad / honors project and presentation.
-	
+\begin{frame}[t]{You \highlight{earn} your grade with}
+	\begin{center}\large\begin{tabular}{@{}lll@{}}
+	UG		&	Three 75-point exams 				& 	50\% \\
+			&	Critical Analyses					& 	20\% \\
+			&	Data Analyses / Assignments			& 	30\% \\
+			&										&	\\
+	G / HC	&	Three 75-point exams 				& 	50\% \\
+			&	Critical Analyses \& Leadership		& 	15\% \\
+			&	Data Analyses / Assignments 		&	15\% \\
+			&	Annotated Bibliography 				&	20\% \\
+		\end{tabular}
+	\end{center}
 \end{frame}
 
 %% Software
