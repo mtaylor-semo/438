@@ -18,9 +18,9 @@
 %\pagenumbering{gobble}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -35,8 +35,6 @@
 
 \usepackage{booktabs}
 \usepackage{longtable}
-%\usepackage{tabularx}
-%\usepackage{siunitx}
 %\usepackage[justification=raggedright, singlelinecheck=off]{caption}
 %\captionsetup{labelsep=period} % Removes colon following figure / table number.
 %\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
@@ -50,14 +48,18 @@
 
 %\usepackage{enumitem}
 %\usepackage{hyperref}
-%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
-\usepackage{titling}
-\setlength{\droptitle}{-50pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+%\usepackage{titling}
+%\setlength{\droptitle}{-50pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
 
 \usepackage{hanging}
+\usepackage{wrapfig}
+
+\usepackage[sc]{titlesec}
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
 
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -67,8 +69,15 @@
 %\rhead{Name: \rule{5cm}{0.4pt}}
 %\renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
-\fancyhead[R]{\footnotesize Range Size \thepage}
-\fancyhead[L]{\footnotesize Biogeography}
+\fancyhead[R]{\footnotesize Geographic Range Size \thepage}
+\fancyhead[L]{\footnotesize \coursename}
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\renewcommand{\headrulewidth}{0pt}
+}
 
 \newcommand{\bigSpace}{\vspace{5\baselineskip}}
 
@@ -80,8 +89,9 @@
 \date{}                                           % Activate to display a given date or no date
 
 \begin{document}
-\maketitle
-\thispagestyle{plain}
+\thispagestyle{first_page}
+
+\subsection*{Geographic Range Size (10 points)}
 
 The goal of this exercise is for you to discover whether most species of
 freshwater fishes, mussels and (in the second section) crayfishes have
@@ -95,26 +105,7 @@ then determine range size at the state scale (e.g., Missouri, Georgia)
 for fishes, mussels or crayfish. The data sets you use will be assigned
 to you randomly.
 
-Before you proceed, what is your hypothesis? Do you think most species
-have small, medium or large range sizes, or will range sizes be a mix of
-sizes at the scale of North America? (Save your ideas about the smaller
-state scale for later.) Discuss your ideas with your partner but your
-hypothesis does not have to agree with your partner's hypothesis. If
-your hypotheses don't agree, glare at your partner with severe
-disapproval for not recognizing your genius!
-
-\textbf{1. Write your hypothesis here.} Considering all of North America, tell
-whether you think most species in a closely related group of organisms
-have large, medium or small range size, or some combination. Be prepared
-to discuss your hypothesis and \emph{your justification for your
-prediction} with the rest of the class.
-
-\vspace{7\baselineskip}
-
-For the North American scale, each student pair will be assigned a data
-set using either fishes or mussels. For the state scale, each student
-pair will get a different state and taxon combination. (e.g., Alabama
-fishes, Alabama mussels, Missouri crayfishes, etc.). To determine range
+To determine range
 size, you will use R to calculate the number of watersheds (rivers)
 occupied by each species, and then plot a \textbf{histogram} to evaluate
 the range size. A species that occupies only a few watersheds will be
@@ -122,66 +113,100 @@ considered to have a small range size, while a species that occupies
 most or all watersheds in the state will be considered to have a large
 range size.
 
+\begin{wrapfigure}[17]{r}[0.5in]{3.0in}
+	\includegraphics[width=2.9in]{height_histogram}
+\end{wrapfigure}
+Histograms are graphs that display
+the frequency distribution of a continuous variable divided into distinct
+classes. For example, the histogram at right shows the frequency distribution for
+the height of 250 randomly sampled adult humans. Height is a continuous variable, divided here into 2-inch size classes.
+The 60 inch class contains individuals between 60.0 and 61.9 inches tall,
+the 62 inch class contains individuals between 62.0 and 63.9 inches, and so on. The 
+height of each bar shows the frequency of individuals in each class. The greatest
+number of people were in the 66-inch size class. The fewest number of people were
+in the shortest and tallest size classes.
+
+%\begin{center}
+%\end{center}
+
+
+
+Before you proceed, what do you predict? Do you think most species
+have small, medium or large range sizes, or will range sizes be a mix of
+sizes at the scale of North America? Discuss your ideas with others at your table. If
+your predictions do not agree, discuss reasons why.
+
+\textbf{1. Write your prediction here.} Considering all of North America, tell
+whether you think most species in a closely related group of organisms
+have large, medium or small range size, or some combination. Be prepared
+to discuss your prediction and \emph{your justification} with others.
+
+\vspace{6\baselineskip}
+
+You will be assigned North American fishes or mussels and also a state combined with fishes, mussels, or crayfishes  (e.g., Alabama fishes, Ohio mussels, Missouri crayfishes, etc.). Write the assigned
+files in the space provided below.
+
 \vspace{2ex}
 
 \begin{tabular}{@{}ll@{}}
-Name of your North American data set: & \rule{2in}{0.4pt}.\\[3ex]
-
-Name of your State and Taxon data set: & \rule{2in}{0.4pt}.\\
+	Name of your North American data set: & \rule{2in}{0.4pt}.\\[3ex]
+	
+	Name of your State and Taxon data set: & \rule{2in}{0.4pt}.\\
 \end{tabular}
 
-A \textbf{histogram} is a type of graph that shows the number of
-occurrences within categories. For example, a graph that shows the
-number of As, Bs, Cs, Ds and Fs for an exam is a type of histogram. To
-be certain you know how to interpret a histogram, we'll build one using
-the height of the students in class today. \textbf{Calculate your height
-in inches, using the following information}:
 
-If you are 5 ft. 6 in., then add the number of inches of your height to
-60 (5 ft. = 60 in.). Your height would be 66 inches. If you are 6 ft. 1
-in., add the number of inches of your height to 72 (6 ft. = 72 in). Use
-48 inches if you are 4 ft.+ and 84 inches if you are 7 ft.+. If you know your height in centimeters, give me that number. 
-
-\vspace{2ex}
-
-What is your height in inches (or centimeters)? \rule{1in}{0.4pt}.
-Tell me this number when asked.
+%
+%A \textbf{histogram} is a type of graph that shows the number of
+%occurrences within categories. For example, a graph that shows the
+%number of As, Bs, Cs, Ds and Fs for an exam is a type of histogram. To
+%be certain you know how to interpret a histogram, we'll build one using
+%the height of the students in class today. \textbf{Calculate your height
+%in inches, using the following information}:
+%
+%If you are 5 ft. 6 in., then add the number of inches of your height to
+%60 (5 ft. = 60 in.). Your height would be 66 inches. If you are 6 ft. 1
+%in., add the number of inches of your height to 72 (6 ft. = 72 in). Use
+%48 inches if you are 4 ft.+ and 84 inches if you are 7 ft.+. If you know your height in centimeters, give me that number. 
+%
+%\vspace{2ex}
+%
+%What is your height in inches (or centimeters)? \rule{1in}{0.4pt}.
+%Tell me this number when asked.
 
 One histogram that you create below will show the number of species that
 occupy one watershed, two watersheds, and so on, up to the total number
-of watersheds in the data set.
+of watersheds in the data set. You'll make a similar histogram that shows the 
+number of species that occur in each watershed.
 
-\subsection*{North American Analysis}
+\subsubsection*{North American Analysis}
 
-In the command below, substitute the file name for the North American
-data set you were given for the \textbf{filename} part of the command.
-For this data set, the file name will be \textbf{NAfishes.csv} or
-\textbf{NAmussels.csv}. 
+Run the following command in R, substituting the file name for the North American
+data set you were given for the \texttt{filename} part of the command. Your file name 
+will be \texttt{NAfishes.csv} or \texttt{NAmussels.csv}. 
 
 \texttt{spp \textless{}-
 read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/filename.csv', row.names=1)}
 
-Watersheds (major river systems) are rows and species are columns, with presence or absence of
-species indicated by 1s and 0s. 1 indicates a species is present in a
-watershed and 0 indicates a species is absent from a watershed.
+%Now, determine how many watersheds are in the data set, and how many
+%species of your taxon are in the data set. This is easy to do with the
+%\textbf{dim()} function. (If you do not remember how to use it, refer to
+%the R Tutorial exercise you did.)
+%
+%\textbf{dim()} returns the number of rows and columns, in that order so
+%the first number is the number of watersheds and the second number is
+%the number of species in your taxon. Remember the dim()
+%function as you'll use it again for the second data set.
 
-Now, determine how many watersheds are in the data set, and how many
-species of your taxon are in the data set. This is easy to do with the
-\textbf{dim()} function. (If you don't remember how to use it, refer to
-the R Tutorial exercise you did.)
-
-\textbf{dim()} returns the number of rows and columns, in that order so
-the first number is the number of watersheds and the second number is
-the number of species in your taxon. Remember the dim()
-function as you'll use it again for the second data set.
-
-Your primary goal is to calculate the range size for the species in your
+Your goal is to calculate the range size for each species in your
 data set, represented by the number of watersheds occupied by each
-species. You will also calculate the number of species per watershed. R
-provides two functions, \textbf{rowSums()} and \textbf{colSums()}, that
-sum across a row or down a column, for all rows or columns in your data
-set. The table below shows you results from the two functions for a
-small data set.
+species. You will also calculate the number of species per watershed. In your 
+data set, watersheds (major river systems) are rows and species are columns, with presence or absence of
+species indicated by 1s and 0s. A 1 indicates a species is present in a
+watershed and a 0 indicates a species is absent from a watershed.
+
+The R function \texttt{colSums()} sums the numbers in one column and \texttt{rowSums()} 
+sums the numbers in one row. The table below shows example results from the 
+two functions.
 
 \label{tab:colrowsums}
 \begin{longtable}[c]{@{}L{1.5in}cccC{1.5in}@{}}
@@ -201,21 +226,21 @@ watersheds per species & \textbf{2} & \textbf{2} & \textbf{2}
 \bottomrule
 \end{longtable}
 
-First, calculate the number of watersheds per species.
+Calculate the number of watersheds per species.
 
 \texttt{numWatersheds \textless{}- colSums(spp)}\qquad \# Remember that R is case
 sensitive.
 
 \texttt{numWatersheds} \qquad \# view the results
 
-Next, calculate the number of species that occur in each watershed.
+Calculate the number of species that occur in each watershed.
 
 \texttt{numSpecies \textless{}- rowSums(spp)}
 
 \texttt{numSpecies} \qquad \# view the results
 
-To create a histogram, use the \textbf{hist()} function. The
-\textbf{hist()} function, like \textbf{plot()}, has many arguments to
+To create a histogram, use the \texttt{hist()} function. The
+\texttt{hist()} function, like \texttt{plot()}, has many arguments to
 customize your figure, but begin with a simple histogram.
 
 \texttt{hist(numWatersheds, ylab='Number of Species')}
@@ -230,19 +255,18 @@ occur in just a few watersheds (small range size)? Or, is it some
 combination of the two? Explain how the observed result supports or
 falsifies your hypothesis in question 1. Be prepared to discuss.
 
-\vspace{7\baselineskip}
+\vspace{6\baselineskip}
 
-Now, use the \textbf{hist()} function to graph the number of species per
+Now, use the \texttt{hist()} function to graph the number of species per
 watershed. You should be able to figure out what command to type. Use 'Number 
 of Watersheds' for the ylab part of the command.
 
 \textbf{3. Interpret your second histogram.} How does the information displayed
-in this histogram differ from the first histogram? Don't just say that
+in this histogram differ from the first histogram? Do not say that
 one is the number of watersheds occupied by each species and the other
-is the number of species in each watershed. Interpret what you see.
-Explain below and be prepared to discuss.
+is the number of species in each watershed. Interpret and explain your results.
 
-\vspace{7\baselineskip}
+\vspace{6\baselineskip}
 
 To see the two figures nicely formatted side by side, type
 
@@ -250,23 +274,23 @@ To see the two figures nicely formatted side by side, type
 
 Expand the window to full screen. 
 
-\subsection*{State Analysis}
+\subsubsection*{State Analysis}
 
 Perhaps the pattern that you observed is not surprising given the size
-of North America. Let's take a look at a much smaller scale: the state.
+of North America. Does the same pattern hold at a smaller scale, such as a state?
 This is the type of analysis you might perform as a state conservation
 manager, for example. The steps are the same as the steps you
 performed for North America.
 
-\textbf{4. Write your hypothesis here.} Considering a single state like Missouri
-or Georgia, tell whether you think most species in a closely related
+\textbf{4. Write your prediction here.} For the state you were assigned, 
+tell whether you think most species in a closely related
 group of organisms have large, medium or small range size, or some
-combination. Be prepared to discuss your hypothesis and \emph{your
-justification for your prediction} with the rest of the class.
+combination. Be prepared to discuss your prediction and \emph{your
+justification} with the class.
 
 \vspace{7\baselineskip}
 
-\textbf{Get the State data.} Substitute the file name of your \textbf{state} data set for filename in
+\textsc{Get the State data.} Substitute the file name of your state data set for filename in
 the command. Be sure to use your state file name, which you wrote down
 earlier.
 
@@ -274,34 +298,30 @@ earlier.
 read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/filename.csv', row.names=1)}
 
 Calculate the number of watersheds per species and assign it to the
-variable \textbf{numWatersheds}. Do the same for number of species per
-watershed and assign to \textbf{numSpecies}. Use \textbf{rowSums()} and
-\textbf{colSums()} as needed. If you don't remember which function goes
+variable \texttt{numWatersheds}. Do the same for number of species per
+watershed and assign to \texttt{numSpecies}. Use \texttt{rowSums()} and
+\texttt{colSums()} as needed. If you do not remember which function goes
 with watersheds and which goes with species, review page \pageref{tab:colrowsums} of this handout.
 
-Use the \textbf{hist()} function on numWatersheds and numSpecies, as you did above,
+Use the \texttt{hist()} function on \texttt{numWatersheds} and \texttt{numSpecies}, as you did above,
 to determine whether most species at the state scale have large, medium, or
-small size ranges, or a mix.  Use ylab = 'Number of Species' when making the histogram
-for numWatersheds. 
+small size ranges, or a mix.  Use \texttt{ylab = 'Number of Species'} when making the histogram
+for \texttt{numWatersheds}. 
 
-\textbf{5. Interpret the pattern.} Describe the pattern that you see. Do most
+\texttt{5. Interpret and explain the pattern.} Describe the pattern that you see. Do most
 species occur in most watersheds (large range size) or do most species
 occur in just a few watersheds (small range size)? Or, is it some
 combination of the two? Explain how the observed result supports or
-falsifies your hypothesis in question 4.
+prediction your hypothesis in question 4.
 
 \vspace{7\baselineskip}
-\newpage
 
-\textbf{6. Repeat this for numSpecies.} Interpret the pattern. 
-Use ylab='Number of Watersheds' when making the histogram for numSpecies.
+
+\textbf{6. Repeat this for numSpecies.} Interpret and explain the pattern. 
+Use \texttt{ylab='Number of Watersheds'} when making the histogram for \texttt{numSpecies}.
 How does the information displayed in this histogram differ from the first histogram?
-Don't just say that one is the number of watersheds occupied by each
-species and the other is the number of species in each watershed.
-Interpret what you see. Explain below and be prepared to discuss.
 
 \vspace{7\baselineskip}
-
 
 To see the two figures nicely formatted side by side, type
 
@@ -309,6 +329,6 @@ To see the two figures nicely formatted side by side, type
 
 Expand the window to full screen. In some cases, the bars of the histogram might be too wide or too skinny. If so, replace \texttt{makepretty.r} with either \texttt{makepretty2.r} or \texttt{makepretty5.r}. Try to get the width of the bars in the right histogram to be about the same width as the left histogram.
 
-Save your state histograms as a PDF file and upload to the Unit 1a: Range Size drop box. If working in pairs, each of you should upload a copy.
+Save your state histograms as a \textsc{png} or \textsc{pdf} file and upload to the Unit 1a: Range Size drop box. If working in pairs, each of you should upload a copy.
 
 \end{document}  
