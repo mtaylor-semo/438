@@ -3,7 +3,7 @@
 
 \documentclass[11pt]{article}
 \usepackage{graphicx}
-	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
 
 \usepackage{geometry}
 \geometry{letterpaper}                   
@@ -18,9 +18,9 @@
 %\pagenumbering{gobble}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -35,8 +35,6 @@
 
 \usepackage{booktabs}
 \usepackage{longtable}
-%\usepackage{tabularx}
-%\usepackage{siunitx}
 %\usepackage[justification=raggedright, singlelinecheck=off]{caption}
 %\captionsetup{labelsep=period} % Removes colon following figure / table number.
 %\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
@@ -50,14 +48,18 @@
 
 %\usepackage{enumitem}
 %\usepackage{hyperref}
-%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
-\usepackage{titling}
-\setlength{\droptitle}{-50pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+%\usepackage{titling}
+%\setlength{\droptitle}{-50pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
 
 \usepackage{hanging}
+\usepackage{wrapfig}
+
+\usepackage[sc]{titlesec}
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
 
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -67,20 +69,29 @@
 %\rhead{Name: \rule{5cm}{0.4pt}}
 %\renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
-\fancyhead[R]{\footnotesize Range Size \thepage}
+\fancyhead[R]{\footnotesize Coastal Californa Range Size \thepage}
+\fancyhead[L]{\footnotesize \coursename}
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\renewcommand{\headrulewidth}{0pt}
+}
 
 \newcommand{\bigSpace}{\vspace{5\baselineskip}}
 
 \newlength{\myLength}
 \setlength{\myLength}{\parindent}
 
-\title{Range Size: California Coastal Marine Fishes}
+\title{Geographic Range Size}
 \author{10 Points}
 \date{}                                           % Activate to display a given date or no date
 
 \begin{document}
-\maketitle
-\thispagestyle{plain}
+	\thispagestyle{first_page}
+
+\subsection*{Range Size: California Coastal Marine Fishes (10 points)}
 
 In a previous exercise, you determined the range size for freshwater
 organisms. Fishes, mussels, and some crayfishes can't cross land so it seems
@@ -110,10 +121,10 @@ species. You will also calculate the number of species present in each
 degree of latitude. In this data set, species are rows and degrees of
 latitude are columns. You will plot histograms of the results from these
 two calculations. Finally, you will learn a new trick with the
-\textbf{plot()} function to identify the region with the highest
+\texttt{plot()} function to identify the region with the highest
 diversity of coastal marine fishes.
 
-\subsection*{Obtain the Data Set}
+\subsubsection*{Obtain the Data Set}
 
 Enter the following on one line:
 
@@ -130,7 +141,7 @@ degree of latitude.
 
 Calculate some basic statistics to fill in the table below. I've shown
 you what to do for range size. Repeat for the number of species present
-in each degree of latitude.
+in each degree of latitude. Fill in the table on the next page.
 
 \texttt{max(rangeSize)} \qquad \# maximum number of degrees latitude occupied
 
@@ -156,35 +167,33 @@ fishes likely have large or small range size? Explain.
 
 \vspace{7\baselineskip}
 
-Create a histogram of \textbf{rangeSize} and \textbf{numSpecies}. What
-do the result suggest about range size?
+Create a histogram of \texttt{rangeSize} and \texttt{numSpecies}. Review the
+last handout if necessary.\footnote{You can use ``makeprettyCA.r'' if you want.} 
+What do the results suggest about range size?
 
 \textbf{2. Was your hypothesis supported for range size?} Did most coastal marine
 fishes have relatively small or relatively large range sizes, especially
 in relation to the actual distance covered by the data set? Explain.
 
-\vspace{7\baselineskip}
+\vspace{5\baselineskip}
 
-\textbf{3. Describe the pattern for number of species per degree latitude.} A few
+\textbf{3. Describe the pattern for number of species per degree latitude.} Study the histogram
+for you made for \texttt{numSpecies}. A few
 degrees of latitude seem to have very few species. Can you think of
-reasons why? Hint 1: Look back at the minimum number of species per
+reasons why? \textsc{Hint 1}: What was the minimum number of species per
 degree latitude in the table on the first page. Do you really think
-there is a degree of latitude anywhere along the coast that has only one
-species of fish? Hint 2: The data set encompasses only those species
+there is a degree of latitude along the west coast of North America that has only one
+species of fish? \textsc{Hint 2}: The data set encompasses only those species
 that occur in California. Use this information to try to explain the
 very high peak with very low numbers of species and the secondary peak
-with more reasonably numbers of species.
+with more reasonable numbers of species.
 
+\newpage
 
+%When you have finished, save the file as a PDF and upload to the Unit
+%1b: California course drop box before you leave today.
 
-%% MAke pretty.
-
-
-
-When you have finished, save the file as a PDF and upload to the Unit
-1b: California course drop box before you leave today.
-
-\textbf{Where is the richness of coastal marine fishes the highest?}
+\subsubsection*{Where is the richness of coastal marine fishes the highest?}
 
 Species richness is the number of species present at a given location.
 The second histogram showed that most degrees of latitude had fewer than
@@ -206,26 +215,26 @@ more about biogeographic regions in the next unit. For now, you will
 explore which degrees of latitude have the highest overall species
 richness.
 
-To do so, use the \textbf{plot()} function to plot the
-\textbf{numSpecies} results.
+To do so, use the \texttt{plot()} function to plot the
+\texttt{numSpecies} results.
 
 \texttt{plot(numSpecies)}
 
 Clearly, there is a peak in species richness, but at which latitudes?
 The Y-axis is the richness per degree latitude. The X-axis, labeled
-Index, is simply the order of the results in the \textbf{numSpecies}
+Index, is simply the order of the results in the \texttt{numSpecies}
 data set, so you can't easily tell which latitudes have the highest
 species richness. However, the order of records corresponds to the order
 of latitude from 30°S to 68°N.
 
 To get degrees of latitude on the X-axis, you need to generate a
-sequence of numbers that correspond to the degrees of latitude. Use the \textbf{seq()} function to generate a
+sequence of numbers that correspond to the degrees of latitude. Use the \texttt{seq()} function to generate a
 sequence of numbers from $\minus$30 to 68, incrementing by 1. Assign the
-results to a variable called \textbf{lat} for \emph{lat}itude.
+results to a variable called \texttt{lat} for \emph{lat}itude.
 
 \texttt{lat <- seq(-30,68,1)}
 
-Now you can plot species richness against latitude. \textbf{xlim{}} limits create a balanced distribution of tick marks along the X-axis.
+Now you can plot species richness against latitude. \texttt{xlim{}} limits create a balanced distribution of tick marks along the X-axis.
 
 \texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}
 
@@ -235,29 +244,27 @@ get a sense that the highest diversity is somewhere between 25N and
 degrees of latitude have the highest species richness.
 
 R provides a way to interact with your plots, using the
-\textbf{identify()} function. The \textbf{identify()} function lets you
+\texttt{identify()} function. The \texttt{identify()} function lets you
 click on points in your plot. It will identify each point you click, up
-to a specifiable limit. You have to use the \textbf{identify()} function
-immediately after you use the \textbf{plot()} function because
-\textbf{identify()} works only in the currently active plot window.
+to a specifiable limit. You have to use the \texttt{identify()} function
+immediately after you use the \texttt{plot()} function because
+\texttt{identify()} works only in the currently active plot window.
 
-After you type the plot command below (or recall the command using
-the “up” cursor, move the window to the back and type the identify
-command, then bring the plot window back to the front.
+After you type or recall the plot command below, move the plot window to the back and type the \texttt{identify{}} command, then bring the plot window back to the front.
 
-\texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}
-
+\texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}\\
 \texttt{identify(numSpecies\textasciitilde{}lat, labels=lat, cex=0.8)} \qquad \# cex reduces the character size.
 
 Now, click once on the highest point. The number that should appear is the latitude of that point. Remember that a negative number is °S (south of the equator). Click 3–4 more of the highest points. Also click the lowest leftmost point and the
-lowest rightmost point. Press the \textbf{Esc} key when you are finished
-to stop the interaction. (If numbers do not appear, try the commands again. If you are still not
-successful, ask for help.)
+lowest rightmost point. Press the \texttt{Esc} key when you are finished
+to stop the interaction. \emph{RStudio users may have to click the points, then press \texttt{Esc} to see
+the numbers.} If numbers do not appear at all, try the commands again. If you are still not
+successful, ask for help.
 
 The lowest leftmost point should be $\minus$30 and the lowest rightmost point
 should be 68. The highest points are in the low- to mid-30s. Notice also that
 the numbers that appeared on your graph also appear in the R command
-window after you pressed the \textbf{Esc} key. You could assign the
+window after you pressed the \texttt{Esc} key. You could assign the
 results to a variable for later use but it is not necessary to do so
 here.
 
