@@ -1,18 +1,14 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[t]{beamer}
+%\documentclass[t]{beamer}
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
-%\documentclass[t,handout]{beamer}  %Use this for handouts.
-%\usepackage{handoutWithNotes}
-%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+\documentclass[t,handout]{beamer}  %Use this for handouts.
+\usepackage{handoutWithNotes}
+\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
 
-
-%%% Including only some slides for students.
-%%% Uncomment the following line. For the slides,
-%%% use the labels shown below the command.
-%\includeonlylecture{student}
+\includeonlylecture{student}
 
 %% For students, use \lecture{student}{student}
 %% For mine, use \lecture{instructor}{instructor}
@@ -142,7 +138,7 @@
 \end{frame}
 }
 
-\begin{frame}[t,plain]{Abundance and density is highest near the center of the range. Why?}
+\begin{frame}[t]{Abundance and density is highest near the center of the range. Why?}
 	\begin{center}
 		\includegraphics[width=\textwidth]{range_scissortail}
 	\end{center}
@@ -151,12 +147,18 @@
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_juniper}}
-\begin{frame}[b,plain]{\highlight{Habitat quality} influences abundance and density.}
+\begin{frame}[b]{\highlight{Habitat quality} influences abundance and density.}
 
 \end{frame}
 }
-
-\begin{frame}[t,plain]{\highlight{Metapopulations} have cycles of extinction and colonization.}
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_size_point_conception}}
+\begin{frame}[b]
+\end{frame}
+}
+%
+\begin{frame}[t]{\highlight{Metapopulations} have cycles of extinction and colonization.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{range_metapopulation}	
 	\end{center}
@@ -164,7 +166,7 @@
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_disturbance_flood}}
-\begin{frame}[b,plain]{Floods restore sediment and nutrients.}
+\begin{frame}[b]{Floods restore sediment and nutrients.}
 \tiny\hfill\textcolor{white}{2008 St. Louis area flood, Jocelyn Augustino, Wikimedia Commons.}
 \end{frame}
 }
@@ -173,104 +175,104 @@
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_flood_birdspoint}}
-\begin{frame}[b,plain]{}
+\begin{frame}[b]{}
 
 \end{frame}
 }
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_louisiana_land_loss}}
-\begin{frame}[b,plain]{}
+\begin{frame}[b]{}
 
 \end{frame}
 }
 
 \lecture{student}{student}
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_disturbance_fire}}
-\begin{frame}[b,plain]{\textcolor{white}{Fires maintain forests and grasslands.}}
+\begin{frame}[b]{\textcolor{white}{Fires maintain forests and grasslands.}}
 
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_disturbance_fire_regime}}
-\begin{frame}[b,plain]
+\begin{frame}[b]
 	\tiny\hfill USDA, Wikimedia Commons.
 \end{frame}
 }
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_hurricane}}
-\begin{frame}[b,plain]{Hurricanes can alter reef ecosystems.}
+\begin{frame}[b]{Hurricanes can alter reef ecosystems.}
 	\tiny\hfill Hurricane Sandy, NOAA, Wikimedia Commons.
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_urchins}}
-\begin{frame}[b,plain]
+\begin{frame}[b]
 	\tiny\textcolor{white}{NOAA, Flickr Creative Commons.}
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_ginsburgellus}}
-\begin{frame}[b,plain]{\textcolor{white}{The range of some species depends on the range of other species.}}
+\begin{frame}[b]{\textcolor{white}{The range of some species depends on the range of other species.}}
 	\tiny\textcolor{white}{Nineline Goby, \copyright André de Molenaar.}
 \end{frame}
 }
-
-\begin{frame}[t,plain]{Whitebark Pine uses Clark’s Nutcracker for seed dispersal.}
+%
+\begin{frame}[t]{Whitebark Pine uses Clark’s Nutcracker for seed dispersal.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{range_nutcracker}
 	\end{center}
 \end{frame}
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_squirrels}}
-\begin{frame}[b,plain]{Native Red Squirrels have lost range to invasive Grey Squirrels.}
-	
+\begin{frame}[b]{Native Red Squirrels have lost range to invasive Grey Squirrels.}	
 	\tiny\hfill Red Squirrel Survival Trust
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_brown_tree_snake}}
-\begin{frame}[b,plain]{Native bats and birds have lost range to invasive snake.}
+\begin{frame}[b]{Native bats and birds have lost range to invasive snake.}
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_historical}}
-\begin{frame}[b,plain]{Historical factors influence range size.}
+\begin{frame}[b]{Historical factors influence range size.}
 \end{frame}
 }
-
+%
 \lecture{instructor}{instructor}
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_groundhog}}
-\begin{frame}[b,plain]
+\begin{frame}[b]
 \tiny Wikimedia Commons.
 \end{frame}
 }
-
+%
 \lecture{student}{student}
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_marmota}}
-\begin{frame}[b,plain]
+\begin{frame}[b]
 	\tiny Modified from Wikimedia Commons.
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_allopatric}}
-\begin{frame}[t,plain]{Closely related species have \highlight{allopatric} distributions.}
+\begin{frame}[t]{Closely related species have \highlight{allopatric} distributions.}
 \end{frame}
 }
-
-\begin{frame}[t,plain]{Closely related species have fewer overlapping ranges than expected.}
+%
+\begin{frame}[t]{Closely related species have fewer overlapping ranges than expected.}
 
 	\begin{center}
 		\hangpara Observed vs. expected number of \\\hspace{0.5em} overlapping ranges for desert rodents.
@@ -287,14 +289,12 @@
 		\end{tabular}
 	\end{center}
 \end{frame}
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_goby_phylo}}
-\begin{frame}[b,plain]
+\begin{frame}[b]
 \end{frame}
 }
-
-
-
-
+%
+%
 \end{document}
