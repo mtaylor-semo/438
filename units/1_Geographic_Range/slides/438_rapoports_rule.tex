@@ -7,20 +7,11 @@
 %\documentclass[t,handout]{beamer}  %Use this for handouts.
 %\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
-%	\setbeamercolor{background canvas}{bg=black!5}
 
-
-%%% Including only some slides for students.
-%%% Uncomment the following line. For the slides,
-%%% use the labels shown below the command.
 %\includeonlylecture{student}
 
 %% For students, use \lecture{student}{student}
 %% For mine, use \lecture{instructor}{instructor}
-
-
-%\usepackage{pgf,pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
 
 % FONTS
 \usepackage{fontspec}
@@ -64,12 +55,11 @@
 }
 
 
-
 \begin{document}
-%\lecture{instructor}{instructor}
+%
 \lecture{student}{student}
 
-\begin{frame}[t,plain]{Our goal for today is to }
+\begin{frame}[t]{Our goal for today is to }
 
 %	\hangpara learn how range size varies with latitude, and
 	
@@ -79,127 +69,147 @@
 	
 %	\vspace{4\baselineskip}\pause
 	
-	\hangpara We'll begin by identifying a latitudinal pattern in the U.S.
+	\hangpara We will begin by identifying a latitudinal pattern in the U.S.
 
 \end{frame}
 
 \lecture{instructor}{instructor}
-
+%
 \begin{frame}[t,plain]
 	\begin{center}
 		\includegraphics[height=0.95\textheight]{range_size_alabama_fishes}
 	\end{center}
 \end{frame}
-
+%
 \begin{frame}[t,plain]
 	\begin{center}
 		\includegraphics[height=0.95\textheight]{range_size_tennessee_fishes}
 	\end{center}
 \end{frame}
-
+%
 \begin{frame}[t,plain]
 	\begin{center}
 		\includegraphics[height=0.95\textheight]{range_size_kentucky_fishes}
 	\end{center}
 \end{frame}
-
+%
 \begin{frame}[t,plain]
 	\begin{center}
 		\includegraphics[height=0.95\textheight]{range_size_illinois_fishes}
 	\end{center}
 \end{frame}
-
+%
 \begin{frame}[t,plain]
 	\begin{center}
 		\includegraphics[height=0.95\textheight]{range_size_wisconsin_fishes}
 	\end{center}
 \end{frame}
-
+%
 \lecture{student}{student}
-
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_size_fishes_pattern}}
-\begin{frame}[b,plain]{What is the pattern from south to north?}
+\begin{frame}[b]{What is the pattern from south to north?}
 
 \end{frame}
 }
-
-
-
-
-\begin{frame}[t,plain]{\highlight{Rapoport's rule} states that range size decreases from south to north.}
+%
+\begin{frame}[t]{\highlight{Rapoport's rule} states that range size  from south to north.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{rapoport_range_size}
 	\end{center}
 
-\end{frame}
+	\vfilll
 
-\begin{frame}[b,plain]{How does species richness change from south to north?}
+	\tiny \hfill Fig.~14.4\,\textcopyright Sinauer Associates, Inc.
+
+\end{frame}
+%
+\begin{frame}[t]{How does species richness change from south to north?}
 	\begin{center}
 		\includegraphics[height=0.85\textheight]{rapoport_fishes_richness}
 	\end{center}
 
 \end{frame}
-
-\begin{frame}[t,plain]{\highlight{Rapoport's rule} states that richness decreases from south to north.}
+%
+\begin{frame}[t]{\highlight{Rapoport's rule} states that richness decreases from south to north.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{rapoport_richness}
 	\end{center}
 
+	\vfilll
+
+	\tiny \hfill Fig.~14.4\,\textcopyright Sinauer Associates, Inc.
+
 \end{frame}
-
-
-\begin{frame}[t,plain]{A pattern similar to Rapoport's is observed for altitude.}
+%
+\begin{frame}[t]{A pattern similar to Rapoport's is observed for altitude.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{rapoport_altitude}
 	\end{center}
-\end{frame}
 
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.7\,\textcopyright Sinauer Associates, Inc.
+
+\end{frame}
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_size_area_mass}}
-\begin{frame}[b,plain]{Range size shows a non-random relation to body mass.}
+\begin{frame}[t]{Range size shows a non-random relation to body mass.}
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.11\,\textcopyright Sinauer Associates, Inc.
 
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_size_area_abundance}}
-\begin{frame}[b,plain]{Range size shows a non-random relation to abundance.}
+\begin{frame}[t]{Range size shows a non-random relation to abundance.}
 
+	\vfilll
+
+	\tiny \hfill Fig.~14.16\,\textcopyright Sinauer Associates, Inc.
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{range_size_range_shape}}
-\begin{frame}[b,plain]{Range shape reflects continental features.}
+\begin{frame}[t]{Range shape reflects continental features.}
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.15\,\textcopyright Sinauer Associates, Inc.
 
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{topo_us}}
-\begin{frame}[b,plain]{\textcolor{white}{North American mountain ranges run north-south.}}
+\begin{frame}[t]{\textcolor{white}{North American mountain ranges run north-south.}}
 
 \end{frame}
 }
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{topo_eurasia}}
-\begin{frame}[b,plain]{Eurasian mountain ranges run east-west.}
+\begin{frame}[t]{Eurasian mountain ranges run east-west.}
 
 \end{frame}
 }
-
-
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient}}
-\begin{frame}[b,plain]{Diversity shows a strong latitudinal gradient. Why?}
+\begin{frame}[b]{Diversity shows a strong latitudinal gradient. Why?}
 
+	\vfilll
+	
+	\tiny \hfill Fig.~14.44\,\textcopyright Sinauer Associates, Inc.
 \end{frame}
 }
-
-
+%
 %\begin{frame}[t,plain]{Several related \highlight{biotic} hypotheses have been proposed.}
 %
 %	\hangpara Productivity,
@@ -217,107 +227,120 @@
 %	\hangpara Tropical stability.
 %	
 %\end{frame}
-
-\begin{frame}[t,plain]{Environmental gradients contribute to diversity gradient.}
+%
+\begin{frame}[t]{Environmental gradients contribute to diversity gradient.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{diversity_gradient_environment}
 	\end{center}
 	
-\end{frame}
 
+	\vfilll
+
+	\tiny \hfill Fig.~14.53\,\textcopyright Sinauer Associates, Inc.
+
+\end{frame}
+%
 \begin{frame}[t,plain]{\highlight{Net primary productivity} is highest in the tropics.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{diversity_gradient_npp}
 	\end{center}
 \end{frame}
-
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_thermal}}
-\begin{frame}[b,plain]{High solar input may cause tropical diversity.}
+\begin{frame}[b]{High solar input may cause tropical diversity.}
+
+
+\vfilll
+
+\tiny \hfill Fig.~14.54\,\textcopyright Sinauer Associates, Inc.
 
 \end{frame}
 }
 
 
 
-\begin{frame}[t,plain]{Tropical niche conservation and adaption to new niches may explain diversity gradient.}
-	\begin{center}
-		\includegraphics[height=0.8\textheight]{diversity_gradient_niche_conservatism}
-	\end{center}
+\begin{frame}[t]{Tropical niche conservation and adaption to new niches may explain diversity gradient.}
+
+	{\centering
+		\includegraphics[height=0.75\textheight]{diversity_gradient_niche_conservatism}\par
+	}
+
+	\vfilll
 	
+	\hfill \tiny Weins and Donoghue	2004. Trends Ecol. Evol. 19: 636.
 \end{frame}
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_niche_conservatism_phylogeny}}
-\begin{frame}[t,plain]{Oldest lineages are tropical. Younger lineages are temperate.}
+\begin{frame}[t]{Oldest lineages are tropical. Younger lineages are temperate.}
 
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.55\,\textcopyright Sinauer Associates, Inc.
 \end{frame}
 }
 
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_tnc_frog_phylogeny}}
-\begin{frame}[b,plain]{Tropical niche conservatism was supported by hylid tree frogs.}
+\begin{frame}[b]{Tropical niche conservatism was supported by hylid tree frogs.}
 
-\tiny\hfill Wiens et al. 2006. Am. Nat. 168: 579.
+
+ \tiny \hfill Wiens et al. 2006. Am. Nat. 168: 579.
 \end{frame}
 }
-
-
-\begin{frame}[t,plain]{Niche conservatism was tested with amphibians.}
+%
+\begin{frame}[t]{Niche conservatism was tested with amphibians.}
 	\begin{center}
 		\includegraphics[height=0.75\textheight]{diversity_gradient_tnc_amphib1}
 	\end{center}
 	
-	\vskip0pt plus 1filll
+	\vfilll
 	
-	\tiny Gómoz-Rodríguez et al. 2015. Global Ecol. Biogeogr. 24: 383.
+	\hfill \tiny Gómez-Rodríguez et al. 2015. Global Ecol. Biogeogr. 24: 383.
 \end{frame}
-
+%
 \begin{frame}[t,plain]{Most amphibians tended to have a conserved niche.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{diversity_gradient_tnc_amphib2}
 	\end{center}
 	
-	\vskip0pt plus 1filll
+	\vfilll
 	
-	\tiny Gómoz-Rodríguez et al. 2015. Global Ecol. Biogeogr. 24: 383.
+	\tiny \hfill Gómez-Rodríguez et al. 2015. Global Ecol. Biogeogr. 24: 383.
 \end{frame}
-
-
-
-
+%
 {
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{diversity_gradient_out_of_tropics}}
-\begin{frame}[t,plain]{Tropics serve as cradle, museum, and immigration pump.}
+\begin{frame}[t]{Tropics serve as cradle, museum, and immigration pump.}
 
+
+	\vfilll
+
+	\tiny \hfill Fig.~14.56\,\textcopyright Sinauer Associates, Inc.
 \end{frame}
 }
-
-\begin{frame}[t,plain]{More marine bivalves tended to evolve first in tropics.}
+%
+\begin{frame}[t]{More marine bivalves tended to evolve first in tropics.}
 	\begin{center}
 		\includegraphics[width=\textwidth]{diversity_gradient_oot_first_occurrence}
 	\end{center}
 	
-	\vskip0pt plus 1filll
+	\vfilll
 	
-	\tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
+	\hfill \tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
 \end{frame}
-
-\begin{frame}[t,plain]{Marine bivalves tended to appear later in temperate zones.}
+%
+\begin{frame}[t]{Marine bivalves tended to appear later in temperate zones.}
 	\vspace{-\baselineskip}
 	\begin{center}
 		\includegraphics[height=0.75\textheight]{diversity_gradient_oot_first_occurrence2}
 	\end{center}
 	
-	\vskip0pt plus 1filll
+	\vfilll
 	
-	\tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
+	\hfill \tiny Jablonski et al. 2013. Proc. Natl. Acad. Sci. 110: 10487.
 \end{frame}
-
-
-
-
-
-
+%
 \end{document}
