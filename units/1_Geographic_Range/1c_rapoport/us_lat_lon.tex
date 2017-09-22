@@ -1,0 +1,61 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%\includeonlylecture{student}
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Ligatures={Common,TeX}, Scale=MatchLowercase, Numbers=OldStyle]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/pictures/teach/438/lab/}
+	{/Users/goby/pictures/teach/common/}} % set of paths to search for images
+
+%\usepackage{units}
+\usepackage{booktabs}
+\usepackage{multicol}
+
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+}
+
+\begin{document}
+
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+	
+ \begin{columns}
+	\column{\dimexpr\paperwidth}
+	\includegraphics[width=\textwidth]{us_lat_lon}
+\end{columns}	
+	
+\end{frame}
+}
+%
+
+\end{document}
