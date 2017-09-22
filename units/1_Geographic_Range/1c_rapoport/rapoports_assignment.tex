@@ -18,7 +18,7 @@
 %\pagenumbering{gobble}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* Bold Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* Bold Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
 \setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
 \usepackage{microtype}
@@ -48,16 +48,16 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-%\usepackage{enumitem}
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}.}
+%\setlist[itemize]{label=\color{gray}\textbullet}
 %\usepackage{hyperref}
-%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
-\usepackage{titling}
-\setlength{\droptitle}{-50pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+\usepackage[sc]{titlesec}
 
-\usepackage{hanging}
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
 
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -67,8 +67,15 @@
 %\rhead{Name: \rule{5cm}{0.4pt}}
 %\renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
-\fancyhead[R]{\footnotesize Range Size \thepage}
-\fancyhead[L]{\footnotesize Biogeography}
+\fancyhead[R]{\footnotesize Rapoport's Rule Abstract Assignment\thepage}
+\fancyhead[L]{\footnotesize \coursename}
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\renewcommand{\headrulewidth}{0pt}
+}
 
 \newcommand{\bigSpace}{\vspace{5\baselineskip}}
 
@@ -76,13 +83,11 @@
 \setlength{\myLength}{\parindent}
 
 
-\title{Rapoport's Rule Assignment}
-\author{30 Points}
-\date{}                                           % Activate to display a given date or no date
 
 \begin{document}
-\maketitle
-\thispagestyle{plain}
+\thispagestyle{first_page}
+
+\subsection*{Rapoport's Rule: Abstract Assignment (30 points)}
 
 An important role as a scientist is to share your results with other
 scientists. One way to share your results is via oral presentation or
@@ -94,55 +99,59 @@ purpose of your project, the methods, results and the broader
 implications of your results. A typical abstract is usually limited to
 250 words.
 
-You must write a 250 word (maximum) abstract that concisely does the
-following:
+You must write a 230 word (mininimum) to 250 word (maximum) abstract 
+that includes:
 
 \begin{enumerate}
-	\item Title and author. Follow the format of the examples on the next page.
-These do not count towards your word count limit.
+	\item the title and author. Follow the format of the examples on the next page.
+	These do not count towards your word count limit.
 
 	\item Provides the background and motivation for your project. What
-is the question you attempted to answer and why did it need to be
-answered? You have read about Rapoport's Rule and you have a sense of
-the debate about whether Rapoport's Rule applies universally to all
-taxa. Thus, you have background information and a motivation for
-performing your study.
+	is the question you attempted to answer and why did it need to be
+	answered? You have read about Rapoport's Rule and you have a sense of
+	the debate about whether Rapoport's Rule applies universally to all
+	taxa. Thus, you have background information and a motivation for
+	performing your study.
 
-	\item Your methods. I've provided a basic outline of the methods
-in the handouts. Feel free to ask questions.
+	\item Your methods. I have provided a basic outline of the methods
+	in the handouts. Feel free to ask questions.
 
-	\item Your results. You have them. Study them and interpret them
-concisely and correctly.
+	\item Your results. You have them. Study and interpret them
+	concisely and correctly.
 
 	\item Implication of your results, particularly as it relates to
-the background and motivation. How do your results compare with the
-predictions of the rules? What would be the implications of your results
-for other aquatic groups in North America, such as crayfishes or
-mussels, or for freshwater fishes in Europe and Asia or South America or
-Africa? This is often very brief. I'm not as concerned about your
-specific statements as I am that you demonstrate some depth of thought.
-Think about why or how Rapoport's Rule does or doesn't apply to fishes,
-and relate those ideas to other groups or regions.
+	the background and motivation. How do your results compare with the
+	predictions of the rules? What would be the implications of your results
+	for other aquatic groups in North America, such as crayfishes or
+	mussels, or for freshwater fishes in Europe and Asia or South America or
+	Africa? This is often very brief. I am not as concerned about your
+	specific statements as I am that you demonstrate some depth of thought.
+	Think about why or how Rapoport's Rule does or does not apply to fishes,
+	and relate those ideas to other groups or regions.
 
 \end{enumerate}
 
 On the other side of this handout are two example abstracts from the
 2013 proceedings of the International Biogeographic Society biannual
 conference for you to use as a guide. The course website also contains a
-link to the proceedings, which you can browse to get a sense of the
-abstract structure.\footnote{Scientists are human. Some turn in abstracts
-  before they have the full results to meet the deadline. You may
-  stumble across an abstract that suggests, ``Results will be
-  discussed.'' You must not do this for the assignment. You must include
-  results and a brief discussion.}
+link to recent conference program filled with abstracts that you can 
+browse to get a sense of proper abstract structure.%
+\footnote{Scientists are human. Some turn in abstracts
+before they have the full results to meet the deadline. You may
+stumble across an abstract that suggests, ``Results will be
+discussed.'' You must not do this for the assignment. You must include
+results and a brief discussion.}
 
-Upload your final abstract to the Abstract drop box by 24 September, 11 am.
+Upload your abstract to the Rapoport's Rule Abstracts 
+drop box by the due date.
 
-Abstracts that exceed the 250 word limit or that are written with poor
-grammar will be returned for further editing (and a 20\% deduction). Be
-concise; be professional!
+Abstracts that are below the 230 word limit, exceed the 250 word limit, 
+or that are written poorly will be returned for further editing 
+(and a 20\% deduction). Be concise. Be professional.
 
 \newpage
+
+\subsubsection*{Example abstracts}
 
 \textbf{Species-to-genus ratios reveal latitudinal asymmetry in the
 diversification of New World bats}

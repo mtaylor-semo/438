@@ -1,3 +1,4 @@
+
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
@@ -50,7 +51,9 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \usepackage{enumitem}
-	\setlist{leftmargin=1em}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+%\setlist[enumerate]{label=\textsc{\alph*}.}
 %\usepackage{hyperref}
 
 \usepackage[sc]{titlesec}
