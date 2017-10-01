@@ -36,7 +36,7 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage[justification=raggedright, singlelinecheck=off]{caption}
-%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+\captionsetup{labelsep=period} % Removes colon following figure / table number.
 %\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
 %\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
 %\captionsetup[table]{skip=0pt}
@@ -48,6 +48,7 @@
 
 %\usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{multicol}
 
 %\usepackage{titling}
 %\setlength{\droptitle}{-50pt}
@@ -92,12 +93,23 @@
 \maketitle
 \section{Assigned Reading}
 %\subsection{}
+\begin{multicols}{2}
+4th edition\\
+Chapter 4: 83--86, 89 (niche concept)--119. \\
+Chapter 15: 621-637.
+
+%\medskip
+\columnbreak
+
+5th edition\\
 Chapter 4: 71--74, 78--100. \\
 Chapter 14: 521-538.
+\end{multicols}
 
-The assigned reading from the textbook is fair game for assignments and exams, even if I do not cover the material in  lecture.
 
-Some of the material in Chapter 4 will be an ecological review (for some of you) but you should study these pages to learn how ecology influences the geographic range.  I expect you to know the fundamental ecological concepts (niche, competition, mutualism, etc.) and to be able to explain how they influence the geographic range.  For Figure 4.25 on page 93, can you think of an evolutionary explanation for the origin of non-overlapping distributions?
+The assigned reading from the textbook is fair game for assignments and exams, even if I do not cover the material in  lecture. Figure and page numbers refer to the 5th edition. Numbers in parentheses after figure and page numbers refer to their equivalents in the 4th edition. 
+
+Some of the material in Chapter 4 will be an ecological review for most of you but study these pages to learn how ecology influences the geographic range.  I expect you to know the fundamental ecological concepts (niche, competition, mutualism, etc.) and to be able to explain how they influence the geographic range.  For Figure 4.25 on page 93 (105), can you think of an evolutionary explanation for the origin of non-overlapping distributions?
 
 All hyperlinks in this PDF are live. Click them to be transported to the web site.
 
@@ -190,7 +202,7 @@ Algal growth was held in check only by long-spined sea urchins.  However, Hurric
 Also, if you study the ranges of any closely related species, you are very likely to find that many species have adjoining ranges but do not overlap.  Closely related species are very likely to use similar resources, so the ranges remain non-overlapping which reduces competition. 
 
 \subsubsection{Predation}
-Distributions of predators may be influenced by the geographic range of their prey species. This can also be said for the distributions of parasites and their hosts. Evidence in favor of this idea would include the complete coincidence of predator/prey (or host/parasite) ranges. It's hard to document how predators limit prey distribution in natural systems, but we have gained clues through accidental or intentional introduction of predators outside of their native range. Introduction of largemouth bass (\emph{Micropterus salmoides}) into the southwestern United States has decimated many of that region's native fishes.  The brown tree snake, \emph{Boiga irregularis}, snake was accidentally introduced  to the island of Guam in the south Pacific and has caused extinction of most of the native bird fauna there (up to 10--12 species) (Figure \ref{brown tree snake}). 
+Distributions of predators may be influenced by the geographic range of their prey species. This can also be said for the distributions of parasites and their hosts. Evidence in favor of this idea would include the complete coincidence of predator/prey (or host/parasite) ranges. It is hard to document how predators limit prey distribution in natural systems, but we have gained clues through accidental or intentional introduction of predators outside of their native range. Introduction of largemouth bass (\emph{Micropterus salmoides}) into the southwestern United States has decimated many of that region's native fishes.  The brown tree snake, \emph{Boiga irregularis}, snake was accidentally introduced  to the island of Guam in the south Pacific and has caused extinction of most of the native bird fauna there (up to 10--12 species) (Figure \ref{brown tree snake}). 
 
 \begin{figure}
 	\centering
@@ -201,7 +213,7 @@ Distributions of predators may be influenced by the geographic range of their pr
 
 \subsubsection{Mutualism}
 
-\emph{Mutualism} is a third kind of interspecific interaction and one in which both species benefit from the interaction. In such cases, if the mutualism is very specific, the distribution of one species limits the distribution of the other. Most cases of mutualism involve multiple possible species that can take place in the interaction. For instance, there are 8 or so species of hummingbirds in North America which use over 100 species of flowering plants as a food source. Even though the interaction between these birds and the flowers is beneficial to both species, there is little correspondence between the geographic ranges of particular species of hummingbirds and plant species. A good exception is the strong overlap of the ranges of Clark's nutcracker (\emph{Nucifraga columbiana}) and the white bark pine trees (\emph{Pinus albicaulis}) (Figure \ref{nutcracker}). The distribution of the pine (especially) is dependent on the dispersal of seeds by nutcrackers which feed on the cones (and hence release the seeds). On the other hand, the cones/seeds provide an excellent food source for the nutcracker. Both species are found with widely overlapping ranges in the Rocky Mountain sub-alpine habitats.
+\emph{Mutualism} is a third kind of interspecific interaction and one in which both species benefit from the interaction. In such cases, if the mutualism is very specific, the distribution of one species limits the distribution of the other. Most cases of mutualism involve multiple possible species that can take place in the interaction. For instance, there are eight or so species of hummingbirds in North America which use over 100 species of flowering plants as a food source. Even though the interaction between these birds and the flowers is beneficial to both species, there is little correspondence between the geographic ranges of particular species of hummingbirds and plant species. A good exception is the strong overlap of the ranges of Clark's nutcracker (\emph{Nucifraga columbiana}) and the white bark pine trees (\emph{Pinus albicaulis}) (Figure \ref{nutcracker}). The distribution of the pine (especially) is dependent on the dispersal of seeds by nutcrackers which feed on the cones (and hence release the seeds). On the other hand, the cones/seeds provide an excellent food source for the nutcracker. Both species are found with widely overlapping ranges in the Rocky Mountain sub-alpine habitats.
 
 \begin{figure}[tb]
 	\centering
@@ -226,7 +238,7 @@ In 1982, Eduardo Rapoport reported a trend in range size that he observed across
 		\caption{Illustration of Rapoport's Rule for range size and elevation, based on range size (meters, blue line) and species richness (green line) for Costa Rican trees and Venezuelan birds. For both taxonomic groups, average range size increases and species richness decreases with higher altitude (modified from Stevens 1992).\label{raporuleelev}}
 \end{figure}
 
-Rapoport's observations are now collectively called \emph{Rapoport's Rule}.  Not all taxa show these trends associated with latitude an elevation so there is considerable debate about whether this rule applies to most taxa. We'll read some papers associated with this debate.  A number of ideas have been proposed to explain this rule, at least for the taxa where the trend has been observed.  Your text discusses this in some detail on pages 626--634, so study those pages.  Later in the semester, we will discuss in more depth the hypotheses that have been proposed to explain the latitudinal gradient for species richness.
+Rapoport's observations are now collectively called \emph{Rapoport's Rule}.  Not all taxa show these trends associated with latitude an elevation so there is considerable debate about whether this rule applies to most taxa. We'll read some papers associated with this debate.  A number of ideas have been proposed to explain this rule, at least for the taxa where the trend has been observed.  Your text discusses this in some detail on pages 526--534 (626--634), so study those pages.  Later in the semester, we will discuss in more depth the hypotheses that have been proposed to explain the latitudinal gradient for species richness.
 
 \section{Body Size, Abundance and Geographic Area}
 
@@ -235,14 +247,14 @@ Figure \ref{areabodysize}  shows the range size of North American birds as a fun
 \begin{figure}[tb]
 	\centering
 		\includegraphics[width=0.9\textwidth]{land_bird_range_size.png}
-		\caption{Geographic area as a function of body mass for North American birds.  See the notes for an explanation of the three dashed lines. (Figure 14.11 from your text.)\label{areabodysize}}
+		\caption{Geographic area as a function of body mass for North American birds.  See the notes for an explanation of the three dashed lines. (Figure 14.11 (15.9) from your text.)\label{areabodysize}}
 \end{figure}
 
 If anything, small birds show considerable variation of range size, while large birds are constrained to have large range sizes.  A similar trend is observed for land mammals (see your text).  However, the graphs suggest a bit more than we might first realize.  To understand why, you have to consider the information represented by the three dashed lines, called \emph{constraint lines}.   A constraint is a limitation of some sort, like the constraints on the geographic range discussed in the last set of lecture notes.
  
 Two of the constraints should be fairly obvious as to the limitation.  The third will be subtle but it has potentially important consequences from a conservation biology perspective.  This first constraint is the vertical dashed line.  Interpret this in relation to the X-axis. \emph{What do you think is the constraint?} (Think about it before reading further.) The vertical dashed line represents a physiological constraint on body size.  Species have to be of a certain minimum size to function. The second constraint is the horizontal dashed line. Interpret it in relation to the Y-axis. This time the constraint is not related to the organism but to the land.  \emph{What do you think is the second constraint?} (Again, think before peeking ahead.)  The second constraint is the size of the continent or ocean basin.  Most species don't (or can't) extend beyond continents or ocean basins, which sets the upper limit of the range size.
 
-The third constraint is represented by the diagonal dashed line.  It doesn't relate directly to the two axes but it does begin to explain the non-random relationship between body mass and range size. What do you think is the constraint? This one is rather subtle, so we'll walk through it slowly, but we first have to establish a few basic biological tenets.  For many species, abundance is a negative function of body size.  That is, small species tend to have high abundance, while large species have much lower abundance.  This is not usually a problem to accept because large species need more of the limited resources, so fewer individuals can be supported.  However, studies have shown that species with low abundances are more vulnerable to extinction.  Therefore, large species tend to be much less common and have a higher probability of going extinct.\footnote{If you had BI 300, think back to the lectures on turnover rates and the link between high origination and extinction rates.  If you didn't have my evolution class, think back on a particularly fond childhood memory.  Either way, send me an e-mail saying you read this far to get two extra credit points.}  Thus, for a population of a large species to be sustained, it needs a range size sufficient to support the population.  That's where this diagonal line comes into play, and not just for large species. 
+The third constraint is represented by the diagonal dashed line.  It does not relate directly to the two axes but it does begin to explain the non-random relationship between body mass and range size. What do you think is the constraint? This one is rather subtle, so we'll walk through it slowly, but we first have to establish a few basic biological tenets.  For many species, abundance is a negative function of body size.  That is, small species tend to have high abundance, while large species have much lower abundance.  This is not usually a problem to accept because large species need more of the limited resources, so fewer individuals can be supported.  However, studies have shown that species with low abundances are more vulnerable to extinction.  Therefore, large species tend to be much less common and have a higher probability of going extinct.\footnote{If you had BI 300, think back to the lectures on turnover rates and the link between high origination and extinction rates.  If you didn't have my evolution class, think back on a particularly fond childhood memory.  Either way, send me an e-mail saying you read this far to get two extra credit points.}  Thus, for a population of a large species to be sustained, it needs a range size sufficient to support the population.  That's where this diagonal line comes into play, and not just for large species. 
  
 Considering the information above, can you now begin to explain what this diagonal constraint line represent?  The area above the diagonal line represents the approximate area needed by a species to sustain a viable population.  Species whose ranges are very small relative to their body size may have a higher probability of extinction.  This information would be critical to know by a conservation biologist, for example, who might then try to increase the available habitat and thereby increase the range size of the species.  Several methods exist to calculate constraint lines, but this is well beyond our goals for this course.  However, the application of this method is one of many analytical tools that may be useful to a conservation biologist charged with protecting threatened or endangered species.
 
@@ -251,7 +263,7 @@ Figure \ref{area and abundance} shows this information in a different way.  Here
 \begin{figure}[tb]
 	\centering
 		\includegraphics[width=0.85\textwidth]{area_abundance.png}  
-		\caption{Plot of abundance as a function of geographic area for North American birds.  See the notes for an explanation of the dashed line. (Figure 14.16 of your text) \label{area and abundance}}
+		\caption{Plot of abundance as a function of geographic area for North American birds.  See the notes for an explanation of the dashed line. (Figure 14.16 (15.10) of your text) \label{area and abundance}}
 \end{figure}
 
 \section{Range Shape}
@@ -266,7 +278,7 @@ Another trend noted by Rapoport is range shape.  Figure \ref{range shape} plots 
 
 Continental barriers tend to explain the overall shape.  Large continental barriers, such as the Rocky Mountains and the Appalachian Mountains, tend to run north--south.  In Eurasia, the major mountain barriers tend to run east--west. In North America, species with smaller ranges tend to be constrained in the east--west direction by the barriers, so the ranges tend to stretch into a north--south dimension.  Small North American species may have ranges between the Atlantic coast and the Appalachian Mountains, or between the Appalachian and Rocky mountains, or between the Rockies and the Pacific Coast.  However that Eurasian birds all tend to have large range sizes overall (Figure \ref{range shape}C).  None of the Eurasian birds appear to have small ranges. Can you come up with a possible explanation?  Here's a hint: Pleistocene glaciation.
 
-During the Pleistocene (1.8 million to 12,000 years ago), there were five major glacial advances that extended south into North America and Eurasia. In North America, glaciers advanced as far south as the Missouri River in Missouri and even farther south in Illinois.  Species unable to disperse east to west across mountain barriers could still disperse southward into Mexico or Central America to escape the glaciers and associated cooler climates.  In Eurasia, however, the mountain ranges that run east--west in the southern part of the continent would have limited dispersal south during the glacial advance.  Trapped between a cold place and a high place, many Eurasian species probably went extinct.  The only species that could have survived would have been those that already had the ability to cross over the mountains, and thus would already have larger range sizes. Remember also that the east--west size of the geographic range will be constrained by the edges of the continent.
+During the Pleistocene (2.1 million to 12,000 years ago), there were five major glacial advances that extended south into North America and Eurasia. In North America, glaciers advanced as far south as the Missouri River in Missouri and even farther south in Illinois.  Species unable to disperse east to west across mountain barriers could still disperse southward into Mexico or Central America to escape the glaciers and associated cooler climates.  In Eurasia, however, the mountain ranges that run east--west in the southern part of the continent would have limited dispersal south during the glacial advance.  Trapped between a cold place and a high place, many Eurasian species probably went extinct.  The only species that could have survived would have been those that already had the ability to cross over the mountains, and thus would already have larger range sizes. Remember also that the east--west size of the geographic range will be constrained by the edges of the continent.
 
 \section{Range Overlap}
 
@@ -285,7 +297,6 @@ Species exist as part of a community of many species so many species clearly hav
 \end{figure}
 
 This pattern of non-overlapping ranges among recently diverged species has been observed enough to warrant several comparative studies, but the results are often conflicting.  Thus, the generality of this idea of non-overlap between closely related species remains highly debated.
-
 
 
 
