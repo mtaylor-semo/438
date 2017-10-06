@@ -1,0 +1,128 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lab/}%
+	{/Users/goby/Pictures/teach/common/}%}%
+	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+%\usepackage{tikz}
+%	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+\begin{document}
+%\lecture{instructor}{instructor}
+\lecture{student}{student}
+
+\begin{frame}[t]
+	\includegraphics[width=\textwidth]{global_continents_outline}
+\end{frame}
+%
+\begin{frame}[t]
+	\includegraphics[height=0.95\textheight]{mussel_families}
+\end{frame}
+%
+\begin{frame}[t]
+	\includegraphics[width=\textwidth]{mussel_distribution_global}
+\end{frame}
+%
+\begin{frame}[t]
+	\centering
+	\includegraphics[width=0.95\textwidth]{mussel_distribution_hyriidae}\\
+	\includegraphics[width=0.95\textwidth]{mussel_distribution_mycetopodidae}
+\end{frame}
+%
+\begin{frame}[t]
+	\includegraphics[width=\textwidth]{mussel_distribution_unioninae}
+\end{frame}
+%
+\begin{frame}[t]
+	\includegraphics[width=\textwidth]{mussel_distribution_ambleminae}
+\end{frame}
+%
+\begin{frame}[t]
+	\includegraphics[width=\textwidth]{crayfish_distribution_global}
+\end{frame}
+%
+\begin{frame}[t]{Are these crayfish phylogenies consistent with a Pangean breakup?}
+	\includegraphics[width=\textwidth]{crayfish_phylogenies}
+\end{frame}
+%
+\begin{frame}[t]{Are these crayfish phylogenies consistent with a Pangean breakup?}
+	\includegraphics[width=\textwidth]{crayfish_phylogenies}
+\end{frame}
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{cichlidae_distribution}}
+\begin{frame}[t]
+\end{frame}
+}
+%
+\begin{frame}[t]{Do these phylogenies predict the order of the continental breakup of Gondwana?}
+	\centering
+	\vspace{-0.5\baselineskip}
+	\includegraphics[height=0.8\textheight]{cichlid_phylogenies}
+\end{frame}
+%
+\begin{frame}[t]
+	\includegraphics[width=\textwidth]{cichlid_gondwana_breakup}
+\end{frame}
+%
+
+%
+%
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_polyodon}}
+%\begin{frame}[b]{\highlight{Relict distributions} can arise from extinction.}
+%
+%	\tiny\hfill\textit{Polyodon spatula}, The Earth Society, Wikimedia Commons.
+%\end{frame}
+%}
+%
+
+%
+\end{document}
