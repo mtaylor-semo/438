@@ -42,8 +42,8 @@
 
 %\usepackage{textcomp}
 %\usepackage{setspace}
-%\usepackage{tikz}
-%	\tikzstyle{every picture}+=[remember picture,overlay]
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
 
 \mode<presentation>
 {
@@ -63,218 +63,418 @@
 %\lecture{instructor}{instructor}
 \lecture{student}{student}
 
-\begin{frame}[t,plain]{Our goal for today is to }
+\begin{frame}[t]{Our goal for today is to }
 
-	\hangpara interpret and explain in terms of dispersal and vicariance.
+	\hangpara learn how \highlight{vicariance} and \highlight{dispersal} contribute to the distribution of organisms.
 	
 \end{frame}
-
-\begin{frame}[t,plain]{The \highlight{geographic template} explains biogeographic patterns.}
+%
+\begin{frame}[t]
+	\frametitle<1>{The \highlight{geographic template} explains biogeographic patterns.}
+	\frametitle<2>{How does \highlight{dispersal} and \highlight{vicariance} explain distribution patterns?}
+	
 	\begin{center}
 		\includegraphics[width=0.95\textwidth]{geographic_template}
 	\end{center}
+
+	
+	\begin{tikzpicture}
+		\onslide<2>{\draw [ultra thick, color=orange6] (7.85,4.5) rectangle (11.9,6.6);}
+	\end{tikzpicture}
+
+	\vfilll
+	
+	\hfill \tiny Fig.~3.1~\copyright Sinauer Assoc., Inc.
+
 \end{frame}
-
-
-
+%
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_cosmopolitan}}
-\begin{frame}[b,plain]{\highlight{Cosmopolitan distributions} are uncommon.}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{vicariance_repeated}}
+\begin{frame}[b]{Are repeated patterns due to independent dispersal or shared geological events?}
 
 \end{frame}
 }
-
-
-
-
-\begin{frame}[t,plain]{Several geographic patterns have been recognized.}
-\begin{multicols}{2}
-
-	\noindent\includegraphics[width=0.49\textwidth]{regions_blueyes}
-
-	\columnbreak
+%
+\begin{frame}[t]{If dispersal, was it by land bridge or other means?}
+	\begin{multicols}{2}
 	
-	\hangpara\highlight{Endemism,}
+		\noindent\includegraphics[width=0.49\textwidth]{dispersal_land_bridge}
 	
-	\hangpara\highlight{relict distributions,}
-	
-	\hangpara\highlight{disjunct distributions,} and
-
-	\hangpara\highlight{provincialism.}
-
-\end{multicols}
-\end{frame}
-
-\begin{frame}[t,plain]{\highlight{Endemism} means a taxon is found only in one place.}
-\begin{multicols}{2}
-
-	\includegraphics[width=0.45\textwidth]{regions_wallflower}
-
-	\columnbreak
-	
-	\hfil\includegraphics[height=0.6\textheight]{wallflower_pic}\hfill
-
-	\vfill
+		\columnbreak
 		
-\end{multicols}
-
-	\vskip0pt plus 1fill
+		\hangpara How far can an organism disperse?
 	
-	\tiny\hfill San Francisco Wallflower, Eric in SF, Wikimedia Commons.
+		\hangpara Can low \highlight{vagility} organisms disperse large distances?
+	
+		\hangpara Could dispersal by other means explain repeated patterns?
+	
+	\end{multicols}
+
+	\vfilll
+	
+	\hfill \tiny Fig.~2.8 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\lecture{instructor}{instructor}
+% See https://whyevolutionistrue.wordpress.com/2013/09/13/nasa-launches-a-frog-and-experimental-biogeograhy/ for background.
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{flying_frog1}}
+\begin{frame}[b]
+
+	\hfill \tiny \textcolor{white}{Courtesy \href{https://whyevolutionistrue.wordpress.com/2013/09/13/nasa-launches-a-frog-and-experimental-biogeograhy/}{Why Evolution Is True}}
+\end{frame}
+}
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{flying_frog2}}
+\begin{frame}[b]
+
+	\hfill \tiny \textcolor{white}{Courtesy \href{https://whyevolutionistrue.wordpress.com/2013/09/13/nasa-launches-a-frog-and-experimental-biogeograhy/}{Why Evolution Is True}}
+\end{frame}
+}
+%
+
+\lecture{student}{student}
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{barbour_darlington_dispersal}}
+
+\begin{frame}[b]{Dispersal: a tale of land bridges, hurricanes, and flying frogs.}
+
+\hfill \tiny \textcolor{white}{Courtesy \href{https://whyevolutionistrue.wordpress.com/2013/09/13/nasa-launches-a-frog-and-experimental-biogeograhy/}{Why Evolution Is True}}
 
 \end{frame}
+}
+%
+\begin{frame}[t]{\highlight{Vicariance} does explain repeated patterns.}
 
-\begin{frame}[t,plain]{Endemism is hierarchical within taxa. Why?}
-
-	\begin{center}
-		\includegraphics[height=0.82\textheight]{regions_krats}
-	\end{center}
-
-	\vskip0pt plus 1fill
-	
-	\tiny\hfill Tipton Kangaroo Rat, USFWS, Wikimedia Commons.
-\end{frame}
-
-
-\begin{frame}[t,plain]{Islands have high levels of endemism.}
+\includegraphics[width=\textwidth]{vicariance_model}
 \begin{multicols}{2}
-
-	\includegraphics[width=0.46\textwidth]{regions_silversword}
+	\includegraphics[width=0.49\textwidth]{vicariance_plants}
 
 	\columnbreak
-
-	\vspace*{2\baselineskip}	
-
-	\noindent Over 50 species of silverswords are endemic to the Hawaiian islands.
+	
+	\includegraphics[width=0.49\textwidth]{vicariance_leaffish}
 	
 \end{multicols}
 
-	\vskip0pt plus 1fill
+	\vfilll
 	
-	\tiny\hfill\textit{Argyroxiphium sandwicense}, Wikimedia Commons.
-
+	\hfill \tiny \copyright Sinauer Assoc., Inc.
 \end{frame}
+%
+\begin{frame}[t]{The distribution of many taxa is consistent with vicariance.}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_polyodon}}
-\begin{frame}[b,plain]{\highlight{Relict distributions} can arise from extinction.}
-
-\tiny\hfill\textit{Polyodon spatula}, The Earth Society, Wikimedia Commons.
-\end{frame}
-}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_bristlecone}}
-\begin{frame}[b,plain]{\highlight{Relict distributions} can arise from habitat loss.}
-
-\tiny\hfill Bristlecone Pine, dcrjst, Wikimedia Commons.
-\end{frame}
-}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_terrestrial}}
-\begin{frame}[b,plain]{Terrestrial \highlight{regions} reflect endemism across many taxa.}
-
-\end{frame}
-}
-
-\begin{frame}[t,plain]{Marine \highlight{regions} also reflect taxonomic endemism.}
-
-%	\begin{center}
-		\includegraphics[width=\textwidth]{regions_marine}
-%	\end{center}
-
-\end{frame}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_amphitropical}}
-\begin{frame}[b,plain]{\highlight{Amphitropical} distributions reflect temperature as barriers.}
-
-\tiny\hfill Long-finned Pilot Whale, Barney Moss, Wikimedia Commons.
-\end{frame}
-}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_provinces}}
-\begin{frame}[b,plain]{\highlight{Provinces} are often biodiversity hotspots and may be centers of origin.}
-
-\end{frame}
-}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_north_american_provinces}}
-\begin{frame}[b,plain]
-
-\end{frame}
-}
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_freshwater_provinces}}
-\begin{frame}[b,plain]
-
-\end{frame}
-}
-
-\begin{frame}[t,plain]{What explains high regional and provincial endemism?}
-\begin{multicols}{2}
-
-	\includegraphics[width=0.46\textwidth]{regions_madagascar}
-
-	\columnbreak
-
-	\noindent Madagascar has\\ \quad eight plant families, \\ \quad four bird families, and,\\ \quad five primate families.
+	\includegraphics[width=\textwidth]{vicariance_cycads}
 	
-	\vspace{\baselineskip}
+	{\centering
+	Distribution of Cycadales (cycad plants)\par
+	}
 	
-	\noindent The Seychelles has one amphibian family (Sooglossidae).
+	\vfilll
 	
-	\vspace{\baselineskip}
+	\hfill \tiny Esculapio, Wikimedia, \ccbysa{3}
+\end{frame}
+%
+\begin{frame}[t]{\highlight{Gondwanan} and \highlight{Laurasian} distributions are due to vicariance.}
+
+	\includegraphics[width=\textwidth]{vicariance_ratites}
 	
-\end{multicols}
-
+	{\centering
+	Distribution of ratite birds.\par	
+	}
+	\vfilll
+	
+	\hfill \tiny Fig.~10.26 \copyright Sinauer Assoc., Inc.
 \end{frame}
+%
+\begin{frame}[t]{\highlight{Plate tectonics} explains vicariant distributions.}
 
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_terrestrial}}
-\begin{frame}[b,plain]{Regional endemism separated by sharp or broad \highlight{“lines.”}}
-
+	\vspace*{-0.5\baselineskip}
+	
+	\includegraphics[width=\textwidth]{vicariance_tectonic_plates}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~8.18 \copyright Sinauer Assoc., Inc.
 \end{frame}
-}
+%
+\begin{frame}[t]{Shared geological features support vicariance.}
 
-
-
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_wallaces_line}}
-\begin{frame}[b,plain]{\highlight{Wallace’s line} marks sharp faunal changes.}
-
+	\vspace*{-0.5\baselineskip}
+	
+	\includegraphics[width=\textwidth]{vicariance_geological_formations}
+	
+	\vfilll
+	
+	\hfill \tiny Box~8.1\textsc{a} \copyright Sinauer Assoc., Inc.
 \end{frame}
-}
+%
+\begin{frame}[t]
 
-\begin{frame}[b,plain]{\highlight{Bond’s line} separates continental and insular faunas.}
+%	\vspace*{-0.5\baselineskip}
+	{\centering
+	\includegraphics[width=0.95\textwidth]{vicariance_reptile_mammals}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Box~8.1\textsc{b} \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\begin{frame}[t]
+
+	{\centering
+	\includegraphics[width=0.95\textwidth]{vicariance_various}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Box~8.1\textsc{c} \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\begin{frame}[t]
+
+	{\centering
+	\includegraphics[height=0.46\textheight]{tectonics_proterozoic}\\[1ex]
+	\includegraphics[height=0.46\textheight]{tectonics_silurian}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~8.22 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\begin{frame}[t]
+
+	{\centering
+	\includegraphics[height=0.46\textheight]{tectonics_triassic}\\[1ex]
+	\includegraphics[height=0.46\textheight]{tectonics_cretaceous}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~8.22 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\begin{frame}[t]
+
+	{\centering
+	\includegraphics[height=0.46\textheight]{tectonics_tertiary}\\[1ex]
+	\includegraphics[height=0.46\textheight]{tectonics_miocene}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~8.22 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\begin{frame}[t]
+
+	{\centering
+	\includegraphics[height=0.46\textheight]{tectonics_pleistocene}\\[1ex]
+	\includegraphics[height=0.46\textheight]{tectonics_future}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~8.22 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+%\begin{frame}[t]{Continental rearrangement caused climate change.}
+%
+%	{\centering
+%	\includegraphics[width=0.9\textwidth]{tectonics_climate_change}\par
+%	}
+%	
+%	\vfilll
+%	
+%	\tiny Fig.~8.30 \copyright Sinauer Assoc., Inc.
+%\end{frame}
+%
+\begin{frame}[t]{The breakup of Gondwana can be represented as a cladogram (tree).}
+
+	\vspace*{-1\baselineskip}
+	
+	{\centering
+	\includegraphics[width=\textwidth]{gondwana_cladogram}\par
+	}
+	
+	\vfilll
+	
+%	\tiny Fig.~8.30 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\begin{frame}[t]{Faunal similarity corresponds to tectonic separation.}
+
+	{\centering
+	\includegraphics[width=\textwidth]{tectonics_faunal_similarity}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~8.32 and Table 8.1 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
+\begin{frame}[t]{\highlight{Indices of biotic similarity} compare numbers of taxa shared between areas.}
+
+
+	\begin{multicols}{2}
+	
 	\begin{center}
-		\includegraphics[height=0.9\textheight]{regions_bonds_line}
+	{\LARGE
+		$\dfrac{C}{N_1 + N_2 - C}$
+	}
+	
+	\vspace*{\baselineskip}
+	
+	Jaccard's
 	\end{center}
-\end{frame}
+	
+	\columnbreak
+	
+	\begin{center}
+	{\LARGE
+		$\dfrac{C}{N_1}$
+	}
+	
+	\vspace*{\baselineskip}
 
+	Simpson's
+	\end{center}
+	\end{multicols}
+	
+	\hangpara $C$ = number of shared taxa, \\
+	$N_1$ = total number of taxa in area 1 (the smaller number)\\
+	$N_2$ = total number of taxa in area 2 (the other number)
+
+\end{frame}
+%
+\begin{frame}[t]{Similarity of global mammalian families.}
+
+	\includegraphics[width=\textwidth]{similarity_mammalian_families}
+	
+\end{frame}
+%
+\begin{frame}[t]{Similarity of global mammalian genera.}
+
+	\includegraphics[width=\textwidth]{similarity_mammalian_genera}
+	
+\end{frame}
+%
+\begin{frame}[t]{Mammalian similarity can be represented as a cladogram.}
+
+	\includegraphics[width=\textwidth]{similarity_mammalian_cladograms}
+	
+\end{frame}
+%
+\begin{frame}[t]
+
+	\includegraphics[width=\textwidth]{similarity_southeast_asia}
+	
+\end{frame}
+%
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{regions_broad_lines}}
-\begin{frame}[b,plain]
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{similarity_southeast_asia2}}
+\begin{frame}[b]
 
 \end{frame}
 }
+%
+\begin{frame}[t]{\highlight{Vagile} and \highlight{volant} species can have active dispersal.}
 
-\begin{frame}[t,plain]
-
-	\hangpara Read the online notes and assigned reading for plate tectonics.
-	
-	\hangpara I will not cover the material in lecture but it is fair game for exams.
-	
-	\hangpara Next lecture will require tectonic understanding.
+	\includegraphics[width=\textwidth]{dispersal_vagile_volant}
 	
 \end{frame}
+%
+\begin{frame}[t]{Other organisms have passive dispersal.}
 
+	\begin{multicols}{2}
+		\includegraphics[width=0.49\textwidth]{dispersal_passive_manowar}
+		
+		\columnbreak
+		
+		\includegraphics[width=0.49\textwidth]{dispersal_passive_dandelion}
+		
+	\end{multicols}
+	
+\end{frame}
+%
+\begin{frame}[t]
 
+	{\centering
+	\includegraphics[height=0.85\textheight]{dispersal_deer_tickseed}\par
+	}
+	
+	\vfilll
+	
+	\hfill \tiny Michael S.~Taylor, \ccbysa{3}
+\end{frame}
+%
+\begin{frame}[t]{Range expansion can occur through jump or diffusion dispersal.}
 
+	\vspace*{-0.5\baselineskip}
+	{\centering
+	\includegraphics[height=0.82\textheight]{dispersal_jump_diffusion}\par
+	}
+	
+	\vfilll
+	
+%	\hfill \tiny Michael S.~Taylor, \ccbysa{3}
+\end{frame}
+%
+\begin{frame}[t]{How would you explain this distribution for the Camelidae?}
+
+	\vspace*{-0.5\baselineskip}
+	{\centering
+	\includegraphics[height=0.82\textheight]{camel_distribution}\par
+	}
+	
+	\vfilll
+	
+%	\hfill \tiny Michael S.~Taylor, \ccbysa{3}
+\end{frame}
+%
+\begin{frame}[t]{\highlight{Secular migration} is range expansion with evolutionary divergence.}
+
+	\vspace*{-0.5\baselineskip}
+	{\centering
+	\includegraphics[height=0.82\textheight]{camel_distribution_historical}\par
+	}
+	
+	\vfilll
+	
+%	\hfill \tiny Michael S.~Taylor, \ccbysa{3}
+\end{frame}
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{dispersal_sweepstakes_route}}
+\begin{frame}[b]
+
+\end{frame}
+}
+%
+\begin{frame}[t]{Barriers place limits on dispersal.}
+
+	\vspace*{-1\baselineskip}
+	
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		
+		\includegraphics[width=\textwidth]{dispersal_barriers}
+		\end{column}
+		
+		\begin{column}{0.35\textwidth}
+		
+		\hangpara \highlight{Ecological barriers.}
+
+		\hangpara \highlight{Psychological barriers.}
+
+		\hangpara Barrier effectiveness depends on biotic and abiotic factors.
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+%
 
 \end{document}
