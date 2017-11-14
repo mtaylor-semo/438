@@ -1,0 +1,139 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{exam}
+%\usepackage{graphicx}
+%	\graphicspath{{/Users/goby/Pictures/teach/300/}
+%	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb, amsmath}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common,TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{hanging}
+
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY}\else Island Biogeography\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\printanswers
+
+\begin{document}
+
+Read carefully the papers listed below and then type your answers to the following questions.
+Type the question number and then your answer. You do not need to retype the question. Hand-written
+assignments will not be accepted. You must have your completed answers
+with you in class or your assignment will be considered late. Assignments e-mailed to me after the \emph{start} of class will be
+considered late. \emph{Interpret} what you read; do not copy answers directly from the text (that would
+be plagiarism). Be prepared to discuss your answers in small groups and as a class. Failure
+to discuss these questions may result in a pop quiz with a point value
+equal to this assignment.
+
+\textbf{Failure to attend} \textbf{class} \textbf{on the due date} will
+result in an automatic 50\% deduction.
+
+\begin{hangparas}{1.5em}{1}
+Weigelt, P.~et al.~2016.~Late Quaternary climate change shapes
+island biogeography. Nature 532: 99–102.
+
+Valente, L.~et al.~2017.~Equilibrium bird species diversity in
+Atlantic islands. Current Biology 27: 1660–1666. 
+\end{hangparas}
+
+
+\begin{questions}
+
+\question[5]
+Weigelt et al.~hypothesized that islands with greater area change ($\Delta$area) during the 
+\textsc{lgm} should have greater numbers native and endemic species.
+They also hypothesized that islands with greater changes in isolation ($\Delta$isolation)
+should have more native species but fewer endemics.  Explain why would islands with high $\Delta$isolation have high native richness but low endemic richness while those with high $\Delta$area have high richness for both natives and endemics.
+
+\ifprintanswers
+Answer Here
+\else\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+  
+\ifprintanswers
+Answer Here
+\else\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+  
+\ifprintanswers
+Answer Here
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+  
+\ifprintanswers
+Answer Here
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+  
+\ifprintanswers
+Answer Here
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+  
+\ifprintanswers
+Answer Here
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\end{questions}
+
+\end{document}  
