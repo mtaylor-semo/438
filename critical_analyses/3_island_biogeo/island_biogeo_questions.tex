@@ -1,7 +1,11 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[11pt]{exam}
+\documentclass[11pt, addpoints]{exam}
+
+\printanswers
+
+
 %\usepackage{graphicx}
 %	\graphicspath{{/Users/goby/Pictures/teach/300/}
 %	{img/}} % set of paths to search for images
@@ -52,12 +56,10 @@
 \SolutionEmphasis{\bfseries}
 
 \pagestyle{headandfoot}
-\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY}\else Island Biogeography\fi}
+\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY\ \numpoints~points}\else Island Biogeography\fi}
 \runningheader{}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 \runningheadrule
-
-\printanswers
 
 \begin{document}
 
@@ -81,57 +83,81 @@ Valente, L.~et al.~2017.~Equilibrium bird species diversity in
 Atlantic islands. Current Biology 27: 1660–1666. 
 \end{hangparas}
 
+The papers will be referred to as Weigelt and Valente, respectively, in the questions below. Google Earth (free) might be worth installing on your computer.
+
+\textbf{Cladogenesis:} evolution of new species via branching of lineages into new lineages. A single ancestral species evolves into two descendant species.
+
+\textbf{Anagensis:} evolution of new species within a single lineage. A single ancestral species evolves into a single descendant species.
 
 \begin{questions}
-
 \question[5]
-Weigelt et al.~hypothesized that islands with greater area change ($\Delta$area) during the 
-\textsc{lgm} should have greater numbers native and endemic species.
-They also hypothesized that islands with greater changes in isolation ($\Delta$isolation)
-should have more native species but fewer endemics.  Explain why would islands with high $\Delta$isolation have high native richness but low endemic richness while those with high $\Delta$area have high richness for both natives and endemics.
+Briefly compare and contrast the three hypotheses proposed by Weigelt.
 
-\ifprintanswers
-Answer Here
+\ifprintanswers{\bfseries%
+H\textsubscript{1}: Current climate and island physical features will be the best predictors of current island diversity.\smallskip
+
+H\textsubscript{2}: Islands that had the greatest change in island area ($\Delta$area) between the \textsc{lgm} and present will have the greatest number (raw and proportion) of endemic species.\smallskip
+
+H\textsubscript{3}: Island that had the greatest change in island isolation ($\Delta$isolation) between the \textsc{lgm} and present will have the greatest number of native, non-endemic species.
+}%
 \else\vspace*{\stretch{1}}
 \fi
 
 \question[5]
-  
-\ifprintanswers
-Answer Here
-\else\vspace*{\stretch{1}}
-\fi
+Why should islands with high $\Delta$area have high richness for native \emph{and} 
+endemic species? Why should islands with $\Delta$isolation have only high native 
+richness but low endemic richness. 
 
-\question[5]
-  
-\ifprintanswers
-Answer Here
-\else\vspace*{\stretch{1}}
-\fi
+\ifprintanswers{\bfseries%
+Larger islands, if isolated, can promote speciation. This may be especially true if a larger island gets divided into several smaller islands, as this contributes to allopatric divergence. However, even larger islands can provide opportunities for allopatric separation.
 
-
-\question[5]
-  
-\ifprintanswers
-Answer Here
+Large changes in isolation means islands that are isolated now were much closer together during the \textsc{lgm}. That would increase gene flow, decreasing the opportunity for speciation to occur.  
+}%
 \else\vspace*{\stretch{1}}
 \fi
 
 
 \question[5]
-  
-\ifprintanswers
+Weigelt states, “Effects of area change via sea-level change on endemism were strong.” 
+Describe the information displayed by Figure 3 and how the figure supports their statement. (Most items of relative importance should be self-explanatory but “No. of entities” is the number of individual islands that formed an \textsc{lgm} island group, a measure of connectivity during the \textsc{lgm}.)
+
+\ifprintanswers{\bfseries%
 Answer Here
+}
 \else\vspace*{\stretch{1}}
 \fi
 
 
 \question[5]
-  
-\ifprintanswers
+Valente found higher rates of colonization on the Canary Islands compared to other Macaronesian archipelagos. Is this a surprising result? Which effect (target or rescue) applies? Why? Is this result consistent or contrary with glacial changes in sea levels? Explain.
+
+\ifprintanswers{\bfseries%
 Answer Here
+}%
 \else\vspace*{\stretch{1}}
 \fi
+
+
+\question[5]
+Weigelt studied flowering plants. Valente studied non-migratory birds. What types of biological differences (e.g., ecological, genetical) between flowering plants and birds might explain why plants showed much higher levels of within-island cladogenesis (speciation) than did birds? Be imaginative but biologically sound.
+
+\ifprintanswers{\bfseries%
+Answer Here
+}%
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+Valente concluded that non-migratory bird assemblages on the archipelago's of Macaronesia are in equilibrium. 
+Is there evidence from Weigelt's study to suggest or refute a hypothesis that angiosperm diversity is also at equilibrium? Explain.
+
+\ifprintanswers{\bfseries%
+Answer Here
+}%
+\else\vspace*{\stretch{1}}
+\fi
+
 
 
 \end{questions}
