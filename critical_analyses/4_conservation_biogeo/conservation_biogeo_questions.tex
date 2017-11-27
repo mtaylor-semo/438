@@ -1,0 +1,161 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+
+\printanswers
+
+
+%\usepackage{graphicx}
+%	\graphicspath{{/Users/goby/Pictures/teach/300/}
+%	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb, amsmath}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common,TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{hanging}
+
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY\ \numpoints~points}\else Island Biogeography\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\begin{document}
+
+Read carefully the papers listed below and then type your answers to the following questions.
+Type the question number and then your answer. You do not need to retype the question. Hand-written
+assignments will not be accepted. You must have your completed answers
+with you in class or your assignment will be considered late. Assignments e-mailed to me after the \emph{start} of class will be
+considered late. \emph{Interpret} what you read; do not copy answers directly from the text (that would
+be plagiarism). Be prepared to discuss your answers in small groups and as a class. Failure
+to discuss these questions may result in a pop quiz with a point value
+equal to this assignment.
+
+\textbf{Failure to attend} \textbf{class} \textbf{on the due date} will
+result in an automatic 50\% deduction.
+
+\begin{hangparas}{1.5em}{1}
+Spatz, D.\,R.~et al.~2014.~The biogeography of globally threatened seabirds and 
+island conservation opportunities. Conservation Biogeography 28: 1282–1290.
+
+Jones, H.\,P.~et al.~2016.~Invasive mammal eradication on islands results in 
+substantial conservation gains. Proc.~Natl.~Acad.~Sci. 113: 4033–4038. 
+\end{hangparas}
+
+The papers will be referred to as Spatz and Jones, respectively.
+
+\begin{questions}
+\question[5]
+Briefly compare and contrast the three hypotheses proposed by Weigelt.
+
+\ifprintanswers{\bfseries%
+H\textsubscript{1}: Current climate and island physical features will be the best predictors of current island diversity.\smallskip
+
+H\textsubscript{2}: Islands that had the greatest change in island area ($\Delta$area) between the \textsc{lgm} and present will have the greatest number (raw and proportion) of endemic species.\smallskip
+
+H\textsubscript{3}: Island that had the greatest change in island isolation ($\Delta$isolation) between the \textsc{lgm} and present will have the greatest number of native, non-endemic species.
+}%
+\else\vspace*{\stretch{1}}
+\fi
+
+\question[5]
+Why should islands with high $\Delta$area have high richness for native \emph{and} 
+endemic species? Why should islands with $\Delta$isolation have only high native 
+richness but low endemic richness. 
+
+\ifprintanswers{\bfseries%
+Larger islands, if isolated, can promote speciation. This may be especially true if a larger island gets divided into several smaller islands, as this contributes to allopatric divergence. However, even larger islands can provide opportunities for allopatric separation.
+
+Large changes in isolation means islands that are isolated now were much closer together during the \textsc{lgm}. That would increase gene flow, decreasing the opportunity for speciation to occur.  
+}%
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+Weigelt states, “Effects of area change via sea-level change on endemism were strong.” 
+Describe the information displayed by Figure 3 and how the figure supports their statement. (Most items of relative importance should be self-explanatory but “No. of entities” is the number of individual islands that formed an \textsc{lgm} island group, a measure of connectivity during the \textsc{lgm}.)
+
+\ifprintanswers{\bfseries%
+Figure three uses stacked bars to show the relative strength of various predictors on angiosperm diversity. The longer a given shade, the more important that predictor, positive or negative. Brown shades indicate predictors associated with change since the \textsc{lgm}. For endemism on island units (\textsc{pie}), $\Delta$area was the greatest positive predictor. Elevation was also a positive predictor; although that relates to the present high elevation may also provide more niches for speciation as elevation \emph{change} might also have been greater.
+}
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+Valente found higher rates of colonization on the Canary Islands compared to other Macaronesian archipelagos. Is this a surprising result? Which effect (target or rescue) applies? Why? Is this result consistent or contrary with glacial changes in sea levels? Explain.
+
+\ifprintanswers{\bfseries%
+The result is not surprising. The Canary Islands are closer than any other archipelago. This would increase the immigration of species already present on the islands, potentially reducing the number of extinctions (rescue effect). As a whole, the islands are larger than most islands in the other archipelagos. which also increases the potential rate of immigration, consistent with the target effect. The results are consistent with glacial change because when sea levels were lower, island size would have been larger and on average, somewhat closer. \emph{Note:} Weigelt specifically states that islands that were much larger during the \textsc{lgm} were subject to the target effect.
+}%
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+Weigelt studied flowering plants. Valente studied non-migratory birds. What types of biological differences (e.g., ecological, genetical) between flowering plants and birds might explain why plants showed much higher levels of within-island cladogenesis (speciation) than did birds? Be imaginative but biologically sound.
+
+\ifprintanswers{\bfseries%
+Variety of answers possible. Of note, is that birds are much more mobile, making it harder for endemism to evolve. More interestingly, angiosperms on islands have reduced self-incompatibility, making it easier for selfing to occur. When that happens, it is easier to get within lineage evolution, leading to cladogenesis.
+}%
+\else\vspace*{\stretch{1}}
+\fi
+
+
+\question[5]
+Valente concluded that non-migratory bird assemblages on the archipelago's of Macaronesia are in equilibrium. 
+Is there evidence from Weigelt's study to suggest or refute a hypothesis that angiosperm diversity is also at equilibrium? Explain.
+
+\ifprintanswers{\bfseries%
+The total number of species (and native-only) were positively correlated with present area (not $\Delta$area) and negatively correlated with isolation (not $\Delta$isolation), consistent with the classic M-W equilibrium model. Only islands with great change in area or isolation seem to have a higher proportion of endemic species but the total number of species on the islands seems to be in equilibrium.
+}%
+\else\vspace*{\stretch{1}}
+\fi
+
+
+
+\end{questions}
+
+\end{document}  
