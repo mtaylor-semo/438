@@ -1,34 +1,105 @@
-\documentclass[letterpaper]{tufte-handout}
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
 
-%\geometry{showframe} % display margins for debugging page layout
+\documentclass{tufte-handout}
 
-\usepackage{graphicx} % allow embedded images
-  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
-  \graphicspath{{img/}} % set of paths to search for images
-\usepackage{amsmath}  % extended mathematics
-\usepackage{booktabs} % book-quality tables
-\usepackage{units}    % non-stacked fractions and better unit spacing
-\usepackage{multicol} % multiple column layout facilities
-\usepackage{microtype}   % filler text
-\usepackage{fancyvrb} % extended verbatim environments
-  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}
+	{/Users/goby/Pictures/teach/438/lab/}}
 
-% Standardize command font styles and environments
-\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
-\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
-\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
-\newcommand{\docenv}[1]{\textsf{#1}}% environment name
-\newcommand{\docpkg}[1]{\texttt{#1}}% package name
-\newcommand{\doccls}[1]{\texttt{#1}}% document class name
-\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
-\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
 
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=0.85]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+\captionsetup{labelsep=period} % Removes colon following figure / table number.
+\captionsetup{font={small}}
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-50pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\usepackage{hanging}
+\usepackage{wrapfig}
+
+%\usepackage{titling}
+%\usepackage[sc]{titlesec}
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Geographic Range Size \thepage}
+\fancyhead[L]{\footnotesize \coursename}
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+\newcommand{\MYA}{\textsc{mya}}
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+%\setlength{\droptitle}{-50pt}
 
 \title{Island Biogeography: Community Assembly}
+\author{Biogeography}
+%\date{Fall 2017}							% Activate to display a given date or no date
+\date{}
 
-\author[Biogeography]{Biogeography}
-
-\date{Fall 2013} % without \date command, current date is supplied
+\fboxsep=0.25mm
 
 
 \begin{document}
@@ -48,7 +119,7 @@ If island communities are not random, then what abilities do successful island s
 	\item Which are more likely to be able to colonize an island, species with low or high vagility?\sidenote{Vagility is the ability of an organism to move through the environment.} Why?  
 \end{enumerate}
 	
-the available evidence suggests that species that initially colonize newly formed islands have $r$-selected life histories\sidenote{Look up $r$ and $K$ selection if you are not familiar with them. $r$ and $K$ are derived from the population growth equation $\frac{\Delta N}{\Delta t} = rN(\frac{N-K}{K}).$} although, because new island formation is rarely observed, studies are necessarily limited. Initial colonizers are species with rapid growth, early maturity, high reproductive output, and broad fundamental niches.  Once established, insular communities are more amenable to immigration by $K$-selected species. This concept is similar to classic ecological patterns of terrestrial succession.  
+The available evidence suggests that species that initially colonize newly formed islands have $r$-selected life histories\sidenote{Look up $r$ and $K$ selection if you are not familiar with them. $r$ and $K$ are derived from the population growth equation $\frac{\Delta N}{\Delta t} = rN(\frac{N-K}{K}).$} although, because new island formation is rarely observed, studies are necessarily limited. Initial colonizers are species with rapid growth, early maturity, high reproductive output, and broad fundamental niches.  Once established, insular communities are more amenable to immigration by $K$-selected species. This concept is similar to classic ecological patterns of terrestrial succession.  
 
 Not all $r$- and $K$-selected species are able to colonize islands because the ability to disperse across unsuitable habitat depends on vagility.  Species with high vagility are more likely to successfully colonize islands.  For example, islands may be quickly colonized flying birds and insects.  Mammals are rare on oceanic islands but one group is often present on even very remote oceanic islands?  Which group do you think it is? If you think you know the answer, send me an email with the name of the group for a small reward. 
 
