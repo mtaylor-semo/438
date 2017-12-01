@@ -1,0 +1,144 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase, Numbers={OldStyle}]{Linux Biolinum O} 
+\setmonofont{Linux Libertine O}
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{/Users/goby/Documents/teach/434/lectures/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\usepackage{enumitem}
+\usepackage{mhchem}
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+   \renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+   \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{{\scshape bi} 438/638 Exam 2 Study Guide}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+\section*{Vocabulary}
+
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+vicariance \\
+endemism \\
+cosmopolitan \\
+plate tectonics \\
+continental crust \\
+oceanic crust \\
+seafloor spreading \\
+slab pull \\
+ridge push \\
+subduction \\
+Pangaea \\
+Laurasia \\
+Pleistocene \\
+Milankovitch cycles \\
+eccentricity \\
+obliquity \\
+precession \\
+albedo \\
+isostatic sea level changes \\
+eustatic sea level changes \\
+refugia \\
+driftless region \\
+antitropical distribution \\
+overkill hypothesis
+Gondwana\end{multicols}
+
+\section*{Concepts}
+
+\begin{enumerate}
+
+	\item What is meant by the hierarchy of endemism?  
+
+	\item What evolutionary or biogeographic processes explain the high levels of endemism that led early bigeographers to define distinct biogeographic regions?
+
+	\item Briefly describe the current model for plate tectonics.  How do the plates move?  
+
+	\item If a taxon has a Gondwanan distribution, on what continents might you expect to find either living or fossil species?  What about for a Laurasian distribution or a Pangaean distribution?  
+
+	\item Repeat the above question, but instead of continents, relate the distributions to the major biogeographic regions.
+
+	\item Be able to recognize and name all of the biogeographic regions.  You should be able to indicate the regions on a blank map.
+
+	\item What is a vicariant distribution?  Why is vicariance a better “null hypothesis” compared to dispersal to explain common distribution patterns at the global level (e.g., shared Gondwanan distributions)?
+
+	\item What are “biogeographic lines” such as Wallace’s Line and Bond’s Line?   Are the boundaries between adjacent biogeographic regions always sharply delineated, as suggested by Wallace’s line?  If not, why not?
+
+	\item Compare and contrast seafloor spreading, slab pull, ridge push, and subduction.
+	
+	\item Explain how plate tectonics is related to the vicariant distribution of taxa in different biogeographic regions.
+	
+	\item Know the different biogeographic regions.
+	
+	\item What is the approximate time range of the Pleistocene period?
+
+	\item Briefly describe each of the cycles that together are known as the Milankovitch cycles.  Describe how they may have contributed to Pleistocene glaciation. 
+
+	\item How does albedo further increase cooling during the Pleistocene?
+
+	\item If albedo is increasing, does that favor the formation or loss of glaciers/ Explain.
+
+	\item In what hemisphere did most glacial ice sheets occur during the Pleistocene?  What continent?  About what percentage of the total earth was covered by ice sheets?  What percent of the total ice was found in North America?  [Trivial questions designed to help you digest the impact that the Pleistocene had on certain regions]
+
+	\item The areas immediately below the ice sheets were relatively moderate in temperature; not as cold as you might expect.  Why was this?    What was the average drop in global terrestrial temperatures during the Pleistocene?  What about in the oceans?
+	
+	\item What causes eustatic changes in sea level?  What about isostatic changes?
+
+	\item Some modern biomes were present during the Pleistocene but were drastically different in size and location.  Explain the causes for these shifts.
+
+	\item Other biomes were unique to the Pleistocene; they did not exist before or after.  Explain possible causes for the development of these biomes.  Describe the possible fates of organisms adapted to these unique biomes as the Pleistocene came to an end.
+
+	\item How could sea temperature changes lead to the development of an antitropical distribution?
+
+	\item Explain how sea level changes can lead to diversification and community changes in terrestrial organisms?  Do the same for marine organisms.  
+
+	\item Be able to interpret a parsimony network to infer whether a species shows signs of range expansion following the Pleistocene.
+
+	
+\end{enumerate}
+
+\end{document}
