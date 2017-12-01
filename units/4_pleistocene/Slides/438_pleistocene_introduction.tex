@@ -5,15 +5,9 @@
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
 %\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\includeonlylecture{student}
 %\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
-%	\setbeamercolor{background canvas}{bg=black!5}
-
-
-%%% Including only some slides for students.
-%%% Uncomment the following line. For the slides,
-%%% use the labels shown below the command.
-%\includeonlylecture{student}
 
 %% For students, use \lecture{student}{student}
 %% For mine, use \lecture{instructor}{instructor}
@@ -25,9 +19,9 @@
 % FONTS
 \usepackage{fontspec}
 \def\mainfont{Linux Biolinum O}
-\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{\mainfont}
 \setmonofont[Scale=MatchLowercase]{Inconsolatazi4} 
-\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\setsansfont[Scale=MatchLowercase, Numbers={Proportional, OldStyle}]{Linux Biolinum O} 
 \usepackage{microtype}
 
 \usepackage{graphicx}
@@ -69,7 +63,7 @@
 %\lecture{instructor}{instructor}
 \lecture{student}{student}
 
-\begin{frame}{The \highlight{Pleistocene} (2.6 MYA to 12 KYA) had a profound influence on the biogeography of modern taxa.}
+\begin{frame}{The \highlight{Pleistocene} (2.6 \textsc{mya} to 12 \textsc{kya}) had a profound influence on the biogeography of modern taxa.}
 	\begin{center}
 			\includegraphics[width=0.95\textwidth]{pleistocene_iceage}
 			
@@ -105,30 +99,56 @@
 	\begin{center}
 		\includegraphics[width=1\textwidth]{milankovitch_eccentricity}
 	\end{center}
+
+	\vfilll
+	
+	\hfill \tiny \copyright Sinauer Assoc., Inc.
 \end{frame}
 
 \begin{frame}{\highlight{Obliquity:} Earth’s tilt angle changes every 41,000 years.}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{milankovitch_obliquity}
-	\end{center}
+
+	{\centering
+		\includegraphics[width=1\textwidth]{milankovitch_obliquity}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.2\textsc{b} \copyright Sinauer Assoc., Inc.
+
 \end{frame}
 
 \begin{frame}{\highlight{Precession:} Earth’s axis “wobbles” like a spinning top every 22,000 years.}
-	\begin{center}
-		\includegraphics[width=0.7\textwidth]{milankovitch_precession}
-	\end{center}
+
+	{\centering
+		\includegraphics[width=0.8\textwidth]{milankovitch_precession}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.2\textsc{c} \copyright Sinauer Assoc., Inc.
 \end{frame}
 
 \begin{frame}{Milankovitch Cycle: Present}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{milankopresent}
-	\end{center}
+
+	{\centering
+		\includegraphics[width=1\textwidth]{milankopresent}\par
+	}
+
+	\vfilll
+	
+	\hfill \tiny Fig.~9.2\textsc{d} \copyright Sinauer Assoc., Inc.
 \end{frame}
 
 \begin{frame}{Milankovitch Cycle: 11,000 years ago.}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{milankopast}
-	\end{center}
+
+	{\centering
+		\includegraphics[width=1\textwidth]{milankopast}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.2\textsc{d} \copyright Sinauer Assoc., Inc.
+
 \end{frame}
 
 \begin{frame}{\highlight{Albedo} effect enhances glaciation by reflecting sunlight.}
@@ -156,11 +176,23 @@
 \end{frame}
 
 \begin{frame}{About 1/3 of land covered by ice sheets. Where did the water come from?}
+
 	\includegraphics[width=1\textwidth]{pleistocene_glacial_land_coverage}
+
+
+	\vfilll
+	
+	\hfill \tiny Fig.~9.3 \copyright Sinauer Assoc., Inc.
+	
 \end{frame}
 
 \begin{frame}{New land was exposed by sea level reduction.}
 	\includegraphics[width=1\textwidth]{pleistocene_sealevels}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~9.10 \copyright Sinauer Assoc., Inc.
+	
 \end{frame}
 
 
@@ -200,9 +232,16 @@
 \end{frame}
 
 \begin{frame}{\dots and Lake Bonneville, Lake Lahonta, and many others in the western U.S.}
-	\begin{center}
-		\includegraphics[height=0.8\textheight]{pleistocene_bonneville_lakes}
-	\end{center}
+
+	\vspace*{-0.5\baselineskip}
+	
+	{\centering
+		\includegraphics[height=0.78\textheight]{pleistocene_bonneville_lakes}\par
+	}
+
+	\vfilll
+	
+	\hfill \tiny Fallschirmjäger, Wikimedia Commons \ccbysa{3}
 \end{frame}
 
 \begin{frame}{Pleistocene glaciers caused \highlight{eustatic} and \highlight{isostatic} sea level changes.}
@@ -215,22 +254,43 @@
 \end{frame}
 
 \begin{frame}{\highlight{Beringia} allowed dispersal between Palearctic and Nearctic regions.}
-		\includegraphics[width=1\textwidth]{pleistocene_beringia}
+		
+	\includegraphics[width=1\textwidth]{pleistocene_beringia}
+	
+	\vfilll
+	
+	\hfill \tiny Fig.~9.9\textsc{a} \copyright Sinauer Assoc., Inc.	
 \end{frame}
 
 \begin{frame}{\highlight{Wallacea} allowed dispersal betweel Indomalaysian to Australian regions.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[width=0.85\textwidth]{pleistocene_wallacia}
-	\end{center}
-\end{frame}
 
+	\vspace{-0.5\baselineskip}
+
+	{\centering
+		\includegraphics[width=0.85\textwidth]{pleistocene_wallacia}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.9\textsc{b} \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
 \begin{frame}{Mean Pleistocene temperatures were as much as $-$8°C below current mean temps.}
-	\includegraphics[width=1\textwidth]{pleistocene_temps}
-\end{frame}
 
+	\includegraphics[width=1\textwidth]{pleistocene_temps}
+
+	\vfilll
+	
+	\hfill \tiny Fig.~9.1\textsc{c} \copyright Sinauer Assoc., Inc.
+	
+\end{frame}
+%
 \begin{frame}{Seasonal temperatures did not vary much due to \highlight{adiabatic warming} and altered climate patterns.}
+
 	\includegraphics[width=1\textwidth]{pleistocene_adiabatic}
+
+	\hfill \tiny Fig.~9.7 \copyright Sinauer Assoc., Inc.
+	
 \end{frame}
 
 \end{document}

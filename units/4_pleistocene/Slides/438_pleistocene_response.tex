@@ -5,22 +5,13 @@
 
 %%%% HANDOUTS For online Uncomment the following four lines for handout
 %\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\includeonlylecture{student}
 %\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
-%	\setbeamercolor{background canvas}{bg=black!5}
-
-
-%%% Including only some slides for students.
-%%% Uncomment the following line. For the slides,
-%%% use the labels shown below the command.
-%\includeonlylecture{student}
 
 %% For students, use \lecture{student}{student}
 %% For mine, use \lecture{instructor}{instructor}
 
-
-%\usepackage{pgf,pgfpages}
-%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
 
 % FONTS
 \usepackage{fontspec}
@@ -66,38 +57,43 @@
 
 
 \begin{document}
-%\lecture{instructor}{instructor}
+%
 \lecture{student}{student}
-
-
 
 \begin{frame}[t]{Climates and ecosystems shifted south during expansion.}
 	\vspace{-\baselineskip}
 	\begin{center}
-		\includegraphics[height=0.75\textheight]{pleistocene_climate_marine}\hspace*{1cm}
-		\includegraphics[height=0.75\textheight]{pleistocene_climate_terrestrial}
+		\includegraphics[height=0.8\textheight]{pleistocene_climate_marine}\hspace*{1cm}
+		\includegraphics[height=0.8\textheight]{pleistocene_climate_terrestrial}
 	\end{center}
 	
-	\vskip0pt plus 1fill
+	\vfilll
 	
-	\hfill\tiny{See textbook for legend.}
+	\tiny \hfill Figs.~9.12 \& 9.13 \copyright Sinauer Assoc., Inc. See textbook for legends.
 \end{frame}
-
+%
 \begin{frame}{Ecosystems proportions changed.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[height=0.8\textheight]{pleistocene_ecosystem_proportions}
-	\end{center}
-\end{frame}
+	
+	{\centering
+		\includegraphics[width=\textwidth]{pleistocene_ecosystem_proportions}\par
+	}
 
+	\vfilll
+	
+	\hfill \tiny Fig.~9.17 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
 \begin{frame}{Glaciers altered prevailing wind patterns.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[height=0.8\textheight]{pleistocene_laurentide_climate}
-	\end{center}
+
+	{\centering
+		\includegraphics[height=0.8\textheight]{pleistocene_laurentide_climate}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.7 \copyright Sinauer Assoc., Inc.
 \end{frame}
-
-
+%
 \begin{frame}{Trees expanded northward with glacial retreat.}
 	\begin{columns}[T]
 		\begin{column}{0.3\textwidth}
@@ -108,43 +104,65 @@
 			\includegraphics[height=0.55\textheight]{pleistocene_tree_range_expansion2}
 		\end{column}
 	\end{columns}
-\end{frame}
 
+	\vfilll
+
+	\hfill \tiny Fig.~9.18 \copyright Sinauer Assoc., Inc.
+
+\end{frame}
+%
 \begin{frame}[t]{Mammal ranges expanded with shifting ecosystems.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[height=0.85\textheight]{pleistocene_mammalian_range_expansion}
-	\end{center}
-\end{frame}
 
+	{\centering
+		\includegraphics[height=0.83\textheight]{pleistocene_mammalian_range_expansion}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.19 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
 \begin{frame}[t]{Mammalian co-occurrence in communities changed.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{pleistocene_mammalian_community_change}
-	\end{center}
-\end{frame}
 
+	{\centering
+		\includegraphics[width=\textwidth]{pleistocene_mammalian_community_change}\par
+	}
+
+	\vfilll	
+
+	\hfill \tiny Fig.~9.20 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
 \begin{frame}{Unglaciated areas were \highlight{refugia} from glacial expansion.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{pleistocene_beringia}
-	\end{center}
-\end{frame}
 
+	{\centering
+		\includegraphics[width=\textwidth]{pleistocene_beringia}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.9\textsc{a} \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
 \begin{frame}{Many glacial refugia were available.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[height=0.9\textheight]{pleistocene_glacial_refugia}
-	\end{center}
-\end{frame}
 
+	{\centering
+		\includegraphics[height=0.85\textheight]{pleistocene_glacial_refugia}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.25\textsc{a} \copyright Sinauer Assoc., Inc.
+
+\end{frame}
+%
 \begin{frame}{Many taxa recolonized from glacial refugia.}
 	\vspace{-\baselineskip}
 	\begin{center}
 		\includegraphics[height=0.9\textheight]{pleistocene_north_hemi_range_expansion}
 	\end{center}
 \end{frame}
-
+%
 \begin{frame}{New species evolved by vicariance in refugia.}
 	\begin{columns}[T]
 		\begin{column}{0.5\textwidth}
@@ -169,7 +187,7 @@
 	Speciation or population genetic divergence also found in moose, northern and southern red-backed voles, tundra and arctic shrews, etc.
 
 \end{frame}
-
+%
 \begin{frame}{Where might we find refugia for freshwater fishes?}
 	\vspace{-\baselineskip}
 	\begin{center}
@@ -183,14 +201,21 @@
 		\draw (4.3,5.5) node[anchor=east] {Glacial Maxima} ;
 	\end{tikzpicture}
 \end{frame}
-
-\begin{frame}{}
-%	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[height=0.95\textheight]{pleistocene_modern_fish_distribution}
-	\end{center}
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{pleistocene_us_fish_diversity}}
+\begin{frame}
 \end{frame}
+}
+%
+\begin{frame}{}
 
+	{\centering
+		\includegraphics[height=0.95\textheight]{pleistocene_modern_fish_distribution}\par
+	}
+
+\end{frame}
+%
 
 %\begin{frame}{Western lakes were refugia for freshwater fishes.}
 %	\begin{columns}[T]
@@ -204,7 +229,7 @@
 %		\end{column}
 %	\end{columns}
 %\end{frame}
-
+%
 \begin{frame}{The desert southwest pupfishes have \highlight{relict distributions.}}
 	\begin{columns}[T]
 		\begin{column}{0.5\textwidth}
@@ -220,9 +245,12 @@
 			\end{center}
 		\end{column}
 	\end{columns}
+
+	\vfilll
+	
+	\tiny Fig.~9.24 \copyright Sinauer Assoc., Inc.
 \end{frame}
-
-
+%
 \begin{frame}{Can we test for evidence of refugia and range expansion?}
 	\begin{columns}[T]
 		\begin{column}{0.6\textwidth}
@@ -240,13 +268,13 @@
 	Is the breeding resident population of MacGillivray's Warbler in Mexico a refugial population?
 	
 \end{frame}
-
+%
 \lecture{instructor}{instructor}
 {\setbeamercolor{background canvas}{bg=black}
 \begin{frame}[plain]
 %	Placeholder to work out parsimony network
 \end{frame}}
-
+%
 \lecture{student}{student}
 \begin{frame}{\highlight{Parsimony network} supports refuge and range expansion for MacGillivray's Warbler.}
 	\vspace{-\baselineskip}
@@ -254,16 +282,19 @@
 		\includegraphics[width=0.9\textwidth]{pleistocene_macgillivray_network}
 	\end{center}
 \end{frame}
+%
+\begin{frame}[t]{Sea levels were much higher before the Pleistocene.}
 
-\lecture{student}{student}
-\begin{frame}{Sea levels were much higher before the Pleistocene.}
-	\vspace{-\baselineskip}
-	\begin{center}
+	{\centering
 		\includegraphics[height=0.45\textheight]{pleistocene_prepleisto_sealevels}\\
-		\includegraphics[height=0.35\textheight]{pleistocene_sealevels}\\
-	\end{center}
-\end{frame}
+		\includegraphics[height=0.35\textheight]{pleistocene_sealevels}\par
+	}
 
+	\vfilll
+	
+	\hfill \tiny Fig.~9.10 \copyright Sinauer Assoc., Inc.
+\end{frame}
+%
 \begin{frame}[t]{New diversity evolved in the southern hemisphere.}
 	\begin{columns}[T]
 		\begin{column}{0.45\textwidth}
@@ -280,25 +311,26 @@
 		\end{column}
 	\end{columns}
 \end{frame}
-
+%
 \begin{frame}{\highlight{Antitropical distributions} could form during Pleistocene. How?}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[width=\textwidth]{pleistocene_pilot_whale_range}\\
-		Range of Pilot Whale (green shading)\\
-%		\vspace*{\baselineskip}
-%		\includegraphics[height=0.25\textheight]{pleistocene_antitropical}
-	\end{center}
-\end{frame}
 
+	{\centering
+		\includegraphics[width=\textwidth]{pleistocene_pilot_whale_range}\\
+		Range of Pilot Whale (green shading)\par
+	}
+
+\end{frame}
+%
 \lecture{instructor}{instructor}
 \begin{frame}{Tropical waters were cooler during the Pleistocene.}
-	\vspace{-\baselineskip}
-	\begin{center}
-		\includegraphics[width=0.9\textwidth]{pleistocene_antitropical}
-	\end{center}
+
+	{\centering
+		\includegraphics[width=0.9\textwidth]{pleistocene_antitropical}\par
+	}
+
+	\vfilll
+
+	\hfill \tiny Fig.~9.10 \copyright Sinauer Assoc., Inc.
 \end{frame}
-
-
-
+%
 \end{document}
