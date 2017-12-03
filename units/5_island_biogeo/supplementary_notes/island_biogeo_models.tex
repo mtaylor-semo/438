@@ -1,37 +1,109 @@
-\documentclass[letterpaper]{tufte-handout}
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
 
-%\geometry{showframe} % display margins for debugging page layout
+\documentclass{tufte-handout}
 
-\usepackage{graphicx} % allow embedded images
-  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
-  \graphicspath{{/Users/goby/Pictures/teach/438/lectures/}} % set of paths to search for images
-\usepackage{amsmath}  % extended mathematics
-\usepackage{booktabs} % book-quality tables
-\usepackage{units}    % non-stacked fractions and better unit spacing
-\usepackage{multicol} % multiple column layout facilities
-\usepackage{microtype}   % filler text
-\usepackage{fancyvrb} % extended verbatim environments
-  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}
+	{/Users/goby/Pictures/teach/438/lab/}
+	{/Users/goby/teach/438/units/5_island_biogeo/slides/}}
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=0.85]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
 \usepackage{tikz}
 	\tikzstyle{every picture}+=[remember picture,overlay]
 \usepackage{coffee4}
 
-% Standardize command font styles and environments
-\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
-\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
-\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
-\newcommand{\docenv}[1]{\textsf{#1}}% environment name
-\newcommand{\docpkg}[1]{\texttt{#1}}% package name
-\newcommand{\doccls}[1]{\texttt{#1}}% document class name
-\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
-\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+\captionsetup{labelsep=period} % Removes colon following figure / table number.
+\captionsetup{font={small}}
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
 
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-\title{Island Biogeography: Models}
+\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{multicol}
 
-\author[Biogeography]{Biogeography}
+%\usepackage{titling}
+%\setlength{\droptitle}{-50pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
 
-\date{Fall 2013} % without \date command, current date is supplied
+\usepackage{hanging}
+\usepackage{wrapfig}
+
+%\usepackage{titling}
+%\usepackage[sc]{titlesec}
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Island Biogeography: Community Assembly \thepage}
+\fancyhead[L]{\footnotesize \coursename}
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+\newcommand{\MYA}{\textsc{mya}}
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+%\setlength{\droptitle}{-50pt}
+
+\title{Island Biogeography: Community Assembly}
+\author{Biogeography}
+%\date{Fall 2017}							% Activate to display a given date or no date
+\date{}
+
+\fboxsep=0.25mm
 
 
 \begin{document}
@@ -47,11 +119,11 @@
 %\subsection{name}\label{sec:name}
 \begin{marginfigure}%
 	\centering
-	\includegraphics{island_intro.jpg}\\
-	\includegraphics{patch_reefs.jpg}\\
-	\includegraphics{big_oak_tree_sp.jpg}\\
-	\includegraphics{pothole_lakes.jpg}\\
-	\includegraphics{cave.jpg}
+	\includegraphics{island_intro}\\
+	\includegraphics{patch_reefs}\\
+	\includegraphics{big_oak_tree_sp}\\
+	\includegraphics{pothole_lakes}\\
+	\includegraphics{cave}
 \end{marginfigure} 
 
 Islands, or more broadly, insular habitats, are defined here as suitable habitat surrounded by unsuitable habitat. Insular habitats can include true islands surrounded by water; patches of trees in a savanna surrounded by unsuitable grassland habitat; caves; ponds, lakes, and springs; and the tops of mountains. For our purposes, insular habitats are generally
@@ -106,17 +178,17 @@ MacArthur and Wilson also proposed that immigration rate is linked to the distan
 
 \section{Predicting Species Richness}
 \begin{marginfigure}%
-			\begin{tikzpicture}
-				[mainland/.style={rectangle,draw=black,fill=blue!10,thick,minimum size=15mm},
-				 bigisland/.style={circle,draw=black,fill=black!10,thick,minimum size=7mm,text width=1cm,align=center},
-				 tinyisland/.style={font=\tiny,circle,draw=black,fill=black!10,thick,minimum size=0mm,text width=0.5cm,align=center}]
-				\path	node at (3,-0.8)	[mainland]		{Mainland Source}
-						node at (1.2,-3)	[bigisland]		{Island 1}
-						node at (5,-3)		[tinyisland]	{Island 2}
-						node at (1.2,-5.6)	[tinyisland]	{Island 3}
-						node at (5,-5.6)	[bigisland]		{Island 4};
-			\end{tikzpicture}
-\end{marginfigure} 
+	\begin{tikzpicture}
+		[mainland/.style={rectangle,draw=black,fill=blue!10,thick,minimum size=15mm},
+	bigisland/.style={circle,draw=black,fill=black!10,thick,minimum size=7mm,text width=1cm,align=center},
+	tinyisland/.style={font=\tiny,circle,draw=black,fill=black!10,thick,minimum size=0mm,text width=0.5cm,align=center}]
+		\path	node at (3,-0.8)	[mainland]		{Mainland Source}
+				node at (1.7,-2.5)	[bigisland]		{Island 1}
+				node at (4.5,-2.5)	[tinyisland]	{Island 2}
+				node at (1.7,-4.6)	[tinyisland]	{Island 3}
+				node at (4.5,-4.6)	[bigisland]		{Island 4};
+	\end{tikzpicture}
+	\end{marginfigure} 
 
 The species-area and species-isolation curves can be used separately to predict species richness on islands. Large islands have more area and therefore more species. Far islands tend to have fewer species because they are less likely to be colonized.  But, how do these to patterns inter act to predict richness on islands? 
 Consider a hypothetical mainland source and four islands. Based on area and isolation, which island should have the most species and which should have the fewest? The large near island should have the highest species richness, while the small far island should have the fewest species.  Given the two islands of equal size, you would predict that the near island would have more species than the far island. Given the two islands of equal distance, you would predict the large island to have more species than the small island.  But, how would you predict species richness to compare between the small, near island and the large, far island?  To answer this question, MacArthur and Wilson needed to add two more components to their model. Can you think of what else they needed to consider?
@@ -128,13 +200,43 @@ Consider a hypothetical mainland source and four islands. Based on area and isol
 	\includegraphics{krakatau}
 \end{marginfigure} 
 
+\begin{margintable}
+	\begin{tabular}{rccc}
+		\toprule
+		\textbf{Rakata} & Nonmigrant & Migrant & Total\\
+		\midrule
+		1908 & 13 & 0 & 13 \\
+		1919--1921 & 27 & 4 & 31 \\
+		1932--1934 & 27 & 3 & 30 \\
+		\midrule
+		\textbf{Sertung}&  &  & \\
+		\midrule
+		1908 & 1 & 0 & 1 \\
+		1919--1921 & 27 & 2 & 29\\
+		1932--1934 & 29 & 6 & 34\\
+		\bottomrule
+	\end{tabular}
+\end{margintable}
+
+\begin{margintable}
+	\begin{tabular}{rccc}
+		\toprule
+		\textbf{Rakata} & Extinction & Immigration\\
+		\midrule
+		1908--1919 & 2 & 20 \\
+		1921--1932 & 5 & 4  \\
+		\midrule
+		\textbf{Sertung}&  & \\
+		\midrule
+		1908--1919 & 0 & 28 \\
+		1921--1932 & 2 & 7  \\
+		\bottomrule
+	\end{tabular}
+\end{margintable}
+
 The Krakatou volcano formed a single island in Indonesia.  It erupted violently in 1883.  The eruption broke the initial island into three remnants, and destroyed the island flora and fauna. (The middle island emerged in 1930.) In the early 1900s, the remnant islands were surveyed to determine which bird species were present.
-The first survey in 1908 revealed that 13 nonmigrant species of birds had colonized the islands from neighboring islands, most likely Sumatra and Java.  Rakata was recolonized more quickly than Sertung. By the 1919 survey, the number of nonmigrant species had increased to 27 on both islands, and has remained relatively constant ever since. Despite the steady richness, the actual species present changed between surveys. Two species found on Rakata during the 1908 survey were not found during the 1919 survey, but 20 new species were found. Between the second and third surveys, five species were not found, but four new immigrant species were found. Similar observations were obtained from Sertung. From these results, MacArthur and Wilson drew two conclusions.
-\begin{marginfigure}%
-	\centering
-	\includegraphics{islandbiogeo014.jpg}\\
-	\includegraphics{islandbiogeo016.jpg}
-\end{marginfigure} 
+The first survey in 1908 revealed that 13 nonmigrant species of birds had colonized the islands from neighboring islands, most likely Sumatra and Java.  Rakata was recolonized more quickly than Sertung. By the 1919 survey, the number of nonmigrant species had increased to 27 on both islands, and has since remained relatively constant. Despite the steady richness, the actual species present changed between surveys. Two species found on Rakata during the 1908 survey were not found during the 1919 survey, but 20 new species were found. Between the second and third surveys, five species were not found, but four new immigrant species were found. Similar observations were obtained from Sertung. From these results, MacArthur and Wilson drew two conclusions.
+
 \begin{itemize}
 	\item Colonization took place quickly, reached a plateau, and then remained at that level.  
 	\item Despite the constant number of species, the actual species present turned over with some regularity.
@@ -181,8 +283,8 @@ One of the first empirical tests of the MacArthur and Wilson model was performed
 
 \begin{marginfigure}%
 	\centering
-	\includegraphics{islandbiogeo023.jpg}\\
-	\includegraphics{islandbiogeo025.jpg}
+	\includegraphics[page=20]{island_biogeography_models.pdf}\\
+	\includegraphics[page=21]{island_biogeography_models.pdf}\\
 \end{marginfigure} 
 
 Recall that MacArthur and Wilson based extinction rates on island area but not isolation.  Several studies have shown that extinction on islands that are not isolated is lower than expected due to a high immigration of individuals from nearby sources. The regular addition of individuals keeps the population level high enough to prevent extinction. The reduced extinction due to high immigration is called the \textit{rescue effect}.  MacArthur and Wilson based immigration rates on isolation but not area.  Several studies found that large islands tend to have higher rates of immigration than predicted. This intuitive result is because large islands are larger targets for active and passive dispersers.  The higher than expected immigration to large islands is called the \textit{target effect}.
@@ -191,7 +293,7 @@ Recall that MacArthur and Wilson based extinction rates on island area but not i
 \section{Emergence of New Models}
 \begin{marginfigure}%
 	\centering
-	\includegraphics{sequential_equilibria.png}\\
+	\includegraphics{sequential_equilibria}\\
 \end{marginfigure} 
 
 Overall, MacArthur and Wilson's Theory of Island Equilibrium has performed well even though it does not account for some short-term ecological processes such as competition and succession, nor long-term evolutionary processes such as speciation. For example, initial immigration of a new island might be random, with little or no interaction among species.  As species accumulate and population size increases, then competition, predation and other ecological interactions may influence extinction rates among species. Over long periods of time, the community will stabilize on a group of species with non-overlapping niches.  Finally, over evolutionary times new adaptations and new species may evolve.
@@ -205,7 +307,7 @@ These deficiencies, plus others described in your text, have led some biogeograp
 
 The Lomolino model makes predictions similar to MacArthur and Wilson's model.  If an island is near (not isolated), then immigration will be high. If the island is far, the immigration will be lower. Similarly, if the island is large, then extinction rates will be be low. If the island is small, then extinction rates will be high.
 
-Despite the similarities, the Lomolino model has important differences. First, the Lomolino model eliminates predictions of species equilibrium.  Community structure is dynamic, so few island communities are likely to reach equilibrium.  Instead, community composition on islands tends to fluctuate over time for the  types of species present and their relative abundance as a result of speciation, extinction, historical geographic processes, major climatic events, or other forms of disturbance. 
+Despite the similarities, the Lomolino model has important differences. First, the Lomolino model eliminates predictions of species equilibrium.  Community structure is dynamic, so few island communities are likely to reach equilibrium.  Instead, community composition on islands tends to fluctuate over time for the  types of species present and their relative abundance as a result of speciation, extinction, historical geographic processes, major climatic events, or other forms of disturbance.\marginnote{Never set your coffee mug on your computer!}
 
 Second, the Lomolino model attempts to account for the origin of new species in insular habitats.  Notice that the peak of speciation occurs when immigration and extinction is low.  This occurs on large, isolated islands. Large islands have many niches to which species can adapt. They have time to adapt because extinction is low. Immigration is low so gene flow is limited or absent so the population can diverge from the mainland.
 
@@ -216,7 +318,7 @@ Careful study of the four corners of the model, labeled a-d, reveals the predict
 	\includegraphics{new_island_paradigm}
 \end{marginfigure} 
 
-\begin{enumerate}[a:]
+\begin{enumerate}[label=\alph*:]
 	\item Has high immigration and low extinction.  This island community will probably have low species turnover, low endemicity and moderate species richess.
 
 	\item Has low immigration, low extinction, and high speciation. This island community will have higher richness with many endemic species and very low species turnover.
@@ -225,9 +327,7 @@ Careful study of the four corners of the model, labeled a-d, reveals the predict
 
 	\item Has low immigration and high extinction.  This island community will have very few species because most will go extinct and not be replaced by immigration very often. 
 \end{enumerate}
-\vspace{5cm}
-\section{Why do I set my coffee mug on my computer?}
-\cofeAm{0.2}{0.75}{2}{-5.2cm}{-7.5cm}
 
+\cofeAm{0.14}{0.75}{2}{-0.5cm}{-0.5cm}
 
 \end{document}
