@@ -1,0 +1,130 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, hidelinks, addpoints]{exam}
+
+%\printanswers
+
+
+%\usepackage{graphicx}
+%	\graphicspath{{/Users/goby/Pictures/teach/300/}
+%	{img/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+
+\usepackage[parfill]{parskip}
+
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common,TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{hanging}
+
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+
+\usepackage{titling}
+\setlength{\droptitle}{-60pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY\ \numpoints~points}\else Conservation Biogeography\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+%\usepackage[hyphenbreaks]{breakurl}
+\usepackage[hyphens]{url}
+%\usepackage{hyperref}
+
+\begin{document}
+
+Read carefully the papers listed below and then type your answers to the following questions.
+Type the question number and then your answer. You do not need to retype the question. Hand-written
+assignments will not be accepted. You must have your completed answers
+with you in class or your assignment will be considered late. Assignments e-mailed to me after the \emph{start} of class will be
+considered late. \emph{Interpret} what you read; do not copy answers directly from the text (that would
+be plagiarism). Be prepared to discuss your answers in small groups and as a class. Failure
+to discuss these questions may result in a pop quiz with a point value
+equal to this assignment.
+
+\textbf{Failure to attend} \textbf{class} \textbf{on the due date} will
+result in an automatic 50\% deduction.
+
+\begin{hangparas}{1.5em}{1}
+Sankararaman, S.~et al.~2014.~The genomic landscape of Neanderthal ancestry in present-day humans. Nature 507: 354–357.
+
+Fu, Q.~et al.~2016.~The genetic history of Ice Age Europe. Nature 534: 200–205. 
+\end{hangparas}
+
+
+\begin{questions}
+\question[5]
+Read through the \textsc{url} below (link also on course Moodle), then tell in your own words what is Dobzhansky-Müller incompatibility. \url{https://www.nature.com/scitable/topicpage/hybrid-incompatibility-and-speciation-820}
+
+\begin{solution}
+	Hybrids have incompatibilities between certain alleles from two or more \emph{different} genes. Most often in males.
+\end{solution}
+
+\question[5]
+
+\begin{solution}
+Answer
+\end{solution}
+
+\question[5]
+
+\begin{solution}
+Answer
+\end{solution}
+
+
+\question[5]
+
+\begin{solution}
+Answer
+\end{solution}
+
+
+\question[5]
+
+\begin{solution}
+Answer
+\end{solution}
+
+
+\question[5]
+
+\begin{solution}
+Answer
+\end{solution}
+
+
+\end{questions}
+
+\end{document}  
