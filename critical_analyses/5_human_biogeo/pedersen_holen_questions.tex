@@ -3,7 +3,7 @@
 
 \documentclass[11pt, hidelinks, addpoints]{exam}
 
-%\printanswers
+\printanswers
 
 
 %\usepackage{graphicx}
@@ -53,14 +53,13 @@
 \SolutionEmphasis{\bfseries}
 
 \pagestyle{headandfoot}
-\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY\ \numpoints~points}\else Conservation Biogeography\fi}
+\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY\ \numpoints~points}\else Human Biogeography\fi}
 \runningheader{}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 \runningheadrule
 
-%\usepackage[hyphenbreaks]{breakurl}
-\usepackage[hyphens]{url}
-%\usepackage{hyperref}
+\newcommand{\icf}{\textsc{icf}}
+\newcommand{\kya}{\textsc{kya}}
 
 \begin{document}
 
@@ -77,51 +76,77 @@ equal to this assignment.
 result in an automatic 50\% deduction.
 
 \begin{hangparas}{1.5em}{1}
-Sankararaman, S.~et al.~2014.~The genomic landscape of Neanderthal ancestry in present-day humans. Nature 507: 354–357.
+Pedersen, M.\,W.~et al.~2016.~Postglacial viability and colonization in North America's ice-free corridor. Nature 537: 45–357.
 
-Fu, Q.~et al.~2016.~The genetic history of Ice Age Europe. Nature 534: 200–205. 
+Holen, S.\,R.~et al.~2017.~A 130,000-year-old archaeological site in Southern California, \textsc{usa}. Nature 544: 479–483. 
 \end{hangparas}
 
+For the Holen paper, do not drown in the highly technical details. Instead, try to find how their evidence meets their four criteria for acceptance (question~\ref{ques:criteria})
+
+\medskip
+
+\textsc{Palynology:} the study of plant pollen and spores (and a few other microscopic things), typically dispersed by wind and water.\\
+\textsc{Palynomorphs:} The pollen, spores and other things that are studied by palynologists.\\
+\textsc{Clovis people:} historically, thought to be the first humans to colonize North America.
+
+\medskip
 
 \begin{questions}
 \question[5]
-Read through the \textsc{url} below (link also on course Moodle), then tell in your own words what is Dobzhansky-Müller incompatibility. \url{https://www.nature.com/scitable/topicpage/hybrid-incompatibility-and-speciation-820}
+According to Pedersen, when (years ago) did the Clovis people first occupy North America south of the glaciers? Why, according to Pedersen, could the Clovis people or their ancestors not have passed through the ice free corridor (\icf{}) to be south of the glaciers by that time?
 
 \begin{solution}
-	Hybrids have incompatibilities between certain alleles from two or more \emph{different} genes. Most often in males.
+	Clovis were south of the ice sheets at 14.7 (14–15) \textsc{kya}, and would have passed through that area ca. 13.4 \kya. Pedersen argues that the \icf{} was initially inundated (Glacial Lake Peace) during that time so that route would not have been passable.
 \end{solution}
 
 \question[5]
+Which colonization model did Pedersen feel best matched their data? Describe the model and then describe how Figure 3 supports their choice. 
 
 \begin{solution}
-Answer
+Their Model 2, which had the Clovis migrating south along the coast more than 14 \kya, then moving into the \icf{} ca. 12.5 \kya{} from north and south of the glaciers. Figure 3 shows that traces of animals did not begin to appear in the \icf{} until about 12.5 \kya{} and later. They argue that animals were missing because the area was underwater, which would also preclude human presence. This could be argued further that the absence of animals would mean no resources to support a migrating group of humans.
 \end{solution}
 
 \question[5]
+How does Pedersen's Figure 2 support their results? Focus only on the Plants and Vertebrates of panels \textbf{a} (Charlie Lake) and \textbf{c} (Spring Lake). The legend for the entire figure is located between panels \textbf{b} and \textbf{d.}
 
 \begin{solution}
-Answer
-\end{solution}
-
-
-\question[5]
-
-\begin{solution}
-Answer
+Fig.~2 is a terrible way of showing that pollen was not present in the Charlie Lake region until about 13 \kya{} and animals after 12.5 \kya. Similar for Spring Lake region, pollen and animals were not present until a bit more than 11 \kya.
 \end{solution}
 
 
 \question[5]
+The Holen paper is controversial among archaeologists and other scientists interested in the dispersal of humanity. Why do you think the Holen paper is controversial? 
 
 \begin{solution}
-Answer
+Because it places the appearance of \textit{Homo} in North America \textasciitilde115,000 years before any other evidence. That does not mean it is wrong, but it is subject to scrutiny.
+\end{solution}
+
+
+\question[5] \label{ques:criteria}
+At the start of their paper, Holen presents criteria that must be met for acceptance. Do you think their study met these criteria? Why? For the first criterion, argue both for (criterion met) and against (not met) their success. (Hint: read the “Discovery and excavation” section of the Methods, after the citations.) For the third criterion, tell how radiometric dating and bone fragments \textit{together} support their conclusions.
+
+\begin{solution}
+	
+	\begin{enumerate}
+		\item Defined and undisturbed: Debatable. Site was found at a construction site. Also along fault line. Could that have affected it?
+		
+		\item Reliable radiometric dating: Yes, within my scope of knowledge. Radiocarbon did not work. Would not matter if truly 130 \kya{} as C only good to about 40-50 \kya. Luminescence gave \emph{minimum} age of 60–70 \kya. Uranium seems to have given consistent results. I'll rate this as a pass.
+		
+		\item Multiple lines: Yes.  Extensive testing of bones and tools. NAture of fragments indicate bones broken while fresh, could not be broken by high energy stream, etc.  
+		
+		\item Unquestionable artifacts in context: yes.
+	\end{enumerate}
+
+	Bones were dated and bone fragments consistent with tool use. This suggests that the bones were fragmented by humans in that time frame.
+
 \end{solution}
 
 
 \question[5]
+Assuming the results to be valid, could this unidentified species of \textit{Homo} be \textit{H. sapiens?} Explain.
 
 \begin{solution}
-Answer
+My opinion is no, as I do not think that \textit{H. sapiens} could have made it that far that fast if they left Africa only 200 \kya.
 \end{solution}
 
 
