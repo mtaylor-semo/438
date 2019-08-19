@@ -1,0 +1,35 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+
+\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage[parfill]{parskip}    % Activate to begin 
+\usepackage{booktabs}
+\usepackage{datatool}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+\begin{document}
+\thispagestyle{plain}
+
+\rotatebox{90}{\includegraphics[width=\textheight]{ny_watershed_map}}
+
+\end{document}

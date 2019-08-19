@@ -1,0 +1,224 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{exam}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/homework/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=0.9in}                   
+
+\usepackage{afterpage}
+\usepackage{pdflscape}
+
+\newlength{\myindent}
+\setlength{\myindent}{\parindent}
+\newcommand{\ind}{\hspace*{\myindent}}
+
+\newlength{\litindent}
+\setlength{\litindent}{\parindent}
+
+\usepackage[parfill]{parskip} 
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX, Numbers=OldStyle]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{longtable}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\usepackage[justification=raggedright, labelsep=period]{caption}
+\captionsetup{singlelinecheck=off}
+\captionsetup{skip=0.2em}
+
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\newcolumntype{M}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{tikz}
+
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+
+%\usepackage{hyperref}
+\usepackage{hanging}
+
+\usepackage[sc]{titlesec}
+
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\renewcommand{\questionshook}{%
+	\setlength{\leftmargin}{-\leftskip}%
+}
+%Change \half command from 1/2 to .5
+%\renewcommand*\half{.5}
+
+
+\makeatletter
+\def\SetTotalwidth{\advance\linewidth by \@totalleftmargin
+\@totalleftmargin=0pt}
+\makeatother
+
+\pagestyle{headandfoot}
+\firstpageheader{\textsc{bi} 438/638: Biogeography}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{New York Fishes}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\newcommand*\AnswerBox[2]{%
+    \parbox[t][#1]{0.92\textwidth}{%
+    \begin{solution}#2\end{solution}}
+    \vspace{\stretch{1}}
+}
+
+\newenvironment{AnswerPage}[1]
+    {\begin{minipage}[t][#1]{0.92\textwidth}%
+    \begin{solution}}
+    {\end{solution}\end{minipage}
+    \vspace{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{5\baselineskip}
+
+\newcommand{\allele}[1]{\textit{#1}}
+
+%\printanswers
+
+\begin{document}
+
+\textbf{This assignment is due by the start of the next class period.}
+
+All scientific analyses begin with a set of data. Most data sets 
+you will use in this course were assembled by a former student
+of this course so that you can focus on analysis and interpretation. You 
+will assemble a one small data set to gain some 
+experience with this task.
+
+You will assemble part of a presence / absence data matrix for 
+the fishes of New York, using distribution maps created by 
+scientists with the New York Department of Environmental 
+Conservation and the New York State Museum. The presence/absence matrix shows whether a species is 
+present~(1) or absent~(0) in a watershed. 
+Below is a partial example matrix.
+
+\begin{longtable}[]{@{}lccccc@{}}
+\toprule
+& Watershed 1 & Watershed 2 & Watershed 3 & \ldots{} & Watershed
+X\tabularnewline
+\midrule
+\endhead
+Species 1 & 1 & 1 & 0 & \ldots{} & 0\tabularnewline
+Species 2 & 0 & 0 & 1 & \ldots{} & 1\tabularnewline
+Species 3 & 1 & 0 & 0 & \ldots{} & 1\tabularnewline
+\ldots{} & \ldots{} & \ldots{} & \ldots{} & \ldots{} &
+\ldots{}\tabularnewline
+Species \textsc{x} & 1 & 1 & 0 & \ldots{} & 0\tabularnewline
+\bottomrule
+\end{longtable}
+
+You were given a short list of fishes. For each species, you 
+will determine whether it is present or absent in a given 
+watershed. A watershed includes all or parts of a large river and 
+its tributaries. I will assemble the data obtained by each 
+student into a single data set of all of the fishes that 
+you will analyze later.
+
+Follow these instructions carefully to complete this
+exercise.
+
+\begin{enumerate}
+\item
+  Obtain your list of fishes in class.
+\item
+  Download files from the course Moodle page:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item 
+  	Inland\_Fishes\_of\_New\_York.pdf
+  	
+  	This is the book that you will gather the data from.
+  \item
+    New\_York\_Fishes.xlsx
+    
+    This is the spreadsheet for your data.
+    
+  \item
+    New\_York\_Watersheds.pdf (optional)
+    
+    This is the map included also on the last page of this handout, which you can tear off for reference as you gather your data. 
+    If you tear off and then lose the map, this is here for you.
+    
+  \end{enumerate}
+\item
+  The watersheds map (see last page of this assignment) gives 
+  the names of the watersheds. Each watershed is identified by 
+  a thick black line.
+\item
+  Change the name of the spreadsheet to New\_York\_Fishes\_Lastname.xls.
+  Use \emph{your} last name.
+\item
+  Type the scientific names of your list of species into the first
+  column of the spreadsheet, one species per cell. Be certain to 
+  type the names down the column and not across in the same row. 
+  \emph{Type only the scientific names.}
+\item
+  Open the \textit{Inland Fishes of New York} \textsc{pdf}, and then scroll down until you find your fishes. Your list of fishes is
+  arranged with the same order as the list of fishes in the text. As soon as you find the first species on your list, 
+  continue sequentially until you complete your list. Do not skip 
+  any species on your list. Do not add species not on your list.
+\end{enumerate}
+
+\begin{quote}
+The text includes invasive species, which I deleted
+before creating your lists. Make sure that you are only getting
+distribution information for the species on your list and not 
+others that may be intermingled in the book. These instances 
+are few.
+\end{quote}
+
+\begin{enumerate}[resume]
+\item \label{step1}
+  For each species, you will see a distribution map on the 
+  lower right of the web. The red, yellow, or
+  green shading  
+  represents the generalized area where the species' presence has 
+  been documented.
+\item \label{steptwo}
+  For each watershed that is shaded (red, yellow, or green), change the 0 in the 
+  spreadsheet to 1 to indicate the presence of the species.
+\item
+  Repeat steps \ref{step1} and \ref{steptwo} for each species on your list.
+\item
+  Upload your completed spreadsheet into the drop box available 
+  from the course website.
+\end{enumerate}
+\newpage
+
+\rotatebox{90}{\includegraphics[height=\textwidth]{ny_watershed_map}}
+
+\end{document}  
