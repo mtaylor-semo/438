@@ -18,7 +18,7 @@
 %\pagenumbering{gobble}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
 \setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
 \usepackage{microtype}
@@ -52,12 +52,17 @@
 %\usepackage{hyperref}
 %\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
-\usepackage{titling}
-\setlength{\droptitle}{-50pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+\usepackage[sc]{titlesec}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-50pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
 
 %\usepackage{hanging}
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+
 
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -70,25 +75,37 @@
 \fancyhead[R]{\footnotesize Island Biogeography \thepage}
 \fancyhead[L]{\footnotesize Biogeography}
 
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+
 \newcommand{\bigSpace}{\vspace{5\baselineskip}}
 
 \newlength{\myLength}
 \setlength{\myLength}{\parindent}
 
-\title{Island Biogeography}
-\author{}
-\date{}							% Activate to display a given date or no date
+%\title{Island Biogeography}
+%\author{}
+%\date{}							% Activate to display a given date or no date
 
 \begin{document}
 %\maketitle
 %\section{}
 %\subsection{}
-\thispagestyle{empty}
+%\thispagestyle{empty}
+\thispagestyle{first_page}
 
+
+\section*{Island Biogeography}
 %For this simple exercise, you will plot species abundance against island size or distance from a source, or both.  
 
 
-\section{Caribbean Amphibians and Reptiles}
+\subsection*{Caribbean amphibians and reptiles}
 
 For your first analysis, you will plot species richness against island area for reptiles and amphibians on seven islands in the Caribbean. You will also perform a simple linear regression to determine if the relationship is significant. First, read in the data.
 
@@ -131,10 +148,10 @@ text(lspecies ~ lsize, data=herp, labels=herp$island, pos=2, offset=0.5, cex=0.8
 abline(lsize.lm)
 \end{verbatim}
 
-Save the plot and upload to the dropbox. You and your partner should do this.
+Save the plot and upload to the drop box. You and your partner should do this.
 
 
-\section{Longhorn Beetles in the Florida Keys}
+\subsection*{Longhorn beetles in the Florida Keys}
 
 This data set contains species richness for a family of beetles, Cerambycidae, that were surveyed on the Florida Keys. This data set contains both island size and distance (from what, I do not know).  Read and log transform the data, then perform the regression analysis.  For these data, you will use both island size and island distance.  You will do two regression analyses and plot the results of both.
 
@@ -172,7 +189,7 @@ par(op)
 
 After you have plotted the results, ask me to come over so that you can explain your interpretation of the figures to me.
 
-\section{Mammals in the Mountains}
+\subsection*{Mammals in the mountains}
 
 This data set contains species richness for small mammals found on mountain tops. This data set contains both mountain top size, distance to the nearest neighboring mountain top, and distance to the nearest non-mountainous mainland.  Read and log transform the data, then perform the regression analysis.  For these data, you will use mountain size, distance to the next mountain, and distance to the mainland.  You will do three regression analyses and plot their results.
 
@@ -215,7 +232,7 @@ par(op)
 
 Once again, invite me to your table so that you can interpret your results for me.
 
-\section{Cutting Down the Keys!}
+\subsection*{Cutting down the Keys!}
 
 As mentioned in lecture, one test of MacArthur and Wilson's Equilibrium Theory involved changing the size of mangrove islands by cutting down mangrove trees around the perimeter of the island.  They determined species richness for arthropods (insect and spiders, mostly) in 1969, prior to removing the mangroves. They then resurveyed in 1970 and 1971.  After the 1970 survey, they reduced the island size even more. 
 
