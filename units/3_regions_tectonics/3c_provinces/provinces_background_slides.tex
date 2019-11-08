@@ -1,0 +1,110 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lab/}%
+	{/Users/goby/Pictures/teach/438/lectures/}
+	{/Users/goby/Pictures/teach/common/}%}%
+	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+%\usepackage{tikz}
+%	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+\begin{document}
+%\lecture{instructor}{instructor}
+\lecture{student}{student}
+
+\begin{frame}[t]{Movin’ to Montana soon\dots}
+
+	\includegraphics[width=\linewidth]{montana_watersheds}
+	
+	\vfilll
+	
+	\hfill \tiny \textcolor{gray!60!white}{\dots gonna be a dental floss tycoon}
+\end{frame}
+%
+
+\begin{frame}[t]{Cluster analysis reveals two main groups.}
+
+	\includegraphics[width=\linewidth]{montana_cluster}
+
+	\vfilll
+
+\hfill \tiny \textcolor{gray!60!white}{\dots I just might grow me some bees}
+
+\end{frame}
+%
+\begin{frame}[t]{Ordination reveals more subtle differences.}
+
+	\includegraphics[width=\linewidth]{montana_pco}
+
+	\vfilll
+
+	\hfill \tiny \textcolor{gray!60!white}{\dots yippy-ty-o-ty-ay}
+
+\end{frame}
+%
+\begin{frame}[t]{The \highlight{fall line} is a major biogeographic feature.}
+
+\includegraphics[width=\linewidth]{pleistocene_glacial_fall_line}
+
+\vfilll
+
+\hfill \tiny \textcolor{gray!60!white}{\textsc{rip}}
+
+\end{frame}
+%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{southeastern_us}}
+\begin{frame}[b]{}
+	
+\end{frame}
+}
+
+\end{document}
+

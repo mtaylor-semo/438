@@ -1,0 +1,243 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=0.82]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{listings}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage{titling}
+\setlength{\droptitle}{-50pt}
+\posttitle{\par\end{center}}
+\predate{}\postdate{}
+
+%\usepackage{hanging}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Distribution of Diversity \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Distribution of Species Richness}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\fontsize{14pt}{16pt}\selectfont
+
+You are going to plot the species richness for U.S. fishes. The data were
+obtained by creating a presence / absence matrix for each species of
+native fish. Presence or absence was based on 1° x 1° longitude /
+latitude grids. If a fish was present in a grid cell then a 1 was
+entered for that grid cell. If the fish was absent, a 0 was entered into
+the grid cell. Finally, all the matrices were summed together to create
+the final data matrix.
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Make a prediction.} Where in the U.S. 
+do you think species richness will be the highest? Northeast U.S.? Southeast
+U.S.? Northwest? Southwest? Midwest? Take a look at the map of U.S. 
+Rivers that was given to you.  Below, name the region and 3--4 rivers in that 
+region where you think diversity may be the highest.\vspace{10\baselineskip}
+\end{enumerate}
+
+The following commands will create a ``filled contour map'' with shades
+corresponding to the number of species present. If you get an error at
+any point, you typed something wrong and will need to reenter the
+command. If you do not get an error message, then you can proceed to the
+next command.
+
+\begin{verbatim}
+nagrid <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/
+  nafish_grid.csv')
+\end{verbatim}
+
+The next three commands read in the geographic coordinates (longitude
+and latitude) necessary to draw state boundaries, rivers, and the US
+coast.
+
+\begin{verbatim}
+bnd <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/
+  boundaries.txt')
+rivers <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/
+  rivers.txt')
+coastline <- read.table('http://mtaylor4.semo.edu/~goby/
+  biogeo/coastLoRes.txt')
+\end{verbatim}
+
+The next two commands set the longitude (x) and latitude (y) coordinates
+for the map. The x values are negative because longitudes west of the
+Greenwich Meridian are treated as negative numbers. Your map will cover
+an area between 125°W to 65°W and between 24°N to 49°N. Compare those
+coordinates to your watershed map.
+
+\begin{verbatim}
+x <- -125:-65
+y <- 24:49
+\end{verbatim}
+
+%\newpage
+
+The following commands draw the actual map. You \emph{could} type it exactly as
+shown, pressing the Enter key after you have typed the final parenthesis:
+
+% . Hit the return key after you have typed the final parenthesis in
+%the command below. If it does not work, you typed something incorrectly.
+%It is essentially one long (but weird looking) sentence.
+
+\begin{verbatim}
+filled.contour(x, y, t(nagrid), color = terrain.colors, 
+  plot.title = title(main = "Distribution of Species 
+  Richness for U.S. Freshwater Fishes", xlab = "Longitude 
+  (°W)", ylab = "Latitude (°N)"), plot.axes = { axis(1);
+  axis(2); lines(coastline); lines(bnd, col = 'grey35', 
+  lty=3); lines(rivers, col = 'grey40', lwd='0.75')})
+\end{verbatim}
+
+Or, just type:
+
+\begin{verbatim}
+source('http://mtaylor4.semo.edu/~goby/biogeo/
+  nafish_diversity.r')
+\end{verbatim}
+
+Expand the map to full size and admire its glory. If it didn't work, 
+press the ``up'' cursor arrow to recall the full command, and then 
+carefully compare it to the command above. Move the cursor to 
+the error, correct it, and then press Enter.
+
+The shading corresponds to species richness. Dark green indicates
+relatively low richness. Whites indicate high species richness.
+Yellowish-green and tans indicate intermediate richness.
+
+\begin{enumerate}[resume, leftmargin=*]
+\item \textbf{How does the map compare to your prediction?} Where is the overall
+richness the greatest? In what watershed(s) is the species richness
+highest? Is it in just one location? More than one location?\vspace{10\baselineskip}
+\end{enumerate}
+
+Locations where species richness is very high are often called
+biodiversity hotspots. Such hotspots are often areas of conservation
+concern. Preserving biodiversity hotspots protects the greatest number
+of species, with efficient use of conservation dollars.
+
+\textbf{Now it is your turn to play.} I've divided the North American
+fishes into several major groups of fishes, listed below. These groups
+have relatively large numbers of species with different distribution
+patterns across the U.S. You will be given a selection of five
+groups to plot.
+
+\begin{multicols}{2}
+catostomid \\
+cottid \\
+cyprinid1 \\
+cyprinid2 \\
+cyprinodontiform \\
+etheostoma \\
+fundulus \\
+ictalurid \\
+percidae \\
+salmonid
+\end{multicols}
+
+%\newpage
+
+Plot the different data files to see how the
+distributions of different groups of fishes differ. Type the following
+commands, replacing NAME with one of the names you were assigned, such as
+etheostoma or cottid.
+
+\begin{verbatim}
+nagrid <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/
+  NAME.csv')
+source('http://mtaylor4.semo.edu/~goby/biogeo/diversity.r')
+\end{verbatim}
+
+Repeat this for each group on your list. Remember that you can recall
+previous commands to plot the map by pressing the up cursor
+arrow key to recall previous commands. Press the up cursor key a couple 
+times until you recall the \texttt{nagrid \textless{}- $\ldots$} command, change the NAME,
+then press the Enter key to read in the new file. Next, press the up cursor
+arrow a couple times to recall the \texttt{source($\ldots$)} command and then
+press the Enter key to make the new plot.
+
+\begin{enumerate}[resume, leftmargin=*]
+\item \textbf{Below, write the name of each group and
+describe the distribution of the fishes.} Are they northern? Eastern US?
+Mostly along the coastline? Do any of your groups have similar
+distributions? Do any of your groups have different distributions? \vspace{\baselineskip}
+%How do the distributions relate to the Pleistocene glacial maximum and the Fall Line?
+	\begin{enumerate}[label=\alph*., leftmargin=*]
+		\item %\vspace{5\baselineskip}
+
+		\item \vspace{5\baselineskip}
+
+		\item \vspace{5\baselineskip}
+
+		\item \vspace{5\baselineskip}
+
+		\item \vspace{5\baselineskip}
+	\end{enumerate}
+\end{enumerate}
+
+
+\end{document}  
