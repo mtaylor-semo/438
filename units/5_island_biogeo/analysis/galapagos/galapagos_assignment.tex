@@ -1,0 +1,315 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=0.65in, top = 0.65in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{pdflscape}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Lining}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+%\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{listings}
+\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+\captionsetup{labelsep=period} % Removes colon following figure / table number.
+\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+%\usepackage{hyperref}
+
+
+\usepackage[sc]{titlesec}
+
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize Island Biogeography \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+%\title{Island Biogeography}
+%\author{}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+%\maketitle
+%\section{}
+%\subsection{}
+\thispagestyle{first_page}
+
+\section*{Island bioeography of Galapagos endemic birds}
+
+\textsc{Note:} This is a first draft of the exercise, and a framework for future development. “I have ideas, not time,” said everyone, ever.
+
+More than 180 species of birds have been counted among the Galapagos Islands but 24 are endemic to the archipelago (Table~\ref{tab:endemic}). Enter the R code as necessary and use the tables on the last pages of this handout to answer these questions about the distribution of Galapagos-endemic birds.
+
+Load the data and log-transform (natural log, base \emph{e}) the island area and elevation. 
+
+{\small
+\begin{verbatim}
+birds <- read.csv("galapagos_birds.csv", header = TRUE, row.names = 1)
+islands <- read.csv("galapagos_islands.csv", header = TRUE)
+
+islands$ln_area <- log(islands$Area)
+islands$ln_elev <- log(islands$Elevation)
+\end{verbatim}
+}
+
+Tally the number of species on each island and plot the results. The  type of plot is called a Cleveland dot plot.\footnote{Named for Dr.~William S.~Cleveland, who developed this style of plot.} The dot chart is one of the best ways to visualize counts and similar types of data.
+
+{\small
+\begin{verbatim}
+num_species <- colSums(birds) # skip first column with species names
+dotchart(sort(num_species), main = "Species per island", pch = 19)
+\end{verbatim}
+}
+
+
+1. Which islands have the fewest (10 or less) species? \textsc{Note:} You can estimate the numbers from the plot or type \texttt{sort(num\_species)} into the R console. Or both.
+
+\bigSpace
+
+2. Which islands have the most (15 or more) species? Do any islands have all 24 species?
+
+\bigSpace
+
+3. Look up the islands on the provided map (may also be on screen). Describe the patterns you detect, in terms of island size and distance from other islands, for islands with the fewest and greatest number of species.
+
+\bigSpace \bigSpace
+
+4. How many species are found on Floreana and on Marchena? They are islands of similar size. Why do you think they have very different numbers of species? Discuss possibilities with your group.
+
+\newpage
+
+5. How many species are found on North Seymour? What islands have the same number of species? North Seymour is the second smallest island listed. Why do you think North Seymour has so many species? Discuss possibilities with your group.
+
+\bigSpace
+
+Tally the number of islands occupied by each species and plot the result.
+
+{\small
+\begin{verbatim}
+num_islands <- rowSums(birds)
+dotchart(sort(num_islands), main = "Islands per species", pch = 19)
+\end{verbatim}
+}
+
+5. Which species are endemic to a single island? Again, you can reference the plot or enter \texttt{sort(num\_islands)} into the R console. Or both.
+
+\bigSpace
+
+6. Which species are found on the greatest number of islands? Are any species found on all 16 islands?
+
+\bigSpace
+
+Perform a linear regression to determine if area is a significant predictor of the number of species. Plot the results.
+
+{\small
+\begin{verbatim}
+area.lm <- lm(num_species ~ islands$ln_area)
+summary(area.lm)
+
+plot(num_species ~ islands$ln_area)
+abline(area.lm) # Add a regression line
+\end{verbatim}}
+
+Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}”. Is the ln\_area a significant predictor for number of species?
+
+\vspace{3\baselineskip}
+
+Recall from your math courses that the equation of a straight line is $Y = mX + b$. Here, $X$ is the natural log of island area (\texttt{islands\$ln\_area})and $Y$ is the predicted number of species. $b$ is the Y-axis intercept. $b$ in your summary table is the estimate for the intercept, in this case 8.6463. $m$ is the slope of the line, which indicates how much the value of $Y$ changes for a given change in the value of $X$. In your summary table, $m$ is the estimate for \texttt{island\$ln\_area}, in this case 0.8332.
+
+Thus, the linear model for predicting the relationship between log(area) and number of species is
+
+\[ \mathrm{Species} = 0.83\left(\mathrm{ln\_area}\right) + 8.65.\]
+
+ The question now is how to interpret the linear model? The predictor variable ($X$) is the natural log of island area. To calculate how the number of species is predicted to change for a given percent increase of area, use $m \times log(1.x)$ where $x$ is the percent increase. For example, for a 10\% increase of island area, multiply the coefficient (0.8332) by log(1.10):
+ 
+ \[ 0.8332 \times log(1.10) = 0.079.\]
+ 
+ And increase of 10\% would add roughly 0.08 species, in theory. In practice, you can't add a fraction of a species. What happens if we make an island 4$times$ larger, an increase of 400\%? 
+ 
+ \[ 0.8332 \times log(4) = 1.1.\]
+ 
+ An island 4$\times$ larger than another is \emph{predicted} to have about one more species than the smaller island.
+ 
+7. Does that work if we compare San Cristóbal to Isabella? Isabella is about 830\% larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
+ 
+ % log(8.3) * 0.8332 = 1.76
+ 
+ \bigSpace
+ 
+ 8. Does this prediction match the actual difference in the number of species? 
+ 
+ \bigSpace
+ 
+9. The linear model is a \emph{prediction} of number of species based on island size, if all other variables were constant. That is what the regression line in your plot shows.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
+
+
+\bigSpace \bigSpace
+
+
+
+
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{landscape}
+
+%\section*{Island Biogeography}
+%For this simple exercise, you will plot species abundance against island size or distance from a source, or both.  
+
+\begin{longtable}[l]{>{\em}lllllllllllllllll}
+\caption{Endemic birds of the major Galapagos Islands. See other side for full species and island names. See Table~\ref{tab:species} for scientific and common names of each bird species.\newline  See Table~\ref{tab:islands} for full island names.}\label{tab:endemic}\tabularnewline
+\toprule
+\textup{Species} & Baltra & Bartol & Españo & Fernan & Florea & Genove & Isabel & Marche & NSeym & Pinzón & Pinta & Rábido & SanCri & StCruz & StFe & SanSal \tabularnewline
+\midrule
+P.~harrisi & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+B.~galapagoensis & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1\tabularnewline
+L.~spilonota & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1\tabularnewline
+Z.~galapagoensis & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1\tabularnewline
+M.~magnirostris & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\tabularnewline
+P.~modesta & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1\tabularnewline
+M.~parvulus & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1\tabularnewline
+M.~trifasciatus & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+M.~macdonaldi & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+M.~melanotis & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0\tabularnewline
+G.~magnirostris & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1\tabularnewline
+G.~fortis & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1\tabularnewline
+G.~fuliginosa & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\tabularnewline
+G.~difficilis & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1\tabularnewline
+G.~scandens & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\tabularnewline
+G.~conirostris & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+P.~crassirostris & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1\tabularnewline
+C.~psittacula & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1\tabularnewline
+C.~pauper & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+C.~parvulus & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1\tabularnewline
+C.~pallidus & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1\tabularnewline
+C.~heliobates & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+C.~olivacea & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1\tabularnewline
+C.~fusca & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{landscape}
+
+\newpage
+\thispagestyle{empty}
+\begin{longtable}[l]{>{\em}L{3.7cm}L{4cm}}
+\caption{Scientific and common names of endemic birds of\newline the Galapagos Islands.}\label{tab:species}\tabularnewline
+\toprule
+\textup{Species} & Common Name \tabularnewline
+\midrule
+Phalacrocorax harrisi & Flightless cormorant \tabularnewline
+Buteo galapagoensis & Galápagos hawk \tabularnewline
+Laterallus spilonota & Galápagos crake \tabularnewline
+Zenaida galapagoensis & Galápagos dove \tabularnewline
+Myiarchus magnirostris & Large-billed flycatcher \tabularnewline
+Progne modesta & Galapagos Martin \tabularnewline
+Mimus parvulus & Galápagos mockingbird \tabularnewline
+Mimus trifasciatus & Floreana mockingbird \tabularnewline
+Mimus macdonaldi & Hood mockingbird \tabularnewline
+Mimus melanotis & San Cristóbal mockingbird \tabularnewline
+Geospiza magnirostris & Large ground finch \tabularnewline
+Geospiza fortis & Medium ground finch \tabularnewline
+Geospiza fuliginosa & Small ground finch \tabularnewline
+Geospiza difficilis & Sharp-beaked ground finch \tabularnewline
+Geospiza scandens & Common cactus finch \tabularnewline
+Geospiza conirostris & Española cactus finch \tabularnewline
+Platyspiza crassirostris & Vegetarian finch \tabularnewline
+Camarhynchus psittacula & Large tree finch \tabularnewline
+Camarhynchus pauper & Medium tree finch \tabularnewline
+Camarhynchus parvulus & Small tree finch \tabularnewline
+Camarhynchus pallidus & Woodpecker finch \tabularnewline
+Camarhynchus heliobates & Mangrove finch \tabularnewline
+Certhidea olivacea & Green warbler-finch \tabularnewline
+Certhidea fusca & Grey warbler-finch \tabularnewline
+\bottomrule
+\end{longtable}
+
+\vspace{2cm}
+
+\begin{longtable}[l]{llrr}
+\caption{Full names of Galapagos islands listed in Table~\ref{tab:endemic}, and \newline the area and maximum elevation of each island.}\label{tab:islands} \tabularnewline
+\toprule
+Full Island Name & Table~\ref{tab:endemic} Code & Area (km\textsuperscript{2}) & Elevation (m)) \tabularnewline
+\midrule
+Baltra & Baltra & 21 & 100 \tabularnewline
+Bartolomé & Bartol & 1.2 & 114 \tabularnewline
+Española & Españo & 60 & 206 \tabularnewline
+Fernandina & Fernan & 642 & 1476 \tabularnewline
+Floreana & Florea & 173 & 640 \tabularnewline
+Genovesa & Genove & 14 & 64 \tabularnewline
+Isabella & Isabel & 4670 & 1707 \tabularnewline
+Marchena & Marche & 130 & 343 \tabularnewline
+North Seymour & NSeym & 1.8 & 28 \tabularnewline
+Pinzón & Pinzón & 18 & 458 \tabularnewline
+Pinta & Pinta & 60 & 650\tabularnewline
+Rábida & Rábida & 4.9 & 367\tabularnewline
+San Cristóbal & SanCri & 557 & 730 \tabularnewline
+Santa Cruz & StCruz & 986 & 864 \tabularnewline
+Santa Fe & StFe & 24 & 259 \tabularnewline
+San Salvador & SanSal & 572 & 905\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+\end{document}  
