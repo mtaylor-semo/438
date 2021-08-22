@@ -23,7 +23,7 @@
 \usepackage{fontspec}
 \setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX, Numbers=OldStyle]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
+\setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
 \usepackage{microtype}
 
 \usepackage{unicode-math}
@@ -61,11 +61,10 @@
 \setlist[1]{labelindent=\parindent}
 \setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
 
-%\usepackage{hyperref}
-\usepackage{hanging}
+\usepackage[colorlinks=true, allcolors=blue, allbordercolors={1 1 1}]{hyperref}
+%\usepackage{hanging}
 
 \usepackage[sc]{titlesec}
-
 
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
@@ -84,7 +83,7 @@
 \makeatother
 
 \pagestyle{headandfoot}
-\firstpageheader{BI 438/638: Biogeography}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\firstpageheader{\textsc{bi}~438/638: Biogeography}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
 \runningheader{Georgia Fishes}{}{\footnotesize{pg. \thepage}}
 \footer{}{}{}
 \runningheadrule
@@ -110,18 +109,18 @@
 
 \begin{document}
 
-\textbf{This assignment is due by the start of the next class period.}
+\textbf{You have one week to complete this assignment. See the course page for exact due date and time.}
 
 All scientific analyses begin with a set of data. Most data sets 
 you will use in this course were assembled by a former student
 of this course so that you can focus on analysis and interpretation. You 
-will assemble a few small data sets to gain some 
+will assemble a small data set to gain 
 experience with this task.
 
-You will assemble part of a presence / absence data matrix for 
+You will assemble part of a presence\,/\,absence data matrix for 
 the fishes of Georgia, using distribution maps created by 
 researchers at the University of Georgia Museum of Natural 
-History. The presence/absence matrix shows whether a species is 
+History. The presence\,/\,absence matrix shows whether a species is 
 present in a watershed~(1) or absent from the watershed~(0). 
 Below is a partial example matrix.
 
@@ -153,16 +152,20 @@ exercise.
 \begin{enumerate}
 \item
   Obtain your list of fishes in class.
+  
+\item Click the "Files and link for Georgia fishes assignment" link in the Introduction to the Course module of the course Canvas page. 
+
 \item
-  Download two files from
-  http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/
+  Download these files: 
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
+  
+  \item georgia\_fishes\_assignment.pdf (this file)
   \item
-    Georgia\_Fishes.xlsx
+    georgia\_fishes.xlsx
   \item
-    Georgia\_Watersheds.pdf
+    georgia\_watersheds.pdf
   \end{enumerate}
 \item
   The watersheds map (see last page of this assignment) gives 
@@ -172,46 +175,43 @@ exercise.
   more about later. (Unless, of course, you choose to go learn 
   about it now.)
 \item
-  Change the name of the spreadsheet to Georgia\_Fishes\_Lastname.xls.
+  Change the name of the spreadsheet to georgia\_fishes\_lastname.xlsx.
   Use \emph{your} last name.
+  
+  \newpage
+  
 \item
   Type the scientific names of your list of species into the first
   column of the spreadsheet, one species per cell. Be certain to 
   type the names down the column and not across in the same row. 
   Type only the scientific names.
 \item
-  Go to the Fishes of Georgia website at http://fishesofgeorgia.uga.edu
+  Go to the Fishes of Georgia website at \url{https://fishesofgeorgia.uga.edu}
 \item
-  Click on the ``Fish List'' link near the top of the page.
+  Click on the ``Fish List'' link near the top left of the page.
 \item
   Scroll down until you find your fishes. Your list of fishes is
   arranged with the same order as the list of fishes on the 
   website. As soon as you find the first species on your list, 
   continue sequentially until you complete your list. Do not skip 
   any species on your list.
-\end{enumerate}
+  
+  The website includes invasive (exotic) species, but they are not included on your list. Make sure that you gather
+  distribution information \emph{only} for the species on your list and not 
+  others that may be intermingled on the website. These instances 
+  are few.
+  
 
-\begin{quote}
-The website did include invasive (exotic) species, which I deleted
-before creating your lists. Make sure that you are only getting
-distribution information for the species on your list and not 
-others that may be intermingled on the website. These instances 
-are few.
-\end{quote}
-
-\begin{enumerate}[resume]
-\item
+\item\label{step:first}
   Click on the scientific name of your first species to bring up 
   the species information. You will see a distribution map on the 
   lower right of the web page. The green shading on the map 
   represents the generalized area where the species' presence has 
   been documented.
-\item
+\item\label{step:second}
   For each watershed with green shading, change the 0 in the 
   spreadsheet to 1 to indicate the presence of the species.
-\end{enumerate}
 
-\begin{quote}
 The fall line (the thick black line) on the map you downloaded 
 divides some of the watersheds into upper and lower parts. Be 
 sure to pay close attention to the location of this dividing fall 
@@ -227,12 +227,14 @@ under Cyprinidae. The range of this species includes the upper
 Ocmulgee Watershed. In the Ocmulgee, its range extends down to 
 and perhaps slightly past the fall line. You would treat this 
 species as present in the upper but not the lower Ocmulgee 
-watershed. If you are in doubt, don't hesitate to contact me.
-\end{quote}
+watershed. If you are in doubt, ask me.
+
+\end{enumerate}
+
 
 \begin{enumerate}[resume]
 \item
-  Repeat steps 9 and 10 for each species on your list.
+  Repeat steps~\ref{step:first} and~\ref{step:second} for each species on your list.
 \item
   Upload the completed spreadsheet into the drop box available 
   from the course website.
