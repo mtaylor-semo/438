@@ -1,11 +1,14 @@
 
 ## Read in the data
-birds <- read.csv("galapagos_birds.csv", header = TRUE, row.names = 1)
-islands <- read.csv("galapagos_islands.csv", header = TRUE)
+birds <- read.csv("galapagos/birds.csv", header = TRUE, row.names = 1)
+islands <- read.csv("galapagos/islands.csv", header = TRUE)
+
+birds <- read.csv("http://mtaylor4.semo.edu/biogeo/birds.csv", header = TRUE, row.names = 1)
+islands <- read.csv("http://mtaylor4.semo.edu/biogeo/islands.csv", header = TRUE)
 
 # Log transform area and elevation
-islands$ln_area <- log(islands$Area)
-islands$ln_elev <- log(islands$Elevation)
+islands$ln_area <- log(islands$area)
+islands$ln_elev <- log(islands$elevation)
 
 # Tally and plot number of species per island
 num_species <- colSums(birds) # skip first column with species names
@@ -23,16 +26,23 @@ summary(area.lm)
 plot(num_species ~ islands$ln_area)
 abline(area.lm)
 
-x <- data.frame(ln_area = log(rep(10000, 16)))
 
-predict(area.lm, x)
-
-aelev.lm <- lm(num_species ~ islands$ln_elev)
+# Is number of species predicted by elevation 
+elev.lm <- lm(num_species ~ islands$ln_elev)
 summary(elev.lm)
+plot(num_species ~ islands$ln_elev)
+abline(elev.lm)
 
-# sort the 
-num_spp_sorted <- sort(num_species)
-num_islands_sorted <- sort(num_islands)
+
+features.lm <- lm(ln_elev ~ ln_area, dat = islands)
+summary(features.lm)
+plot(islands$ln_elev ~ islands$ln_area)
+abline(features.lm)
+
+area_elev.lm <- lm(num_species ~ ln_area * ln_elev, data = islands)
+summary(area_elev.lm)
+
+
 
 # Optional barplot
 #op <- par(mar = c(12,3,2,2), mfrow = c(1,2))

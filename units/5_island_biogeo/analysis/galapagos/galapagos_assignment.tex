@@ -1,7 +1,7 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 \usepackage{graphicx}
 	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
 
@@ -95,27 +95,29 @@
 
 \section*{Island bioeography of Galapagos endemic birds}
 
-\textsc{Note:} This is a first draft of the exercise, and a framework for future development. “I have ideas, not time,” said everyone, ever.
+\textbf{Note:} This is a first draft of the exercise, and a framework for future development. “I have ideas, not time,” said everyone, ever. 
 
-More than 180 species of birds have been counted among the Galapagos Islands but 24 are endemic to the archipelago (Table~\ref{tab:endemic}). Enter the R code as necessary and use the tables on the last pages of this handout to answer these questions about the distribution of Galapagos-endemic birds.
+More than 180 species of birds have been counted among the Galapagos Islands but 24 are endemic to the archipelago (Table~\ref{tab:endemic}). Enter the R code below and use the tables on the last pages of this handout to answer the following questions about the distribution of Galapagos-endemic birds. Some question numbers may be duplicated. Deal with it. 
 
 Load the data and log-transform (natural log, base \emph{e}) the island area and elevation. 
 
-{\small
+{%\small
 \begin{verbatim}
-birds <- read.csv("galapagos_birds.csv", header = TRUE, row.names = 1)
-islands <- read.csv("galapagos_islands.csv", header = TRUE)
+birds <- read.csv("http://mtaylor4.semo.edu/biogeo/birds.csv", 
+   header = TRUE, row.names = 1)
+islands <- read.csv("http://mtaylor4.semo.edu/biogeo/islands.csv", 
+   header = TRUE)
 
-islands$ln_area <- log(islands$Area)
-islands$ln_elev <- log(islands$Elevation)
+islands$ln_area <- log(islands$area)
+islands$ln_elev <- log(islands$elevation)
 \end{verbatim}
 }
 
 Tally the number of species on each island and plot the results. The  type of plot is called a Cleveland dot plot.\footnote{Named for Dr.~William S.~Cleveland, who developed this style of plot.} The dot chart is one of the best ways to visualize counts and similar types of data.
 
-{\small
+{%\small
 \begin{verbatim}
-num_species <- colSums(birds) # skip first column with species names
+num_species <- colSums(birds) 
 dotchart(sort(num_species), main = "Species per island", pch = 19)
 \end{verbatim}
 }
@@ -131,11 +133,11 @@ dotchart(sort(num_species), main = "Species per island", pch = 19)
 
 3. Look up the islands on the provided map (may also be on screen). Describe the patterns you detect, in terms of island size and distance from other islands, for islands with the fewest and greatest number of species.
 
-\bigSpace \bigSpace
+\newpage %\bigSpace \bigSpace
 
 4. How many species are found on Floreana and on Marchena? They are islands of similar size. Why do you think they have very different numbers of species? Discuss possibilities with your group.
 
-\newpage
+\bigSpace
 
 5. How many species are found on North Seymour? What islands have the same number of species? North Seymour is the second smallest island listed. Why do you think North Seymour has so many species? Discuss possibilities with your group.
 
@@ -143,12 +145,12 @@ dotchart(sort(num_species), main = "Species per island", pch = 19)
 
 Tally the number of islands occupied by each species and plot the result.
 
-{\small
 \begin{verbatim}
 num_islands <- rowSums(birds)
 dotchart(sort(num_islands), main = "Islands per species", pch = 19)
 \end{verbatim}
-}
+
+\medskip
 
 5. Which species are endemic to a single island? Again, you can reference the plot or enter \texttt{sort(num\_islands)} into the R console. Or both.
 
@@ -160,36 +162,37 @@ dotchart(sort(num_islands), main = "Islands per species", pch = 19)
 
 Perform a linear regression to determine if area is a significant predictor of the number of species. Plot the results.
 
-{\small
 \begin{verbatim}
 area.lm <- lm(num_species ~ islands$ln_area)
 summary(area.lm)
 
 plot(num_species ~ islands$ln_area)
 abline(area.lm) # Add a regression line
-\end{verbatim}}
+\end{verbatim}
 
-Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}”. Is the ln\_area a significant predictor for number of species?
+6d. Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}”. Is \texttt{ln\_area} a significant predictor for number of species?
 
-\vspace{3\baselineskip}
+%\vspace{3\baselineskip}
 
-Recall from your math courses that the equation of a straight line is $Y = mX + b$. Here, $X$ is the natural log of island area (\texttt{islands\$ln\_area})and $Y$ is the predicted number of species. $b$ is the Y-axis intercept. $b$ in your summary table is the estimate for the intercept, in this case 8.6463. $m$ is the slope of the line, which indicates how much the value of $Y$ changes for a given change in the value of $X$. In your summary table, $m$ is the estimate for \texttt{island\$ln\_area}, in this case 0.8332.
+\newpage
 
-Thus, the linear model for predicting the relationship between log(area) and number of species is
+Recall from your math courses that the equation of a straight line is $Y = mX + b$. Here, $X$ is the natural log of island area (\texttt{islands\$ln\_area}) and $Y$ is the predicted number of species. $b$ is the Y-axis intercept. $b$ in your summary table is the estimate for the intercept, in this case 8.6463. $m$ is the slope of the line, which indicates how much the value of $Y$ changes for a given change in the value of $X$. In your summary table, $m$ is the estimate for \texttt{island\$ln\_area}, in this case 0.8332.
+
+Thus, the linear model to predict the relationship between ln\_area and number of species is
 
 \[ \mathrm{Species} = 0.83\left(\mathrm{ln\_area}\right) + 8.65.\]
 
- The question now is how to interpret the linear model? The predictor variable ($X$) is the natural log of island area. To calculate how the number of species is predicted to change for a given percent increase of area, use $m \times log(1.x)$ where $x$ is the percent increase. For example, for a 10\% increase of island area, multiply the coefficient (0.8332) by log(1.10):
+The question now is how to interpret the linear model? The predictor variable ($X$) is the natural log of island area. To calculate how the number of species is predicted to change for a given percent increase of area, use $m \times log(1.x)$ where $x$ is the percent increase. For example, for a 10\% increase of island area, multiply the coefficient (0.8332) by log(1.10):
  
  \[ 0.8332 \times log(1.10) = 0.079.\]
  
- And increase of 10\% would add roughly 0.08 species, in theory. In practice, you can't add a fraction of a species. What happens if we make an island 4$times$ larger, an increase of 400\%? 
+An increase of 10\% would add roughly 0.08 species, in theory. In practice, you can't add a fraction of a species. What happens if we make an island 4$times$ larger, an increase of 400\%? 
  
  \[ 0.8332 \times log(4) = 1.1.\]
  
- An island 4$\times$ larger than another is \emph{predicted} to have about one more species than the smaller island.
+An island 4$\times$ larger than another is \emph{predicted} to have about one more species than the smaller island.
  
-7. Does that work if we compare San Cristóbal to Isabella? Isabella is about 830\% larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
+7. Does our model work if we compare San Cristóbal to Isabella? Isabella is about 830\% larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
  
  % log(8.3) * 0.8332 = 1.76
  
@@ -199,14 +202,56 @@ Thus, the linear model for predicting the relationship between log(area) and num
  
  \bigSpace
  
-9. The linear model is a \emph{prediction} of number of species based on island size, if all other variables were constant. That is what the regression line in your plot shows.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
+9. The linear model is a \emph{prediction} of the number of species based on island size, if all other variables were constant. The predicted values are represented by the regression line in your plot.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
+
+%\bigSpace \bigSpace
+
+\newpage
+
+Test to see if elevation is a significant predictor of species number.
+
+\begin{verbatim}
+elev.lm <- lm(num_species ~ islands$ln_elev)
+summary(elev.lm)
+plot(num_species ~ islands$ln_elev)
+abline(elev.lm)
+\end{verbatim}
+
+10. Does maximum elevation predict the number of species on an island? Interpret the results of the linear regression. 
+
+\bigSpace
+
+Together, the results suggest that island area is a better predictor than island elevation for number of species. However, could there be a relationship between island area and island elevation?
+
+\begin{verbatim}
+features.lm <- lm(ln_elev ~ ln_area, dat = islands)
+summary(features.lm)
+plot(islands$ln_elev ~ islands$ln_area)
+abline(features.lm)
+\end{verbatim}
+
+11. Is island area a good predictor of island elevation? Interpret the results of the linear regression.
+
+\bigSpace
+
+Hmmm. Area was a good predictor of bird species and elevation nearly so. Could both together be a good predictor of the number of bird species on an island? Find out.
+
+The formula in the code below models number of species as a function of area and elevation \emph{and} any interactions between area and elevation. An interaction is an effect that occurs with both together but not by either variable alone.
+
+\begin{verbatim}
+# That's an asterisk in the formula
+area_elev.lm <- lm(num_species ~ ln_area * ln_elev, data = islands)
+summary(area_elev.lm)
+\end{verbatim}
+
+Notice that area and elevation alone are no longer significant predictors of bird species but that the interaction (\texttt{ln\_area:ln\_elev}) between the two variables is a somewhat better predictor of richness.
+
+12. If we assume this is the case, how could island area \emph{and} elevation interact to determine to increase number of species? Discuss ideas with your group.
+
+\bigSpace 
 
 
-\bigSpace \bigSpace
-
-
-
-
+13. What types of data might we be missing that could help solve this issue? Invite Dr.~Taylor to your table to discuss this and other ideas.
 
 \newpage
 
@@ -214,9 +259,9 @@ Thus, the linear model for predicting the relationship between log(area) and num
 
 \begin{landscape}
 
-%\section*{Island Biogeography}
-%For this simple exercise, you will plot species abundance against island size or distance from a source, or both.  
 
+{\fontsize{10pt}{12pt}\selectfont
+	
 \begin{longtable}[l]{>{\em}lllllllllllllllll}
 \caption{Endemic birds of the major Galapagos Islands. See other side for full species and island names. See Table~\ref{tab:species} for scientific and common names of each bird species.\newline  See Table~\ref{tab:islands} for full island names.}\label{tab:endemic}\tabularnewline
 \toprule
@@ -248,13 +293,16 @@ C.~olivacea & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1\tabu
 C.~fusca & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0\tabularnewline
 \bottomrule
 \end{longtable}
+}
 
 \end{landscape}
 
 \newpage
+
+{\fontsize{10pt}{12pt}\selectfont
 \thispagestyle{empty}
 \begin{longtable}[l]{>{\em}L{3.7cm}L{4cm}}
-\caption{Scientific and common names of endemic birds of\newline the Galapagos Islands.}\label{tab:species}\tabularnewline
+\caption{Scientific and common names of the endemic \newline birds of the Galapagos Islands.}\label{tab:species}\tabularnewline
 \toprule
 \textup{Species} & Common Name \tabularnewline
 \midrule
@@ -290,7 +338,7 @@ Certhidea fusca & Grey warbler-finch \tabularnewline
 \begin{longtable}[l]{llrr}
 \caption{Full names of Galapagos islands listed in Table~\ref{tab:endemic}, and \newline the area and maximum elevation of each island.}\label{tab:islands} \tabularnewline
 \toprule
-Full Island Name & Table~\ref{tab:endemic} Code & Area (km\textsuperscript{2}) & Elevation (m)) \tabularnewline
+Full Island Name & Table~\ref{tab:endemic} Code & Area (km\textsuperscript{2}) & Elevation (m) \tabularnewline
 \midrule
 Baltra & Baltra & 21 & 100 \tabularnewline
 Bartolomé & Bartol & 1.2 & 114 \tabularnewline
@@ -311,5 +359,6 @@ San Salvador & SanSal & 572 & 905\tabularnewline
 \bottomrule
 \end{longtable}
 
+}
 
 \end{document}  
