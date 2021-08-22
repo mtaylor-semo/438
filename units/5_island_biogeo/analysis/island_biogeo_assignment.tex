@@ -111,29 +111,29 @@ For your first analysis, you will plot species richness against island area for 
 
 {\small 
 \begin{verbatim}
-herp <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/herps.csv', header=
+herp <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/carib_herps.csv', header=
     TRUE)
 \end{verbatim}}
 
-Log-transform the variables of interest: number of species and island area. The log transformation will highlight the linear relationship between the variables. I put the letter ``l'' in front of the new variable names to indicate that they contain log-transformations of the original data.
+Log-transform the number of species and island area. The log transformation will highlight the linear relationship between the variables. Put ``ln\_'' in front of the new variable names to indicate that they contain log-transformations of the original data.
 
 \begin{verbatim}
-herp$lspecies <- log(herp$species)
-herp$lsize <- log(herp$size)
+herp$ln_species <- log(herp$species)
+herp$ln_area <- log(herp$area)
 
 \end{verbatim}
 
 Perform a simple linear regression analysis so that a regression line can be plotted in the graph. The results of the analysis will be stored in the variable \texttt{lsize.lm}
 
 \begin{verbatim}
-lsize.lm <- lm(lspecies ~ lsize, data=herp)
+area.lm <- lm(ln_species ~ ln_area, data=herp)
 
 \end{verbatim}
 
 Are the results significant?  To find out, type
 
 \begin{verbatim}
-summary(lsize.lm)
+summary(area.lm)
 
 \end{verbatim}
 
@@ -142,9 +142,9 @@ For our purposes, you can ignore most of the information displayed.  Look at the
 Plot the data and regression results.  The \texttt{abline()} function plots the regression line from the linear regression.  Use a tilde (\textasciitilde) between the variables to be plotted.
 
 \begin{verbatim}
-plot(lspecies ~ lsize, data=herp, pch=19, cex=0.5, xlim=c(0,12), xlab = 
+plot(ln_species ~ ln_size, data=herp, pch=19, cex=0.5, xlim=c(0,12), xlab = 
     'Island Size', ylab='Species Richness')
-text(lspecies ~ lsize, data=herp, labels=herp$island, pos=2, offset=0.5, cex=0.8)
+text(ln_species ~ ln_size, data=herp, labels=herp$island, pos=2, offset=0.5, cex=0.8)
 abline(lsize.lm)
 \end{verbatim}
 
@@ -158,18 +158,18 @@ This data set contains species richness for a family of beetles, Cerambycidae, t
 \begin{verbatim}
 beetle <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/beetles.csv', header=TRUE)
 
-beetle$lspecies <- log(beetle$species)
-beetle$lsize <- log(beetle$size)
-beetle$ldist <- log(beetle$distance)
+beetle$ln_species <- log(beetle$species)
+beetle$ln_area <- log(beetle$area)
+beetle$ln_dist <- log(beetle$distance)
 
 \end{verbatim}
 
 \begin{verbatim}
-lsize.lm <- lm(lspecies ~ lsize, data=beetle)
-summary(lsize.lm)
+area.lm <- lm(ln_species ~ ln_area, data=beetle)
+summary(area.lm)
 
-ldist.lm <- lm(lspecies ~ ldist, data=beetle)
-summary(ldist.lm)
+dist.lm <- lm(ln_species ~ ln_dist, data=beetle)
+summary(dist.lm)
 
 \end{verbatim}
 
@@ -178,11 +178,11 @@ Are your results significant?  What is the $R^2$ value?  What is the significanc
 \begin{verbatim}
 op <- par(mfrow=c(1,2))
 
-plot(lspecies ~ lsize, data=beetle, xlab='Island Size', ylab='Species Richness')
-abline(lsize.lm)
+plot(lspecies ~ larea, data=beetle, xlab='Island Size', ylab='Species Richness')
+abline(area.lm)
 
 plot(lspecies ~ ldist, data=beetle, xlab='Island Distance', ylab='Species Richness')
-abline(ldist.lm)
+abline(dist.lm)
 
 par(op)
 \end{verbatim}
@@ -195,21 +195,21 @@ This data set contains species richness for small mammals found on mountain tops
 
 
 \begin{verbatim}
-mtn <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/mammals.csv', header=TRUE)
+mtn <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/montaine_mammals.csv', header=TRUE)
 
-mtn$lspecies <- log(mtn$species)
-mtn$lsize <- log(mtn$size)
-mtn$ldistmtn <- log(mtn$dist_mtn)
-mtn$ldistmain <- log(mtn$dist_mainland)
+mtn$ln_species <- log(mtn$species)
+mtn$ln_area <- log(mtn$area)
+mtn$ln_distmtn <- log(mtn$dist_mtn)
+mtn$ln_distmain <- log(mtn$dist_mainland)
 
-lsize.lm <- lm(lspecies ~ lsize, data=mtn)
-summary(lsize.lm)
+area.lm <- lm(ln_species ~ ln_area, data=mtn)
+summary(area.lm)
 
-ldistmtn.lm <- lm(lspecies ~ ldistmtn, data=mtn)
-summary(ldistmtn.lm)
+distmtn.lm <- lm(ln_species ~ ln_distmtn, data=mtn)
+summary(distmtn.lm)
 
-ldistmain.lm <- lm(lspecies ~ ldistmain, data=mtn)
-summary(ldistmain.lm)
+distmain.lm <- lm(ln_species ~ ln_distmain, data=mtn)
+summary(distmain.lm)
 
 \end{verbatim}
 
@@ -218,14 +218,14 @@ Are the results significant?  Plot all three analyses side by side:
 \begin{verbatim}
 op <- par(mfrow=c(1,3))
 
-plot(lspecies ~ lsize, data = mtn, xlab = 'Mountain Size',  ylab = 'Species Richness')
-abline(lsize.lm)
+plot(ln_species ~ ln_size, data = mtn, xlab = 'Mountain Size',  ylab = 'Species Richness')
+abline(size.lm)
 
-plot(lspecies ~ ldistmtn, data=mtn, xlab = 'Mountain Distance', ylab = 'Species Richness')
-abline(ldistmtn.lm)
+plot(ln_species ~ ln_distmtn, data=mtn, xlab = 'Mountain Distance', ylab = 'Species Richness')
+abline(distmtn.lm)
 
-plot(lspecies ~ ldistmain, data=mtn, xlab = 'Mainland Distance', ylab = 'Species Richness')
-abline(ldistmain.lm)
+plot(ln_species ~ ln_distmain, data=mtn, xlab = 'Mainland Distance', ylab = 'Species Richness')
+abline(distmain.lm)
 
 par(op)
 \end{verbatim}
@@ -241,24 +241,24 @@ How would you predict species richness to change as island size is reduced?
 This data set contains species richness and island size before and after trimming.  Read in the data set, and then log transform the variables.
 
 \begin{verbatim}
-arthro <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/arthropods.csv', header=TRUE)
+arthro <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/arboreal_arthropods.csv', header=TRUE)
 
-arthro$lspecies <- log(arthro$species)
-arthro$lsize <- log(arthro$size)
+arthro$ln_species <- log(arthro$species)
+arthro$ln_area <- log(arthro$area)
 
 \end{verbatim}
 
-The data set has a control island (IN1) which you should not include in the regression analysis or plot of the regression analysis.  However, you will include it in a separate plot.  So,  create a new data set that contains all of the data except for control island IN1.
+The data set has a control island (\textsc{in}1) which you should not include in the regression analysis or plot of the regression analysis.  However, you will include it in a separate plot.  So,  create a new data set that contains all of the data except for control island \textsc{in}1.
 
 \begin{verbatim}
 #copy all of the data except for islands matching IN1
 arthro.new <- subset(arthro, island!='IN1')  
 
-lsize.lm <- lm(lspecies ~ lsize, data=arthro.new)
-summary(lsize.lm)
+area.lm <- lm(lspecies ~ larea, data=arthro.new)
+summary(area.lm)
 
-plot(lspecies ~ lsize, data=arthro.new, ylab='Species Richness', xlab='Island Size')
-abline(lsize.lm)
+plot(ln_species ~ ln_area, data=arthro.new, ylab='Species Richness', xlab='Island Size')
+abline(area.lm)
 
 \end{verbatim}
 
