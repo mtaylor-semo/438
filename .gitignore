@@ -18,6 +18,7 @@
 # *.ps
 # *.eps
 *.pdf
+*.htm
 
 ## Lecture-related documents:
 *.doc
@@ -28,6 +29,7 @@
 *.png
 *.mp4
 .DS_Store
+.Rhistory
 
 ## Folders
 exams
