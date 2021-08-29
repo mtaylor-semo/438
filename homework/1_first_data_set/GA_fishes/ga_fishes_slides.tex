@@ -1,0 +1,124 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\includeonlylecture{student}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=0.75]{Linux Libertine Mono O} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{xspace}
+\newfontfamily\amperfont[Style=Alternate]{Linux Libertine O}    
+\makeatletter
+\DeclareRobustCommand{\amper}{{\amperfont\ifx\f@shape\scname\smaller[1.2]\fi\&}\xspace}
+\makeatother
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/438/homework/}
+	{/Users/goby/Pictures/teach/163/common/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+
+
+\begin{document}
+%\lecture{instructor}{instructor}
+%\lecture{student}{student}
+
+
+% First assignment
+{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{first_assignment}}
+	\begin{frame}[t,plain]{Here is your first assignment.}
+	
+	\hangpara Build a presence/absence data matrix for the fishes of Georgia.
+	
+	\hangpara See “Files and link for Georgia fishes assignment” in \href{https://semo.instructure.com}{Canvas} for \textsc{xlsx} template, \amper\kern-3.33ptc. %\&\kern-.67ptc
+	
+	\hangpara \url{https://fishesofgeorgia.uga.edu}
+	
+\end{frame}
+}
+
+%\begin{frame}[t,plain]{Here is your first assignment.}
+%
+%\hangpara You will build a presence/absence data matrix for the inland fishes of \newline New York state.
+%
+%\hangpara Due next class meeting in drop box.
+%
+%\hangpara Get files from Moodle page.
+%
+%{\centering
+%	\includegraphics[height=1.7in]{ny_brook_trout}\par
+%}
+%
+%\vfilll
+%
+%\hfill \tiny Brook Trout, Carlson et al. 2016, \textit{Inland Fishes of New York}
+%\end{frame}
+%%}
+%
+%\begin{frame}{A species is present (1) or absent (0) from a watershed.}
+%
+%%\vspace{\baselineskip}
+%
+%\bigskip
+%
+%\includegraphics[width=0.48\textwidth]{ny_watershed_map} \hfill
+%\includegraphics[width=0.48\textwidth]{ny_example_map}
+%
+%\vfilll
+%
+%\hfill \tiny Carlson et al. 2016, \textit{Inland Fishes of New York}
+%\end{frame}
+
+\begin{frame}
+	\centering
+	\includegraphics[height=0.95\textheight]{georgia_watershed_map}
+\end{frame}
+
+\end{document}
