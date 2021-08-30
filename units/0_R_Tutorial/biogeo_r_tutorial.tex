@@ -17,7 +17,7 @@
 %\pagenumbering{gobble}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle,Proportional}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
 \setmonofont[Scale=0.8]{Linux Libertine Mono O}
 \usepackage{microtype}
@@ -51,12 +51,16 @@
 %\usepackage{hyperref}
 %\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
-\usepackage{titling}
-\setlength{\droptitle}{-50pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
+%\usepackage{titling}
+%\setlength{\droptitle}{-50pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\usepackage[sc]{titlesec}
 
 \usepackage{hanging}
+
+\newcommand{\assignmentTitle}{R Tutorial}
 
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -66,20 +70,31 @@
 %\rhead{Name: \rule{5cm}{0.4pt}}
 %\renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
-\fancyhead[LE,RO]{\footnotesize R Tutorial \thepage}
+\fancyhead[LE,RO]{\footnotesize \assignmentTitle\ \thepage}
+
+\fancypagestyle{firstpage}
+{
+   \fancyhf{}
+   \lhead{\textsc{bi}~438/638 Biogeography}
+   \rhead{Name: \rule{5cm}{0.4pt}}
+   \renewcommand{\headrulewidth}{0pt}
+%   \fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+}
 
 \newcommand{\bigSpace}{\vspace{5\baselineskip}}
 
 \newlength{\myLength}
 \setlength{\myLength}{\parindent}
 
-\title{R Tutorial}
-\author{Biogeography Unit 0}
-\date{}                                           % Activate to display a given date or no date
+%\title{R Tutorial}
+%\author{Biogeography Unit 0}
+%\date{}                                           % Activate to display a given date or no date
 
 \begin{document}
-\maketitle
-\thispagestyle{plain}
+% \maketitle
+\thispagestyle{firstpage}
+
+\subsection*{\assignmentTitle{}}
 
 You will perform many types of biogeographic analyses during this
 course. For most of these analyses, you will use a software package
