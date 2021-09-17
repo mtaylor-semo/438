@@ -1,0 +1,74 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}}%
+%	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[default]
+}
+
+
+
+
+
+\begin{document}
+
+\begin{frame}[t]{Create a Project file in R Studio.}
+
+\begin{enumerate}
+\item Make a folder called “biogeo” in your Documents folder
+\begin{itemize}
+\item Mac: \textasciitilde/Documents/biogeo
+\item PC: My PC/Documents
+
+\end{itemize}
+
+	\item In RStudio, choose “New Project…” from the File menu.
+	
+	\item Click on “Existing Directory,” and then click the “Browse” button. 
+	
+	\item Navigate to your new “biogeo” folder, select it, and then press the “Open” button.
+	
+	\item Press the “Create Project” button. This will create a file called “biogeo.Rproj” inside your “biogeo” folder.
+
+\end{enumerate}
+	
+	\hangpara \textit{!All files for today and the future go into the “biogeo” folder!`}
+	
+	\hangpara \textit{!Always open this project file when starting RStudio in this class.!`}
+	
+\end{frame}
+
+%
+%
+\end{document}
