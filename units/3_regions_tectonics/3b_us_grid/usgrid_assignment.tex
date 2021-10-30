@@ -52,23 +52,38 @@
 %\usepackage{hyperref}
 %\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
-\usepackage{titling}
-\setlength{\droptitle}{-50pt}
-\posttitle{\par\end{center}}
-\predate{}\postdate{}
 
-%\usepackage{hanging}
+
+\usepackage[sc]{titlesec}
+
 
 \usepackage{fancyhdr}
 \fancyhf{}
 \pagestyle{fancy}
-%\lhead{}
-%\chead{}
-%\rhead{Name: \rule{5cm}{0.4pt}}
-%\renewcommand{\headrulewidth}{0pt}
-\setlength{\headheight}{14pt}
-\fancyhead[R]{\footnotesize Distribution of Diversity \thepage}
-\fancyhead[L]{\footnotesize Biogeography}
+\lhead{}
+\chead{}
+\rhead{\footnotesize pg.~\thepage }
+\renewcommand{\headrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\lhead{\textsc{bi}~438/638: Biogeography}
+	\rhead{Name: \enspace \makebox[2.5in]{\hrulefill}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+%\usepackage{hanging}
+
+%\usepackage{fancyhdr}
+%\fancyhf{}
+%\pagestyle{fancy}
+%%\lhead{}
+%%\chead{}
+%%\rhead{Name: \rule{5cm}{0.4pt}}
+%%\renewcommand{\headrulewidth}{0pt}
+%\setlength{\headheight}{14pt}
+%\fancyhead[R]{\footnotesize Distribution of Diversity \thepage}
+%\fancyhead[L]{\footnotesize Biogeography}
 
 \newcommand{\bigSpace}{\vspace{5\baselineskip}}
 
@@ -80,8 +95,9 @@
 \date{}                                           % Activate to display a given date or no date
 
 \begin{document}
-\maketitle
-\thispagestyle{empty}
+\thispagestyle{plain}
+
+\subsection*{Distribution of Species Richness}
 
 You are going to plot the species richness for U.S. fishes. The data were
 obtained by creating a presence / absence matrix for each species of
