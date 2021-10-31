@@ -20,6 +20,7 @@
 *.pdf
 *.htm
 
+
 ## Lecture-related documents:
 *.doc
 *.docx
@@ -28,6 +29,7 @@
 *.jpg
 *.png
 *.mp4
+*.xls[x]
 .DS_Store
 .Rhistory
 
