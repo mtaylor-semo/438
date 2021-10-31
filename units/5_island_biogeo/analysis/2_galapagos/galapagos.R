@@ -1,10 +1,10 @@
 
 ## Read in the data
-birds <- read.csv("galapagos/birds.csv", header = TRUE, row.names = 1)
-islands <- read.csv("galapagos/islands.csv", header = TRUE)
+birds <- read.csv("birds.csv", header = TRUE, row.names = 1)
+islands <- read.csv("islands.csv", header = TRUE)
 
-birds <- read.csv("http://mtaylor4.semo.edu/biogeo/birds.csv", header = TRUE, row.names = 1)
-islands <- read.csv("http://mtaylor4.semo.edu/biogeo/islands.csv", header = TRUE)
+#birds <- read.csv("http://mtaylor4.semo.edu/biogeo/birds.csv", header = TRUE, row.names = 1)
+#islands <- read.csv("http://mtaylor4.semo.edu/biogeo/islands.csv", header = TRUE)
 
 # Log transform area and elevation
 islands$ln_area <- log(islands$area)
@@ -47,8 +47,8 @@ summary(area_elev.lm)
 # Optional barplot
 #op <- par(mar = c(12,3,2,2), mfrow = c(1,2))
 op <- par(mfrow = c(1,2))
-dotchart(sort(num_species), main = "Species per island")
-dotchart(sort(num_islands), main = "Islands per species")
+dotchart(sort(num_species), main = "Species per island", pch = 19)
+dotchart(sort(num_islands), main = "Islands per species", pch = 19)
 par(op)
 # Defaults
 par(mfrow = c(1,1))
