@@ -1,11 +1,10 @@
-
-setwd('~/teach/438/units/5_island_biogeo/analysis/')
+pacman::p_load(patchwork, ggplot2)
 
 
 # Caribbean Herps ---------------------------------------------------------
 
 
-herp <- read.csv('carib_herps.csv', header = TRUE)
+herp <- read.csv('carib_herps.csv')
 
 herp$lspecies <- log(herp$species)
 herp$larea <- log(herp$area)
@@ -14,9 +13,24 @@ larea.lm <- lm(lspecies ~ larea, data=herp)
 
 summary(larea.lm)
 
-plot(lspecies ~ larea, data = herp, pch = 19, cex = 0.5, xlim = c(0,12), xlab = 'Island Size', ylab = 'Species Richness')
+plot(lspecies ~ larea, data = herp, pch = 19, cex = 0.5, xlim = c(0,12), xlab = 'Island Area (log)', ylab = 'Species Richness (log)')
 text(lspecies ~ larea, data = herp, labels = herp$island, pos=2, offset=0.5, cex=0.8)
 abline(larea.lm)
+
+
+ggplot(herp, aes(x = larea, y = lspecies)) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              color = "gray50",
+              size = 0.75) +
+  geom_point() +
+  theme_bw() +
+  labs(x = "Island Area (log)",
+       y = "Species Richness (log)") +
+  geom_text(aes(label = island),
+            hjust = 0.0,
+            nudge_x = 0.1) +
+  theme(panel.grid = element_blank())
 
 
 # Florida Beetles ---------------------------------------------------------
@@ -44,6 +58,35 @@ abline(ldist.lm)
 
 par(op)
 
+
+p1 <- 
+  ggplot(beetle, aes(x = larea, y = lspecies)) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              color = "gray50",
+              size = 0.75) +
+  geom_point() +
+  theme_bw() +
+  labs(x = "Island Area (log)",
+       y = "Species Richness (log)") +
+  theme(panel.grid = element_blank())
+
+p2 <- 
+  ggplot(beetle, aes(x = ldist, y = lspecies)) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              color = "gray50",
+              size = 0.75) +
+  geom_point() +
+  theme_bw() +
+  labs(x = "Island Distance (log)",
+       y = "Species Richness (log)") +
+  theme(panel.grid = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+
+p1 + p2
 
 # Mammals in the Mountains ------------------------------------------------
 
@@ -77,6 +120,49 @@ abline(ldistmain.lm)
 
 par(op)
 
+p1 <- 
+  ggplot(mtn, aes(x = larea, y = lspecies)) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              color = "gray50",
+              size = 0.75) +
+  geom_point() +
+  theme_bw() +
+  labs(x = "Mountain Area (log)",
+       y = "Species Richness (log)") +
+  theme(panel.grid = element_blank())
+
+p2 <- 
+  ggplot(mtn, aes(x = ldistmtn, y = lspecies)) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              color = "gray50",
+              size = 0.75) +
+  geom_point() +
+  theme_bw() +
+  labs(x = "Mountain Distance (log)",
+       y = "Species Richness (log)") +
+  theme(panel.grid = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+
+p3 <- 
+  ggplot(mtn, aes(x = ldistmain, y = lspecies)) +
+  geom_smooth(method = "lm", 
+              se = FALSE,
+              color = "gray50",
+              size = 0.75) +
+  geom_point() +
+  theme_bw() +
+  labs(x = "Mainland Distance (log)",
+       y = "Species Richness (log)") +
+  theme(panel.grid = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+
+p1 + p2 + p3
 
 # Arboreal Arthropods -----------------------------------------------------
 
@@ -97,10 +183,24 @@ abline(larea.lm)
 
 library(lattice)	# this loads the lattice package.
 
-xyplot(species ~ area | island, data = arthro, aspect = 'xy', type = 'l', 
+xyplot(species ~ area | island, data = arthro.new, aspect = 'xy', type = 'l', 
        index.cond = list(c(5,6,7,8,9,3,1,2,4)),
        xlab = 'Island Size',  ylab = 'Species Richness', 
        panel = function(x,y,...) {
          panel.text(x, y, arthro$year, cex = 0.7, pos = 4, offset = 0)
          panel.xyplot(x, y, ...) })
 
+ggplot(arthro.new, aes(x = larea, y = lspecies)) +
+  geom_smooth(method = "lm", 
+              se = FALSE, 
+              color = "gray50",
+              size = 0.75) +
+  geom_point(size = 0.75) +
+  facet_wrap(facets = vars(island)) +
+  theme_bw() +
+  geom_text(aes(label = year),
+            hjust = 1,
+            nudge_x = -0.1) +
+  theme(panel.grid = element_blank()) +
+  labs(x = "Island Area (log)",
+       y = "Species Richness (log)")
