@@ -1,6 +1,5 @@
-setwd('biogeo')
 spp <- read.csv('NAmussels.csv', header=TRUE, row.names=1) 
-#spp <- read.csv('NAfishes.csv', header=TRUE, row.names=1) 
+spp <- read.csv('NAfishes.csv', header=TRUE, row.names=1) 
 
 #spp <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/NAfishes.csv', header=TRUE, row.names=1) 
 

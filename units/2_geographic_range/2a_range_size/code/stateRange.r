@@ -1,6 +1,5 @@
-setwd('biogeo')
-pluraltaxon <- 'Crayfishes'  # Fishes, Crayfishes or Mussels
-singletaxon <- 'Crayfish'  # Fish, Crayfish or Mussel
+pluraltaxon <- 'Fishes'  # Fishes, Crayfishes or Mussels
+singletaxon <- 'Fish'  # Fish, Crayfish or Mussel
 thestate <- 'Georgia'
 fn=paste(thestate,'_',pluraltaxon, sep='')
 
