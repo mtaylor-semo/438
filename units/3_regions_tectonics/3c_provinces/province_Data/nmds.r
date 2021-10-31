@@ -1,13 +1,36 @@
 ###################################################
-# Non-metric Dimensional Analysis 
+# Non-metric Dimensional Analysis
 ###################################################
 # Non-metric Dimensional Analysis (NMDS) is a method that allows complex data
 # to be more readily interpreted.  Here, similar watersheds tend to cluster
 # together in 2-D space, providing a different view of the cluster results.
-fish.nmds <- metaMDS(fish, k=2, trymax=100)
-plot(fish.nmds, type='n', las = 1)
-points(fish.nmds$points, col=mycolors[fish.clust.cut], pch=20, cex=0.5)
-text(fish.nmds$points, labels=rownames(fish), col=mycolors[fish.clust.cut], adj=0.9, cex=0.8, pos=1)
-#orditorp(fish.nmds, display='sites',pcol=mycolors[fish.clust.cut], col=mycolors[fish.clust.cut], pch=20, pcex=0.5, air=0.01, cex=0.8)
-abline(h=0, col='grey50', lty= 2)
-abline(v=0, col='grey50', lty= 2)
+fish.nmds <- metaMDS(fishFile, k = 2, trymax = 100)
+
+## GGPlot
+
+watershed_scores <- as_tibble(scores(fish.nmds)) %>%
+  mutate(
+    watershed = rownames(scores(fish.nmds)),
+    grp = fish.clust.cut
+  )
+
+
+nmdplt <- watershed_scores %>%
+  ggplot() +
+  geom_point(aes(
+    x = NMDS1, y = NMDS2,
+    color = as.factor(grp)
+  )) +
+  geom_text(aes(x = NMDS1, y = NMDS2, label = watershed, color = as.factor(grp)), vjust = -1, hjust = .50) +
+  geom_hline(yintercept = 0, color = "gray70", size = 0.3) +
+  geom_vline(xintercept = 0, color = "gray70", size = 0.3) +
+  scale_colour_manual(values = mycolors[1:clustCut], guide = NULL) +
+  coord_equal() +
+  theme_bw() +
+  theme(
+    line = element_blank(),
+    text = element_text(size = 12),
+    axis.text = element_blank()
+  )
+
+print(nmdplt)
