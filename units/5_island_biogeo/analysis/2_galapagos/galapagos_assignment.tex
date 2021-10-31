@@ -49,13 +49,14 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \usepackage{enumitem}
-%\usepackage{hyperref}
+\setlist[enumerate]{leftmargin=-\parindent}
+\setlist[1]{labelindent=\parindent}
 
 
 \usepackage[sc]{titlesec}
 
-
 \newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+\newcommand*{\assignmentTitle}{Island bioeography of Galapagos endemic birds}
 
 
 \usepackage{fancyhdr}
@@ -66,7 +67,7 @@
 %\rhead{Name: \rule{5cm}{0.4pt}}
 %\renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
-\fancyhead[R]{\footnotesize Island Biogeography \thepage}
+\fancyhead[R]{\footnotesize \assignmentTitle{} \thepage}
 \fancyhead[L]{\footnotesize Biogeography}
 
 
@@ -93,20 +94,18 @@
 %\subsection{}
 \thispagestyle{first_page}
 
-\section*{Island bioeography of Galapagos endemic birds}
+\section*{\assignmentTitle}
 
-\textbf{Note:} This is a first draft of the exercise, and a framework for future development. “I have ideas, not time,” said everyone, ever. 
+\textbf{Note:} This is the second draft of this exercise, and a framework for future development. “I have ideas, not time,” said everyone, ever. 
 
 More than 180 species of birds have been counted among the Galapagos Islands but 24 are endemic to the archipelago (Table~\ref{tab:endemic}). Enter the R code below and use the tables on the last pages of this handout to answer the following questions about the distribution of Galapagos-endemic birds. Some question numbers may be duplicated. Deal with it. 
 
-Load the data and log-transform (natural log, base \emph{e}) the island area and elevation. 
+Load the data and log-transform (natural log, base \emph{e}) the island area and elevation.\footnote{R uses \texttt{log()} for natural logs and \texttt{log10()} for base~10 logs. In text and on calculators, “ln” is used for natural logs. This text follows the R usage for consistency with the code.} 
 
 {%\small
 \begin{verbatim}
-birds <- read.csv("http://mtaylor4.semo.edu/biogeo/birds.csv", 
-   header = TRUE, row.names = 1)
-islands <- read.csv("http://mtaylor4.semo.edu/biogeo/islands.csv", 
-   header = TRUE)
+birds <- read.csv("birds.csv", header = TRUE, row.names = 1)
+islands <- read.csv("islands.csv", header = TRUE)
 
 islands$ln_area <- log(islands$area)
 islands$ln_elev <- log(islands$elevation)
@@ -122,26 +121,33 @@ dotchart(sort(num_species), main = "Species per island", pch = 19)
 \end{verbatim}
 }
 
-
-1. Which islands have the fewest (10 or less) species? \textsc{Note:} You can estimate the numbers from the plot or type \texttt{sort(num\_species)} into the R console. Or both.
-
-\bigSpace
-
-2. Which islands have the most (15 or more) species? Do any islands have all 24 species?
+\begin{enumerate}[resume]
+\item Which islands have the fewest (10 or less) species? \textsc{Note:} You can estimate the numbers from the plot or type \texttt{sort(num\_species)} into the R console. Or both.
 
 \bigSpace
 
-3. Look up the islands on the provided map (may also be on screen). Describe the patterns you detect, in terms of island size and distance from other islands, for islands with the fewest and greatest number of species.
+\item Which islands have the most (15 or more) species? Do any islands have all 24 species?
+
+\bigSpace
+
+\item Look up the islands on the provided map (may also be on screen). Describe the patterns you detect, in terms of island size and distance from other islands, for islands with the fewest and greatest number of species.
+
+\end{enumerate}
+
 
 \newpage %\bigSpace \bigSpace
 
-4. How many species are found on Floreana and on Marchena? They are islands of similar size. Why do you think they have very different numbers of species? Discuss possibilities with your group.
+
+\begin{enumerate}[resume]
+\item How many species are found on Floreana and on Marchena? They are islands of similar size. Why do you think they have very different numbers of species? Discuss possibilities with your group.
 
 \bigSpace
 
-5. How many species are found on North Seymour? What islands have the same number of species? North Seymour is the second smallest island listed. Why do you think North Seymour has so many species? Discuss possibilities with your group.
+\item How many species are found on North Seymour? What islands have the same number of species? North Seymour is the second smallest island listed. Why do you think North Seymour has so many species? Discuss possibilities with your group.
 
 \bigSpace
+
+\end{enumerate}
 
 Tally the number of islands occupied by each species and plot the result.
 
@@ -152,13 +158,17 @@ dotchart(sort(num_islands), main = "Islands per species", pch = 19)
 
 \medskip
 
-5. Which species are endemic to a single island? Again, you can reference the plot or enter \texttt{sort(num\_islands)} into the R console. Or both.
+
+\begin{enumerate}[resume]
+\item Which species are endemic to a single island? Reference the plot or enter \texttt{sort(num\_islands)} into the R console. Or both.
 
 \bigSpace
 
-6. Which species are found on the greatest number of islands? Are any species found on all 16 islands?
+\item Which species are found on the greatest number of islands? Are any species found on all 16 islands?
 
 \bigSpace
+
+\end{enumerate}
 
 Perform a linear regression to determine if area is a significant predictor of the number of species. Plot the results.
 
@@ -170,7 +180,11 @@ plot(num_species ~ islands$ln_area)
 abline(area.lm) # Add a regression line
 \end{verbatim}
 
-6d. Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}”. Is \texttt{ln\_area} a significant predictor for number of species?
+
+
+\begin{enumerate}[resume]
+\item Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}.” Is \texttt{ln\_area} a significant predictor for number of species?
+\end{enumerate}
 
 %\vspace{3\baselineskip}
 
@@ -186,26 +200,28 @@ The question now is how to interpret the linear model? The predictor variable ($
  
  \[ 0.8332 \times log(1.10) = 0.079.\]
  
-An increase of 10\% would add roughly 0.08 species, in theory. In practice, you can't add a fraction of a species. What happens if we make an island 4$times$ larger, an increase of 400\%? 
+An increase of 10\% would add roughly 0.08 species, in theory. In practice, you can't add a fraction of a species. What happens if we make an island 4$\times$ larger, an increase of 400\%? 
  
  \[ 0.8332 \times log(4) = 1.1.\]
  
 An island 4$\times$ larger than another is \emph{predicted} to have about one more species than the smaller island.
  
-7. Does our model work if we compare San Cristóbal to Isabella? Isabella is about 830\% larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
- 
+\begin{enumerate}[resume]
+\item Does our model work if we compare San Cristóbal to Isabella? Isabella is about 830\% larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
+
  % log(8.3) * 0.8332 = 1.76
+\bigSpace
  
- \bigSpace
+\item Does this prediction match the actual difference in the number of species? 
  
- 8. Does this prediction match the actual difference in the number of species? 
+\bigSpace
  
- \bigSpace
- 
-9. The linear model is a \emph{prediction} of the number of species based on island size, if all other variables were constant. The predicted values are represented by the regression line in your plot.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
+\item The linear model is a \emph{prediction} of the number of species based on island size, if all other variables were constant. The predicted values are represented by the regression line in your plot.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
 
 %\bigSpace \bigSpace
 
+\end{enumerate}
+ 
 \newpage
 
 Test to see if elevation is a significant predictor of species number.
@@ -217,9 +233,12 @@ plot(num_species ~ islands$ln_elev)
 abline(elev.lm)
 \end{verbatim}
 
-10. Does maximum elevation predict the number of species on an island? Interpret the results of the linear regression. 
+\begin{enumerate}[resume]
+\item Does maximum elevation predict the number of species on an island? Interpret the results of the linear regression. 
 
 \bigSpace
+
+\end{enumerate}
 
 Together, the results suggest that island area is a better predictor than island elevation for number of species. However, could there be a relationship between island area and island elevation?
 
@@ -230,13 +249,16 @@ plot(islands$ln_elev ~ islands$ln_area)
 abline(features.lm)
 \end{verbatim}
 
-11. Is island area a good predictor of island elevation? Interpret the results of the linear regression.
+\begin{enumerate}[resume]
+\item Is island area a good predictor of island elevation? Interpret the results of the linear regression.
 
 \bigSpace
 
+\end{enumerate}
+
 Hmmm. Area was a good predictor of bird species and elevation nearly so. Could both together be a good predictor of the number of bird species on an island? Find out.
 
-The formula in the code below models number of species as a function of area and elevation \emph{and} any interactions between area and elevation. An interaction is an effect that occurs with both together but not by either variable alone.
+The formula in the code below models number of species as a function of area and elevation \emph{and} any interactions between area and elevation. An interaction is an effect that occurs with  both variables together but not by either variable alone.
 
 \begin{verbatim}
 # That's an asterisk in the formula
@@ -246,12 +268,17 @@ summary(area_elev.lm)
 
 Notice that area and elevation alone are no longer significant predictors of bird species but that the interaction (\texttt{ln\_area:ln\_elev}) between the two variables is a somewhat better predictor of richness.
 
-12. If we assume this is the case, how could island area \emph{and} elevation interact to determine to increase number of species? Discuss ideas with your group.
+\begin{enumerate}[resume]
+\item If we assume this is the case, how could island area \emph{and} elevation interact to determine to increase number of species? Discuss ideas with your group.
 
 \bigSpace 
 
+\end{enumerate}
 
-13. What types of data might we be missing that could help solve this issue? Invite Dr.~Taylor to your table to discuss this and other ideas.
+
+\begin{enumerate}[resume]
+\item What types of data might we be missing that could help solve this issue? Invite Dr.~Taylor to your table to discuss this and other ideas.
+\end{enumerate}
 
 \newpage
 
