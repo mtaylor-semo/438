@@ -1,20 +1,38 @@
-#nagrid <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/NAfish_grid.csv')
-#bnd <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/boundaries.txt')
-#rivers <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/rivers.txt')
-#coastLine <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/coastLoRes.txt')
+# Script for Distribution of Species Richess
+# BI 438 Biogeography
 
+# Generate a raster map of the U.S.
+# The map will show species richness for
+# select groups of fishes.
 
-#nagrid <- read.csv('NAfish_grid.csv')
-#bnd <- read.table('boundaries.txt')
-#rivers <- read.table('rivers.txt')
-#coastline <- read.table('coastLoRes.txt')
+# 'setup.r' must run first to add needed
+# functions to the environment.
 
+# Read the csv files provided by the instructor.
+group <- getGroupFile()
 
-x = -125:-65
-y = 24:49
-filled.contour(x, y, t(nagrid), color = terrain.colors,
-    plot.title = title(main = "Distribution of Species Richness for U.S. Freshwater Fishes", 
-    xlab = "Longitude (°W)", ylab = "Latitude (°N)"),  
-    plot.axes = { axis(1); axis(2); lines(coastline); lines(bnd, col = 'grey35', 
-    lty=3); lines(rivers, col = 'grey40', lwd='0.75') })
+# Prepare data for plotting. Calls function
+# defined in setup.r
+grid_long <- prepare_data(group)
 
+# Original calls, in case the above function doesn't work.
+# # Convert longitude variable variable to column headers, and
+# # convert latitude variable to a column of data.
+# colnames(group) <- as.character(long)
+# nagrid <- group %>%
+#   mutate(lat = lat)
+# 
+# # Pivot table to long format for use with ggplot.
+# # Convert column header names be converted to integers
+# grid_long <- nagrid %>%
+#   pivot_longer(
+#     cols = -lat,
+#     names_to = "long",
+#     values_to = "N"
+#   ) %>%
+#   mutate(
+#     long = as.integer(long),
+#   )
+
+# Call the plot function from setup.r
+plot_na_grid()

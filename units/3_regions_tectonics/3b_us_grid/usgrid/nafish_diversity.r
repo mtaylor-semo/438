@@ -1,20 +1,53 @@
-#nagrid <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/NAfish_grid.csv')
-#bnd <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/boundaries.txt')
-#rivers <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/rivers.txt')
-#coastLine <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/coastLoRes.txt')
+# Script for Distribution of Species Richess
+# BI 438 Biogeography
+
+# Read the data set of all U.S. fishes
+# Prepare the data for ggplot using function
+# defined in setup.r
+nagrid <- read_csv("NAfish_grid.csv") %>% select(-1)
+grid_long <- prepare_data(nagrid)
+
+# colnames(nagrid) <- as.character(long)
+# nagrid <- nagrid %>%
+#   mutate(lat = lat)# %>%
+# #  select(lat, everything())
+
+# grid_long <- nagrid %>%
+#   pivot_longer(
+#     cols = c(`-125`:`-65`),
+#     names_to = "long",
+#     values_to = "N"
+#   ) %>%
+#   mutate(
+# #    lat = as.numeric(lat),
+#     long = as.numeric(long),
+# #    N = as.numeric(N)
+#   )
 
 
-nagrid <- read.csv('NAfish_grid.csv')
-bnd <- read.table('boundaries.txt')
-rivers <- read.table('rivers.txt')
-coastline <- read.table('coastLoRes.txt')
+plot_na_grid()
 
-
-x = -125:-65
-y = 24:49
-filled.contour(x, y, t(nagrid), color = terrain.colors,
-    plot.title = title(main = "Distribution of Species Richness for U.S. Freshwater Fishes", 
-    xlab = "Longitude (°W)", ylab = "Latitude (°N)"),  
-    plot.axes = { axis(1); axis(2); lines(coastline); lines(bnd, col = 'grey35', 
-    lty=3); lines(rivers, col = 'grey40', lwd='0.75') })
-
+# ggplot(data = world) +
+#   geom_raster(
+#     data = grid_long,
+#     aes(x = long, y = lat, fill = N),
+#     interpolate = TRUE
+#   ) +
+#   scale_fill_viridis_c(guide = NULL, option = "cividis") +
+#   geom_path(data = rivers, aes(x = X1, y = X2), color = "grey70", size = 0.25) +
+#   geom_sf(color = "gray80", fill = NA, size = 0.25) +
+#   geom_sf(data = states, color = "gray80", fill = NA, size = 0.25) +
+#   coord_sf(
+#     default_crs = sf::st_crs(4326),
+#     xlim = c(-125, -65),
+#     ylim = c(24, 49),
+#     expand = FALSE
+#   ) +
+#   annotate(geom = "text", x = -90, y = 26.5, label = "Gulf of Mexico",
+#            color = "white", size = 3) +
+#   annotate(geom = "text", x = -73, y = 30.5, label = "Atlantic",
+#            color = "gray90", size = 3) +
+#   annotate(geom = "text", x = -121, y = 30.5, label = "Pacific",
+#            color = "gray90", size = 3) +
+#   labs(x = "Longtitude", y = "Latitude") +
+#   theme_bw()
