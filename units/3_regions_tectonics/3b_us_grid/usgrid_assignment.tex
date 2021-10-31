@@ -18,7 +18,7 @@
 %\pagenumbering{gobble}
 
 \usepackage{fontspec}
-\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
 \setmonofont[Scale=0.82]{Linux Libertine Mono O}
 \usepackage{microtype}
@@ -27,11 +27,8 @@
 \setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
 %\setmathfont{XITS Math}
 
-% To define fonts for particular uses within a document. For example, 
-% This sets the Libertine font to use tabular number format for tables.
-%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
-%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
 
+\usepackage{calc}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -49,10 +46,16 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \usepackage{enumitem}
+\setlist[enumerate]{leftmargin=-\parindent}
+\setlist[1]{labelindent=\parindent}
+%\setlist[enumerate]{label=\textsc{\alph*}.}
+
+
 %\usepackage{hyperref}
 %\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
-
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+\newcommand*{\assignmentTitle}{Distribution of species richness}
 
 \usepackage[sc]{titlesec}
 
@@ -60,178 +63,131 @@
 \usepackage{fancyhdr}
 \fancyhf{}
 \pagestyle{fancy}
-\lhead{}
-\chead{}
-\rhead{\footnotesize pg.~\thepage }
-\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize \assignmentTitle{} \thepage}
+\fancyhead[L]{\footnotesize \coursename}
 
-\fancypagestyle{plain}{%
+\fancypagestyle{first_page}{%
 	\fancyhf{}
-	\lhead{\textsc{bi}~438/638: Biogeography}
-	\rhead{Name: \enspace \makebox[2.5in]{\hrulefill}}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
 	\renewcommand{\headrulewidth}{0pt}
 }
-
-%\usepackage{hanging}
-
-%\usepackage{fancyhdr}
-%\fancyhf{}
-%\pagestyle{fancy}
-%%\lhead{}
-%%\chead{}
-%%\rhead{Name: \rule{5cm}{0.4pt}}
-%%\renewcommand{\headrulewidth}{0pt}
-%\setlength{\headheight}{14pt}
-%\fancyhead[R]{\footnotesize Distribution of Diversity \thepage}
-%\fancyhead[L]{\footnotesize Biogeography}
 
 \newcommand{\bigSpace}{\vspace{5\baselineskip}}
 
 \newlength{\myLength}
 \setlength{\myLength}{\parindent}
 
-\title{Distribution of Species Richness}
-\author{10 Points}
-\date{}                                           % Activate to display a given date or no date
 
 \begin{document}
-\thispagestyle{plain}
+\thispagestyle{first_page}
 
-\subsection*{Distribution of Species Richness}
+\subsection*{\assignmentTitle}
 
-You are going to plot the species richness for U.S. fishes. The data were
+You are going to make a “raster map” for species richness of U.S.~fishes. The data were
 obtained by creating a presence / absence matrix for each species of
-native fish. Presence or absence was based on 1° x 1° longitude /
-latitude grids. If a fish was present in a grid cell then a 1 was
-entered for that grid cell. If the fish was absent, a 0 was entered into
-the grid cell. Finally, all the matrices were summed together to create
+native fish. Presence or absence was based on 1°\,$\times$\,1° longitude /
+latitude grids. If a fish species was present in a grid cell then 1 was
+entered for that grid cell. If the species was absent, 0 was entered. Finally, all matrices were summed together to create
 the final data matrix.
 
-\begin{enumerate}[leftmargin=*]
-\item \textbf{Make a prediction.} Where in the U.S. 
-do you think species richness will be the highest? Northeast U.S.? Southeast
-U.S.? Northwest? Southwest? Midwest? Take a look at the map of U.S. 
-Rivers that was given to you?  Below, name the region and 3--4 rivers in that 
+\begin{enumerate}%[leftmargin=*]
+\item \textbf{Make a prediction.} Where in the U.S.~do you think species richness will be the highest? Northeastern U.S.? Southeastern
+U.S.? Northwest? Southwest? Midwest? Take a look at the map of U.S.~rivers that was given to you?  Below, name the region and 3--4 rivers in that 
 region where you think diversity may be the highest.\vspace{10\baselineskip}
 \end{enumerate}
 
-The following commands will create a ``filled contour map'' with shades
-corresponding to the number of species present. If you get an error at
+\begin{enumerate}[resume]
+\item \textbf{Download your
+ assigned data files and all ``.r'' files} files from the "Range Size data files” page of the “Data Analysis” module in Canvas. Move the files to your “biogeo” folder with your “biogeo.Rproj” file.
+\end{enumerate}
+
+You will run each ".r” file in RStudio as instructed. If you get an error at
 any point, you typed something wrong and will need to reenter the
 command. If you do not get an error message, then you can proceed to the
-next command.
+next command. Call Dr.~Taylor if you get stuck.
+
+%The following commands will create a ``raster map'' with shades
+%corresponding to the number of species present. 
+
+\begin{enumerate}[resume]
+\item \textbf{Set up the R environment for your work.} “setup.r” will install several R packages that you need for today's exercises. \textit{This script may run for a few minutes as it downloads and installs the packages.}
+\end{enumerate}
 
 \begin{verbatim}
-nagrid <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/nafish_grid.csv')
+source("setup.r")
 \end{verbatim}
 
-The next three commands read in the geographic coordinates (longitude
-and latitude) necessary to draw state boundaries, rivers, and the US
-coast.
+If you wish, you can click the files tab in the lower right pane, find “setup.r”, and then click the file name. The file will open in the upper left panel of RStudio. After the file is open, click the “Source” button  (\,\raisebox{.2\baselineskip-.5\height}{\includegraphics[height=10px]{source_button.png}}\,) above and right of the script to run it.
 
-\begin{verbatim}
-bnd <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/boundaries.txt')
-rivers <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/rivers.txt')
-coastline <- read.table('http://mtaylor4.semo.edu/~goby/biogeo/coastLoRes.txt')
-\end{verbatim}
 
-The next two commands set the longitude (x) and latitude (y) coordinates
-for the map. The x values are negative because longitudes west of the
-Greenwich Meridian are treated as negative numbers. Your map will cover
+When the script is finished, you'll be returned to the \texttt{>} prompt. As the script runs, you will see information in the console about any packages being installed. If, by chance, you already had all packages installed, you will see only the prompt.
+
+\begin{enumerate}[resume]
+\item \textbf{Plot the map.} Your map will cover
 an area between 125°W to 65°W and between 24°N to 49°N. Compare those
 coordinates to your watershed map.
+\end{enumerate}
+
 
 \begin{verbatim}
-x <- -125:-65
-y <- 24:49
+source("nafish_diversity.r") 
 \end{verbatim}
 
-\newpage
+\textit{If at any time you do not see a plot, be sure the “Plot” tab is selected in the lower right pane. If the tab is selected and you still do not see a plot, holler for Dr.~Taylor.}
 
-The following commands draw the actual map. You \emph{could} type it exactly as
-shown, pressing the Enter key after you have typed the final parenthesis:
+Zoom the map to full size and admire its glory! Your map covers
+the area between 125°\textsc{w} to 65°\textsc{w} and between 24°\textsc{n} to 49°\textsc{n.} Compare those
+coordinates to your watershed map. 
 
-% . Hit the return key after you have typed the final parenthesis in
-%the command below. If it does not work, you typed something incorrectly.
-%It is essentially one long (but weird looking) sentence.
+\textit{Lighter colors represent higher species richness. Darker colors represent lower species richness.}
 
-\begin{verbatim}
-filled.contour(x, y, t(nagrid), color = terrain.colors, plot.title =
-  title(main = "Distribution of Species Richness for U.S. Freshwater Fishes", xlab =
-  "Longitude (°W)", ylab = "Latitude (°N)"), plot.axes = { axis(1);
-  axis(2); lines(coastline); lines(bnd, col = 'grey35', lty=3);
-  lines(rivers, col = 'grey40', lwd='0.75')})
-\end{verbatim}
 
-Or, just type:
-
-\begin{verbatim}
-source('http://mtaylor4.semo.edu/~goby/biogeo/nafish_diversity.r')
-\end{verbatim}
-
-Expand the map to full size and admire its glory. If it didn't work, 
-press the ``up'' cursor arrow to recall the full command, and then 
-carefully compare it to the command above. Move the cursor to 
-the error, correct it, and then press Enter.
-
-The shading corresponds to species richness. Dark green indicates
-relatively low richness. Whites indicate high species richness.
-Yellowish-green and tans indicate intermediate richness.
-
-\begin{enumerate}[resume, leftmargin=*]
+\begin{enumerate}[resume]
 \item \textbf{How does the map compare to your prediction?} Where is the overall
-richness the greatest? In what watershed(s) is the species richness
-highest? Is it in just one location? More than one location?\vspace{10\baselineskip}
+richness the greatest? In what watershed(s) does the species richness appear to be highest? Is it in just one location? More than one location?\vspace{10\baselineskip}
 \end{enumerate}
 
 Locations where species richness is very high are often called
-biodiversity hotspots. Such hotspots are often areas of conservation
+\textbf{biodiversity hotspots.} Such hotspots are often areas of conservation
 concern. Preserving biodiversity hotspots protects the greatest number
 of species, with efficient use of conservation dollars.
 
-\textbf{Now it is your turn to play.} I've divided the North American
-fishes into several major groups of fishes, listed below. These groups
+\subsubsection*{Your turn to play}
+
+Below is a list of taxonomic groups (mostly families, a couple genera) of North American fishes.  These groups
 have relatively large numbers of species with different distribution
-patterns across the U.S. You will be given a selection of five
-groups to plot.
+patterns across the U.S. You have been given a selection of five of these groups to plot.
 
 \begin{multicols}{2}
 catostomid \\
 cottid \\
 cyprinid1 \\
 cyprinid2 \\
-cyprinodontiform \\
+cyprinodont \\
 etheostoma \\
 fundulus \\
 ictalurid \\
-percidae \\
+percid \\
 salmonid
 \end{multicols}
-\newpage
 
-Plot the different data files to see how the
-distributions of different groups of fishes differ. Type the following
-commands, replacing NAME with one of the names you were assigned, such as
-etheostoma or cottid.
+\begin{enumerate}[resume]
+\item \textbf{Plot the five data files assigned to you}. Run the command below \emph{once} for each group listed. (Remember that you can recall
+previous commands to plot the map by pressing the up cursor
+arrow key to recall previous commands.) You will be prompted to enter one of the group names each time you run the command. Compare the distribution of each group as it is mapped.
+\end{enumerate}
 
 \begin{verbatim}
-nagrid <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/NAME.csv')
-source('http://mtaylor4.semo.edu/~goby/biogeo/diversity.r')
+source("diversity.r")
 \end{verbatim}
 
-Repeat this for each group on your list. Remember that you can recall
-previous commands to plot the map by pressing the up cursor
-arrow key to recall previous commands. Press the up cursor key a couple 
-times until you recall the \texttt{nagrid \textless{}- $\ldots$} command, change the NAME,
-then press the Enter key to read in the new file. Next, press the up cursor
-arrow a couple times to recall the \texttt{source($\ldots$)} command and then
-press the Enter key to make the new plot.
 
-\begin{enumerate}[resume, leftmargin=*]
-\item \textbf{Below, write the name of each group and
-describe the distribution of the fishes.} Are they northern? Eastern US?
-Mostly along the coastline? Do any of your groups have similar
-distributions? Do any of your groups have different distributions? \vspace{\baselineskip}
+\begin{enumerate}[resume]
+\item \textbf{On the next page, write the name of each group and
+describe the distribution of the fishes.} Are they northern? Eastern U.S.?
+Mostly along a coastline? Which of your groups have similar or  different distributions? \vspace{\baselineskip}
 %How do the distributions relate to the Pleistocene glacial maximum and the Fall Line?
 	\begin{enumerate}[label=\alph*., leftmargin=*]
 		\item %\vspace{5\baselineskip}
