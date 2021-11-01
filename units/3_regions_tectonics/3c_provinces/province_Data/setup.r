@@ -35,7 +35,7 @@ mycolors <- c(
 # Global vars -------------------------------------------------------------
 
 world <- ne_countries(scale = "medium", continent = "North America", returnclass = "sf")
-states <- st_as_sf(map("state", plot = FALSE, fill = TRUE))
+states <- st_as_sf(maps::map("state", plot = FALSE, fill = TRUE))
 
 # Read the data to plot the rivers.
 rivers <- read_table("rivers.txt", col_names = c("X1", "X2"))
