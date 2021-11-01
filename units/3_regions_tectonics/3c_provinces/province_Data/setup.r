@@ -55,7 +55,7 @@ valid_groups <- c(
   "etheostoma",
   "fundulus",
   "ictalurid",
-  "percid.",
+  "percid",
   "salmonid"
 )
 
