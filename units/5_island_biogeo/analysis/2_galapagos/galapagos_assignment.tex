@@ -100,27 +100,34 @@
 
 \textit{Read the instructions carefully throughout so that you understand how to interpret your analysis.}
 
-More than 180 species of birds have been counted among the Galapagos Islands but 24 are endemic to the archipelago (Table~\ref{tab:endemic}). Enter the R code below and use the tables on the last pages of this handout to answer the following questions about the distribution of Galapagos-endemic birds. Some question numbers may be duplicated. Deal with it. 
+More than 180 species of birds have been counted among the Galapagos Islands but 24 are endemic to the archipelago (Table~\ref{tab:endemic}). You will explore the relationship between endemic species richness, island area, and island elevation. Enter the R code below and use the tables at the end of this handout to answer the following questions about the distribution of Galapagos-endemic birds.  
 
 \subsubsection*{Get the data}
 
 Download “birds.csv” and “islands.csv” from the “Galapagos Analysis” module near the top of the Canvas page for this course.
 
-\textbf{Place both files in the same folder} as your “biogeo.Rproj” file. This will be the same folder you've been using for analyses all semester long.
+\textbf{Place both files in the same folder as your “biogeo.Rproj” file.} This will be the same folder you've been using for analyses all semester long.
 
 \subsubsection*{Analysis}
 
-Load the data and log-transform (natural log, base \emph{e}) the island area and elevation.\footnote{R uses \texttt{log()} for natural logs and \texttt{log10()} for base~10 logs. In text and on calculators, “ln” is used for natural logs. This text follows the R usage for consistency with the code.} 
+Load the data and log-transform $\left(\mathrm{log}_{10}(x)\right)$ the island area and elevation.\footnote{R uses \texttt{log10()} for base-10 logs and \texttt{log()} for natural logs. In text and on calculators, “log” is used for base-10 logs. This text uses \texttt{log10} for consistency with the R~code.} 
 
 {%\small
 \begin{verbatim}
 birds <- read.csv("birds.csv", header = TRUE, row.names = 1)
 islands <- read.csv("islands.csv", header = TRUE)
 
-islands$ln_area <- log(islands$area)
-islands$ln_elev <- log(islands$elevation)
+islands$log_area <- log10(islands$area)
+islands$log_elev <- log10(islands$elevation)
 \end{verbatim}
 }
+
+\medskip
+
+\fbox{\parbox{\linewidth}{Common logarithms (base 10) are an easy way to show exponential relationships: $\log{(100)} = 2.$ and $\log{(1000)} = 3.$ Thus, in the plots you'll make below, a point at 2 on the x-axis indicates an island that is 10$\times$ smaller than an point at 3 on the x-axis. Every increase of 1 on the x-axis of the graph is a 10$\times$~increase in island area. }}
+
+\vspace{\baselineskip}
+
 
 Tally the number of species on each island and plot the results. The  type of plot is called a Cleveland dot plot.\footnote{Named for Dr.~William S.~Cleveland, who developed this style of plot.} The dot chart is one of the best ways to visualize counts and similar types of data.
 
@@ -134,12 +141,12 @@ dotchart(sort(num_species), main = "Species per island", pch = 19)
 \begin{enumerate}[resume]
 \item Which islands have the fewest (10 or fewer) species? \textsc{Note:} You can estimate the numbers from the plot or type \texttt{sort(num\_species)} into the R console. Or both.
 
-\bigSpace
+\bigSpace\newpage
 
 \item Which islands have the most (15 or more) species? Do any islands have all 24 species?
 
-%\bigSpace
-\newpage
+\bigSpace
+%\newpage
 
 \item Look up the islands on the provided map (may also be on screen). Describe the patterns you detect, in terms of island size and distance from other islands, for islands with the fewest and greatest number of species.
 
@@ -184,13 +191,12 @@ dotchart(sort(num_islands), main = "Islands per species", pch = 19)
 
 \end{enumerate}
 
-Perform a linear regression to determine if area is a significant predictor of the number of species. Show the summary table, and then plot the results.
+Perform a linear regression to determine if area is a significant predictor of the number of species. Show the summary table in the console and plot the results.
 
 \begin{verbatim}
-area.lm <- lm(num_species ~ islands$ln_area)
+area.lm <- lm(num_species ~ islands$log_area)
 summary(area.lm)
-
-plot(num_species ~ islands$ln_area)
+plot(num_species ~ islands$log_area)
 abline(area.lm) # Add a regression line
 \end{verbatim}
 
@@ -198,14 +204,18 @@ abline(area.lm) # Add a regression line
 
 \emph{Look at the summary table and the plot together as you read this section.}
 
-Recall from mathematics that the equation of a straight line is $Y = mX + b.$ Here, $Y$ is the predicted number of species. $X$ is the natural log of island area (\texttt{islands\$ln\_area}).  $m$ is the slope of the line and $b$ is the Y-axis intercept. 
+Recall from mathematics that the equation of a straight line is $Y = mX + b.$ Here, $Y$ is the predicted number of species. $X$ is the common log of island area (\texttt{islands\$log\_area}).  $m$ is the slope of the line and $b$ is the Y-axis intercept. 
 
-The Y-axis intercept $(b)$ of the equation obtains when $X$ is equal to zero. The intercept in your summary table is \emph{estimated} as 8.6463. This means that the smallest possible island should have about 8.65 species. Look at your plot. Notice the trend line intersects the Y-axis at about 8.6.
+The slope $(m)$ of the regression line tells how much species richness should change (Y-axis) for a given change of \texttt{islands\$log\_area} (X-axis). The slope is given in the Estimate column of the summary table, here 1.9186. 
 
-$m$ is the slope of the line, which indicates how much the value of $Y$ changes for a given \emph{percent} change in the value of $X$. In your summary table, $m$ is the estimate for \texttt{island\$ln\_area}, in this case 0.8332. Divide this value by 100. The result (0.008332)
-is how much the number of species should increase for every 1\% increase in island area.
 
-Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}.” One or more asterisks means that the independent variable (\texttt{ln\_area} in this case) is a significant predictor $(p < 0.05)$ for the dependent variable (number of species).
+The Y-axis intercept $(b)$ of the equation obtains when $X$ is equal to zero. The intercept is shown in the Estimate column of your summary table is \emph{estimated}, here 8.6463. The smallest possible island should have about 8.6 species on average. Look at your plot. Notice the regression line intersects the Y-axis at about 8.6.
+
+%\textbf{IS THIS NECESSARY?}
+%If you divide this value by 100, the result tells you how many species will be added for each 1\% increase of island area.% The result (0.019186)
+%is how much the number of species should increase for every 1\% increase in island area.
+
+Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}.” One or more asterisks means that the independent variable (\texttt{log\_area} in this case) is a significant predictor $(p < 0.05)$ for the dependent variable (number of species).
 
 %\newpage
 
@@ -222,25 +232,25 @@ Significance is indicated by the asterisks that appear to the right of the summa
 
 %Recall from mathematics that the equation of a straight line is $Y = mX + b.$ Here, $X$ is the natural log of island area (\texttt{islands\$ln\_area}) and $Y$ is the predicted number of species. $b$ is the Y-axis intercept. $b$ in your summary table is the estimate for the intercept, in this case 8.6463. $m$ is the slope of the line, which indicates how much the value of $Y$ changes for a given change in the value of $X$. In your summary table, $m$ is the estimate for \texttt{island\$ln\_area}, in this case 0.8332.
 
-For interpretation, the linear model to predict the relationship between number of species and ln\_area can be written as
+For interpretation, the linear model to predict the relationship between number of species and log\_area can be written as
 
-\[ \mathrm{Species} = 0.83\left(\mathrm{ln\_area}\right) + 8.65.\]
+\[ \mathrm{Species} = 1.92\left(\mathrm{log\_area}\right) + 8.65.\]
 
-To predict how the number of species should \emph{change} for a given  increase of island area, use $m \times 1.x$ where $x$ is the proportional increase. For example, to predict the change in number of species for an island area that is 0.10$\times$ larger (10\% larger), multiply the coefficient (0.8332) by 1.10:
+To predict how the number of species should \emph{change} for a given  increase of island area, use $m \times \log(x)$ where $x$ is the proportional increase of area. For example, to predict the change in number of species for an island area that is 2$\times$ larger, multiply the coefficient (1.92) by $\log{(2)},$
+
+
+ \[ 1.92 \times \log2 = 0.58.\]
  
- \[ 0.8332 \times 1.10 = 0.917.\]
+An increase of 2$\times$ would add roughly 0.6 more species. What happens if we make an island 10$\times$ larger? 
  
-An increase of 10\% would add roughly 1 more species. What happens if we make an island 4$\times$ larger (an increase of 300\%)? 
+ \[ 1.92 \times \log10 = 1.9.\]
  
- \[ 0.8332 \times 4 = 3.3.\]
- 
-An island 4$\times$ larger than another is \emph{predicted} to have about 3 more species than the smaller island.
+An island 10$\times$ larger than another is \emph{predicted} to have about 2 more species than the smaller island.
  
 \begin{enumerate}[resume]
-\item Does our model work if we compare San Cristóbal to Isa
-bella? Isabella is about 8.3$\times$ larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
+\item Does our model work if we compare San Cristóbal to Isabella? Isabella is about 8.4$\times$ larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
 
- % 8.3 * 0.8332 = 6.9
+ % 1.92 * log10(8.4) = 1.8 or about 2
 \bigSpace
  
 \item Does this prediction match the actual difference in the number of species? 
@@ -249,11 +259,11 @@ bella? Isabella is about 8.3$\times$ larger than San Cristóbal. How many more s
 
 %\newpage
  
-\item The linear model is a \emph{prediction} of the number of species based on island size, if all other variables were constant. The predicted values are represented by the regression line in your plot.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
+\item The linear model \emph{predicts} species richness based on island area, if all other variables were constant. The predicted values are represented by the regression line in your plot.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
 
 %\newpage
 
-%\bigSpace
+\bigSpace
 
 \end{enumerate}
  
@@ -262,14 +272,23 @@ bella? Isabella is about 8.3$\times$ larger than San Cristóbal. How many more s
 Test to see if elevation is a significant predictor of species number.
 
 \begin{verbatim}
-elev.lm <- lm(num_species ~ islands$ln_elev)
+elev.lm <- lm(num_species ~ islands$log_elev)
 summary(elev.lm)
-plot(num_species ~ islands$ln_elev)
+plot(num_species ~ islands$log_elev)
 abline(elev.lm)
 \end{verbatim}
 
 \begin{enumerate}[resume]
-\item Does maximum elevation predict the number of species on an island? Interpret the results of the linear regression. 
+
+\item Based on the intercept $(b)$, what is the minimum number of species present on an island with the lowest possible elevation?
+
+\vspace{2\baselineskip}
+
+\item What is the slope $(m)$ for island elevation?
+
+\vspace{2\baselineskip}
+
+\item Is elevation a significant predictor of species richness? 
 
 \bigSpace
 
@@ -278,9 +297,9 @@ abline(elev.lm)
 Together, the results suggest that island area is a better predictor than island elevation for number of species. However, could there be a relationship between island area and island elevation?
 
 \begin{verbatim}
-features.lm <- lm(ln_elev ~ ln_area, dat = islands)
+features.lm <- lm(log_elev ~ log_area, dat = islands)
 summary(features.lm)
-plot(islands$ln_elev ~ islands$ln_area)
+plot(islands$log_elev ~ islands$log_area)
 abline(features.lm)
 \end{verbatim}
 
@@ -291,17 +310,17 @@ abline(features.lm)
 
 \end{enumerate}
 
-Hmmm. Area was a good predictor of bird species and elevation nearly so. Could both together be a good predictor of the number of bird species on an island? Find out.
+Hmmm. Area was a good predictor of endemic bird richness and elevation nearly so. Could both together be a good predictor of the number of bird species on an island? Find out.
 
 The formula in the code below models number of species as a function of area and elevation \emph{and} any interactions between area and elevation. An interaction is an effect that occurs with  both variables together but not by either variable alone.
 
 \begin{verbatim}
 # That's an asterisk in the formula
-area_elev.lm <- lm(num_species ~ ln_area * ln_elev, data = islands)
+area_elev.lm <- lm(num_species ~ log_area * log_elev, data = islands)
 summary(area_elev.lm)
 \end{verbatim}
 
-Notice that area and elevation alone are no longer significant predictors of bird species but that the interaction (\texttt{ln\_area:ln\_elev}) between the two variables is a somewhat better predictor of richness.
+Notice that area and elevation alone are no longer significant predictors of endemic bird richness but that the interaction (\texttt{log\_area:log\_elev}) between the two variables is a somewhat better predictor of richness.
 
 %\newpage 
 
