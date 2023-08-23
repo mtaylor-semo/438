@@ -47,8 +47,12 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-%\usepackage{enumitem}
-%\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+
+\usepackage{hyperref}
 %\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
 \usepackage[sc]{titlesec}
@@ -101,70 +105,119 @@ labeled A-H in the data set). For each ecosystem, the dominant plant species or 
 was recorded (Cw = Western Redcedar, Gr = mixed grasses, La = Subalpine
 Larch). The measurements are in five-year intervals from 1965--2010.
 
-You must recreate, as close as reasonably possible, the following figure
-(color version on screen).
+This exercise will introduce you to the relationship between climate and 
+the distribution of ecosystems. 
 
-\begin{center}
-	\includegraphics[width=0.9\textwidth]{tutorial_assignment_climate}
-\end{center}
+\subsubsection*{Important}
 
-Pay attention to the use of colors and symbols. Colors identify the
-ecosystems, while the symbols represent the dominant plant groups.
+Follow these instructions carefully. The format of this online exercise will
+be used for many exercises in this course.  Be sure to carefully read the 
+information online.  \emph{Fill in all blanks of the online pages.} You will not be 
+able to advance until you have filled in all text areas.
 
-R provides the \texttt{read.csv()} function to read data sets from Internet 
-URLs. You will use this function  to get data sets for exercises during this
-course. You assign the data to a variable name, as you did in the tutorial
-You should assign the data to an informative variable name. To get the 
-data for this assignment, type the following command into R:
+You will often be asked to make predictions. Do not worry about whether your
+prediction is correct or not. You are allowed to be wrong in the sciences. If you are wrong,
+you learn. If you are right, you learn.  Think about the question or questions, then make your
+best prediction.
 
+\subsubsection*{Instructions}
+
+These instructions are detailed because this is the first online assignment for this course. Future assignments will be similar so future instructions will focus on new tasks instead of repeating common tasks like entering your name and filling in all blanks.
+
+\begin{enumerate}
+	\item Open a web browser on your computer and go to \url{https://semobio.shinyapps.io/climate_tutorial}. You will also find a “Climate Tutorial Site” link on our Canvas page that you can click instead.
+	
+	\item Read the Introduction page. Photos of the three plant species are shown. You may use the internet to learn more about each species. You might be interested in their distribution in North America for this exercise.
+	
+	\item Click the Predictions tab to begin. 
+	
+	\item Enter your first and last name in the upper left box.
+	
+	\item Read the prompt questions and make your prediction. (Don't worry about being right or wrong; see above.) Write short, direct sentences. For example, “I think that Larch will require the
+	most precipitation.” (This is an example, but not necessarily correct. Make your predictions 
+	based on what \emph{you} think.)
+			
+	\item Press the Next button after entering your predictions. \emph{You will not be able to advance until you have entered your name \emph{and} predictions.}
+	
+	You may discuss ideas with your classmates but your predictions and writing \textit{must} be your own.
+	
+	\item Study the scatterplot that appears. Note the climate variables on the x- and y-axes.  Note the relationship of the three plant ecosystems with the two variables. How do your predictions fit the graphical result?
+	
+	\item Your prediction is displayed in the upper right. Below your prediction, tell whether your predictions were right, wrong, or somewhere in between. Be clear and concise. Do not be vague. Do not write, “I was correct; I am brilliant!” Instead, give a couple specific examples of how your prediction was right or wrong, or somewhere in between. I want you to demonstrate that you have carefully compared the results to your prediction but you do not have to be exhaustive.
+	
+	\item Click the Next button. Enter a brief summary of what biogeographic principles you learned from this exercise. 
+	
+	\item Click the Download button after writing your summary. A \textsc{pdf} report of the exercise, with all of your responses will download to your computer (it may take a few moments). After the file has downloaded it, upload it to the “Climate and Ecosystems” drop box on our Canvas page.
+	
+\end{enumerate}
+
+
+
+
+%You must recreate, as close as reasonably possible, the following figure
+%(color version on screen).
+%
+%\begin{center}
+%	\includegraphics[width=0.9\textwidth]{tutorial_assignment_climate}
+%\end{center}
+%
+%Pay attention to the use of colors and symbols. Colors identify the
+%ecosystems, while the symbols represent the dominant plant groups.
+%
+%R provides the \texttt{read.csv()} function to read data sets from Internet 
+%URLs. You will use this function  to get data sets for exercises during this
+%course. You assign the data to a variable name, as you did in the tutorial
+%You should assign the data to an informative variable name. To get the 
+%data for this assignment, type the following command into R:
+%
+%%\texttt{climate \textless{}-
+%%read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/tutorial\_climate\_data.csv')}
+%
 %\texttt{climate \textless{}-
-%read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/tutorial\_climate\_data.csv')}
-
-\texttt{climate \textless{}-
-read.csv('http://mtaylor4.semo.edu/438/tutorial\_climate\_data.csv')}
-
-\textit{Important}: Use the \texttt{main} argument in the \texttt{plot()} function to add
-a main title, which will appear above the graph (but is not shown
-above). The title should contain your name (and your partner's name, if you work with one).
-
-\subsection*{Some hints:}
-
-Don't forget to use \texttt{attach()} and \texttt{detach()} functions.
-
-Add only one argument at a time to the plot, as you
-did in the R Tutorial. If you make an error, it will be easier to find and fix
-before adding the next argument. Be careful with quotes and parentheses.
-
-Use \texttt{xlim} and \texttt{ylim} arguments in the \texttt{plot()} function to set the lower and
-upper values for the X and Y-axes, respectively. Type \texttt{?plot} to learn about
-the \texttt{xlim} and \texttt{ylim} arguments.
-
-You will need eight colors, one for each ecosystem. Instead of defining
-eight colors, use \texttt{rainbow(8)} to define your colors. See \texttt{?rainbow} for
-details.
-
-Use 21, 22 and 25 to specify the symbols for the \texttt{pch} argument in the
-\texttt{plot} function.
-
-Use the \texttt{text()} function to place the names of the major plant groups
-into the figure. You will need to use the \texttt{text()} function
-three separate times, one for each dominant plant group. Use the \texttt{font=3}
-argument to specify italics for the labels. Remember that the first two
-numbers should be the X and Y coordinates for your text. The Y value may
-be negative for one of the dominant plant group labels.
-
-Technically, you should include °C in the Y-axis label but doing so is
-more complex than I want to get into now. However, to encourage
-exploration, I will buy you an imaginary adult beverage of your choice if %add 50\% extra credit to this assignment (5 pts) if
-you figure it out. You may access the Internet to do a Google search.
-
-\subsection*{Upload the completed graph to the tutorial drop box.}
-
-Save the file as a PDF or 75\% jpg file (File menu \textgreater{} Save
-as\ldots{}).
-
-Give the file an obvious name like climate\_lastnames.pdf (or .jpg).
-Include both last names. If you worked with a partner, you must \textbf{each upload a
-copy} to the drop box in your respective Canvas accounts.
+%read.csv('http://mtaylor4.semo.edu/438/tutorial\_climate\_data.csv')}
+%
+%\textit{Important}: Use the \texttt{main} argument in the \texttt{plot()} function to add
+%a main title, which will appear above the graph (but is not shown
+%above). The title should contain your name (and your partner's name, if you work with one).
+%
+%\subsection*{Some hints:}
+%
+%Don't forget to use \texttt{attach()} and \texttt{detach()} functions.
+%
+%Add only one argument at a time to the plot, as you
+%did in the R Tutorial. If you make an error, it will be easier to find and fix
+%before adding the next argument. Be careful with quotes and parentheses.
+%
+%Use \texttt{xlim} and \texttt{ylim} arguments in the \texttt{plot()} function to set the lower and
+%upper values for the X and Y-axes, respectively. Type \texttt{?plot} to learn about
+%the \texttt{xlim} and \texttt{ylim} arguments.
+%
+%You will need eight colors, one for each ecosystem. Instead of defining
+%eight colors, use \texttt{rainbow(8)} to define your colors. See \texttt{?rainbow} for
+%details.
+%
+%Use 21, 22 and 25 to specify the symbols for the \texttt{pch} argument in the
+%\texttt{plot} function.
+%
+%Use the \texttt{text()} function to place the names of the major plant groups
+%into the figure. You will need to use the \texttt{text()} function
+%three separate times, one for each dominant plant group. Use the \texttt{font=3}
+%argument to specify italics for the labels. Remember that the first two
+%numbers should be the X and Y coordinates for your text. The Y value may
+%be negative for one of the dominant plant group labels.
+%
+%Technically, you should include °C in the Y-axis label but doing so is
+%more complex than I want to get into now. However, to encourage
+%exploration, I will buy you an imaginary adult beverage of your choice if %add 50\% extra credit to this assignment (5 pts) if
+%you figure it out. You may access the Internet to do a Google search.
+%
+%\subsection*{Upload the completed graph to the tutorial drop box.}
+%
+%Save the file as a PDF or 75\% jpg file (File menu \textgreater{} Save
+%as\ldots{}).
+%
+%Give the file an obvious name like climate\_lastnames.pdf (or .jpg).
+%Include both last names. If you worked with a partner, you must \textbf{each upload a
+%copy} to the drop box in your respective Canvas accounts.
 
 \end{document}  
