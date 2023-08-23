@@ -5,7 +5,7 @@
 
 setwd('biogeo')
 
-climate <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/climatedata.csv')
+climate <- read.csv('http://mtaylor4.semo.edu/438/tutorial_climate_data.csv')
 attach(climate)
 
 plot(MAT ~ MAP, xlab='Mean annual precipitation (mm)', ylab = 'Mean annual temperature', pch=c(21,22,25)[Species], bg=rainbow(8)[Ecosys], xlim=c(0,3500), ylim=c(-5,10))
