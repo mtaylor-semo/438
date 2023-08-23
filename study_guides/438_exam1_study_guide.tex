@@ -1,0 +1,157 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase, Numbers={OldStyle}]{Linux Biolinum O} 
+\setmonofont{Linux Libertine O}
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{/Users/goby/Documents/teach/438/lectures/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\usepackage{enumitem}
+\usepackage{mhchem}
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+   \renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+   \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+
+\title{{\scshape bi} 438/638 Exam 1 Study Guide}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+\section*{Vocabulary}
+
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+geographic template \\
+climate \\
+range shadow \\
+geographic range  \\
+restricted distribution \\
+cosmopolitan distribution \\
+niche \\
+fundamental geographic range \\
+realized geographic range \\
+habitat quality \\
+metapopulations \\
+source population \\
+sink population \\
+allopatric distribution \\
+Rapoport's rule \\
+latitudinal diversity gradient \\
+trophic niche conservatism \\
+out-of-the-tropics model \\
+\end{multicols}
+
+\section*{Concepts}
+
+\begin{enumerate}
+
+\item   Do most species have large range sizes or small range sizes? For
+  species with large range sizes, do they tend to be generalists or
+  specialists? Argue for both cases.
+  
+\item   How does an organism's niche relate to it's geographic range?\marginnote{Geographic distribution is synonymous with geographic range.} Does the
+  niche perfectly define the range? Why or why not? What factors can
+  also influence the size of an organism's range?
+  
+\item  List some of factors that you think would determine the range boundary
+  of a species. Briefly explain why you think each would influence the
+  boundary?
+  
+\item   You come across a perfectly good patch of habitat that could be
+  occupied by your favorite species. After exhaustive searching, you
+  ascertain that your species is not present. What reasons could you
+  give to explain its absence?
+  
+\item  What is meant by metapopulation dynamics? Are metapopulations static
+  systems?
+  
+\item  Provide examples of how disturbance can positively and negatively
+  affect a species' geographic range. Do \emph{not} use the examples
+  given in class.
+  
+\item  What types of species interactions may affect the distribution of a
+  species? Describe how species interactions may affect the range of one
+  or both of the interaction species. Provide examples, preferably those
+  not used in class.
+  
+\item  What are source and sink populations? How does this relate to habitat
+  quality, range edges, the niche, and other facets of the geographic
+  range. How might you relate source and sink populations to
+  metapopulation dynamics?
+  
+\item  How do historical factors impact a species's range? Can you provide
+  examples in addition to those used in class?
+
+\item  Explain Rapoport's Rule, for both species richness and range size. 
+Does it apply universally to all higher taxonomic groups (assume family 
+level and higher)? Does it apply universally
+to all continental land masses? Explain.
+
+\item  We considered the relationship between range size (area) and body size
+  in birds and mammals. We identified three different constraints that,
+  at least in part, explain the overall relationship. You should be able
+  to identify the approximate locations of the three constraints on a
+  figure. You should also be able to explain each of the constraints:
+  What is the constraint and how does it affect the relationship between
+  range size and body size?
+  
+\item   Explain why North American ranges of mammals and birds tend to be
+  elongated in a north to south direction, while Eurasian distributions
+  of these organisms are elongated in an east-west direction. Consider
+  overall available area and potential biogeographic barriers.
+  
+\item  North American birds and mammals have various range sizes, from very
+  small to very large. In contrast, Eurasian birds and mammals tend to
+  have only very large range sizes. Explain the hypothesis that has been
+  proposed to account for this discrepancy.  
+  
+\item Compare and contrast the tropical niche conservatism model and the
+out-of-the-tropics model as models that explain the latitudinal diversity gradient.
+
+\item Explain what cradle, museum, and immigration pump refer to in the 
+out-of-the-tropics model.
+
+\end{enumerate}
+
+\end{document}
