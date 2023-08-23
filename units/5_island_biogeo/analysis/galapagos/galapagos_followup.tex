@@ -1,0 +1,163 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}%}%
+	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+%\usepackage{tikz}
+%	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+\begin{document}
+
+
+\begin{frame}{The Galapagos Islands.}
+		\includegraphics[width=\linewidth]{galapagos_islands_trimmed}
+\end{frame}
+
+\begin{frame}{Lower sea levels, subsidence, \& loading reduced isolation.}
+		\includegraphics[width=\linewidth]{galapagos_sealevel_1}
+	
+	\vfilll
+	
+	\tiny Panel b = 20~\textsc{kya} \hfill Ali \& Aitchison 2014. J.~Biogeo.~41: 1227
+		
+\end{frame}
+
+
+\begin{frame}{Lower sea levels, subsidence, \& loading reduced isolation.}
+	\centering
+		\includegraphics[height=0.8\textheight]{galapagos_sealevel_2}
+
+	\vfilll
+
+\tiny 630~\textsc{kya} \hfill Ali \& Aitchison 2014. J.~Biogeo.~41: 1227
+
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+
+\end{frame}
+}
+
+\begin{frame}{Area and elevation were positive predictors of spp.~number. Right\dots?}
+\centering
+
+\begin{tabular}{lrr}	
+	\toprule
+	 Model & Estimate & $p$ \tabularnewline
+	 \midrule
+	 num\_species\,\textasciitilde\,log\_area	&	1.92	& 0.026 \tabularnewline
+	 num\_species\,\textasciitilde\,log\_elev	&	3.49 	& 0.052 \tabularnewline
+	 \bottomrule
+\end{tabular}
+
+\end{frame}
+
+
+
+\begin{frame}{\dots When modeled together, area and elev become negative predictors. \highlight{\textsc{wtf?}}}
+\centering
+Model: num\_species\,\textasciitilde\,log\_area * log\_elev
+
+\begin{tabular}{lrr}
+	\toprule
+	 & Estimate & $p$ \tabularnewline
+	 \midrule
+	 log\_area	& $-$7.89	& 0.119 \tabularnewline
+	 log\_elev	& $-$2.72	& 0.397 \tabularnewline
+	 log\_area:log\_elev	&	3.34	&	0.058\tabularnewline
+	 \bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Residuals are variation not explained by your model.}
+\vspace{-\baselineskip}\centering
+\includegraphics[height=0.85\textheight]{regression_residuals}
+
+\vfilll
+
+\tiny \hfill Wikimedia Commons, \ccbysa{3}
+\end{frame}
+
+
+\begin{frame}{Smaller islands were more variable in height.}
+	\centering
+		\includegraphics[width=\linewidth]{area_elev_plot}
+\end{frame}
+
+\begin{frame}{Small islands are more variable in elevation and species.}
+\centering
+\begin{tabular}{lrrr}
+	\toprule
+	Island	& 	Area	& 	Elevation	& Species \tabularnewline
+	\midrule
+	Bartolomé	&	1.2	& 114	& 9 \tabularnewline
+	N.~Seymour	&	1.8	&	28	& 13 \tabularnewline
+	Rábida		&	4.9	&	367	& 12	\tabularnewline
+	Genovesa* 	&	14.0	&	64	&	6	\tabularnewline
+	Pinta*		&	60.0	&	650	&	7	\tabularnewline
+	\bottomrule \addlinespace[\belowrulesep] % See booktabs manual
+	* = isolated &&&\tabularnewline
+\end{tabular}
+
+\end{frame}
+
+\end{document}
+
