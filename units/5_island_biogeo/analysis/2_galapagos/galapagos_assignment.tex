@@ -6,8 +6,9 @@
 	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
 
 \usepackage{geometry}
-\geometry{letterpaper}                   
-\geometry{bottom=0.65in, top = 0.65in}
+\geometry{letterpaper}  
+\geometry{bottom=0.75in}                 
+%\geometry{bottom=0.65in, top = 0.65in}
 %\geometry{landscape}                % Activate for for rotated page geometry
 \usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{amssymb}
@@ -134,14 +135,17 @@ Tally the number of species on each island and plot the results. The  type of pl
 {%\small
 \begin{verbatim}
 num_species <- colSums(birds) 
+
 dotchart(sort(num_species), main = "Species per island", pch = 19)
 \end{verbatim}
 }
 
+\newpage
+
 \begin{enumerate}[resume]
 \item Which islands have the fewest (10 or fewer) species? \textsc{Note:} You can estimate the numbers from the plot or type \texttt{sort(num\_species)} into the R console. Or both.
 
-\bigSpace\newpage
+\bigSpace
 
 \item Which islands have the most (15 or more) species? Do any islands have all 24 species?
 
@@ -338,6 +342,15 @@ Notice that area and elevation alone are no longer significant predictors of end
 
 \newpage
 
+\vspace*{\fill}
+
+\hspace*{\fill} You can tear off the last page of tables if helpful to you. \hspace*{\fill}
+
+\vspace*{\fill}
+
+
+\newpage
+
 \thispagestyle{empty}
 
 \begin{landscape}
@@ -346,7 +359,7 @@ Notice that area and elevation alone are no longer significant predictors of end
 {\fontsize{10pt}{12pt}\selectfont
 	
 \begin{longtable}[l]{>{\em}lllllllllllllllll}
-\caption{Endemic birds of the major Galapagos Islands. See other side for full species and island names. See Table~\ref{tab:species} for scientific and common names of each bird species.\newline  See Table~\ref{tab:islands} for full island names.}\label{tab:endemic}\tabularnewline
+\caption{Endemic birds of the major Galapagos Islands. See other side for full species and island names. See Table~\ref{tab:species} for scientific and common names of each bird species.  See Table~\ref{tab:islands} for full island names.}\label{tab:endemic}\tabularnewline
 \toprule
 \textup{Species} & Baltra & Bartol & Españo & Fernan & Florea & Genove & Isabel & Marche & NSeym & Pinzón & Pinta & Rábido & SanCri & StCruz & StFe & SanSal \tabularnewline
 \midrule
@@ -416,7 +429,7 @@ Certhidea fusca & Grey warbler-finch \tabularnewline
 \bottomrule
 \end{longtable}
 
-\vspace{2cm}
+%\vspace{2cm}
 
 \begin{longtable}[l]{llrr}
 \caption{Full names of Galapagos islands listed in Table~\ref{tab:endemic}, and \newline the area and maximum elevation of each island.}\label{tab:islands} \tabularnewline
