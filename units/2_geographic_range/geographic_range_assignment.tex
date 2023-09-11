@@ -1,0 +1,220 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+
+\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage[sc]{titlesec}
+
+\usepackage{hanging}
+
+\newcommand{\assignmentTitle}{Geographic Range Size and Rapoport's Rule}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[LE,RO]{\footnotesize \assignmentTitle\ \thepage}
+
+\fancypagestyle{firstpage}
+{
+   \fancyhf{}
+   \lhead{\textsc{bi}~438/638 Biogeography}
+   \rhead{Name: \rule{5cm}{0.4pt}}
+   \renewcommand{\headrulewidth}{0pt}
+%   \fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+%\title{Tutorial: Climate and Distribution}
+%\author{10 Points}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle
+\thispagestyle{firstpage}
+
+\subsection*{\assignmentTitle\ (10 points)}
+
+The goal of this exercise is for you to discover whether most species of
+freshwater fishes, mussels or crayfishes have
+small, medium, or large range sizes, or if range size seems to be random.
+
+You will determine the range size of these taxonomic groups at
+different geographic scales. You will first determine range size at the
+scale of North America for  fishes and mussels. You will
+then determine range size at the state scale (e.g., Missouri, Georgia)
+for fishes, mussels or crayfish. 
+
+Range size is defined here as the number of watersheds 
+occupied by a species. A watershed is a large river and the smaller
+rivers that flow in to it. The number of watersheds varies with scale. 
+Watersheds of North America are larger rivers; states use smaller rivers
+as the basis of each watershed. 
+
+\subsubsection*{Important}
+
+Follow these instructions carefully. They provide detail and context for some
+of the questions online.  Be sure to also read carefully the 
+information online.  \emph{Fill in all blanks of the online pages.} You will not be 
+able to advance until you have filled in all text areas.
+
+You will often be asked to make predictions. Do not worry about whether your
+prediction is correct or not. You are allowed to be wrong in the sciences. If you are wrong,
+you learn. If you are right, you learn.  Think about the question or questions, then make your
+best prediction.
+
+\subsubsection*{Instructions}
+
+\begin{enumerate}
+	\item Open a web browser on your computer and go to \url{https://semobio.shinyapps.io/range_size}. You will also find a “Geographic Range Size analysis site” link on our Canvas page that you can click instead.
+	
+	\item Read the Introduction page, then click the Predictions tab to begin. 
+	
+	\item Enter your name in the upper left box.
+	
+	\item Read the prompt questions and make your predictions. Enter a prediction for range size
+	for North America (primarily the U.S.) and a separate prediction for the states.
+	
+	\item \textbf{Important:} The third prediction will apply Rapoport's Rule for both range size and 
+	species richness. The latitudinal gradient spans across Alabama, Tennessee, Kentucky, Illinois, and
+	Wisconsin, which form a roughly south to north line. Predict how you think range size and
+	species richness will change as you go from Alabama to Wisconsin.
+			
+	\item Press the Next button after entering your predictions. \emph{You will not be able to advance until you have entered your name \emph{and} predictions.}
+	
+\end{enumerate}
+
+\subsubsection*{Range Size: North America}
+
+\begin{enumerate}[resume]
+	\item Study the histogram for fishes. Do \emph{most} species of fishes show small, moderate, or
+	large range size? Or is it more or less random and even? (Each bin is 5 watersheds.)
+	
+	\item Click on the radio button for mussels. Do you observe a similar pattern for mussels that
+	you observed for fishes, or is it different? Describe the patterns that you observe for both taxa
+	in the text box provided. Do your observations here agree with what you learned in lecture about
+	range size for terrestrial organisms?
+	
+	\item Press the Next button after entering your observations.
+	
+	\textbf{Note:} The histogram you last view on screen for each section of this exercise is the 
+	figure that will be saved in your final report. It does not matter which figure you save. You can
+	use one that may help you later when you review the material for understanding.
+	
+\end{enumerate}
+
+\subsubsection*{Range Size: States}
+
+%	\textbf{Part 1: state range size}
+
+\begin{enumerate}[resume]
+	
+	\item The first histogram displayed will be for Missouri crayfishes. How do you interpret this 
+	histogram for typical range size in Missouri? (Note the number of species for each group and 
+	the number of watersheds for the state below the histogram.) View the other taxa for Missouri. 
+	Is the pattern the same or different among the groups (crayfishes, fishes, or mussels)? (The 
+	number of watersheds per bin varies but you can figure it out from the x-axis.)
+	
+	\item Choose another state and view the histograms for the available taxa. Not all taxonomic groups
+	are available for every state.
+	
+	\item View the histograms for about 8-10 states total, then describe and interpret the results in the
+	text box provided.
+
+\end{enumerate}
+
+\subsubsection*{Rapoport's Rule: Range Size}
+
+\begin{enumerate}[resume]
+		
+	\item View the histograms for all taxa for Alabama, Tennessee, Kentucky, Illinois, and Wisconsin, in that order. Maintaining the order will help you visualize the range size trend to see if it conforms
+	to Rapoport's Rule.
+	
+	\item Make a note (mental or written) on the pattern but do not enter the results in the text box on
+	this page. You'll combine then with the species richness section on the next tab.
+	
+	\item After entering your observations for the overall range size (not Rapoport's Rule) in the text
+	box, press the Next button.
+	
+\end{enumerate}
+
+\subsubsection*{Rapoport's Rule: Species Richness}
+
+\begin{enumerate}[resume]
+	\item This bar chart plot shows species richness for the five states, arranged  south to north from bottom to top.
+	
+	\item View the bar charts for all three taxonomic groups.
+	
+	\item Tell whether the results for both range size (from the previous tab) and species richness 
+	correspond to Rapoport's Rule. I'm not asking you to explain the rule; I want you to describe whether
+	the data \emph{match} the rule.
+	
+	\item Press the Next button to continue.
+	
+	\item Enter a summary of the lessons you learned from this exercise, then click the Download button.
+	
+	\item After your \textsc{pdf} report has downloaded,  upload it to the Geographic Range Size drop box on our Canvas page.
+\end{enumerate}
+
+
+\end{document}  
