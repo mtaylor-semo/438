@@ -1,3 +1,4 @@
+setwd("~/teach/438/units/5_island_biogeo/analysis/2_galapagos")
 
 ## Read in the data
 birds <- read.csv("birds.csv", header = TRUE, row.names = 1)
@@ -12,7 +13,7 @@ islands$ln_elev <- log(islands$elevation)
 
 # Tally and plot number of species per island
 num_species <- colSums(birds) # skip first column with species names
-dotchart(sort(num_species), main = "Species per island", pch = 19)
+dotchart(sort(num_species), main = "Species per island", pch = 19, frame.plot = FALSE)
 
 # Tallyname number of islands occupied by each species
 num_islands <- rowSums(birds)
