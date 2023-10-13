@@ -14,7 +14,7 @@ mycolors = c('black', 'red', 'green3', 'blue3', 'darkcyan', 'darkmagenta', 'dark
 ###################################################
 # Read the Fish Data File
 ###################################################
-nataxa = read.delim('NA_fishes2.txt', header = TRUE, row.names = 1)
+nataxa = read.delim('NAfishes2.txt', header = TRUE, row.names = 1)
 
 # Transform the data
 nataxa.hel = decostand(nataxa,method='hellinger')
@@ -63,11 +63,11 @@ abline(v=0, col='grey50')
 # Left-click to rotate plot
 # Right-click to zoom in and out.
 
-#library('rgl')
+library('rgl')
 
-#plot3d(nataxa.pco$points, col = mycolors[nataxa.clust.cut], type='s', size=0.5, xlab='PCO1', ylab='PCO2', zlab='PCO3')
+plot3d(nataxa.pco$points, col = mycolors[nataxa.clust.cut], type='s', size=0.5, xlab='PCO1', ylab='PCO2', zlab='PCO3')
 
-#text3d(nataxa.pco$points, text=rownames(nataxa), col = mycolors[nataxa.clust.cut], cex=0.7, adj = -0.3)
+text3d(nataxa.pco$points, text=rownames(nataxa), col = mycolors[nataxa.clust.cut], cex=0.7, adj = -0.3)
 
 
 ###################################################
