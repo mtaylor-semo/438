@@ -1,0 +1,319 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, addpoints]{exam}
+
+%\printanswers
+
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/exercises/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper, bottom=1in}                   
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+	\everymath{\displaystyle}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana Math}
+%\setmathfont[Scale=MatchLowercase]{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+ 
+\usepackage{booktabs}
+%\usepackage{tabularx}
+\usepackage{longtable}
+%\usepackage{siunitx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}.}
+\setlist[itemize]{label=\color{gray}\textbullet}
+
+\usepackage{hyperref}
+%\usepackage{placeins} %PRovides \FloatBarrier to flush all floats before a certain point.
+%\usepackage{hanging}
+
+\usepackage[sc]{titlesec}
+
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+\SolutionEmphasis{\bfseries}
+
+\pagestyle{headandfoot}
+\firstpageheader{BI 438: Biogeography}{}{\ifprintanswers\textbf{KEY}\else Name: \enspace \makebox[2.5in]{\hrulefill}\fi}
+\runningheader{}{}{\footnotesize{pg. \thepage}}
+\footer{}{}{}
+\runningheadrule
+
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\bfseries}
+
+\newcommand*\AnswerBox[3]{%
+	\parbox[t][#1]{0.92\textwidth}{%
+		\begin{solution}#3\end{solution}}
+	\vspace*{\stretch{#2}}
+}
+
+\newenvironment{AnswerPage}[2]
+{\begin{minipage}[t][#1]{0.92\textwidth}%
+		\begin{solution}}
+		{\end{solution}\end{minipage}
+	\vspace*{\stretch{1}}}
+
+\newlength{\basespace}
+\setlength{\basespace}{4\baselineskip}
+
+\begin{document}
+
+The goal of this exercise is for you to explore the relationship of
+island isolation and area with species richness. Along the way, you will
+look at other island-based relationships as well.
+
+\textbf{Important!} This exercise is different than the other online exercises you have completed. You will explore the data online but
+the questions are listed below. Type your answers in to a Word document
+and upload it to the drop box. You will not enter your answers online nor will you download a finished report.
+
+You can use the Next and Prev buttons to navigate or choose a tab.
+
+You will first explore basic island biogeography predictions based on island size, island distance (isolation). Then, you will explore similar relationships for birds of the Galapagos Islands.
+
+\subsection*{Basic Island Biogeography}
+
+\begin{enumerate}
+	\item Open a web browser on your computer and go to \url{https://semobio.shinyapps.io/provinces}. You will also find a “Glacial Maxima and the Fall Line” link on our Canvas page that you can click instead.
+	
+	\item Read the Introduction page, then click the Next button to begin 
+	Part 1. Study the information carefully to learn more about what you
+	will see as you explore the data. 
+\end{enumerate}
+
+\subsubsection*{Part 1 predictions}
+
+\begin{questions}
+
+\question
+\textbf{What do you predict?} Where in the U.S. will species richness be highest? Will it be north of the glacial maximum? Will richness be highest in the interior highlands? The eastern or central highlands? Will richness be highest on the coastal plain? Explain why you think so. (Enter your answers in a separate document. You do not need to type the question. Just enter the question number and your answer.)
+
+
+\fullwidth{
+
+\subsubsection*{North America}
+
+\begin{enumerate}[resume]
+\item Press the Next button to view a relief map of species richness for
+freshwater fishes. Dark areas indicate low species richness. Brighter
+areas indicate higher species richness. This is a large data set so the
+map may take a few moments to plot.
+\end{enumerate}
+
+}
+
+\question
+\textbf{Do the results agree with your predictions?} Describe with 
+reasonable detail where species richness is highest. Further, describe 
+the distribution of species richness relative to the interior highlands,
+the coastal plain, and north of the glacial maxima.
+
+
+\fullwidth{
+
+\subsubsection*{Family Richness}
+\begin{enumerate}[resume]
+\item Press the Next button to view species richness for selected seven
+families of freshwater fishes. Use the drop down menu to view the 
+distribution for each family.
+\end{enumerate}
+}
+
+\question
+List the families that have the highest richness in the interior highlands (generally the eastern highlands). This list can include families that have high richness outside of the interior
+highlands. \textit{Remember that the brightest color indicates the 
+highest richness.}
+
+\question
+List the one family that has very low richness outside of the eastern
+highlands. This family has very high diversity in a comparibly small 
+region. Write a hypothesis that might explain why diversity of this 
+family is so high in a relatively small geographic area. (Hint: do you
+think the rivers and streams in this unglaciated area have always
+had the same configuration they have now?)
+
+\question
+List the two families that have high richness outside of the highlands? Based on the family information, why do you think these families might
+be so widely distributed.
+
+
+\question
+Which family has the greatest richness on the coastal plain? 
+Read the description for this family. From this information, why do you
+think the richness of this family is coastal.
+
+
+\question
+List the two families have the greatest richness in the Great Lakes or 
+northwestern U.S. Read the descriptions for these two families. What do 
+they have in common? How does that fit with the richness shown on their 
+distribution maps?
+
+
+\fullwidth{
+\subsection*{Part 2: Fall Line}
+
+\begin{enumerate}[resume]
+\item Press the Next button to begin Part 2. The tabs for Part 1 will be 
+hidden but you can press the Prev buttons to view them again.
+
+\item Read the information carefully. The Fall Line separates two 
+major biogeographic regions: the coastal plain and the interior 
+highlands. 
+
+The coastal plain is very flat so the streams and rivers tend to be sluggish, warm, and more turbid (more sediment in the water). The stream bottoms tend to be sandy or muddy. The interior highlands are mountainous regions so the streams and rivers tend to have faster moving, cooler water, with gravel bottoms in the faster stretches.
+
+Many southeastern rivers start in the interior highlands above the fall line but flow across the fall line to the coastal plain before reaching the ocean.
+
+You will use both cluster and \textsc{nmds} analyses for this part.
+Review the exercise on Montana (you kept a copy of your report, right?)
+to recall how to interpret cluster and \textsc{nmds} plots. Remember
+that cluster and \textsc{nmds} analyses are based on species similarity;
+that is the species that are shared among the watersheds.
+
+\end{enumerate}
+}
+
+\question
+\textbf{What do you predict?} Do you think the fishes found in the watersheds \emph{above} the fall line will be more similar to the fishes in the \emph{same river below} the fall line? Or, will they be more similar to the fishes in \emph{nearby rivers above} the fall line?
+Explain your reasoning.
+
+\fullwidth{
+\subsubsection*{Cluster and nmds}
+
+For the cluster and \textsc{nmds} tabs, you will see a map of each state
+showing the smaller watersheds and the fall line. The fall line is an important biogeographic feature. Also important is larger watersheds where the smaller watersheds terminate. Some rivers flow east to 
+the Atlantic Ocean (Atlantic Slope). Some flow south to the Gulf of
+Mexico. All the other smaller watersheds flow west to the Mississippi 
+River, the Tennessee River, or the Ohio River. In the state of Missouri, 
+the smaller watersheds flow to the Missouri River, the White River, and 
+the Arkansas River. Each state map lists the smaller watersheds grouped 
+by the larger watershed. Each tab also includes a regional reference map 
+of these larger watersheds to help you stay oriented.
+
+(I hope the above becomes apparent you view the different states.)
+
+\begin{enumerate}[resume]
+\item Press the Next button to view a cluster analysis of Virginia watersheds. Notice that the Atlantic Slope rivers are the Potamac,
+Rappahannock, York, James, Chowan, and Roanoake rivers. The Clinch/Powell and Holston are part of the Tennessee River watershed. The
+New and Big Sandy flow into the Ohio River watershed. 
+
+\item Press the Next button to view the \textsc{nmds} plot for Virginia.
+Notice the cluster plot is below the \textsc{nmds} plot. \emph{You will 
+not have to return to the cluster tab at any point during the rest of
+this exercise} (it's too late for me to reprogram now).
+
+\item Compare the arrangement of points in the \textsc{nmds} plot to 
+the cluster plot. Recall that points closer together are more similar.
+
+\item  View the \textsc{nmds} and clusters plot for each state in this 
+order: Virgina, North Carolina, South Carolina, Georgia, Alabama, 
+Mississippi, Missouri. You will follow the fall line from the northeast 
+to the south, and then up to Missouri. 
+
+\item As you view each state, look at the plots with reference to the
+fall line \emph{and} the major watersheds. The questions below are
+presented in the recommended order of viewing.
+\end{enumerate}
+}
+
+\question
+
+\textbf{Virginia:} I'll guide you for the Virginia plots so you have
+an idea how to approach subsequent questions. \emph{You do not have to 
+type an answer for this question. Use my questions below to help guide 
+your thinking for the other questions.} Virginia has three major 
+watersheds. Does the cluster plot suggest differences in species 
+similarity among the major watersheds?  Look at the first split of the 
+cluster plot. The upper cluster contains the Holston, the Clinch-Powell, 
+the New, and the Big Sandy. Which watersheds are this rivers a part of? 
+Where do all the other rivers in Virginia end up? 
+
+This initial split is consistent with the rivers flowing west to the
+Tennessee or Ohio versus rivers of the Atlantic Slope. Compare the 
+cluster plot to the \textsc{nmds} plot. Notice the western rivers are 
+quite distinct from the rivers that flow to the Atlantic (x-axis). 
+Although the Ohio and Tennessee rivers are in the same cluster, notice 
+that they are  separated along the y-axis of the \textsc{nmds} plot.
+
+Finally, notice that the stretches of rivers above the fall line 
+tend to cluster together, such as the Upper Chowan, Roanoke, and Upper 
+James, This is repeated for the upper Potomac and Rappahannock
+rivers. The lower reaches of the rivers below the fall line 
+also tend to cluster together. Does this relationship hold when viewed
+in the context of \textsc{nmds?}
+
+\question
+\textbf{North Carolina:} Interpret the cluster and \textsc{nmds} plots
+as we did above and summarize your interpretation of the results. You can
+safely disregard the Watauga, Savannah, and New rivers. They barely enter
+in to the state so their results are not reliable. Also and 
+unfortunately, the distribution of fishes above and below the fall line
+were not available for North Carolina so you do not have to address
+the fall line for this state. However, notice that the Lumber,
+White Oak, and Chowan-Paquatonk cluster together and separate slightly
+from the other Atlantic Slope rivers. This may be that these rivers 
+barely extend above the fall line. The other Atlantic Slope rivers 
+extend much farther west above the fall line.
+
+\question
+\textbf{South Carolina:} All rivers are Atlantic Slope so you only need
+to compare rivers relative to the fall line. Unfortunately most of the
+rivers overlap on the \textsc{nmds} plot but you should be able to 
+determine which rivers are plotted at that point and why.
+
+\question
+\textbf{Georgia:} This state has three watersheds. Mobile Bay is part of 
+the Gulf of Mexico but is highlighted to point out that the Coosa and
+Tallapoosa rivers are distinct from other Georgia rivers that flow into 
+the Gulf. The results here are very good for the watersheds and the fall 
+line. Write a thorough and clear summary of the results.
+
+\question
+\textbf{Alabama:} Another data set with clear results so write another
+thorough and clear summary.
+
+\question
+\textbf{Mississippi:} This state lies entirely below the fall line so
+your summary here should focus on the watersheds.
+
+\question
+\textbf{Missouri:} In many ways, Missouri has the most complex pattern
+although the results are clear.  A few notes: The Arkansas River 
+watershed begins in southwest Missouri, flows west and south through 
+Kansas and Oklahoma before cutting back through central Arkansas to meet 
+the Mississippi River. The White River watershed flows east across 
+northern Arkansas to meet the Mississippi River.  Of interest is the
+Salt, Chariton, and Grand rivers. The Salt flows east directly to the 
+Mississippi River but the Chariton and Grand both flow south to the 
+Missouri River. Write a hypothesis why you think these three rivers might
+be similar. (Hint: remember that all of Missouri north of the Missouri
+River is north of the Pleistocene glacial maximum.)
+
+\end{questions}
+
+\end{document}  
