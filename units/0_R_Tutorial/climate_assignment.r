@@ -6,14 +6,23 @@
 setwd('biogeo')
 
 climate <- read.csv('http://mtaylor4.semo.edu/~goby/biogeo/climatedata.csv')
-attach(climate)
+climate <- read.csv("tutorial_climate_data.csv", header = TRUE)
 
-plot(MAT ~ MAP, xlab='Mean annual precipitation (mm)', ylab = 'Mean annual temperature', pch=c(21,22,25)[Species], bg=rainbow(8)[Ecosys], xlim=c(0,3500), ylim=c(-5,10))
+attach(climate)
+rbow <- rainbow(8)
+
+plot(MAT ~ MAP, bg = rainbow(8)[factor(Ecosys)], pch = c(21,22,23)[factor(Species)])
+
+
+
+
+plot(MAT ~ MAP, xlab='Mean annual precipitation (mm)', ylab = 'Mean annual temperature (°C)', pch=c(21,22,25)[factor(Species)], bg=rainbow(8)[factor(Ecosys)], xlim=c(0,3500), ylim=c(-5,10))
+
 text(700, 4, 'Grassland', font=3, pos=4)
-text(1900,8, 'Redcedar', font=3, pos=4)
+text(1900, 8, 'Redcedar', font=3, pos=4)
 text(700, -2.5, 'Larch', font=3, pos=4)
 
-legend(3100, 1, legend=c('A','B','C','D','E','F','G','H'), pch=c(25,22,21,22,22,21,25,25), col='black', pt.bg=rainbow(8))
+legend(3100, 8, legend=c('A','B','C','D','E','F','G','H'), pch=c(25,22,21,22,22,21,25,25), col='black', pt.bg=rainbow(8))
 
 
 op <- par(cex=1, ps=12, family='serif', mar=c(5,5,3,3))

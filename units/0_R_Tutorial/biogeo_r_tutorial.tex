@@ -2,8 +2,8 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass[11pt]{article}
-%\usepackage{graphicx}
-%	\graphicspath{{/Users/goby/Pictures/teach/153/lab/}} % set of paths to search for images
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
 
 \usepackage{geometry}
 \geometry{letterpaper}                   
@@ -34,6 +34,8 @@
 
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{multicol}
+
 %\usepackage{tabularx}
 %\usepackage{siunitx}
 %\usepackage[justification=raggedright, singlelinecheck=off]{caption}
@@ -47,7 +49,7 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-%\usepackage{enumitem}
+\usepackage{enumitem}
 %\usepackage{hyperref}
 %\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
 
@@ -104,7 +106,7 @@ advantages: it is powerful, it is free, it is available on all major
 computer platforms (including PC, Mac, and linux), it is flexible, and
 it is expandable. The main disadvantage of R is the steep learning
 curve. The best way to learn R is through practice and repetition.
-Because R is free, I encourage you to download R to your personal
+R is free so download and install R on your personal
 computer and practice these exercises. The course website has
 instructions on how to install R on your computer, as well as some of
 the packages you will need and links to many tutorials to become
@@ -117,10 +119,47 @@ a brief overview of R's powerful graphing features. \textbf{Study,
 practice and memorize the commands and functions in this tutorial. You
 will use them often in this course.}
 
-Begin by launching R. After a moment, you will see a `\texttt{\textgreater{}}'
-prompt. That is the command line. You type commands after the prompt.
-Depending on the command, R may or may not return information to you, as
-you will see.
+\subsubsection*{R Studio Defaults}
+
+The first time you launch R Studio, it will probably look similar to this.
+
+\includegraphics[width=\linewidth]{rstudio_three_panes}
+
+The console pane is where you type R commands to execute immediately. The environment pane will show R variables that you create. The files and plots pane lists files in the same folder as your open R Project file (or current working directory) and graphs that you plot.
+
+I suggest you click the small “Split Pane” button (\includegraphics[width=0.5cm]{rstudio_split_pane_button}) in the upper right of the console pane to give you a source code pane (shown below) that use the source code pane later.
+
+\includegraphics[width=\linewidth]{rstudio_four_panes}
+
+Next, set a couple important default settings that will make your work with R and R Studio much easier for all of your work, even outside of this course.
+
+Choose “Tools > Global Options\dots” from the menu bar. In the dialog that appears, choose “General” from the upper left, then make the following changes, as necessary. 
+
+\begin{multicols}{2}
+
+\begin{itemize}
+	\item \textit{Check} "Restore the most recently opened project at startup.” This will open your project file for this course automatically, unless you used a different project for something else.
+	
+	\item \textit{Uncheck} “Restore .RData into workspace at startup:” R Studio saves your information in the project file. Restoring .RData would override that and possibly screw up your work in weird ways.
+	
+	\item “Save workspace on .RData on exit:” should be set to “Never.”
+	
+	\item \textit{Uncheck} “Always save history (even when not saving .RData).”
+\end{itemize}
+
+\columnbreak
+
+\quad\includegraphics[width=0.95\linewidth]{rstudio_general_settings}
+\end{multicols}
+
+Press the “OK” button to save your changes. You can change other settings as you develop your own preferences for working with R and R Studio.
+
+\textit{Let's dive in.}
+
+
+\subsubsection*{Introduction to base R.}
+
+Click the Console pane (lower left pane). Notice the `\texttt{\textgreater{}}' prompt. This is where you will type R commands right now.
 
 At the prompt, type the following commands, one at a time, and then
 observe the results that R returns to you. Commands that you type, the
@@ -128,18 +167,19 @@ results that you get, or the keys that you press will be \texttt{in this monospa
 font.} Press the \texttt{Enter} or \texttt{Return} key after typing each command.
 
 \begin{tabular}{@{}L{1in}L{4.5in}@{}}
-\texttt{3 + 2} & \\
-
-\texttt{A \textless{}- 3 + 2} & \texttt{\# ''\textless{}-''} is a less than sign, followed
-by a dash, no space between them. \\
-	& 	\texttt{\#} \textbf{NOTE}: Any text following a hash tag is a comment and ignored
+\texttt{3 + 2} & \texttt{\#} You should get the number 5 in response.\\
+%
+	& 	\texttt{\#} \textsc{Note:} Any text following a hash tag is a comment and ignored
 by R.\\
+%
+\texttt{A \textless{}- 3 + 2} & \texttt{\# ''\textless{}-''} is a less than sign, followed
+by a dash, no space between them. \textbf{Pro tip:} Type \texttt{Option} + \texttt{-} (dash; Mac) or \texttt{Alt} + \texttt{-} (dash; PC) to type the assignment operator.\\
  
 \texttt{A} & \\
 
 \texttt{a} & \# returns an error because the variable a has not been defined. R is
-case sensitive.  \texttt{A} and \texttt{a} are different variables. Remember that R is case sensitive because
-that is a common source of error.\\[2ex]
+case sensitive.  \texttt{A} and \texttt{a} are different variables. \textit{Remember that R is case sensitive because
+that is a common source of error.}\\[2ex]
 
 	
 \texttt{B \textless{}- 4\^{}2}	&	 \# what does the caret do?\\ 
@@ -160,7 +200,7 @@ the variable and ``\texttt{\textless{}-}'' is the assignment operator. The
 statement \texttt{A \textless{}- 3+2} evaluates \texttt{3+2}, then assigns the result (\texttt{5})
 to the variable called \texttt{A}. When you typed \texttt{A} by itself, R returned the
 value that was stored in variable \texttt{A}. For variable \texttt{B}, you assigned it
-\texttt{4\textsuperscript{2}}, which is 16. The caret symbol means exponent.
+\texttt{4\textsuperscript{2}}, which is 16. The caret symbol indicates exponent.
 
 \subsection*{Diving Deeper: R functions, the help function, and a simple
 plot.}
@@ -172,7 +212,7 @@ Type the following commands:
 
 What did the \texttt{rnorm()} function do? To find out, type
 
-\texttt{?rnorm}
+\texttt{?rnorm}   \quad \texttt{\#} The ? is a shortcut for help.
 
 \texttt{rnorm()} generates a set of random numbers that are normally distributed.
 \texttt{rnorm()} is one of the many functions available in R. Typing the question
@@ -223,6 +263,8 @@ deviation of 2.5:
 Repeat this one more time but assign the random numbers to the variable
 \texttt{y}. Use slightly different values for the mean and standard deviation.
 
+\textbf{Pro tip:} Press the “up” cursor key to recall the last command you entered. Edit the command to make your changes, such as replacing the \texttt{x} with \texttt{y.}
+
 \texttt{mean(y)} \\
 \texttt{sd(y)}
 
@@ -239,10 +281,8 @@ starting with the next section.
 
 \subsection*{Plunge Into The Deep End: The Iris Data Set}
 
-\texttt{data()} \# scroll through the list
-
-R comes with many built in data sets. You will use the data set called
-\texttt{iris}. The iris data set contains measurements from 50 individuals for
+R comes with many built-in data sets. You can list them if you enter \texttt{data()} at the console prompt (you must include the parentheses). You will use the data set called
+\texttt{iris}. The iris data set contains measurements from 50 individuals sampled from
 each of three species of iris: \emph{Iris setosa}, \emph{I. versicolor}
 and \emph{I. virginica}. For each individual, the length and width of
 the petals and sepals were measured in centimeters. For a typical data
@@ -293,7 +333,7 @@ you write and type commands.
 \emph{I. setosa}. 
 \end{tabular}
 
-Modify the formula above to  find the mean petal length for all three species. Hint: Press the ``up'' cursor key to recall the last command. You can then click in the command line to edit it. Fill in the following table.
+Modify the formula above to  find the mean petal length for all three species. \textsc{Hint:} Remember the ``up'' cursor key to recall the last command. Fill in the following table.
 
 
 \begin{longtable}[l]{@{}lccc@{}}
@@ -308,7 +348,7 @@ Mean Petal Length: & \rule{1in}{0.4pt} & \rule{1in}{0.4pt}  & \rule{1in}{0.4pt} 
 
 One species clearly has shorter petals than the other two but are they
 significantly different in a statistical sense? Perform a simple
-analysis of variance (ANOVA) to find out:
+analysis of variance \textsc{(anova)} to find out:
 
 \begin{tabular}{@{}L{4in}L{1.5in}@{}}
 \texttt{iris.aov \textless{}- aov(Petal.Length \textasciitilde{} Species,
@@ -427,15 +467,42 @@ pch=c(21,22,23){[}Species{]})}
 Now, even in grey scale, you can tell which points belong to which
 species.
 
+
+\subsubsection*{Using the Source pane}
+
+You just learned that you can enter R commands directly into the console and get results, but this is not efficient. A better method is to type your commands into the script editor. You can save your commands as a simple text file. You can execute several commands at the same time. You can more easily easily correct mistakes.
+
+To see this, first click on the “History” tab of the Environment and History pane (upper right pane). Scroll down until you find the most recent command you entered:
+
+\texttt{plot(Sepal.Length, Petal.Length, bg=mycolors[Species], pch = c(21,22,23)[Species])}
+
+Click the command to select it, then press the "To Source” button. The command will appear in your Source pane. 
+
+\includegraphics[width=\linewidth]{rstudio_to_source}
+
+\bigskip
+
+Click anywhere in the command in the Source pane then press \texttt{Cmd + Return} (Mac) or \texttt{Ctrl + Enter} (PC) to execute the command. Entering and editing commands is much easier from the Source pane. You can slowly build up a basic command to create a more complex command.
+
+Let's see how by improving the Iris plot.
+
+\newpage
+
 The labels for the X- and Y-axes are not informative. They should
-include centimeters as the unit of measurement.
+include centimeters as the unit of measurement. Edit the command in the Source console to look like the command below. Place your cursor immediately before the final parentheses, type the comma, then the rest of the code.
+
+\textsc{Important!} Type the entire command on one line. R Studio will automatically wrap the code to another line which is okay. Do \textit{not} press the return/enter key until after you complete the code.
+
+After you enter code, be sure your cursor is still somewhere in or at the end of the line, then press Cmd/Ctrl + Enter.
+
+
 
 \texttt{plot(Petal.Length, Sepal.Length, bg=mycolors{[}Species{]},
 pch=c(21,22,23){[}Species{]}, \\xlab='Petal Length (cm)', ylab='Sepal
 Length (cm)')}
 
 Many figures include a title. Add a title with the main argument
-in the \texttt{plot()} function.
+in the \texttt{plot()} function. Remember to edit and run the command from the Source pane.
 
 \texttt{plot(Petal.Length, Sepal.Length, bg=mycolors{[}Species{]}, pch=c(21,22,23){[}Species{]}, \\
 xlab='Petal Length (cm)', ylab='Sepal Length (cm)', main = 'Sepal Length vs. \\
@@ -462,31 +529,26 @@ Petal Length in 3 Species of Irises')}
 You can also place text, arrows or other items anywhere on the graph.
 For fun, add your name and your partner's name to the lower right of the
 figure. Like the legend() function, the text() function needs X and Y
-coordinates based on the two axes. For example:
+coordinates based on the two axes. For example, the type following command \textit{on a new line}:
 
 \begin{tabular}{@{}L{4.25in}L{1.5in}@{}}
-\texttt{text(5, 4.7, 'Your name\textbackslash{}nYour partner's name', pos=4)} & \# ?text\\
-
+\texttt{text(5, 4.7, 'Your name', pos=4)} & \# ?text\\
 \end{tabular}
 
-The first two numbers are the X and Y coordinates.  The \texttt{\textbackslash{}n} puts the second name on a \emph{n}ew line, which probably fits better in your graph. \texttt{pos=4} puts the text to the right of the specified coordinates.
+\texttt{text()} is a different function than the \texttt{plot()} function so they must be on separate lines.
 
-You can save your graph by choosing ``Save As\ldots{}'' from the File
-menu.
+The first two numbers are the X and Y coordinates. \texttt{pos=4} puts the text to the right of the specified coordinates. You have to determine the best position for added text through trial and error but the coordinates correspond to the coordinates of the axes on the plot. For example, \texttt(5, 4.7) corresponds to 5 on the petal length axis and 4.7 on the sepal length axis. You can often eyeball an approximate starting location from the plot axes, then tweak as needed.
+
+\textsc{Important!} If you don't like the position of the text, you have to replot the data, then execute the modified \texttt{text()} function. If you do not replot, the new text will be added to the existing plot.
+
+You can enlarge the graph by pressing the “Zoom” button in the Plot pane. You can save your graph by pressing the “Export\dots” button in the Plot pane. You do not have to save this plot.
+
 
 \begin{tabular}{@{}L{1in}L{4.5in}@{}}
 \texttt{detach(iris)} & \# I said I would remind you to detach the iris data set
 when you were finished. \\
 \end{tabular}
 
-To get a sense of the variety of plots and legends that can be created
-type:
-
-\texttt{demo(graphics)}
-
-\texttt{demo(images)}
-
-\texttt{example(legend)}
 
 Most, if not all, of the exercises you will do in this course will
 stress creating presentation quality figures using various plot()

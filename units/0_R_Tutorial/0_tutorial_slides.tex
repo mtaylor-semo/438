@@ -1,0 +1,105 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\includeonlylecture{student}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+
+%\usepackage{pgf,pgfpages}
+%\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm]
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=0.75]{Linux Libertine Mono O} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/438/homework/}
+	{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+
+
+\begin{document}
+%\lecture{instructor}{instructor}
+%\lecture{student}{student}
+
+\begin{frame}[t,plain]{Set up your computer.}
+	
+	\hangpara Find the Documents folder on your computer. Make a “biogeo” folder inside the “Documents” folder. 
+	
+	\hangpara You will use this folder to store your all analysis files for this course.
+	
+	\hangpara If you want, make a shortcut to the biogeo folder and put the shortcut on your desktop or other convenient place for you.
+	
+	\hangpara Go to the Canvas page for this course. Scroll down to the R and R Studio module.
+	
+\end{frame}
+
+
+\begin{frame}[t,plain]{Installing and using R.}
+
+\begin{multicols}{2}
+
+\hangpara Go to Canvas page for links to R and R Studio.
+
+\hangpara \textbf{Download and install R first.} If prompted for the website to download from, scroll down to the United States, then choose Washington University. (You can search for wustl, too.)
+
+\hangpara \textbf{Download and install R Studio second.} Download the free Desktop version.
+
+\columnbreak
+
+\noindent Launch R Studio.  You should see something like this:
+
+\noindent\includegraphics[width=\linewidth]{rstudio_splash}
+\end{multicols}
+
+\end{frame}
+
+
+
+\begin{frame}{Create and save an R Project file}
+
+	\hangpara Choose “File $>$ New Project \dots\end{frame}
+
+	\hangpara Choose ”Existing Directory”
+	
+	\hangpara Press the “Browse” button. 
+
+
+\end{document}
