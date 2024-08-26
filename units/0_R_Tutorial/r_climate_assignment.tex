@@ -102,14 +102,14 @@
 	Larch). The measurements are in five-year intervals from 1965--2010.
 	
 	You must recreate, as close as reasonably possible, the following figure
-	(color version on screen).
+	(color version on screen and Canvas). Pay attention to the use of colors and symbols. Colors identify the
+	ecosystems, while the symbols represent the dominant plant groups.
 	
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{tutorial_assignment_climate}
 	\end{center}
 	
-	Pay attention to the use of colors and symbols. Colors identify the
-	ecosystems, while the symbols represent the dominant plant groups.
+	
 	
 	\subsubsection*{Get the data}
 	
@@ -130,7 +130,9 @@
 	
 	\texttt{climate \textless{}-
 		read.csv('tutorial\_climate\_data.csv')}
-		
+	
+	If you get an error, be \textit{sure} that the file ends with “.csv” and is located in the same folder as your open R Project file.
+	
 	\subsubsection*{Some hints:}
 	
 	Don't forget to use \texttt{attach()} and \texttt{detach()} functions.
@@ -167,7 +169,7 @@
 	Technically, you should include °C in the Y-axis label but doing so might be
 	more complex than I want to get into now. However, to encourage
 	exploration, I will buy you an imaginary adult beverage of your choice if %add 50\% extra credit to this assignment (5 pts) if
-	you figure it out. You may search the Internet. \textsc{Note:} The degree symbol is \emph{not} a superscript lower-case o or zero. It is a degree symbol.
+	you figure it out. You may search the Internet. \textsc{Note:} The degree symbol is \emph{not} a superscript lower-case o or zero. It is a degree symbol. 
 	
 	Use the \texttt{main} argument in the \texttt{plot()} function to add
 	a main title, which will appear above the graph (but is not shown
