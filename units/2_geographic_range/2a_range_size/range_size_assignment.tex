@@ -190,7 +190,7 @@ will be \texttt{NAfishes.csv} or \texttt{NAmussels.csv}.
 %read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/filename.csv', row.names=1)}
 
 \texttt{spp \textless{}-
-read.csv(‘filename.csv’, row.names=1)}
+read.csv(‘filename.csv’, row.names = 1)}
 
 %Now, determine how many watersheds are in the data set, and how many
 %species of your taxon are in the data set. This is easy to do with the
@@ -248,7 +248,7 @@ To create a histogram, use the \texttt{hist()} function. The
 \texttt{hist()} function, like \texttt{plot()}, has many arguments to
 customize your figure, but begin with a simple histogram.
 
-\texttt{hist(numWatersheds, ylab=‘Number of Species’)}
+\texttt{hist(numWatersheds, ylab = ‘Number of Species’)}
 
 This histogram provides enough detail for you to determine whether most
 species occur in many watersheds (large range size) or in just a few
@@ -305,7 +305,7 @@ earlier.
 %read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/filename.csv', row.names=1)}
 
 \texttt{spp \textless{}-
-read.csv(‘filename.csv’, row.names=1)}
+read.csv(‘filename.csv’, row.names = 1)}
 
 Calculate the number of watersheds per species and assign it to the
 variable \texttt{numWatersheds}. Do the same for number of species per
@@ -318,7 +318,7 @@ to determine whether most species at the state scale have large, medium, or
 small size ranges, or a mix.  Use \texttt{ylab = ‘Number of Species’} when making the histogram
 for \texttt{numWatersheds}. 
 
-\texttt{5. Interpret and explain the pattern.} Describe the pattern that you see. Do most
+\textbf{5. Interpret and explain the pattern.} Describe the pattern that you see. Do most
 species occur in most watersheds (large range size) or do most species
 occur in just a few watersheds (small range size)? Or, is it some
 combination of the two? Explain how the observed result supports or
