@@ -190,7 +190,7 @@ will be \texttt{NAfishes.csv} or \texttt{NAmussels.csv}.
 %read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/filename.csv', row.names=1)}
 
 \texttt{spp \textless{}-
-read.csv(‘filename.csv’, row.names = 1)}
+read.csv("filename.csv", row.names = 1)}
 
 %Now, determine how many watersheds are in the data set, and how many
 %species of your taxon are in the data set. This is easy to do with the
@@ -248,7 +248,7 @@ To create a histogram, use the \texttt{hist()} function. The
 \texttt{hist()} function, like \texttt{plot()}, has many arguments to
 customize your figure, but begin with a simple histogram.
 
-\texttt{hist(numWatersheds, ylab = ‘Number of Species’)}
+\texttt{hist(numWatersheds, ylab = "Number of Species")}
 
 This histogram provides enough detail for you to determine whether most
 species occur in many watersheds (large range size) or in just a few
@@ -264,7 +264,7 @@ falsifies your hypothesis in question 1. Be prepared to discuss.
 
 Now, use the \texttt{hist()} function to graph the number of species per
 watershed. You should be able to figure out what command to type. Use 'Number 
-of Watersheds' for the ylab part of the command.
+of Watersheds' for the \texttt{ylab} argument.
 
 \textbf{3. Interpret your second histogram.} How does the information displayed
 in this histogram differ from the first histogram? Do not say that
@@ -277,7 +277,7 @@ To see the two figures nicely formatted side by side, type
 
 %\texttt{source('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/makeprettyNA.r')}
 
-\texttt{source(‘makeprettyNA.r’)}
+\texttt{source("makeprettyNA.r")}
 
 Expand the window to full screen. 
 
@@ -305,7 +305,7 @@ earlier.
 %read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/filename.csv', row.names=1)}
 
 \texttt{spp \textless{}-
-read.csv(‘filename.csv’, row.names = 1)}
+read.csv("filename.csv", row.names = 1)}
 
 Calculate the number of watersheds per species and assign it to the
 variable \texttt{numWatersheds}. Do the same for number of species per
@@ -315,7 +315,7 @@ with watersheds and which goes with species, review page \pageref{tab:colrowsums
 
 Use the \texttt{hist()} function on \texttt{numWatersheds} and \texttt{numSpecies}, as you did above,
 to determine whether most species at the state scale have large, medium, or
-small size ranges, or a mix.  Use \texttt{ylab = ‘Number of Species’} when making the histogram
+small size ranges, or a mix.  Use \texttt{ylab = "Number of Species"} when making the histogram
 for \texttt{numWatersheds}. 
 
 \textbf{5. Interpret and explain the pattern.} Describe the pattern that you see. Do most
@@ -328,7 +328,7 @@ prediction your hypothesis in question 4.
 
 
 \textbf{6. Repeat this for numSpecies.} Interpret and explain the pattern. 
-Use \texttt{ylab=‘Number of Watersheds’} when making the histogram for \texttt{numSpecies}.
+Use \texttt{ylab = "Number of Watersheds"} when making the histogram for \texttt{numSpecies}.
 How does the information displayed in this histogram differ from the first histogram?
 
 \vspace{7\baselineskip}
@@ -337,7 +337,7 @@ To see the two figures nicely formatted side by side, type
 
 %\texttt{source('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/makepretty.r')}
 
-\texttt{source(‘makepretty.r’)}
+\texttt{source("makepretty.r")}
 
 Expand the window to full screen. In some cases, the bars of the histogram might be too wide or too skinny. If so, replace \texttt{makepretty.r} with either \texttt{makepretty2.r} or \texttt{makepretty5.r} (download them from Canvas if necessary). Try to get the width of the bars in the right histogram to be about the same width as the left histogram.
 
