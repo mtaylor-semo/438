@@ -1,7 +1,7 @@
 #Divides species into those whose mean latitudinal range is above 
 #Point Conception and those below Point Conception
 
-cafish <- read.csv('data/california_marine_fishes.csv', row.names=1)
+cafish <- read.csv('data/california_marine_fishes.csv', row.names = 1)
 
 #colNames <- colnames(cafish)
 
@@ -25,12 +25,12 @@ maxLat <- vector('numeric')
 
 for (i in 1:numRows) {
 	x <- data.frame(cafish)[i,]
-	y <- colnames(x)[x==1]
+	y <- colnames(x)[x == 1]
 
 	#colNames <- colnames(y)
 
-	colNames <- gsub('N','',y)
-	colNames <- gsub('S','-',colNames)
+	colNames <- gsub('N', '', y)
+	colNames <- gsub('S', '-', colNames)
 
 	minLat[i] <- as.numeric(colNames[1])
 	maxLat[i] <- as.numeric(colNames[length(colNames)])
@@ -46,8 +46,8 @@ cafish$meanLat <- meanLat
 
 latCol <- vector('character')
 for (i in 1:numRows) {
-	if (cafish$meanLat[i] > meanCut){latCol[i] = "darkorange3"}
-	else { latCol[i] = "steelblue"}	
+	if (cafish$meanLat[i] > meanCut) {latCol[i] = "steelblue"}
+	else { latCol[i] = "darkorange2"}	
 } 
 
 # for (i in 1:numRows) {
@@ -57,14 +57,30 @@ for (i in 1:numRows) {
 
 cafish$latCol <- latCol
 
-cafish <- cafish[order(-cafish$minLat,-cafish$meanLat),]
+cafish <- cafish[order(-cafish$minLat, -cafish$meanLat),]
 
 
-plot(nrow(cafish),99, type='n', xlim=c(1,516), ylim=c(-30,68), ylab='Latitude (°S — °N)', xlab='Species Index', main='Latitudinal Range for\nCalifornia Coastal Marine Fishes')
-for (i in 1:numRows){
-	segments(x0 = i, y0 = cafish$minLat[i], x1 = i, y1 = cafish$maxLat[i], col=cafish$latCol[i])
+plot(
+  nrow(cafish),
+  99,
+  type = "n",
+  xlim = c(1, 516),
+  ylim = c(-30, 68),
+  ylab = "Latitude (°S — °N)",
+  xlab = "Species Index",
+  main = "Latitudinal Range for\nCalifornia Coastal Marine Fishes"
+)
 
+for (i in 1:numRows) {
+  segments(
+    x0 = i,
+    y0 = cafish$minLat[i],
+    x1 = i,
+    y1 = cafish$maxLat[i],
+    col = cafish$latCol[i]
+  )
+  
 }
-abline(h=36,col='gray')
-abline(h=meanCut,col='gray3')
-abline(h=32,col='gray')
+# abline(h = 36, col = 'gray')
+abline(h = meanCut, col = 'gray30')
+# abline(h = 32, col = 'gray')
