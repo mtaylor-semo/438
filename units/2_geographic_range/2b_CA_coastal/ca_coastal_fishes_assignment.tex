@@ -128,7 +128,7 @@ diversity of coastal marine fishes.
 
 Double-click your project file to launch R~Studio. Alternatively, launch R~Studio, then open the project file. \textbf{Do this before any step below.}
 
-Download "california\_marine\_fishes.csv" from the course Canvas page. \textit{Place the file in the same folder as your project file.}
+Download "california\_marine\_fishes.csv" from the course Canvas page. Download the \texttt{.r} files, too. \textit{Place the file in the same folder as your project file.}
 
 In the R~Studio console, enter the following on one line:
 
@@ -300,6 +300,26 @@ List some of your reasons and be prepared to share them with the class.
 
 
 \newpage
+
+\subsubsection*{Range extent}
+
+Your final task is to make a plot that shows the range extent for each species. Run the following command in the R Studio console. It may take a moment to plot.
+
+\texttt{source("ca\_fishes\_ns.r)}
+
+Each vertical bar shows the minimum to maximum latitude for one species of fish. Species with a median latitude above Point Conception are shown in blue. Species with an median latitude below Point Conception are shown in orange. The horizontal black line is the latitude of Point Conception. Fishes are sorted (left to right on x-axis) in order of minimum latitude.
+
+Notice that few “northern” species (blue) have a range that much farther south than Point Conception. In contrast, more of the “southern” (orange) species have a much more extensive range. Some of the “southern” species have a range that spans from 30°S to 60°N. (For comparison, that is a greater latitude span than from Cape Girardeau to the North Pole!) 
+
+\textbf{5. Why do you think more “southern” species have a much broader range than most of the “northern” species.}
+
+	
+	\vspace{9\baselineskip}
+	
+	Among the species with the greatest range extent are \textit{Carcharodon carcharias,} \textit{Trachipterus altivelis,} and \textit{Coryphaena hippurus.} Look them up on the Internet. The Wikipedia and Fishbase entries are reliable sources. 
+	
+\textbf{6. Can you detect anything these three species have in common that might explain why they have such a broad range?}
+	
 
 
 \end{document}  
