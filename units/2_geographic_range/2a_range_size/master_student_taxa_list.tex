@@ -1,0 +1,208 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional, OldStyle}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+\usepackage{multicol}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%\usepackage{enumitem}
+%\usepackage{hyperref}
+
+%\usepackage{titling}
+%\setlength{\droptitle}{-50pt}
+%\posttitle{\par\end{center}}
+%\predate{}\postdate{}
+
+\usepackage{hanging}
+\usepackage{wrapfig}
+
+\usepackage[sc]{titlesec}
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+\newcommand*{\assignmentTitle}{Geographic Range Size}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize \assignmentTitle{} \thepage}
+\fancyhead[L]{\footnotesize \coursename}
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{Master taxononmy assignment list}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+\title{Geographic Range Size}
+\author{10 Points}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\thispagestyle{first_page}
+
+
+{\Large
+\begin{multicols}{2}
+North America Mussels\newline
+Alabama Fishes
+
+\bigskip
+
+North America Fishes\newline
+Alabama Mussels
+
+\bigskip
+
+North America Mussels\newline
+Georgia Fishes
+
+\bigskip
+
+North America Fishes\newline
+Illinois Fishes
+
+\bigskip
+
+North America Mussels\newline
+Kentucky Fishes
+
+\bigskip
+
+North America Fishes\newline
+Kentucky Crayfishes
+
+\bigskip
+
+North America Mussels\newline
+Louisiana Fishes
+
+\bigskip
+
+North America Fishes\newline
+Louisiana Crayfishes
+
+\bigskip
+
+North America Mussels\newline
+Mississippi Fishes
+
+\bigskip
+
+North America Fishes\newline
+Mississippi Mussels
+
+\bigskip
+
+North America Mussels\newline
+Missouri Fishes
+
+\bigskip
+
+North America Fishes\newline
+Missouri Mussels
+
+\bigskip
+
+North America Mussels\newline
+North Carolina Fishes
+
+\bigskip
+
+North America Fishes\newline
+North Carolina Crayfishes
+
+\bigskip
+
+North America Mussels\newline
+Ohio Fishes
+
+\bigskip
+
+North America Fishes\newline
+Ohio Mussels
+
+\bigskip
+
+North America Mussels\newline
+South Carolina Fishes
+
+\bigskip
+
+North America Fishes\newline
+Tennessee Mussels
+
+\bigskip
+
+North America Mussels\newline
+Tennessee Fishes
+
+\bigskip
+
+North America Fishes\newline
+Wisconsin Fishes
+
+\bigskip
+
+North America Mussels\newline
+Virginia Fishes
+
+\bigskip
+
+North America Fishes\newline
+California Fishes
+\end{multicols}
+}
+\end{document}  
