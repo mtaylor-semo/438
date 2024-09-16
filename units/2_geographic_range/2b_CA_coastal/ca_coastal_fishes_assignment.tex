@@ -126,12 +126,16 @@ diversity of coastal marine fishes.
 
 \subsubsection*{Obtain the Data Set}
 
-Enter the following on one line:
+Double-click your project file to launch R~Studio. Alternatively, launch R~Studio, then open the project file. \textbf{Do this before any step below.}
+
+Download "california\_marine\_fishes.csv" from the course Canvas page. Download the \texttt{.r} files, too. \textit{Place the file in the same folder as your project file.}
+
+In the R~Studio console, enter the following on one line:
 
 \texttt{cafish \textless{}-
-read.csv('http://mtaylor4.semo.edu/\textasciitilde{}goby/biogeo/california\_marine\_fishes.csv', row.names=1)}
+read.csv("california\_marine\_fishes.csv", row.names = 1)}
 
-First, calculate how many degrees of latitude are covered by each
+Calculate how many degrees of latitude are covered by each
 species to determine range size. Repeat for the number of species per
 degree of latitude.
 
@@ -160,52 +164,59 @@ Mean & \rule{1.5in}{0.4pt} & \rule{1.5in}{0.4pt} \tabularnewline
 \bottomrule
 \end{tabular}
 
+\bigskip
+
 \textbf{1. What is your hypothesis?} Given that the total latitudinal range in
 the data set covers 99° of latitude, from 30°S to 68°N, does the mean
 number of degrees latitude occupied suggest that most coastal marine
 fishes likely have large or small range size? Explain.
 
-\vspace{7\baselineskip}
+\vspace{9\baselineskip}
 
-Create a histogram of \texttt{rangeSize} and \texttt{numSpecies}. Review the
-last handout if necessary.\footnote{You can use ``makeprettyCA.r'' if you want.} 
-What do the results suggest about range size?
+Create a histogram of \texttt{rangeSize} to show the distribution of range sizes for California coastal marine fishes. Type the following code on one line.\footnote{Or, you can enter \texttt{source("makeprettyCA.r")} into the console.}
+
+\texttt{hist(rangeSize, breaks = 20, xlim = c(0, 100), las = 1, xlab = "Degrees of Latitude\newline Occupied", ylab = "Number of Species")}
+
+%What do the results suggest about range size?
+
+\bigskip\bigskip
 
 \textbf{2. Was your hypothesis supported for range size?} Did most coastal marine
 fishes have relatively small or relatively large range sizes, especially
 in relation to the actual distance covered by the data set? Explain.
 
-\vspace{5\baselineskip}
+%\vspace{6\baselineskip}
 
-\textbf{3. Describe the pattern for number of species per degree latitude.} Study the histogram
-for you made for \texttt{numSpecies}. A few
-degrees of latitude seem to have very few species. Can you think of
-reasons why? \textsc{Hint 1}: What was the minimum number of species per
-degree latitude in the table on the first page. Do you really think
-there is a degree of latitude along the west coast of North America that has only one
-species of fish? \textsc{Hint 2}: The data set encompasses only those species
-that occur in California. Use this information to try to explain the
-very high peak with very low numbers of species and the secondary peak
-with more reasonable numbers of species.
+%\textbf{3. Describe the pattern for number of species per degree latitude.} Study the histogram
+%for you made for \texttt{numSpecies}. A few
+%degrees of latitude seem to have very few species. Can you think of
+%reasons why? \textsc{Hint 1}: What was the minimum number of species per
+%degree latitude in the table on the first page. Do you really think
+%there is a degree of latitude along the west coast of North America that has only one
+%species of fish? \textsc{Hint 2}: The data set encompasses only those species
+%that occur in California. Use this information to try to explain the
+%very high peak with very low numbers of species and the secondary peak
+%with more reasonable numbers of species.
 
 \newpage
 
 %When you have finished, save the file as a PDF and upload to the Unit
 %1b: California course drop box before you leave today.
 
-\subsubsection*{Where is the richness of coastal marine fishes the highest?}
+\subsubsection*{Where is the richness of coastal marine fishes the greatest?}
 
 Species richness is the number of species present at a given location.
-The second histogram showed that most degrees of latitude had fewer than
-half of the 519 species, and some degrees of latitude had far less than
-one-fifth of all species in the data set. Thus, most degrees of latitude
-had relatively low species richness (relative to the total data set).
-However, a few degrees of latitude had nearly or more than 400 species,
-which indicates very high species richness. Those were the degrees of
-latitude at the very right side of your histogram. Are those few degrees
-of latitude in the same area or are they randomly scattered? If the
-degrees of latitude are in the same area, they may suggest some type of
-biogeographic hotspot with high overall species diversity. Biogeographic
+%The second histogram showed that most degrees of latitude had fewer than
+%half of the 519 species, and some degrees of latitude had far less than
+%one-fifth of all species in the data set. Thus, most degrees of latitude
+%had relatively low species richness (relative to the total data set).
+%However, a few degrees of latitude had nearly or more than 400 species,
+%which indicates very high species richness. Those were the degrees of
+%latitude at the very right side of your histogram. Are those few degrees
+%of latitude in the same area or are they randomly scattered? If the
+%degrees of latitude are in the same area, they may suggest some type of
+%biogeographic hotspot with high overall species diversity. 
+Latitutdes with high species richness might indicate a \textbf{biogeographic hotspot.} Biogeographic
 hotspots are often targets for conservation management to ensure
 maintenance of diversity. The area of high richness may also represent a
 boundary between two biogeographically distinct regions. Regions that
@@ -220,7 +231,7 @@ To do so, use the \texttt{plot()} function to plot the
 
 \texttt{plot(numSpecies)}
 
-Clearly, there is a peak in species richness, but at which latitudes?
+Clearly, there is a peak in species richness, but at what latitude?
 The Y-axis is the richness per degree latitude. The X-axis, labeled
 Index, is simply the order of the results in the \texttt{numSpecies}
 data set, so you can't easily tell which latitudes have the highest
@@ -232,48 +243,52 @@ sequence of numbers that correspond to the degrees of latitude. Use the \texttt{
 sequence of numbers from $\minus$30 to 68, incrementing by 1. Assign the
 results to a variable called \texttt{lat} for \emph{lat}itude.
 
-\texttt{lat <- seq(-30,68,1)}
+\texttt{lat <- seq(-30, 68, 1)}
 
-Now you can plot species richness against latitude. \texttt{xlim{}} limits create a balanced distribution of tick marks along the X-axis.
+Now you can plot species richness against latitude. \texttt{xlim{}} limits create a balanced distribution of tick marks along the X-axis. That is a tilde after \texttt{numSpecies.}
 
-\texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}
+\texttt{plot(numSpecies \textasciitilde{} lat, xlim = c(-40, 80))}
 
-Now, if you compare the points that represent the greatest richness, you
-get a sense that the highest diversity is somewhere between 25N and
-40°N. This is useful but it would be nice to know precisely which
-degrees of latitude have the highest species richness.
+If you compare the points that represent the greatest richness, you
+get a sense that the highest diversity is somewhere between 25°\textsc{n} and
+40°\textsc{n}. %This is useful but it would be nice to know precisely which
+%degrees of latitude have the highest species richness.
 
-R provides a way to interact with your plots, using the
-\texttt{identify()} function. The \texttt{identify()} function lets you
-click on points in your plot. It will identify each point you click, up
-to a specifiable limit. You have to use the \texttt{identify()} function
-immediately after you use the \texttt{plot()} function because
-\texttt{identify()} works only in the currently active plot window.
+\textbf{3. Estimate the approximate latitude of greatest species richness from your graph. Write the number below. Compare your estimate to the map of California on the next page. Look at your notes and the “range size” slides from last lecture. What is the name of this location in California?}
 
-After you type or recall the plot command below, move the plot window to the back and type the \texttt{identify{}} command, then bring the plot window back to the front.
+\vspace{3\baselineskip}
 
-\texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}\\
-\texttt{identify(numSpecies\textasciitilde{}lat, labels=lat, cex=0.8)} \qquad \# cex reduces the character size.
 
-Now, click once on the highest point. The number that should appear is the latitude of that point. Remember that a negative number is °S (south of the equator). Click 3–4 more of the highest points. Also click the lowest leftmost point and the
-lowest rightmost point. Press the \texttt{Esc} key when you are finished
-to stop the interaction. \emph{RStudio users may have to click the points, then press \texttt{Esc} to see
-the numbers.} If numbers do not appear at all, try the commands again. If you are still not
-successful, ask for help.
+%R provides a way to interact with your plots, using the
+%\texttt{identify()} function. The \texttt{identify()} function lets you
+%click on points in your plot. It will identify each point you click, up
+%to a specifiable limit. You have to use the \texttt{identify()} function
+%immediately after you use the \texttt{plot()} function because
+%\texttt{identify()} works only in the currently active plot window.
+%
+%After you type or recall the plot command below, move the plot window to the back and type the \texttt{identify{}} command, then bring the plot window back to the front.
+%
+%\texttt{plot(numSpecies\textasciitilde{}lat, xlim=c(-40,80))}\\
+%\texttt{identify(numSpecies\textasciitilde{}lat, labels=lat, cex=0.8)} \qquad \# cex reduces the character size.
+%
+%Now, click once on the highest point. The number that should appear is the latitude of that point. Remember that a negative number is °S (south of the equator). Click 3–4 more of the highest points. Also click the lowest leftmost point and the
+%lowest rightmost point. Press the \texttt{Esc} key when you are finished
+%to stop the interaction. \emph{RStudio users may have to click the points, then press \texttt{Esc} to see
+%the numbers.} If numbers do not appear at all, try the commands again. If you are still not
+%successful, ask for help.
+%
+%The lowest leftmost point should be $\minus$30 and the lowest rightmost point
+%should be 68. The highest points are in the low- to mid-30s. Notice also that
+%the numbers that appeared on your graph also appear in the R command
+%window after you pressed the \texttt{Esc} key. You could assign the
+%results to a variable for later use but it is not necessary to do so
+%here.
+%
+%You can now easily tell that the region with the highest species
+%richness occurs in the same general area in the northern hemisphere. The
+%question is, where is this?
 
-The lowest leftmost point should be $\minus$30 and the lowest rightmost point
-should be 68. The highest points are in the low- to mid-30s. Notice also that
-the numbers that appeared on your graph also appear in the R command
-window after you pressed the \texttt{Esc} key. You could assign the
-results to a variable for later use but it is not necessary to do so
-here.
-
-You can now easily tell that the region with the highest species
-richness occurs in the same general area in the northern hemisphere. The
-question is, where is this?
-
-\textbf{4. Identify the area with the map on the next page.} Discuss with your
-partner some potential reasons why this area might have such high
+\textbf{4. Discuss with others at your table} some potential reasons why this area might have such high
 species richness compared to surrounding higher and lower latitudes.
 List some of your reasons and be prepared to share them with the class.
 
@@ -282,6 +297,29 @@ List some of your reasons and be prepared to share them with the class.
 \begin{center}
 	\includegraphics[width=\textwidth]{california_with_latitude}
 \end{center}
+
+
+\newpage
+
+\subsubsection*{Range extent}
+
+Your final task is to make a plot that shows the range extent for each species. Run the following command in the R Studio console. It may take a moment to plot.
+
+\texttt{source("ca\_fishes\_ns.r)}
+
+Each vertical bar shows the minimum to maximum latitude for one species of fish. Species with a median latitude above Point Conception are shown in blue. Species with an median latitude below Point Conception are shown in orange. The horizontal black line is the latitude of Point Conception. Fishes are sorted (left to right on x-axis) in order of minimum latitude.
+
+Notice that few “northern” species (blue) have a range that much farther south than Point Conception. In contrast, more of the “southern” (orange) species have a much more extensive range. Some of the “southern” species have a range that spans from 30°S to 60°N. (For comparison, that is a greater latitude span than from Cape Girardeau to the North Pole!) 
+
+\textbf{5. Why do you think more “southern” species have a much broader range than most of the “northern” species.}
+
+	
+	\vspace{9\baselineskip}
+	
+	Among the species with the greatest range extent are \textit{Carcharodon carcharias,} \textit{Trachipterus altivelis,} and \textit{Coryphaena hippurus.} Look them up on the Internet. The Wikipedia and Fishbase entries are reliable sources. 
+	
+\textbf{6. Can you detect anything these three species have in common that might explain why they have such a broad range?}
+	
 
 
 \end{document}  
