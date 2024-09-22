@@ -94,7 +94,7 @@
 
 \subsection*{Range Size: Rapoport's Rule} % (10 points)
 
-\textbf{Save copies of your figures today. You will need them for the
+\textbf{Save copies of all your figures today. You will need them for the
 writing assignment.}
 
 Now that you understand Rapoport's Rule, you will explore whether the 
@@ -113,6 +113,21 @@ recorded for 529 species of North American freshwater fishes.
 \begin{center}
 	\includegraphics[width=\textwidth]{na_grid}
 \end{center}
+
+Visit the course Canvas page.  Download the following files from the Rapoport's Rule data and code page and place them in the same folder as your R Project file for this course.
+
+
+\hspace*{1em} rapo\_champagne.r \newline
+\hspace*{1em} rapo\_pretty.r\newline
+\hspace*{1em} boundaries.txt \newline
+\hspace*{1em} coastLoRes.txt \newline
+\hspace*{1em} rivers.txt \newline
+\hspace*{1em} nagrid.csv \newline
+\hspace*{1em} fish\_area.csv
+
+
+Double-click your project file to launch R~Studio. Alternatively, launch R~Studio, then open the project file. \textbf{Do this before any step below.}
+
 
 Enter the following command to import the data:
 
@@ -203,9 +218,11 @@ fishArea <- read.csv("fish_area.csv", row.names = 1)
 
 \texttt{fishArea} \qquad \# view the data file
 
-Latitude (\texttt{lat}) is one column in the data set. Area
-(\texttt{area}) is another column in the data set. Plot a quality
-graph by typing this code on one line:
+\texttt{area} is a scaled value that represents the relative range area
+ occupied by each species. \texttt{lat} and \texttt{long} indicate the
+ approximate center of the range area.
+
+ Plot a quality graph by typing this code on one line:
 
 \begin{verbatim}
 plot(fishArea$lat ~ fishArea$area, las = 1, xlab = "Relative Area",
@@ -213,8 +230,8 @@ plot(fishArea$lat ~ fishArea$area, las = 1, xlab = "Relative Area",
   main = "Relative area occupied by U.S. freshwater fishes")
 \end{verbatim}
 
-Save your graph as a \textsc{png} or \textsc{pdf} file on your flash 
-drive or upload it to the Rapoport drop box for safekeeping. You are 
+Save your graph as a \textsc{png} or \textsc{pdf} file. You may upload it to 
+the Rapoport drop box for safekeeping. You are 
 \emph{not required} to upload this file to the drop box.
 
 \begin{enumerate}[resume]
@@ -226,7 +243,7 @@ drive or upload it to the Rapoport drop box for safekeeping. You are
 \end{enumerate}
 
 Next, create a graph that displays the results in a different way, 
-using what I call a “champagne graph.” This graph uses ``bubbles'' to 
+using what I call a “champagne graph.” This graph uses “bubbles” to 
 plot the relative area occupied by each species, overlaid on a map of 
 the U.S., complete with state boundaries and major rivers.  The center 
 of each bubble is located at the mean latitude and longitude for each 
@@ -240,11 +257,11 @@ source('rapo_champagne.r')
 \end{verbatim}
 
 Zoom this graph to full size and save it as a \textsc{png} or 
-\textsc{pdf} file on your flash drive or upload it to the Rapoport 
+\textsc{pdf} file. You may upload it to the Rapoport 
 drop box for safekeeping. You are \emph{not required} to upload this 
 file to the drop box. Then, answer the following questions. (Try 
 to ignore the circles located in the oceans. The algorithm I wrote is 
-rather poor but it serves our needs.)
+crude but it serves our needs.)
 
 \begin{enumerate}[resume]
 	\item Based on this graph, combined with the previous graph, do
@@ -263,12 +280,6 @@ rather poor but it serves our needs.)
 	have the fewest bubbles? (Or, most of the smallest bubbles?) Why 
 	do you think this is? 
 \end{enumerate}
-
-
-
-
-
-
 
 
 \end{document}  
