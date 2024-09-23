@@ -1,1 +1,19 @@
-,Bouchardina robisoni,Cambarus aculabrum,Cambarus causeyi,Cambarus setosus,Cambarus zophonastes,Fallicambarus gilpini,Fallicambarus harpi,Fallicambarus jeanae,Fallicambarus petilicarpus,Fallicambarus strawni,Faxolnella blairi,Orconectes eupunctus,Orconectes macrus,Orconectes marchandi,Orconectes meeki brevis,Orconectes menae,Orconectes nana,Orconectes neglectus chaenodactylus,Orconectes williamsi,Procambarus ferrugineus,Procambarus parasimulans,Procambarus regalis,Procambarus reimeri,Procambarus tenuis1 ARVal-Arkansas R,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,02 ARVal-White R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,03 BosMtn-Arkansas R,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,04 BosMtn-White R,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,05 MAP-Arkansas R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,06 MAP-StFrancis R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,07 MAP-White R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,08 MAPBB-Ouachita R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,09 MAPLC-Mississippi R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,010 MRLP-St. Francis R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,011 MRLP-White R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,012 OuaMtns-Arkansas R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,113 OuaMtns-Ouachita R,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,1,0,0,0,0,1,0,1,114 OuaMtns-Red R,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,115 Ozark-Arkansas R,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,016 Ozark-White R,0,0,0,1,1,0,0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,0,0,017 SCP-Ouachita R,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,018 SCP-Red River,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0
+,Bouchardina robisoni,Cambarus aculabrum,Cambarus causeyi,Cambarus setosus,Cambarus zophonastes,Fallicambarus gilpini,Fallicambarus harpi,Fallicambarus jeanae,Fallicambarus petilicarpus,Fallicambarus strawni,Faxolnella blairi,Orconectes eupunctus,Orconectes macrus,Orconectes marchandi,Orconectes meeki brevis,Orconectes menae,Orconectes nana,Orconectes neglectus chaenodactylus,Orconectes williamsi,Procambarus ferrugineus,Procambarus parasimulans,Procambarus regalis,Procambarus reimeri,Procambarus tenuis
+1 ARVal-Arkansas R,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+2 ARVal-White R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+3 BosMtn-Arkansas R,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+4 BosMtn-White R,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+5 MAP-Arkansas R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+6 MAP-StFrancis R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+7 MAP-White R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+8 MAPBB-Ouachita R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+9 MAPLC-Mississippi R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10 MRLP-St. Francis R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+11 MRLP-White R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+12 OuaMtns-Arkansas R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+13 OuaMtns-Ouachita R,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,1,0,0,0,0,1,0,1,1
+14 OuaMtns-Red R,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1
+15 Ozark-Arkansas R,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0
+16 Ozark-White R,0,0,0,1,1,0,0,0,0,0,0,1,0,1,0,0,1,1,1,0,0,0,0,0
+17 SCP-Ouachita R,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+18 SCP-Red River,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0
