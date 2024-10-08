@@ -26,7 +26,7 @@ par(op)
 
 ####  AREA
 
-fishArea <- read.csv('data/fish_area.csv', row.names = 1)
+fishArea <- read.csv('data/fish_area_new.csv', row.names = 1)
 
 plot(
   fishArea$lat ~ fishArea$area,
