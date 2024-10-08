@@ -1,0 +1,185 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+
+\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage[sc]{titlesec}
+
+\usepackage{hanging}
+
+\newcommand{\assignmentTitle}{Rapoport's Rule: U.S. Freshwater Fishes}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[LE,RO]{\footnotesize \assignmentTitle\ \thepage}
+
+\fancypagestyle{firstpage}
+{
+   \fancyhf{}
+   \lhead{\textsc{bi}~438/638 Biogeography}
+   \rhead{Name: \rule{5cm}{0.4pt}}
+   \renewcommand{\headrulewidth}{0pt}
+%   \fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+%\title{Tutorial: Climate and Distribution}
+%\author{10 Points}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle
+\thispagestyle{firstpage}
+
+\subsection*{\assignmentTitle\ (10 points)}
+
+Rapoport's Rules were based originally on land birds and mammals. You have 
+already explored how the rules fit coastal marine fishes and, to a lesser extent,
+freshwater fishes. 
+
+For this exercise, you will explore whether the rules apply to 
+primary freshwater fishes in the U.S., plus parts of northern Mexico and southern 
+Canada. First, you will explore mean and maximum richness as a function of latitude.
+Second, you will explore whether range size increases with latitude.
+
+The geographic area was divided into a grid of 1° latitude x 1° longitude cells
+(see figure below). If a species was collected in one of the 1° cells, then
+presence was recorded with a 1. Absence was recorded with a 0. The 
+presence/absence data for each cell was recorded for 529 species of North American
+freshwater fishes.
+
+\begin{center}
+	\includegraphics[width=\textwidth]{na_grid}
+\end{center}
+
+\subsubsection*{Important}
+
+\textbf{Think carefully about your predictions.} Is the U.S. uniform from
+south to north? What about east to west? Think about where the U.S. tends
+to be wetter (more precipitation) or more arid (drier). Do some regions
+have more rivers than other regions? Will the U.S. have any regional climate
+effects due to rain shadows or deserts? How might this influence freshwater
+fishes and Rapoport's Rule?"
+
+\newpage
+
+\subsubsection*{Predictions}
+
+\begin{enumerate}
+	\item Open a web browser on your computer and go to \url{https://semobio.shinyapps.io/rapo}. 
+	You will also find a “Rapoport's Rule analysis site” link on our Canvas page (in the Unit 2: Geographic Range module) that you can click instead.
+	
+	\item Read the Introduction page, then click the Predictions tab to begin. 
+	
+	\item Enter your name and enter your predictions. Think about information learned
+	from lecture and previous exercises as you form your predictions.
+	
+	\item Press the Next button when finished with this page.
+	
+\end{enumerate}
+
+\subsubsection*{Species Richness and Area Occupied.}
+
+\begin{enumerate}[resume]
+	\item Study both the Species Richness and Area Occupied plots, and then answer the three questions below the plots.
+	
+	\item When finished, press the Next button for the next tab.
+		
+\end{enumerate}
+
+\subsubsection*{U.S. Range Size}
+
+%	\textbf{Part 1: state range size}
+
+\begin{enumerate}[resume]
+	
+	\item Study this plot carefully. Each circle represents the range of one species.
+	The diameter of the circle is proportional to the total range area occupied by the species.
+	The center of the circle is located at the approximate mid-point of the latitude and 
+	longitude of the range. (The algorithm is crude so some circles end up in the ocean but
+	this is due to the slant of the east coast of the U.S.)
+	
+	\item Things to think about: Why are there more species in the eastern U.S. compared
+	to the western U.S. Why are the range sizes so small in the southwestern U.S.? What
+	about the many small ranges in the south eastern U.S. Where would you say overall
+	species richness is highest in the U.S. Why bigeographic process might explain this pattern?
+	
+	\item Answer the three questions below the figure, then press the Next button.
+
+\end{enumerate}
+
+\subsubsection*{Summarize what you learned}
+
+\begin{enumerate}[resume]
+	
+	\item Enter a summary of the lessons you learned from this exercise, then click the Download button.
+	
+	\emph{Leave your browser open until the message says it is okay to close it}.
+	
+	\item After your \textsc{pdf} report has downloaded,  upload it to the Rapoport's Rule (Freshwater Fishes) drop box on our Canvas page.
+\end{enumerate}
+
+
+\end{document}  
