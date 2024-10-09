@@ -1,0 +1,178 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}                   
+\geometry{bottom=1in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+%\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage{siunitx}
+%\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+%\captionsetup{labelsep=period} % Removes colon following figure / table number.
+%\captionsetup{tablewithin=none}  % Sequential numbering of tables and figures instead of
+%\captionsetup{figurewithin=none} % resetting numbers within each chapter (Intro, M&M, etc.)
+%\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\setlist{leftmargin=*}
+\setlist[1]{labelindent=\parindent}
+\setlist[enumerate]{label=\textsc{\alph*}., ref=\textsc{\alph*}}
+
+\usepackage{hyperref}
+%\usepackage{placeins} %P4ovides \FloatBarrier to flush all floats before a certain point.
+
+\usepackage[sc]{titlesec}
+
+\usepackage{hanging}
+
+\newcommand{\assignmentTitle}{Rapoport's Rule: California Marine Fishes}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[LE,RO]{\footnotesize \assignmentTitle\ \thepage}
+
+\fancypagestyle{firstpage}
+{
+   \fancyhf{}
+   \lhead{\textsc{bi}~438/638 Biogeography}
+   \rhead{Name: \rule{5cm}{0.4pt}}
+   \renewcommand{\headrulewidth}{0pt}
+%   \fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+}
+
+\newcommand{\bigSpace}{\vspace{5\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+%\title{Tutorial: Climate and Distribution}
+%\author{10 Points}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+%\maketitle
+\thispagestyle{firstpage}
+
+\subsection*{\assignmentTitle\ (10 points)}
+
+In a previous exercise, you determined the range size for freshwater
+organisms. Fishes, mussels, and some crayfishes can't cross land so it seems
+reasonable that they may be restricted to just a few watersheds.
+However, coastal marine fishes do not have obvious limitations to their
+distribution. Adults of many coastal marine fishes are able to swim very
+long distances. Thus, at least potentially, more marine fishes may have
+relatively large range sizes compared to those with small ranges. Your
+goal for this exercise is to determine whether coastal marine fishes
+have large range sizes.
+
+Your goal for this exercise is to determine whether California          coastal marine fishes have large range sizes. All 516 species in         the data set occur in California but some species have ranges that extend as far south as 30°S (central Chile, South America) or as far north as 68°N (north of the Arctic Circle, Alaska, North America). The only requirement was that some part of the species' range had to occur within the coastal waters of California. For each degree of         latitude, a species was assigned 1 if present, and 0 if absent.
+
+This exercise helps you analyze range size (number of degrees of latitude occupied) for each species. You will also analyze the number of species present in each degree of latitude.
+
+\subsubsection*{Important}
+
+Follow these instructions carefully. They provide detail and context for some
+of the questions online.  Be sure to also read carefully the 
+information online.  \emph{Fill in all blanks of the online pages.} You will not be 
+able to advance until you have filled in all text areas.
+
+You will often be asked to make predictions. Do not worry about whether your
+prediction is correct or not. You are allowed to be wrong in the sciences. If you are wrong,
+you learn. If you are right, you learn.  Think about the question or questions, then make your
+best prediction.
+
+\subsubsection*{Instructions}
+
+\begin{enumerate}
+	\item Open a web browser on your computer and go to \url{https://semobio.shinyapps.io/range_size_ca}. You will also find a “Geographic Range Size (California) analysis site” link on our Canvas page that you can click instead.
+	
+	\item Read the Introduction page, then click the Predictions tab to begin. 
+	
+	\item Enter your name in the upper left box.
+	
+	\item Read the prompt questions and make your predictions. Enter a prediction for overall range size for coastal marine fishes. Will it be small (a few degrees of latitude), large (many degrees of latitude), or somewhere in between? Why did you make this prediction? 
+	
+	Also, in general terms, where do you think species richness (number of species) will be highest? You do not have to give an exact latitude, but you can enter things like 'close to the equator', or 'at the higher latitudes.' Remember that all species in the data set occur at least partially in California.
+	
+			
+	\item Press the Next button after entering your name and predictions.
+	
+\end{enumerate}
+
+\subsubsection*{Range Size}
+
+\begin{enumerate}[resume]
+	\item Study the histogram for California coastal marine fishes fishes. Do \emph{most} species of fishes show small, moderate, or
+	large range size? Or is it more or less random and even? (Each bin is 5 degrees of latitude.)
+	
+	\item Click on the radio button for Range Extent (this may take a moment to plot). Each vertical bar shows the minimum to maximum latitude for one species of fish. Species with a median latitude above Point Conception (more in next section) are shown in blue. Species with an average latitude below Point Conception are shown in red. The horizontal black line is the latitude of Point Conception. Fishes are sorted (left to right on x-axis) in order of minimum latitude.
+	
+	\item Enter your observations, and then press the Next button.
+		
+\end{enumerate}
+
+\subsubsection*{Point Conception and Species Richness}
+
+%	\textbf{Part 1: state range size}
+
+\begin{enumerate}[resume]
+	
+	\item At approximately what location or latitude is species richness highest? As above, Species with a median latitude above Point Conception are shown in blue. Species with an average latitude below Point Conception are shown in red.
+	
+	\item Tell in your answer whether the results agreed with your prediction but also tell whether you think richness will still be highest around Point Conception or elsewhere along the coast. Explain your reasoning, Enter your observations, and then press the Next button.
+
+\end{enumerate}
+
+\subsubsection*{Summarize what you learned}
+
+\begin{enumerate}[resume]
+	
+	\item Enter a summary of the lessons you learned from this exercise, then click the Download button.
+	
+	\emph{Leave your browser open until the message says it is okay to close it}.
+	
+	\item After your \textsc{pdf} report has downloaded,  upload it to the Geographic Range Size (California) drop box on our Canvas page.
+\end{enumerate}
+
+
+\end{document}  
