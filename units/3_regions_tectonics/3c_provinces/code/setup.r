@@ -9,13 +9,14 @@
 
 # Use pacman to download (if necessary) and load
 # packages requires for this set of exercises.
+options(timeout = 1000)
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(
   "tidyverse",
   "vegan",
   "rnaturalearth",
   "rnaturalearthdata",
-  "rgeos",
+#  "rgeos",
   "sf",
   "maps",
   "ggdendro",
