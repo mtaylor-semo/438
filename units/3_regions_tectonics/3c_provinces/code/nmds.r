@@ -8,9 +8,9 @@ fish.nmds <- metaMDS(fishFile, k = 2, trymax = 100)
 
 ## GGPlot
 
-watershed_scores <- as_tibble(scores(fish.nmds)) %>%
+watershed_scores <- as_tibble(scores(fish.nmds, display = "sites")) %>%
   mutate(
-    watershed = rownames(scores(fish.nmds)),
+    watershed = rownames(scores(fish.nmds, display = "sites")),
     grp = fish.clust.cut
   )
 
@@ -22,8 +22,8 @@ nmdplt <- watershed_scores %>%
     color = as.factor(grp)
   )) +
   geom_text(aes(x = NMDS1, y = NMDS2, label = watershed, color = as.factor(grp)), vjust = -1, hjust = .50) +
-  geom_hline(yintercept = 0, color = "gray70", size = 0.3) +
-  geom_vline(xintercept = 0, color = "gray70", size = 0.3) +
+  geom_hline(yintercept = 0, color = "gray70", linewidth = 0.3) +
+  geom_vline(xintercept = 0, color = "gray70", linewidth = 0.3) +
   scale_colour_manual(values = mycolors[1:clustCut], guide = NULL) +
   coord_equal() +
   theme_bw() +

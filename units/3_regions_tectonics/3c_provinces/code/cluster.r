@@ -24,7 +24,7 @@ fishFile <- getFishFile()
 clustCut <- readCutoff()
 
 
-# fish <- read.csv("mississippi_fishes.csv", row.names = 1)
+7# fish <- read.csv("mississippi_fishes.csv", row.names = 1)
 # Transform the data using hellinger. Necessary for data
 # with many zeros.
 fish.hel <- decostand(fishFile, method = "hellinger")
@@ -44,21 +44,26 @@ fish.clust.cut <- cutree(fish.clust, k = clustCut)
 dend <- as.dendrogram(fish.clust, rotate = TRUE)
 # dend_data <- dendro_data(dend, type = "rectangle", rotate = TRUE)
 
-dend1 <- as.ggdend(dend %>% set("branches_k_color",
-  value = mycolors[1:clustCut], k = clustCut
-) %>%
+
+dend1 <- as.ggdend(
+  dend %>% set(
+    "branches_k_color",
+    value = mycolors[1:clustCut],
+    k = clustCut) %>%
   set("labels_col", value = mycolors[1:clustCut], k = clustCut) %>%
-  set("branches_lwd", 0.5) %>%
-  set("labels_cex", 0.75)) # %>%
+  set("branches_lwd", 2) %>%
+  set("labels_cex", 0.7)) # %>%
 # plot(horiz = TRUE)
 
-denplt <- ggplot(dend1, horiz = TRUE) +
+
+denplt <- ggplot(dend1, horiz = TRUE, aes(linewidth = 3)) +
   scale_x_continuous(expand = c(-1, -1)) +
   scale_y_reverse(expand = c(1, 0)) +
   theme(
     axis.title = element_blank(),
     axis.text = element_blank(),
-    axis.ticks = element_blank()
+    axis.ticks = element_blank(),
+    legend.position = "none"
   )
 
 print(denplt)

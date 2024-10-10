@@ -122,9 +122,11 @@ in the figure are part of the larger Missouri River watershed.
 \end{center}
 
 \begin{enumerate}[resume]
-\item \textbf{Make a prediction.} If you compared the fish fauna from 
+\item \textbf{What would you predict?} If you compared the fish fauna from 
 rivers west of the continental divide  to rivers east of the divide, do you think
-they will he very similar or very different? Explain.%\vspace{8\baselineskip}
+they will he very similar or very different? %Explain.%\vspace{8\baselineskip}
+
+\emph{A reasonable prediction would be that the fish assemblage on the west side of the continental divide would be very different from the fish assemblage on the east side of the divide.}
 \end{enumerate}
 
 
@@ -141,6 +143,7 @@ A dendrogram looks similar to a phylogenetic tree but a dendrogram is based on s
 %based on evolutionary relationships. The dendrogram is based only on similarity
 %of the fauna. 
 Below is the dendrogram from the cluster analysis of Montana fishes.
+
 
 %\begin{center}
 	\includegraphics[width=\linewidth]{montana_cluster}
@@ -168,12 +171,13 @@ Upper Missouri
 \end{multicols}
 
 \begin{enumerate}[resume]
-\item \textbf{Does the dendrogram support your prediction?} Does the dendrogram appear
+\item \textbf{Does the dendrogram support the prediction?} Does the dendrogram appear
 to support the prediction that the rivers west of the continental divide are very different
 from rivers east of the divide?%\vspace{10\baselineskip}
+
+\emph{Not quite.} 
 \end{enumerate}
 
-\newpage
 
 You may have been surprised to see that the Kootenai and Clark Fork watersheds 
 (west of the divide) appear to be similar to Saskatchewan and the Upper Missouri 
@@ -182,6 +186,7 @@ the prairie regions (flat lands) of Montana. The right cluster contains watershe
 the mountainous region of Montana. Thus, the mountainous watersheds may actually
 have a more similar fauna due to similar habitat, despite the presence of the continental
 divide.
+
 
 \subsubsection*{Non-metric multidimensional scaling}
 
@@ -200,15 +205,13 @@ have the same color in the figure.
 	\includegraphics[width=1\textwidth]{montana_pco}
 \end{center}
 
-Compare this plot to the dendrogram shown above. Watersheds with similar fauna cluster
+Compare this plot to the dendrogram shown above. Watersheds with similar fish assemblages cluster
 together in the figure. Notice that the Kootenai and Clark Fork (watersheds west of the 
 continental divide) are clearly isolated from the rivers east of the divide. Furthermore, 
 the Saskatchewan and Upper Missouri are almost as different from each other as they are 
 from the other watersheds east of the divide. Although the Musselshell clustered with the 
-Upper Yellowstone and Bighorn watersheds in the dendrogram, the \textsc{pco} results 
+Upper Yellowstone and Bighorn watersheds in the dendrogram, the ordination results 
 suggest it has a fauna more similar to the Milk, Lower Yellowstone, and Lower Missouri.
-
-\newpage
 
 Why do these discrepancies exist between cluster and \textsc{nmds} analyses? The
 differences show why you must inspect your data carefully. Montana has relatively few fish
@@ -217,13 +220,32 @@ influencing the cluster results. The math that underlies \textsc{nmds}
 is much better than cluster analysis at identifying and representing the differences. So, you will use both cluster and \textsc{nmds} analyses
 today.
 
-\subsubsection*{Your snalyses}
+\subsubsection*{Your analyses}
+
+Visit the course Canvas page.  Download the following files from the Provinces Data and Code page. \emph{Place them in the same folder as your R Project file for this course.}
+
+
+\hspace*{1em} setup.r \newline
+\hspace*{1em} cluster.r\newline
+\hspace*{1em} nmds.r \newline
+\hspace*{1em} the csv file for your assigned data set 
+
+
+Double-click your project file to launch R~Studio. Alternatively, launch R~Studio, then open the project file. \textbf{Do this before any step below.}
+
 
 You have been given the name of a data set, with a number next to it. The number will determine  the number of clusters to be identified for your cluster analysis and establish the number
-of colors to be displayed on your dendrogram and for your \textsc{nmds} results.
+of colors to be displayed on your dendrogram and for your \textsc{nmds} results. 
+
+You have also been given a map of the watersheds for your state that are in the data set. In many cases, the watersheds will be listed as “upper watershed” and “lower watershed” (or something similar) to indicate that the watershed spans across the fall line.
 
 \begin{enumerate}[resume]
-\item \textbf{If and only if you quit RStudio since the previous exercise,} rerun \textsc{source("setup.r")} to load the libraries and functions needed for this exercise. Disregard this part if you haven't quit RStudio.
+\item Run the following command to install certain R packages and set up necessary variables.%\textbf{If and only if you quit RStudio since the previous exercise,} rerun \textsc{source("setup.r")} to load the libraries and functions needed for this exercise. Disregard this part if you haven't quit RStudio.
+
+\begin{verbatim}
+	source("setup.r")
+\end{verbatim}
+
 
 \item \textbf{Perform a cluster analysis}. Run the code below to perform your cluster analysis. When prompted, enter the assigned file name and then the number of clusters for your data set.
 \end{enumerate}
@@ -231,6 +253,8 @@ of colors to be displayed on your dendrogram and for your \textsc{nmds} results.
 \begin{verbatim}
 source("cluster.r")
 \end{verbatim}
+
+Compare the results of your cluster analysis to the map of the state watersheds. Focus especially on the watersheds above and below the fall line. See the final page for more ideas to think about.
 
 
 \begin{enumerate}[resume]
@@ -244,9 +268,8 @@ source("nmds.r")
 
 \textit{Use the left and right arrows above your plots to move back and forth between the cluster and \textsc{nmds} plots.} Compare the dendrogram clusters to the clusters (same color) in the \textsc{nmds} plot.
 
-Compare both plots to the map of the watersheds for your state.  Use that map, along with the large U.S.~watershed map to 
-get a sense of your results. Dr.~Taylor can help you locate the watersheds, if you want.%\emph{Here is where I ran out of time. Ask for help.} %
-
+Compare both plots to your watershed map, along with the large U.S.~watershed map to 
+get a sense of your results. Dr.~Taylor can help you locate the watersheds on the big map.%\emph{Here is where I ran out of time. Ask for help.} %
 
 \subsubsection*{Thought questions to guide your interpretion}
 
@@ -258,4 +281,8 @@ What is the first split in your cluster? Do you find differences for rivers that
 \end{enumerate}
 
 
-\end{document}  
+
+\textbf{Type your interpretation into a Word document and upload it to the drop box for this assignment.}
+
+
+\end{document}

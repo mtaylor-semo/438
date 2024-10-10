@@ -17,27 +17,28 @@ fish.pco.big <- fish.pco$points[-c(1,2),]
 fish.pco.small <- fish.pco$points[c(1,2),]
 
 plot(fish.pco$points, type = "n", 
-     main = 'Fishes\nPrincipal Coordinates', 
+     main = 'Montana Fishes Ordination', 
      xlab = 'PCO 1', ylab = 'PCO 2', 
      col=mycolors[fish.clust.cut], 
      bg=mycolors[fish.clust.cut],
-     pch=21, cex=1.5, las=1)
+     pch=21, cex=1.4, las=1)
 
 points(x = fish.pco.big[,1],
        y = fish.pco.big[,2],
        col=mycolors[fish.clust.cut[3:10]], 
        bg=mycolors[fish.clust.cut[3:10]],
-       pch=21, cex=1.5, las=1)
+       pch=21, cex=1.4, las=1)
 points(x = fish.pco.small[,1],
        y = fish.pco.small[,2],
        col=mycolors[fish.clust.cut[1:2]], 
        bg=mycolors[fish.clust.cut[1:2]],
-       pch=21, cex=1.5, las=1)
+       pch=21, cex=1.4, las=1)
 
 text(fish.pco.big, labels = rownames(fish.pco.big), 
-     col=mycolors[fish.clust.cut[3:10]], adj=1.1, cex=1.5)
+     col=mycolors[fish.clust.cut[3:10]], adj=1.1, cex=1.3)
 text(fish.pco.small, labels = rownames(fish.pco.small), 
-     col=mycolors[fish.clust.cut[1:2]], adj=1.1, cex=1.5, pos = 4)
+     col=mycolors[fish.clust.cut[1:2]], adj=1.1, cex=1.3, pos = 4)
 
 abline(h=0, col='grey50', lty=2)
 abline(v=0, col='grey50',lty=2)
+
