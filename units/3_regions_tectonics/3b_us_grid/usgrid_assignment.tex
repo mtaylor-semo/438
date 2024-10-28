@@ -94,13 +94,12 @@ the final data matrix.
 
 \begin{enumerate}%[leftmargin=*]
 \item \textbf{Make a prediction.} Where in the U.S.~do you think species richness will be the highest? Northeastern U.S.? Southeastern
-U.S.? Northwest? Southwest? Midwest? Take a look at the map of U.S.~rivers that was given to you?  Below, name the region and 3--4 rivers in that 
+U.S.? Northwest? Southwest? Midwest? Take a look at the map of U.S.~rivers that was given to you.  Below, name the region and 3--4 rivers in that 
 region where you think diversity may be the highest.\vspace{10\baselineskip}
 \end{enumerate}
 
 \begin{enumerate}[resume]
-\item \textbf{Download your
- assigned data files and all ``.r'' files} files from the "Range Size data files” page of the “Data Analysis” module in Canvas. Move the files to your “biogeo” folder with your “biogeo.Rproj” file.
+\item \textbf{Download all data files and all ``.r'' files} files from the "Pleistocene data files” page of the “Unit 4: Pleistocene” module in Canvas. Move the files to your “biogeo” folder with your “biogeo.Rproj” file.
 \end{enumerate}
 
 You will run each ".r” file in RStudio as instructed. If you get an error at
@@ -135,7 +134,7 @@ coordinates to your watershed map.
 source("nafish_diversity.r") 
 \end{verbatim}
 
-\textit{If at any time you do not see a plot, be sure the “Plot” tab is selected in the lower right pane. If the tab is selected and you still do not see a plot, holler for Dr.~Taylor.}
+\textit{If at any time you do not see a plot, be sure the “Plot” tab is selected in the lower right pane.}
 
 Zoom the map to full size and admire its glory! Your map covers
 the area between 125°\textsc{w} to 65°\textsc{w} and between 24°\textsc{n} to 49°\textsc{n.} Compare those
@@ -158,7 +157,7 @@ of species, with efficient use of conservation dollars.
 
 Below is a list of taxonomic groups (mostly families, a couple genera) of North American fishes.  These groups
 have relatively large numbers of species with different distribution
-patterns across the U.S. You have been given a selection of five of these groups to plot.
+patterns across the U.S. You will plot the distribution for each of the 10 groups.
 
 \begin{multicols}{2}
 catostomid \\
@@ -174,9 +173,9 @@ salmonid
 \end{multicols}
 
 \begin{enumerate}[resume]
-\item \textbf{Plot the five data files assigned to you}. Run the command below \emph{once} for each group listed. (Remember that you can recall
+\item \textbf{Run the command below \emph{once} for each group listed.} (Remember that you can recall
 previous commands to plot the map by pressing the up cursor
-arrow key to recall previous commands.) You will be prompted to enter one of the group names each time you run the command. Compare the distribution of each group as it is mapped.
+arrow key to recall previous commands.) You will be prompted to enter one of the group names each time you run the command. Study the distribution of each group as it is mapped.
 \end{enumerate}
 
 \begin{verbatim}
@@ -185,22 +184,65 @@ source("diversity.r")
 
 
 \begin{enumerate}[resume]
-\item \textbf{On the next page, write the name of each group and
-describe the distribution of the fishes.} Are they northern? Eastern U.S.?
-Mostly along a coastline? Which of your groups have similar or  different distributions? \vspace{\baselineskip}
+\item \textbf{On the next page, describe the distribution for each group as you plot it.} Think about the group distibution relative the glacial maximum and the fall line. Are they northern? Eastern U.S.?
+Mostly along a coastline? Which of your groups have similar or  different distributions? 
+
+I suggest also that you read the questions at the end to think about answers as you plot the maps. \vspace{\baselineskip}
+
 %How do the distributions relate to the Pleistocene glacial maximum and the Fall Line?
+
+\newpage
+
+This list is alphabetical but you can explore them in any order.
+
 	\begin{enumerate}[label=\alph*., leftmargin=*]
-		\item %\vspace{5\baselineskip}
 
-		\item \vspace{5\baselineskip}
+		\item Catostomids (suckers)\vspace{3\baselineskip}
 
-		\item \vspace{5\baselineskip}
+		\item Cottids (sculpins)\vspace{3\baselineskip}
 
-		\item \vspace{5\baselineskip}
+		\item Cyprinids1 (\textit{Notropis} and \textit{Cyprinella})\vspace{3\baselineskip}
 
-		\item \vspace{5\baselineskip}
+		\item Cyprinids2 (other minnow and shiners)\vspace{3\baselineskip}
+
+		\item Cyprinodonts (topminnows, ex.~\textit{Fundulus})\vspace{3\baselineskip}
+
+		\item \textit{Etheostoma} (darters)\vspace{3\baselineskip}
+
+		\item \textit{Fundulus} (topminnows)\vspace{3\baselineskip}
+
+		\item Ictalurids (catfishes)\vspace{3\baselineskip}
+
+		\item Percid (perches ex.~\textit{Etheostoma})\vspace{3\baselineskip}
+
+		\item Salmonids (salmon and trout)\vspace{3\baselineskip}
 	\end{enumerate}
 \end{enumerate}
 
+\subsubsection*{Questions to answer. Turn in your complete answers before leaving.}
+
+\smallskip
+
+\begin{enumerate}[resume]
+	\item \textbf{Which two group have their greatest species richness concentrated well north of the glacial maxima line?} Carefully study the areas where these groups have the highest richness. If these regions were covered by glaciers, where do you think the ancestors of these species might have survived? \textit{Note:} the freshwater rivers to the south are not directly connected to the regions with highest richness.
+
+	\vspace{6\baselineskip}
+
+	\item \textbf{Which group or groups of fishes have greatest species richness in the coastal plain?} Some of the coastal species in this data set extend from the Gulf of Mexico, around peninsular Florida, and part way up the Atlantic Coast. How could these coastal species have such a broad range if the freshwater rivers were never connected? (Hint: Do you think these coastal rivers are strictly freshwater all the way to the their mouths?)
+	
+	\vspace{6\baselineskip}
+	
+	\item \textbf{Which groups have the greatest species richness in the interior (eastern and central) highlands?}  Why do you think these regions have very high richness compared to the coastal plain or more northern latitudes? \textit{Be specific.}
+	
+	\vspace{6\baselineskip}
+
+	\item \textbf{Species richness of catostomids and ictalurids is broadly distributed across the eastern \textsc{u.s.?}} Hypothesize a reason why this might be the case. \textsc{Hint:} I'm sure a hint would be welcomed.
+
+	\vspace{6\baselineskip}
+	
+	\item \textbf{Grad students only:} Write a question that you think I could have asked about the data that would help your interpretation. You must write a true and serious question.
+	
+
+\end{enumerate}
 
 \end{document}  

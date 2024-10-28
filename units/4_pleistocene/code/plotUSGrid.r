@@ -1,6 +1,7 @@
-setwd('~/Documents/stat/rwork/usgrid/csv_files')
+#setwd('~/Documents/stat/rwork/usgrid/csv_files')
 tmpGrid <- array(0, dim = c(26,61))
-fileNames = list.files('.', pattern = '*.csv')
+#fileNames = list.files('.', pattern = '*.csv')
+fileNames = list.files(pattern = '*.csv')
 
 numFiles = length(fileNames)
 
@@ -19,13 +20,13 @@ for (i in 1:gridsize) {
 	j = j-1
 }
 
-setwd('~/Documents/stat/rwork/usgrid')
+#setwd('~/Documents/stat/rwork/usgrid')
 
 write.table(NAgrid, file='NAfish_grid.txt', sep=',', quote=FALSE)
 
 #############################
 
-setwd('~/Documents/stat/rwork/usgrid')
+#setwd('~/Documents/stat/rwork/usgrid')
 
 NAgrid <- read.csv('NAfish_grid.txt')
 bnd <- read.table('boundaries.txt')
