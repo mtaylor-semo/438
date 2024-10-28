@@ -1,4 +1,4 @@
-setwd("~/teach/438/units/5_island_biogeo/analysis/2_galapagos")
+# setwd("~/teach/438/units/5_island_biogeo/analysis/2_galapagos")
 
 ## Read in the data
 birds <- read.csv("birds.csv", header = TRUE, row.names = 1)
