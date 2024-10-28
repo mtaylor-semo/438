@@ -1,0 +1,90 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/lectures/}%
+	{/Users/goby/Pictures/teach/common/}%}%
+	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\usepackage{calc}
+\usepackage{hyperref}
+
+\newcommand\HiddenWord[1]{%
+	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
+}
+
+\begin{document}
+%\lecture{instructor}{instructor}
+
+\begin{frame}[t]{Recall your “champagne” plot to explore Rapoport's Rule.}
+
+	\vspace{-0.5\baselineskip}
+
+	\includegraphics[width=\linewidth]{champagne_plot}
+
+\end{frame}
+%
+\begin{frame}[t]{You will also analyze distributions of these groups of fishes.}
+
+	
+		\includegraphics[width=\textwidth]{fish_groups}
+	
+\end{frame}
+%
+%
+\begin{frame}{Location of glacial maxima and fall line.}
+	\vspace{-\baselineskip}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{pleistocene_glacial_fall_line}
+	\end{center}
+	\begin{tikzpicture}[overlay, line width=2pt]
+		\draw [<-] (5.7,2.5) -- (4.5,2.5) ;
+		\draw (4.5,2.5) node[anchor=east] {Fall Line} ;
+		
+		\draw [<-] (5.5,5.5) -- (4.3,5.5) ;
+		\draw (4.3,5.5) node[anchor=east] {Glacial Maxima} ;
+	\end{tikzpicture}
+\end{frame}
+
+\end{document}
