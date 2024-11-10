@@ -6,15 +6,15 @@ pacman::p_load(patchwork, ggplot2)
 
 herp <- read.csv("carib_herps.csv")
 
-herp$lspecies <- log(herp$species)
-herp$larea <- log(herp$area)
+herp$lspecies <- log10(herp$species)
+herp$larea <- log10(herp$area)
 
 larea.lm <- lm(lspecies ~ larea, data = herp)
 
 summary(larea.lm)
 
-plot(lspecies ~ larea, data = herp, pch = 19, cex = 0.5, xlim = c(0, 12), xlab = "Island Area (log)", ylab = "Species Richness (log)")
-text(lspecies ~ larea, data = herp, labels = herp$island, pos = 2, offset = 0.5, cex = 0.8)
+plot(species ~ area, data = herp, pch = 19, cex = 0.7, xlab = "Island Area (log)", ylab = "Species Richness (log)", log = "xy")
+text(species ~ area, data = herp, labels = herp$island, pos = 2, offset = 0.5, cex = 0.8)
 abline(larea.lm)
 
 
