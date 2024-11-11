@@ -147,20 +147,20 @@ summary(area.lm)
 
 For our purposes, you can ignore most of the information displayed.  Look at the \texttt{Coefficients:} table. Notice the three asterisks at the end of the line.  This means that there is a highly significant relationship between species richness and island area ($p = 1.13 \times 10^{-7}$.  To get a sense of how much variation in species richness is due to island size, look for the value that follows \texttt{Adjusted R-squared}. The value will be around $0.997$, plus or minus a few thousandths.  $R^2$ is a measure of how much variation in the dependent variable (species richness) is explained by the dependent variable (island area). $R^2$ varies from 0 (none of the variation is explained) to 1 (100\% of the variation is explained). Here, $R^2 \approx 0.997$ means that island size accounts for almost all of the island richness on the islands, at least for this data set and regression model.
 
-Before plotting, enter the following code. It will not seem to do anything but may be helpful if a certain problem arises.
-
-\texttt{opfix <- par(op)}
+%Before plotting, enter the following code. It will not seem to do anything but may be helpful if a certain problem arises.
+%
+%\texttt{opfix <- par(op)}
 
 \newpage
 
 Plot the data and regression results.  The \texttt{abline()} function plots the regression line from the linear regression.  Use a tilde (\textasciitilde) between the variables to be plotted. Type each command on a single line into the console.
 
 \begin{verbatim}
-plot(lspecies ~ lsize, data = herp, pch = 19, cex = 0.7, xlim = c(0, 12), 
+plot(lspecies ~ larea, data = herp, pch = 19, cex = 0.7,  
     xlab = "Island Size", ylab = "Species Richness")
-text(lspecies ~ lsize, data = herp, labels = herp$island, pos = 2,
+text(lspecies ~ larea, data = herp, labels = herp$island, pos = 2,
     offset = 0.5, cex = 0.8)
-abline(lsize.lm)
+abline(area.lm)
 \end{verbatim}
 
 \subsection*{Longhorn beetles in the Florida Keys}
@@ -168,18 +168,17 @@ abline(lsize.lm)
 This data set contains species richness for a family of beetles, Cerambycidae, that were surveyed on the Florida Keys. This data set contains both island size and distance (from what, I do not know).  Read and log transform the data, then perform the regression analysis.  For these data, you will use both island size and island distance.  You will do two regression analyses and plot the results of both.
 
 \begin{verbatim}
-beetle <- read.csv('beetles.csv', header = TRUE)
+beetle <- read.csv('florida_beetles.csv', header = TRUE)
 
 beetle$lspecies <- log10(beetle$species)
 beetle$larea <- log10(beetle$area)
 beetle$ldist <- log10(beetle$distance)
 
-area.lm <- lm(ln_species ~ ln_area, data = beetle)
+area.lm <- lm(lspecies ~ larea, data = beetle)
 summary(area.lm)
 
-dist.lm <- lm(ln_species ~ ln_dist, data = beetle)
+dist.lm <- lm(lspecies ~ ldist, data = beetle)
 summary(dist.lm)
-
 \end{verbatim}
 
 Enter the results of your linear regression analysis below.
@@ -270,9 +269,9 @@ Plot all three analyses side by side:
 \begin{verbatim}
 op <- par(mfrow = c(1, 3))
 
-plot(lspecies ~ lsize, data = mtn, xlab = "Mountain Size",  
+plot(lspecies ~ larea, data = mtn, xlab = "Mountain Size",  
     ylab = "Species Richness")
-abline(size.lm)
+abline(area.lm)
 
 plot(lspecies ~ ldistmtn, data = mtn, xlab = "Mountain Distance",
     ylab = "Species Richness")
@@ -315,7 +314,6 @@ summary(area.lm)
 plot(lspecies ~ larea, data = arthro.new, xlab = "Island Size",
     ylab = "Species Richness")
 abline(area.lm)
-
 \end{verbatim}
 
 I want you to view the effect of size reduction independently for each island.  You could build a plot separately for each island but that would be time-consuming.  Instead, you will use an R package called \texttt{lattice}.  It will produce a separate graph for each of the nine islands monitored, including control island IN1. You will use the untransformed data.
@@ -323,7 +321,6 @@ I want you to view the effect of size reduction independently for each island.  
 
 \begin{verbatim}
 library(lattice)	# this loads the lattice package.
-
 \end{verbatim}
 
 %\newpage
