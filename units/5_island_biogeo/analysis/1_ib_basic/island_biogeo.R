@@ -42,9 +42,9 @@ ggplot(herp, aes(x = larea, y = lspecies)) +
 
 beetle <- read.csv("florida_beetles.csv")
 
-beetle$lspecies <- log(beetle$species)
-beetle$larea <- log(beetle$area)
-beetle$ldist <- log(beetle$distance)
+beetle$lspecies <- log10(beetle$species)
+beetle$larea <- log10(beetle$area)
+beetle$ldist <- log10(beetle$distance)
 
 larea.lm <- lm(lspecies ~ larea, data = beetle)
 summary(larea.lm)
@@ -108,10 +108,10 @@ p1 + p2
 
 mtn <- read.csv("montaine_mammals.csv")
 
-mtn$lspecies <- log(mtn$species)
-mtn$larea <- log(mtn$area)
-mtn$ldistmtn <- log(mtn$dist_mtn)
-mtn$ldistmain <- log(mtn$dist_mainland)
+mtn$lspecies <- log10(mtn$species)
+mtn$larea <- log10(mtn$area)
+mtn$ldistmtn <- log10(mtn$dist_mtn)
+mtn$ldistmain <- log10(mtn$dist_mainland)
 
 larea.lm <- lm(lspecies ~ larea, data = mtn)
 summary(larea.lm)
@@ -199,8 +199,8 @@ p1 + p2 + p3
 
 arthro <- read.csv("arboreal_arthropods.csv")
 
-arthro$lspecies <- log(arthro$species)
-arthro$larea <- log(arthro$area)
+arthro$lspecies <- log10(arthro$species)
+arthro$larea <- log10(arthro$area)
 
 
 # copy all of the data except for islands matching IN1
@@ -215,7 +215,7 @@ abline(larea.lm)
 library(lattice) # this loads the lattice package.
 
 xyplot(species ~ area | island,
-  data = arthro.new, aspect = "xy", type = "l",
+  data = arthro, aspect = "xy", type = "l",
   index.cond = list(c(5, 6, 7, 8, 9, 3, 1, 2, 4)),
   xlab = "Island Size", ylab = "Species Richness",
   panel = function(x, y, ...) {
