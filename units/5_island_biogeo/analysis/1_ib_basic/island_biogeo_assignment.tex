@@ -188,7 +188,7 @@ Enter the results of your linear regression analysis below.
 	
 	\item Area \textit{p:}
 
-	\item  Distance \textit{Adjusted R²:} 
+	\item  Distance Adjusted \textit{R²:} 
 	
 	\item Distance \textit{p:}
 	
@@ -196,6 +196,8 @@ Enter the results of your linear regression analysis below.
 \end{enumerate}
 
 \vspace{4\baselineskip}
+
+\newpage
 
 Plot both results side by side:
 
@@ -316,7 +318,7 @@ plot(lspecies ~ larea, data = arthro.new, xlab = "Island Size",
 abline(area.lm)
 \end{verbatim}
 
-I want you to view the effect of size reduction independently for each island.  You could build a plot separately for each island but that would be time-consuming.  Instead, you will use an R package called \texttt{lattice}.  It will produce a separate graph for each of the nine islands monitored, including control island IN1. You will use the untransformed data.
+I want you to view the effect of size reduction independently for each island.  You could build a plot separately for each island but that would be time-consuming.  Instead, you will use an R package called \texttt{lattice} to produce a separate graph for each of the nine islands monitored, including control island IN1. You will use the untransformed data.
 
 
 \begin{verbatim}
