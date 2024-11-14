@@ -8,8 +8,8 @@ islands <- read.csv("islands.csv", header = TRUE)
 #islands <- read.csv("http://mtaylor4.semo.edu/biogeo/islands.csv", header = TRUE)
 
 # Log transform area and elevation
-islands$ln_area <- log(islands$area)
-islands$ln_elev <- log(islands$elevation)
+islands$log_area <- log10(islands$area)
+islands$log_elev <- log10(islands$elevation)
 
 # Tally and plot number of species per island
 num_species <- colSums(birds) # skip first column with species names
