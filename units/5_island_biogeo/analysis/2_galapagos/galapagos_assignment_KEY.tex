@@ -1,0 +1,461 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+	\graphicspath{{/Users/goby/Pictures/teach/438/lab/}} % set of paths to search for images
+
+\usepackage{geometry}
+\geometry{letterpaper}  
+\geometry{bottom=0.75in}                 
+%\geometry{bottom=0.65in, top = 0.65in}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{amssymb}
+%\usepackage{mathtools}
+%	\everymath{\displaystyle}
+
+\usepackage{pdflscape}
+
+\usepackage{color}
+%\pagenumbering{gobble}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Lining}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Linux Libertine Mono O}
+\usepackage{microtype}
+
+\usepackage{unicode-math}
+%\setmathfont[Scale=MatchLowercase]{Asana-Math.otf}
+\setmathfont{XITS Math}
+
+% To define fonts for particular uses within a document. For example, 
+% This sets the Libertine font to use tabular number format for tables.
+%\newfontfamily{\tablenumbers}[Numbers={Monospaced}]{Linux Libertine O}
+%\newfontfamily{\libertinedisplay}{Linux Libertine Display O}
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multicol}
+%\usepackage{listings}
+\usepackage[justification=raggedright, singlelinecheck=off]{caption}
+\captionsetup{labelsep=period} % Removes colon following figure / table number.
+\captionsetup[table]{skip=0pt}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=-\parindent}
+\setlist[1]{labelindent=\parindent}
+
+
+\usepackage[sc]{titlesec}
+
+\newcommand{\coursename}{\textsc{bi} 438/638: Biogeography}
+\newcommand*{\assignmentTitle}{Island bioeography of Galapagos endemic birds}
+
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+%\lhead{}
+%\chead{}
+%\rhead{Name: \rule{5cm}{0.4pt}}
+%\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\footnotesize \assignmentTitle{} \thepage}
+\fancyhead[L]{\footnotesize Biogeography}
+
+
+\fancypagestyle{first_page}{%
+	\fancyhf{}
+	\fancyhead[L]{\coursename}
+	\fancyhead[R]{\textbf{KEY}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+
+\newcommand{\bigSpace}{\vspace{4\baselineskip}}
+
+\newlength{\myLength}
+\setlength{\myLength}{\parindent}
+
+%\title{Island Biogeography}
+%\author{}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+%\maketitle
+%\section{}
+%\subsection{}
+\thispagestyle{first_page}
+
+\section*{\assignmentTitle}
+
+\textsc{Note:} This is the second draft of this exercise, and a framework for future development. “I have ideas, not time,” said everyone, ever. 
+
+\textit{Read the instructions carefully throughout so that you understand how to interpret your analysis.}
+
+More than 180 species of birds have been counted among the Galapagos Islands but 24 are endemic to the archipelago (Table~\ref{tab:endemic}). You will explore the relationship between endemic species richness, island area, and island elevation. Enter the R code below and use the tables at the end of this handout to answer the following questions about the distribution of Galapagos-endemic birds.  
+
+\subsubsection*{Get the data}
+
+Download “birds.csv” and “islands.csv” from the “Island Biogeography Part 2: Galapagos” page from the “Unit 5: Island Biogeography module.”
+
+\textbf{Place both files in the same folder as your “biogeo.Rproj” file.} This will be the same folder you've been using for analyses all semester long.
+
+\subsubsection*{Analysis}
+
+Load the data and log-transform $\left(\mathrm{log}_{10}(x)\right)$ the island area and elevation.\footnote{R uses \texttt{log10()} for base-10 logs and \texttt{log()} for natural logs. In text and on calculators, “log” is used for base-10 logs. This text uses \texttt{log10} for consistency with the R~code.} 
+
+{%\small
+\begin{verbatim}
+birds <- read.csv("birds.csv", header = TRUE, row.names = 1)
+islands <- read.csv("islands.csv", header = TRUE)
+
+islands$log_area <- log10(islands$area)
+islands$log_elev <- log10(islands$elevation)
+\end{verbatim}
+}
+
+\medskip
+
+\fbox{\parbox{\linewidth}{Common logarithms (base 10) are an easy way to show exponential relationships: $\log{(100)} = 2.$ and $\log{(1000)} = 3.$ Thus, in the plots you'll make below, a point at 2 on the x-axis indicates an island that is 10$\times$ smaller than an point at 3 on the x-axis. Every increase of 1 on the x-axis of the graph is a 10$\times$~increase in island area. }}
+
+\vspace{\baselineskip}
+
+
+Tally the number of species on each island and plot the results. The  type of plot is called a Cleveland dot plot.\footnote{Named for Dr.~William S.~Cleveland, who developed this style of plot.} The dot chart is one of the best ways to visualize counts and similar types of data.
+
+{%\small
+\begin{verbatim}
+num_species <- colSums(birds) 
+
+dotchart(sort(num_species), main = "Species per island", pch = 19)
+\end{verbatim}
+}
+
+\newpage
+
+\begin{enumerate}[resume]
+\item Which islands have the fewest (10 or fewer) species? \textsc{Note:} You can estimate the numbers from the plot or type \texttt{sort(num\_species)} into the R console. Or both.
+
+\textbf{Genovesa: 6. Pinta: 7. Marchena 8. Bartolomé and Española: 9, Pinzon: 10}
+
+\vspace{2\baselineskip}
+
+\item Which islands have the most (15 or more) species? Do any islands have all 24 species?
+
+\textbf{Floreana: 15. Santa Cruz: 15. Santiago,: 16. Fernandina and Isabella: 17. No island has all 24.}
+
+\vspace{2\baselineskip}
+
+\item Look up the islands on the provided map (may also be on screen). Describe the patterns you detect, in terms of island size and distance from other islands, for islands with the fewest and greatest number of species.
+
+\textbf{The smallest and most distant islands have the fewest species. The largest islands have the most species.}
+
+\vspace{2\baselineskip}
+
+\item How many species are found on Floreana and on Marchena? They are islands of similar size. Why do you think they have very different numbers of species? Discuss possibilities with your group.
+
+\textbf{Marchena is more isolated. Floreana is closer to some of the larger islands.}
+
+\vspace{2\baselineskip}
+
+\item How many species are found on North Seymour? What islands have the same number of species? North Seymour is the second smallest island listed. Why do you think North Seymour has so many species? Discuss possibilities with your group.
+
+\textbf{North Seymour has 13 species, as does San Cristobal and Santa Fe. N.S. is essentially part of Santa Cruz (15) and Baltra (14).}
+
+\end{enumerate}
+
+Tally the number of islands occupied by each species and plot the result.
+
+\begin{verbatim}
+num_islands <- rowSums(birds)
+dotchart(sort(num_islands), main = "Islands per species", pch = 19)
+\end{verbatim}
+
+\medskip
+
+
+\begin{enumerate}[resume]
+\item Which species are endemic to a single island? Reference the plot or enter \texttt{sort(num\_islands)} into the R console. Or both.
+
+\textbf{\textit{Mimus trifasciatus, M. macdonaldi, M. melanotis,} and \textit{Camarhynchus pauper}}
+
+\vspace{2\baselineskip}
+
+\item Which species are found on the greatest number of islands? Are any species found on all 16 islands?
+
+\textbf{\textit{Zenaida galaoagoensis, Myiarchus magnirostris, Geospize fuliginosa} all in 15 islands. None on all 16.}
+
+\end{enumerate}
+
+Perform a linear regression to determine if area is a significant predictor of the number of species. Show the summary table in the console and plot the results.
+
+\begin{verbatim}
+area.lm <- lm(num_species ~ islands$log_area)
+summary(area.lm)
+plot(num_species ~ islands$log_area)
+abline(area.lm) # Add a regression line
+\end{verbatim}
+
+\subsubsection*{Interpret the linear model}
+
+\emph{Look at the summary table and the plot together as you read this section.}
+
+Recall from mathematics that the equation of a straight line is $Y = mX + b.$ Here, $Y$ is the predicted number of species. $X$ is the common log of island area (\texttt{islands\$log\_area}).  $m$ is the slope of the line and $b$ is the Y-axis intercept. 
+
+The slope $(m)$ of the regression line tells how much species richness should change (Y-axis) for a given change of \texttt{islands\$log\_area} (X-axis). The slope is given in the Estimate column of the summary table, here 1.9186. 
+
+The Y-axis intercept $(b)$ of the equation obtains when $X$ is equal to zero. The intercept is shown in the Estimate column of your summary table is \emph{estimated}, here 8.6463. The smallest possible island should have about 8.6 species on average. Look at your plot. Notice the regression line intersects the Y-axis at about 8.6.
+
+Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}.” One or more asterisks means that the independent variable (\texttt{log\_area} in this case) is a significant predictor $(p < 0.05)$ for the dependent variable (number of species).
+
+\begin{enumerate}[resume]
+\item Is island area a significant predictor for the number of species present on an island?
+
+\textbf{Island area is a significant predictor (0.0264).}
+
+\vspace{2\baselineskip}
+
+\end{enumerate}
+
+For interpretation, the linear model to predict the relationship between number of species and log\_area can be written as
+
+\[ \mathrm{Species} = 1.92\left(\mathrm{log\_area}\right) + 8.65.\]
+
+To predict how the number of species should \emph{change} for a given  increase of island area, use $m \times \log(x)$ where $x$ is the proportional increase of area. For example, to predict the change in number of species for an island area that is 2$\times$ larger, multiply the coefficient (1.92) by $\log{(2)},$
+
+
+ \[ 1.92 \times \log 2 = 0.58.\]
+ 
+An increase of 2$\times$ would add roughly 0.6 more species. What happens if we make an island 10$\times$ larger? 
+ 
+ \[ 1.92 \times \log10 = 1.9.\]
+ 
+An island 10$\times$ larger than another is \emph{predicted} to have about 2 more species than the smaller island.
+ 
+\begin{enumerate}[resume]
+\item Does our model work if we compare San Cristóbal to Isabella? Isabella is about 8.4$\times$ larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
+
+\textbf{ 1.92 * log10(8.4) = 1.8 or about 2}
+
+\vspace{2\baselineskip}
+ 
+\item Does this prediction match the actual difference in the number of species? 
+ 
+\textbf{No. Isabella has 4 more species than San Cristóbal, not 2.}
+
+\vspace{2\baselineskip}
+ 
+\item The linear model \emph{predicts} species richness based on island area, if all other variables were constant. The predicted values are represented by the regression line in your plot.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
+
+\textbf{Open ended. Distance and elevation are good answers. Elevation sets stage.}
+
+\vspace{2\baselineskip}
+
+\end{enumerate}
+ 
+%\newpage
+
+Test to see if elevation is a significant predictor of species number.
+
+\begin{verbatim}
+elev.lm <- lm(num_species ~ islands$log_elev)
+summary(elev.lm)
+plot(num_species ~ islands$log_elev)
+abline(elev.lm)
+\end{verbatim}
+
+\begin{enumerate}[resume]
+
+\item Based on the intercept $(b)$, what is the minimum number of species present on an island with the lowest possible elevation?
+
+\textbf{3.281 or about 3 species.}
+
+\vspace{2\baselineskip}
+
+\item What is the slope $(m)$ for island elevation?
+
+\textbf{3.487}
+
+\vspace{2\baselineskip}
+
+\item Is elevation a significant predictor of species richness? 
+
+\textbf{p = 0.052. Technically, no. Some authors would call it marginal.}
+
+\vspace{1\baselineskip}
+
+\end{enumerate}
+
+Together, the results suggest that island area is a better predictor than island elevation for number of species. However, could there be a relationship between island area \emph{and} island elevation?
+
+\begin{verbatim}
+features.lm <- lm(log_elev ~ log_area, dat = islands)
+summary(features.lm)
+plot(islands$log_elev ~ islands$log_area)
+abline(features.lm)
+\end{verbatim}
+
+\begin{enumerate}[resume]
+\item Is island area a good predictor of island elevation? Interpret the results of the linear regression.
+
+\textbf{Yes. Larger islands tend to have higher elevation.}
+
+\vspace{2\baselineskip}
+
+\end{enumerate}
+
+Hmmm. Area was a good predictor of endemic bird richness and elevation nearly so. Could both together be a good predictor of the number of bird species on an island? Find out.
+
+The formula in the code below models number of species as a function of area and elevation \emph{and} any interactions between area and elevation. An interaction is an effect that occurs with  both variables together but not by either variable alone.
+
+\begin{verbatim}
+# That's an asterisk in the formula
+area_elev.lm <- lm(num_species ~ log_area * log_elev, data = islands)
+summary(area_elev.lm)
+\end{verbatim}
+
+Notice that area and elevation alone are no longer significant predictors of endemic bird richness but that the interaction (\texttt{log\_area:log\_elev}) between the two variables is a somewhat better predictor of richness.
+
+
+\begin{enumerate}[resume]
+\item If we assume this is the case, how could island area \emph{and} elevation interact to determine to increase number of species? Discuss ideas with your group.
+
+\textbf{Open ended} \bigSpace 
+
+\end{enumerate}
+
+
+\begin{enumerate}[resume]
+\item What types of data might we be missing that could help solve this issue? Invite Dr.~Taylor to your table to discuss this and other ideas.
+
+\textbf{Open-ended.}
+\end{enumerate}
+
+\newpage
+
+\rotatebox{90}{%
+	\includegraphics[width=8in]{galapagos_map}
+}
+
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{landscape}
+
+
+{\fontsize{10pt}{12pt}\selectfont
+	
+\begin{longtable}[l]{>{\em}lllllllllllllllll}
+\caption{Endemic birds of the major Galapagos Islands. See other side for full species and island names. See Table~\ref{tab:species} for scientific and common names of each bird species.  See Table~\ref{tab:islands} for full island names.}\label{tab:endemic}\tabularnewline
+\toprule
+\textup{Species} & Baltra & Bartol & Españo & Fernan & Florea & Genove & Isabel & Marche & NSeym & Pinzón & Pinta & Rábido & SanCri & StCruz & StFe & SanSal \tabularnewline
+\midrule
+P.~harrisi & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+B.~galapagoensis & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1\tabularnewline
+L.~spilonota & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1\tabularnewline
+Z.~galapagoensis & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1\tabularnewline
+M.~magnirostris & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\tabularnewline
+P.~modesta & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1\tabularnewline
+M.~parvulus & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1\tabularnewline
+M.~trifasciatus & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+M.~macdonaldi & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+M.~melanotis & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0\tabularnewline
+G.~magnirostris & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1\tabularnewline
+G.~fortis & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1\tabularnewline
+G.~fuliginosa & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\tabularnewline
+G.~difficilis & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1\tabularnewline
+G.~scandens & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\tabularnewline
+G.~conirostris & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+P.~crassirostris & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 1\tabularnewline
+C.~psittacula & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1\tabularnewline
+C.~pauper & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+C.~parvulus & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1\tabularnewline
+C.~pallidus & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1\tabularnewline
+C.~heliobates & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\tabularnewline
+C.~olivacea & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1\tabularnewline
+C.~fusca & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0\tabularnewline
+\bottomrule
+\end{longtable}
+}
+
+\end{landscape}
+
+\newpage
+
+{\fontsize{10pt}{12pt}\selectfont
+\thispagestyle{empty}
+\begin{longtable}[l]{>{\em}L{3.7cm}L{4cm}}
+\caption{Scientific and common names of the endemic \newline birds of the Galapagos Islands.}\label{tab:species}\tabularnewline
+\toprule
+\textup{Species} & Common Name \tabularnewline
+\midrule
+Phalacrocorax harrisi & Flightless cormorant \tabularnewline
+Buteo galapagoensis & Galápagos hawk \tabularnewline
+Laterallus spilonota & Galápagos crake \tabularnewline
+Zenaida galapagoensis & Galápagos dove \tabularnewline
+Myiarchus magnirostris & Large-billed flycatcher \tabularnewline
+Progne modesta & Galapagos Martin \tabularnewline
+Mimus parvulus & Galápagos mockingbird \tabularnewline
+Mimus trifasciatus & Floreana mockingbird \tabularnewline
+Mimus macdonaldi & Hood mockingbird \tabularnewline
+Mimus melanotis & San Cristóbal mockingbird \tabularnewline
+Geospiza magnirostris & Large ground finch \tabularnewline
+Geospiza fortis & Medium ground finch \tabularnewline
+Geospiza fuliginosa & Small ground finch \tabularnewline
+Geospiza difficilis & Sharp-beaked ground finch \tabularnewline
+Geospiza scandens & Common cactus finch \tabularnewline
+Geospiza conirostris & Española cactus finch \tabularnewline
+Platyspiza crassirostris & Vegetarian finch \tabularnewline
+Camarhynchus psittacula & Large tree finch \tabularnewline
+Camarhynchus pauper & Medium tree finch \tabularnewline
+Camarhynchus parvulus & Small tree finch \tabularnewline
+Camarhynchus pallidus & Woodpecker finch \tabularnewline
+Camarhynchus heliobates & Mangrove finch \tabularnewline
+Certhidea olivacea & Green warbler-finch \tabularnewline
+Certhidea fusca & Grey warbler-finch \tabularnewline
+\bottomrule
+\end{longtable}
+
+%\vspace{2cm}
+
+\begin{longtable}[l]{llrr}
+\caption{Full names of Galapagos islands listed in Table~\ref{tab:endemic}, and \newline the area and maximum elevation of each island.}\label{tab:islands} \tabularnewline
+\toprule
+Full Island Name & Table~\ref{tab:endemic} Code & Area (km\textsuperscript{2}) & Elevation (m) \tabularnewline
+\midrule
+Baltra & Baltra & 21 & 100 \tabularnewline
+Bartolomé & Bartol & 1.2 & 114 \tabularnewline
+Española & Españo & 60 & 206 \tabularnewline
+Fernandina & Fernan & 642 & 1476 \tabularnewline
+Floreana & Florea & 173 & 640 \tabularnewline
+Genovesa & Genove & 14 & 64 \tabularnewline
+Isabella & Isabel & 4670 & 1707 \tabularnewline
+Marchena & Marche & 130 & 343 \tabularnewline
+North Seymour & NSeym & 1.8 & 28 \tabularnewline
+Pinzón & Pinzón & 18 & 458 \tabularnewline
+Pinta & Pinta & 60 & 650\tabularnewline
+Rábida & Rábida & 4.9 & 367\tabularnewline
+San Cristóbal & SanCri & 557 & 730 \tabularnewline
+Santa Cruz & StCruz & 986 & 864 \tabularnewline
+Santa Fe & StFe & 24 & 259 \tabularnewline
+San Salvador & SanSal & 572 & 905\tabularnewline
+\bottomrule
+\end{longtable}
+
+}
+
+\newpage
+
+
+\end{document}  
