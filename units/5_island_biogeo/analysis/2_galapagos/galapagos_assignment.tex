@@ -301,7 +301,7 @@ abline(elev.lm)
 Together, the results suggest that island area is a better predictor than island elevation for number of species. However, could there be a relationship between island area and island elevation?
 
 \begin{verbatim}
-features.lm <- lm(log_elev ~ log_area, dat = islands)
+features.lm <- lm(log_elev ~ log_area, data = islands)
 summary(features.lm)
 plot(islands$log_elev ~ islands$log_area)
 abline(features.lm)
