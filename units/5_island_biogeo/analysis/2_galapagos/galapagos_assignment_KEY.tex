@@ -75,7 +75,7 @@
 \fancypagestyle{first_page}{%
 	\fancyhf{}
 	\fancyhead[L]{\coursename}
-	\fancyhead[R]{Name: \enspace \rule{2.5in}{0.4pt}}
+	\fancyhead[R]{\textbf{KEY}}
 	\renewcommand{\headrulewidth}{0pt}
 }
 
@@ -145,32 +145,31 @@ dotchart(sort(num_species), main = "Species per island", pch = 19)
 \begin{enumerate}[resume]
 \item Which islands have the fewest (10 or fewer) species? \textsc{Note:} You can estimate the numbers from the plot or type \texttt{sort(num\_species)} into the R console. Or both.
 
-\bigSpace
+\textbf{Genovesa: 6. Pinta: 7. Marchena 8. Bartolomé and Española: 9, Pinzon: 10}
+
+\vspace{2\baselineskip}
 
 \item Which islands have the most (15 or more) species? Do any islands have all 24 species?
 
-\bigSpace
-%\newpage
+\textbf{Floreana: 15. Santa Cruz: 15. Santiago,: 16. Fernandina and Isabella: 17. No island has all 24.}
+
+\vspace{2\baselineskip}
 
 \item Look up the islands on the provided map (may also be on screen). Describe the patterns you detect, in terms of island size and distance from other islands, for islands with the fewest and greatest number of species.
 
+\textbf{The smallest and most distant islands have the fewest species. The largest islands have the most species.}
 
-\bigSpace
+\vspace{2\baselineskip}
 
-\end{enumerate}
-
-
-%\newpage %\bigSpace \bigSpace
-
-
-\begin{enumerate}[resume]
 \item How many species are found on Floreana and on Marchena? They are islands of similar size. Why do you think they have very different numbers of species? Discuss possibilities with your group.
 
-\bigSpace
+\textbf{Marchena is more isolated. Floreana is closer to some of the larger islands.}
+
+\vspace{2\baselineskip}
 
 \item How many species are found on North Seymour? What islands have the same number of species? North Seymour is the second smallest island listed. Why do you think North Seymour has so many species? Discuss possibilities with your group.
 
-\bigSpace
+\textbf{North Seymour has 13 species, as does San Cristobal and Santa Fe. N.S. is essentially part of Santa Cruz (15) and Baltra (14).}
 
 \end{enumerate}
 
@@ -187,11 +186,13 @@ dotchart(sort(num_islands), main = "Islands per species", pch = 19)
 \begin{enumerate}[resume]
 \item Which species are endemic to a single island? Reference the plot or enter \texttt{sort(num\_islands)} into the R console. Or both.
 
-\bigSpace
+\textbf{\textit{Mimus trifasciatus, M. macdonaldi, M. melanotis,} and \textit{Camarhynchus pauper}}
+
+\vspace{2\baselineskip}
 
 \item Which species are found on the greatest number of islands? Are any species found on all 16 islands?
 
-\bigSpace
+\textbf{\textit{Zenaida galaoagoensis, Myiarchus magnirostris, Geospize fuliginosa} all in 15 islands. None on all 16.}
 
 \end{enumerate}
 
@@ -212,29 +213,18 @@ Recall from mathematics that the equation of a straight line is $Y = mX + b.$ He
 
 The slope $(m)$ of the regression line tells how much species richness should change (Y-axis) for a given change of \texttt{islands\$log\_area} (X-axis). The slope is given in the Estimate column of the summary table, here 1.9186. 
 
-
 The Y-axis intercept $(b)$ of the equation obtains when $X$ is equal to zero. The intercept is shown in the Estimate column of your summary table is \emph{estimated}, here 8.6463. The smallest possible island should have about 8.6 species on average. Look at your plot. Notice the regression line intersects the Y-axis at about 8.6.
 
-%\textbf{IS THIS NECESSARY?}
-%If you divide this value by 100, the result tells you how many species will be added for each 1\% increase of island area.% The result (0.019186)
-%is how much the number of species should increase for every 1\% increase in island area.
-
 Significance is indicated by the asterisks that appear to the right of the summary table. Ignore the line for “\texttt{(intercept)}.” One or more asterisks means that the independent variable (\texttt{log\_area} in this case) is a significant predictor $(p < 0.05)$ for the dependent variable (number of species).
-
-%\newpage
 
 \begin{enumerate}[resume]
 \item Is island area a significant predictor for the number of species present on an island?
 
-\bigSpace
+\textbf{Island area is a significant predictor (0.0264).}
+
+\vspace{2\baselineskip}
+
 \end{enumerate}
-
-%\vspace{3\baselineskip}
-
-
-%\newpage
-
-%Recall from mathematics that the equation of a straight line is $Y = mX + b.$ Here, $X$ is the natural log of island area (\texttt{islands\$ln\_area}) and $Y$ is the predicted number of species. $b$ is the Y-axis intercept. $b$ in your summary table is the estimate for the intercept, in this case 8.6463. $m$ is the slope of the line, which indicates how much the value of $Y$ changes for a given change in the value of $X$. In your summary table, $m$ is the estimate for \texttt{island\$ln\_area}, in this case 0.8332.
 
 For interpretation, the linear model to predict the relationship between number of species and log\_area can be written as
 
@@ -254,20 +244,21 @@ An island 10$\times$ larger than another is \emph{predicted} to have about 2 mor
 \begin{enumerate}[resume]
 \item Does our model work if we compare San Cristóbal to Isabella? Isabella is about 8.4$\times$ larger than San Cristóbal. How many more species should Isabella have than San Cristóbal?
 
- % 1.92 * log10(8.4) = 1.8 or about 2
-\bigSpace
+\textbf{ 1.92 * log10(8.4) = 1.8 or about 2}
+
+\vspace{2\baselineskip}
  
 \item Does this prediction match the actual difference in the number of species? 
  
-\bigSpace
+\textbf{No. Isabella has 4 more species than San Cristóbal, not 2.}
 
-%\newpage
+\vspace{2\baselineskip}
  
 \item The linear model \emph{predicts} species richness based on island area, if all other variables were constant. The predicted values are represented by the regression line in your plot.  However, the actual number of species varies quite a bit from the predicted numbers. Why do you think this is? Discuss ideas with your group.
 
-%\newpage
+\textbf{Open ended. Distance and elevation are good answers. Elevation sets stage.}
 
-\bigSpace
+\vspace{2\baselineskip}
 
 \end{enumerate}
  
@@ -286,22 +277,28 @@ abline(elev.lm)
 
 \item Based on the intercept $(b)$, what is the minimum number of species present on an island with the lowest possible elevation?
 
+\textbf{3.281 or about 3 species.}
+
 \vspace{2\baselineskip}
 
 \item What is the slope $(m)$ for island elevation?
+
+\textbf{3.487}
 
 \vspace{2\baselineskip}
 
 \item Is elevation a significant predictor of species richness? 
 
-\bigSpace
+\textbf{p = 0.052. Technically, no. Some authors would call it marginal.}
+
+\vspace{1\baselineskip}
 
 \end{enumerate}
 
-Together, the results suggest that island area is a better predictor than island elevation for number of species. However, could there be a relationship between island area and island elevation?
+Together, the results suggest that island area is a better predictor than island elevation for number of species. However, could there be a relationship between island area \emph{and} island elevation?
 
 \begin{verbatim}
-features.lm <- lm(log_elev ~ log_area, data = islands)
+features.lm <- lm(log_elev ~ log_area, dat = islands)
 summary(features.lm)
 plot(islands$log_elev ~ islands$log_area)
 abline(features.lm)
@@ -310,7 +307,9 @@ abline(features.lm)
 \begin{enumerate}[resume]
 \item Is island area a good predictor of island elevation? Interpret the results of the linear regression.
 
-\bigSpace
+\textbf{Yes. Larger islands tend to have higher elevation.}
+
+\vspace{2\baselineskip}
 
 \end{enumerate}
 
@@ -326,18 +325,19 @@ summary(area_elev.lm)
 
 Notice that area and elevation alone are no longer significant predictors of endemic bird richness but that the interaction (\texttt{log\_area:log\_elev}) between the two variables is a somewhat better predictor of richness.
 
-%\newpage 
 
 \begin{enumerate}[resume]
 \item If we assume this is the case, how could island area \emph{and} elevation interact to determine to increase number of species? Discuss ideas with your group.
 
-\bigSpace 
+\textbf{Open ended} \bigSpace 
 
 \end{enumerate}
 
 
 \begin{enumerate}[resume]
 \item What types of data might we be missing that could help solve this issue? Invite Dr.~Taylor to your table to discuss this and other ideas.
+
+\textbf{Open-ended.}
 \end{enumerate}
 
 \newpage
