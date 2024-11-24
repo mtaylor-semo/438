@@ -8,7 +8,6 @@
 %\includeonlylecture{student}
 %\usepackage{handoutWithNotes}
 %\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
-%	\setbeamercolor{background canvas}{bg=black!5}
 
 
 %%% Including only some slides for students.
@@ -52,14 +51,77 @@
 %  \setbeamertemplate{items}[square]
 }
 
-\usepackage{calc}
 \usepackage{hyperref}
 
-\newcommand\HiddenWord[1]{%
-	\alt<handout>{\rule{\widthof{#1}}{\fboxrule}}{#1}%
-}
 
 \begin{document}
+
+
+\begin{frame}{Many species have gone extinct within the past 500 years.}
+	\centering%
+	\includegraphics[height=0.85\textheight]{conservation_extinctions}
+	
+	\tinyfill Fig.~15.14 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
+
+\begin{frame}{Most taxonomic groups are threatened, endangered, or vulnerable to extinction.}
+	\centering%
+	\includegraphics[height=0.78\textheight]{conservation_threatened}
+	
+	\tinyfill Fig.~15.14 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
+
+\begin{frame}{We have \highlight{shortfalls} in our biological knowledge.}
+
+	\includegraphics[width=\linewidth]{conservation_shortfalls}
+	
+	\tinyfill Table~15.4 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
+
+\begin{frame}{Mammals shows a geographic bias of extinction, due to overexploitation and habitat loss.}
+	
+	\centering
+	
+	\includegraphics[width=0.92\linewidth]{conservation_bias_mammals}
+	
+	\tinyfill Fig~15.16 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
+
+\begin{frame}{Birds shows a geographic bias of extinction, due to habitat loss and invasive species.}
+	
+	\centering
+	
+	\includegraphics[width=\linewidth]{conservation_bias_birds}
+	
+	\tinyfill Fig~15.16 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
+
+\begin{frame}{Clear-cutting of forests have created island-like remnants.}
+	
+	\centering
+	
+	\includegraphics[height=0.82\textheight]{conservation_forest_loss}
+	
+	\tinyfill Fig~15.19 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
+
+\begin{frame}{\highlight{Geographic range collapse} can precede extinction for mainland species$\dots$}
+	
+	\centering
+	
+	\includegraphics[width=\linewidth]{conservation_range_collapse_terrestrial}
+	
+	\tinyfill Fig~15.23 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
+
+\begin{frame}{$\dots$and insular species.}
+	
+	\centering
+	
+	\includegraphics[width=\linewidth]{conservation_range_collapse_insular}
+	
+	\tinyfill Fig~15.24 \textcopyright Sinauer Assoc., Inc.
+\end{frame}
 
 \begin{frame}[plain]{\highlight{Biodiversity hotspots} have high endemism and many threats.}
 	\centering%
@@ -96,30 +158,58 @@
 		
 \end{frame}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{philippine_eagle}}
-\begin{frame}[plain]
+%{
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{philippine_eagle}}
+%\begin{frame}[plain]
+%
+%\vfilll
+%
+%\hfill \tiny \textcolor{white}{\copyright\,Klaus Nigge, National Geographic}
+%\end{frame}
+%}
 
-\vfilll
+%\begin{frame}{Apply island biogeography and metapopulation concepts to conserve diversity.}
+%	\begin{columns}[T]
+%		\begin{column}{0.6\textwidth}%
+%			\centering
+%			\includegraphics[height=0.6\textheight]{insular_distribution_function_top}\\
+%		\end{column}
+%		\begin{column}{0.4\textwidth}%
+%			\quad How are organisms distributed?
+%			
+%			\bigskip
+%			
+%			\quad Protect the distribution.
+%			
+%			\bigskip
+%			
+%			Proceed despite limited knowledge.
+%		\end{column}		
+%	\end{columns}
+%\end{frame}
 
-\hfill \tiny \textcolor{white}{\copyright\,Klaus Nigge, National Geographic}
-\end{frame}
-}
+\begin{frame}{Apply island biogeography and metapopulation concepts to conserve diversity.}
+	
+	\vspace{-\baselineskip}
+	
+	\begin{multicols}{2}
+			\includegraphics[width=\linewidth]{insular_distribution_function_top}
+			
+			\columnbreak
 
-\begin{frame}[plain]{Apply island biogeography and metapopulation concepts to conserve diversity.}
-	\begin{columns}[T]
-		\begin{column}{0.6\textwidth}%
-			\centering
-			\includegraphics[height=0.6\textheight]{insular_distribution_function_top}\\
-		\end{column}
-		\begin{column}{0.4\textwidth}%
-			\begin{itemize}%
-				\item How are organisms distributed?
-				\item Protect the distribution.
-				\item Proceed despite limited knowledge.
-			\end{itemize}
-		\end{column}		
-	\end{columns}
+			\vspace*{0.11ex}
+			
+			How are organisms distributed?
+			
+			\bigskip
+			
+			Protect the distribution.
+			
+			\bigskip
+			
+			Proceed despite limited knowledge.
+
+	\end{multicols}
 \end{frame}
 
 {
@@ -133,6 +223,8 @@
 	\centering%
 		\includegraphics[height=0.9\textheight]{puma_range}
 \end{frame}
+
+%
 
 \begin{frame}[plain]{Fewer than 200 panthers live in South Florida.}
 	\centering%
@@ -165,9 +257,9 @@
 		\includegraphics[height=0.8\textheight]{florida_corridor1}
 \end{frame}
 
-\begin{frame}[plain]{Florida agencies are proposing a series of habitat corridors.}
+\begin{frame}[plain]{Florida set aside \$100 million to establish a wildlife \highlight{corridor.}}
 	\centering%
-		\includegraphics[height=0.8\textheight]{florida_corridor2}
+		\includegraphics[height=0.85\textheight]{conservation_florida_corridor}
 \end{frame}
 
 
