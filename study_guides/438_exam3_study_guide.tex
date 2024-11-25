@@ -1,0 +1,145 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[letterpaper]{tufte-handout}
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{fontspec}
+\def\mainfont{Linux Libertine O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={OldStyle}]{\mainfont}
+\setsansfont[Scale=MatchLowercase, Numbers={OldStyle}]{Linux Biolinum O} 
+\setmonofont{Linux Libertine O}
+\usepackage{microtype}
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{/Users/goby/Documents/teach/434/lectures/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+%\usepackage{fancyvrb} % extended verbatim environments
+%  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+\usepackage{enumitem}
+\usepackage{mhchem}
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0pt}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother
+
+% Set up the spacing using fontspec features
+   \renewcommand\allcapsspacing[1]{{\addfontfeatures{LetterSpace=15}#1}}
+   \renewcommand\smallcapsspacing[1]{{\addfontfeatures{LetterSpace=10}#1}}
+
+\newcommand{\ib}{island biogeography}
+
+\title{{\scshape bi} 438/638 Exam 3 Study Guide}
+
+\date{} % without \date command, current date is supplied
+
+\begin{document}
+
+\maketitle	% this prints the handout title, author, and date
+
+%\printclassoptions
+\section*{Vocabulary}
+
+\vspace{-1\baselineskip}
+\begin{multicols}{2}
+\noindent island biogeography \\
+area \\
+isolation \\
+species turnover \\
+rescue effect \\
+target effect \\
+filter \\
+nesting \\
+insular distribution function \\
+biodiversity hotspot \\
+metapopulation \\
+Linnean shortfall \\
+Wallacean shortfall \\
+geographic range collapse \\
+Allee effect \\
+corridors \\
+exposure \\
+resilience \\
+vulnerability index \\
+replacement hypothesis \\
+island rule (dwarfism, gigantism) 
+\end{multicols}
+
+\section*{Concepts}
+
+\begin{enumerate}
+
+	\item Illustrate\marginnote{The basic model is known as the MacArthur-Wilson model of \ib{}.} and describe the basic model of \ib{}. Include both island area and island isolation, for both (local) extinction and immigration rates. 
+	
+	\item In a broad sense, what is an island? That is, why can we apply the model of \ib{} to patchy habitats, pothole wetlands, caves, and other types of “island–like” habitats?
+	
+	\item What is species turnover as it relates to \ib{}?
+	
+	\item Compare and contrast the rescue and target effects? Are they mutually exclusive or can they occur on the same island(s)? Describe how each modifies the \emph{predicted} equilibrium point based on island area or isolation.
+	
+	\item I presented a model of \ib{} that modifies the MacArthur-Wilson model that incorporates evolutionary processes such as speciation. Explain how speciation can occur (considering area and isolation) might modify equilibrium species richness on an island?
+	
+	\item Describe how filters and nesting might be reflected in the distribution of species richness across an island archipelago. For ease, consider a linear island group such as the Aleutian Islands of Alaska.
+	
+	\item Explain the insular distribution function. Be sure to include how area and isolation might influence the presence or absence of a species, based on the the function. Be able to interpret a diagram of an insular distribution function if presented with one.
+	
+	\item Explain how species interactions might affect the presence or absence of some species. Consider for example, interspecific competition, predator-prey interactions, ecological release, symbioses, etc.
+	
+	\item What are biodiversity hotspots? Why are they important in terms of diversity and in terms of vulnerability?
+	
+	\item Describe how the models of \ib{} and metapopulations apply to conservation biogeography.
+	
+		\item Explain the Linnean and Wallacean shortfalls. How are they similar? How are they different? Why are they important from a conservation biogeography viewpoint?
+	
+	\item Explain geographic range collapse. Can you find examples beyond those provided in class?
+	
+	\item Provide some possible causes of geographic range collapse.
+	
+	\item Why is geographic range collapse associated with threatened, endangered, and vulnerable species? Why does geographic range collapse typically precede extinction?
+	
+	\item What is the allele effect? Why is this concept important from a conservation biogeography perspective?
+	
+	\item What are corridors? Why are they important for conservation biogeography?
+	
+	\item I presented one method of using exposure and resilience to develop a vulnerability index. There are many such models but you should be able to broadly explain what is vulnerability and what is resilience and why they should be considered together when thinking about conserving habitats and ecosystems in anticipation of future climate change.
+	
+	\item I discussed the multiregional and replacement hypotheses as it relates to the evolution of the genus \textit{Homo} and its expansion out of Africa. Be able to explain the replacement hypothesis. I will not ask you to interpret the genetic data but you should be able to accurately explain the basic hypothesis.
+	
+	\item Where did the genus \textit{Homo} first evolve (what region of what continent)? How do we know this?
+	
+	\item What was most likely the first species of \textit{Homo} to leave Africa? Do not count \textit{H. habilis} as the data are controversial.	
+	
+	\item About how long did it take for \textit{Homo sapiens} (archaic and modern) to expand across the globe?
+	
+	\item What region (Africa, Europe, Asia, North America, etc.) was \textit{H. neanderthalensis} most abundant?  Where (approximately) were refugia located for this species during Pleistocene glacial advances?
+	
+	\item About when did \textit{H. sapiens} first enter North America? How did they enter North America? (I know it was on foot; from which region outside of North America?)
+	
+	\item Which did \textit{H. sapiens} reach first, the southern tip of South America or the outer Pacific Islands?
+	
+	\item Which island rule applies to \textit{H. floresiensis?} Why would it apply to this species but not other species in the genus \textit{Home?}
+	
+\end{enumerate}
+
+\end{document}
