@@ -1,0 +1,114 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[t]{beamer}
+
+%%%% HANDOUTS For online Uncomment the following four lines for handout
+%\documentclass[t,handout]{beamer}  %Use this for handouts.
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{3 on 1 with notes}[letterpaper,border shrink=5mm]
+%	\setbeamercolor{background canvas}{bg=black!5}
+
+
+%%% Including only some slides for students.
+%%% Uncomment the following line. For the slides,
+%%% use the labels shown below the command.
+%\includeonlylecture{student}
+
+%% For students, use \lecture{student}{student}
+%% For mine, use \lecture{instructor}{instructor}
+
+% FONTS
+\usepackage{fontspec}
+\def\mainfont{Linux Biolinum O}
+\setmainfont[Ligatures={Common,TeX}, Contextuals={NoAlternate}, BoldFont={* Bold}, ItalicFont={* Italic}, Numbers={Proportional}]{\mainfont}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4} 
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O} 
+\usepackage{microtype}
+
+\usepackage{graphicx}
+	\graphicspath{%
+	{/Users/goby/Pictures/teach/438/ca/}}%
+%	{img/}} % set of paths to search for images
+
+\usepackage{amsmath,amssymb}
+
+%\usepackage{units}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+%	\setlength{\columnsep=1em}
+
+%\usepackage{textcomp}
+%\usepackage{setspace}
+\usepackage{tikz}
+	\tikzstyle{every picture}+=[remember picture,overlay]
+
+\mode<presentation>
+{
+  \usetheme{Lecture}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{items}[square]
+}
+
+\begin{document}
+
+\begin{frame}
+		\includegraphics[width=\textwidth]{alroy_table1}
+		
+		\tinyfill Alroy Table~1
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{alroy_table1_part2}
+	
+	\tinyfill Alroy Table~1
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\textwidth]{alroy_fig1}
+
+		\tinyfill Alroy Fig.~1
+\end{frame}
+
+\begin{frame}
+	\centering
+	\includegraphics[height=0.93\textheight]{lorenzen_fig1}
+	
+			\tinyfill Lorenzen et al. Fig.~1
+\end{frame}
+
+
+\begin{frame}
+\begin{multicols}{2}
+	
+	\includegraphics[width=\linewidth]{lorenzen_fig2}
+	\columnbreak
+	
+		\includegraphics[width=\linewidth]{lorenzen_fig3}		
+\end{multicols}
+	
+	\tinyfill Lorenzen et al. Figs.~2–3
+\end{frame}
+
+\begin{frame}
+	\centering
+	\includegraphics[height=0.93\textheight]{lorenzen_fig4}
+
+	\tinyfill Lorenzen et al. Fig.~4
+\end{frame}
+
+\begin{frame}
+	\centering
+	\includegraphics[height=0.93\textheight]{lorenzen_fig6_sup}
+	
+	\tinyfill Lorenzen et al. Supplementary Fig.~1.6
+\end{frame}
+
+\begin{frame}{The overkill hypothesis.}
+	\centering
+	\includegraphics[width=\linewidth]{overkill}
+	
+\end{frame}
+
+\end{document}
